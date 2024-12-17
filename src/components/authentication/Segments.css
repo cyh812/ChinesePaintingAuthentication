@@ -1,0 +1,86 @@
+/* 容器整体样式 */
+.segments {
+  background-color: rgb(219, 219, 219);
+  width: calc(100% - 10px);
+  height: 95%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box; /* 保证内边距不影响大小 */
+  border: 1px solid #ddd; /* 添加边框 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+}
+
+/* 上方的菜单按钮容器 */
+.segments-menu {
+  display: flex;
+  justify-content: flex-start; /* 从左向右排列 */
+  gap: 10px; /* 按钮之间的间距 */
+  margin-bottom: 10px;
+}
+
+.menu-button {
+  width: 65px;
+  height: 65px;
+  border: none;
+  border-radius: 50%; /* 圆形按钮 */
+  background-color: rgb(209, 241, 25);
+  color: #333; /* 文字颜色 */
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.menu-button:hover {
+  background-color: rgb(200, 200, 200); /* 鼠标悬停时的颜色 */
+}
+
+/* 下方输入区域样式 */
+.segments-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px; /* 输入框和发送按钮之间的间隔 */
+}
+
+.segments-input {
+  flex: 1; /* 占据剩余空间 */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px; /* 输入框内边距 */
+  font-size: 20px;
+  line-height: 1.5; /* 文本行高 */
+  color: #333; /* 文本颜色 */
+  background-color: #fff; /* 背景颜色 */
+  box-sizing: border-box;
+  resize: none; /* 禁止用户调整输入框大小 */
+  overflow-y: auto; /* 内容超出时滚动 */
+  caret-color: black; /* 输入光标颜色 */
+}
+
+.segments-input:focus {
+  border-color: #007bff; /* 输入框聚焦时的边框颜色 */
+  outline: none; /* 移除默认的聚焦外框 */
+}
+
+/* 发送按钮样式 */
+.send-button {
+  width: 100px;
+  height: 60px;
+  border: none;
+  border-radius: 10px;
+  background-color: #007bff; /* 按钮背景颜色 */
+  color: white; /* 按钮文字颜色 */
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.send-button:hover {
+  background-color: #0056b3; /* 鼠标悬停时的背景颜色 */
+}
