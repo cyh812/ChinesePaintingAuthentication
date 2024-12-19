@@ -25,7 +25,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
   }
+
+  .left-side-border {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    display: flex;
+    flex-direction: column;
+    position: relative; /* 让子元素绝对定位生效 */
+    border-radius: 10px;
+    background: linear-gradient(to top, rgb(35, 35, 35), rgb(152, 151, 151) 54%, rgb(228, 228, 228) 92%, rgb(138, 138, 138));
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
   
   /* 右侧 div，占 70% 宽度 */
   .right-side {
@@ -63,6 +76,7 @@
     overflow: hidden; /* 隐藏任何溢出内容 */
     border-radius: 10px; /* 圆角，增加美观 */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* 添加阴影 */
+    position: relative; /* 启用相对定位 */
   }
   
   .right-side-buttom-right {

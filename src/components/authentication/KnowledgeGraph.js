@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import * as echarts from "echarts";
-import jsonData from "../../assets/data/data.json"; // 导入本地 JSON 数据
+import jsonData from "../../assets/data/data1.json"; // 导入本地 JSON 数据
 import "./KnowledgeGraph.css"
 
 const KnowledgeGraph = () => {

@@ -15,6 +15,8 @@ import "./App.css"
 import KG from "./components/authentication/KnowledgeGraph"
 import Segments from "./components/authentication/Segments";
 import Storyline from "./components/authentication/Storyline";
+import StageMenu from "./components/authentication/StageMenu"
+import NestedList from "./components/authentication/NestedList"
 
 // Define image, embedding and model paths
 const IMAGE_PATH = "/assets/data/1.png";
@@ -134,12 +136,17 @@ const App = () => {
     </div>
     <div className="bottom-container">
       <div className="left-side">
+        <div className="left-side-border">
+        <StageMenu />
         <Stage />
+        </div>
       </div>
       <div className="right-side">
         <div className="right-side-top">
           <div className="right-side-top-left">
-            <KG />
+            <NestedList/>
+            <Storyline />
+            {/* <KG /> */}
           </div>
           {/* storyline部分，暂时不需要了 */}
           {/* <div className="right-side-buttom-right">
