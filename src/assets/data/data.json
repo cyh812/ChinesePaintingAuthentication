@@ -1,14 +1,26 @@
 {
   "nodes": [
-    { "id": 1, "category": 0, "name": "Node 1" },
-    { "id": 2, "category": 1, "name": "Node 2" },
-    { "id": 3, "category": 2, "name": "Node 3" },
-    { "id": 4, "category": 3, "name": "Node 4" }
+    { "id": 1, "category": "P", "name": "P1", "url":"../../assets/img/logo.png" },
+    { "id": 2, "category": "P", "name": "P2", "url":"../../assets/img/logo.png" },
+    { "id": 3, "category": "P", "name": "P3", "url":"../../assets/img/logo.png" },
+    { "id": 4, "category": "P", "name": "P4", "url":"../../assets/img/logo.png" },
+    { "id": 5, "category": "S", "name": "S1", "url":"../../assets/img/logo.png" },
+    { "id": 6, "category": "S", "name": "S2", "url":"../../assets/img/logo.png" },
+    { "id": 7, "category": "A", "name": "A2" },
+    { "id": 8, "category": "L", "name": "L1" },
+    { "id": 9, "category": "A", "name": "A3" },
+    { "id": 10, "category": "A", "name": "A1" }
   ],
   "links": [
-    { "source": 1, "target": 2 },
-    { "source": 2, "target": 3 },
-    { "source": 3, "target": 4 },
-    { "source": 4, "target": 1 }
+    { "source": 1, "target": 2, "angle":0.9 },
+    { "source": 3, "target": 4,"angle":0.8 },
+    { "source": 1, "target": 5,"angle":0.95 },
+    { "source": 2, "target": 6,"angle":0.65 },
+    { "source": 10, "target": 1 },
+    { "source": 10, "target": 2 },
+    { "source": 10, "target": 3 },
+    { "source": 10, "target": 8 },
+    { "source": 4, "target": 7,"angle":0.32},
+    { "source": 9, "target": 3,"angle":0.32}
   ]
 }

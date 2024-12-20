@@ -24,10 +24,10 @@ const CustomToggleButton = styled(ToggleButton)(({ theme }) => ({
     //   backgroundColor: '#777777', // 鼠标悬停时的颜色
     // },
     '&.Mui-selected': {
-      backgroundColor: '#D19762', // 选中时的背景颜色
-      color: '#ffffff', // 选中时的图标颜色
+        backgroundColor: '#D19762', // 选中时的背景颜色
+        color: '#ffffff', // 选中时的图标颜色
     },
-  }));
+}));
 
 const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
 
@@ -46,9 +46,11 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
     },
 }));
 
-export default function CustomizedDividers() {
-    const [alignment, setAlignment] = React.useState('left');
-    const [formats, setFormats] = React.useState(() => ['italic']);
+export default function StageMenu({ onZoomIn, onZoomOut, showStage }) {
+    const [alignment, setAlignment] = React.useState('');
+    const [formats, setFormats] = React.useState(() => ['']);
+
+    const fileInputRef = React.useRef(null); // 创建文件输入的引用
 
     const handleFormat = (event, newFormats) => {
         setFormats(newFormats);
@@ -56,6 +58,31 @@ export default function CustomizedDividers() {
 
     const handleAlignment = (event, newAlignment) => {
         setAlignment(newAlignment);
+    };
+
+    // 添加按钮点击事件处理
+    const handleZoomIn = () => {
+        if (onZoomIn) onZoomIn();
+    };
+
+    const handleZoomOut = () => {
+        if (onZoomOut) onZoomOut(); // 调用传入的缩小函数
+    };
+
+
+    // 当点击上传按钮时，触发文件输入框的点击事件
+    const handleFileUploadClick = () => {
+        if (fileInputRef.current) {
+            fileInputRef.current.click(); // 触发文件选择窗口
+        }
+    };
+
+    // 当选择文件后，不做任何事情（忽略上传）
+    const handleFileChange = (event) => {
+        event.preventDefault(); // 阻止默认行为
+        event.stopPropagation(); // 阻止事件冒泡
+        // 此处不进行任何处理，选择的文件会被忽略
+        showStage();
     };
 
     return (
@@ -83,17 +110,17 @@ export default function CustomizedDividers() {
                 <StyledToggleButtonGroup
                     size="small"
                     value={alignment}
-                    exclusive
-                    onChange={handleAlignment}
+                    // exclusive
+                    // onChange={handleAlignment}
                     aria-label="text alignment"
                 >
-                    <CustomToggleButton value="left" aria-label="left aligned">
+                    <CustomToggleButton value="left" onClick={handleFileUploadClick} aria-label="left aligned">
                         <CloudUploadIcon />
                     </CustomToggleButton>
-                    <CustomToggleButton value="center" aria-label="centered">
+                    <CustomToggleButton value="center" onClick={handleZoomIn} aria-label="centered">
                         <ZoomInOutlinedIcon />
                     </CustomToggleButton>
-                    <CustomToggleButton value="right" aria-label="right aligned">
+                    <CustomToggleButton value="right" onClick={handleZoomOut} aria-label="right aligned">
                         <ZoomOutOutlinedIcon />
                     </CustomToggleButton>
                     <CustomToggleButton value="justify" >
@@ -104,6 +131,7 @@ export default function CustomizedDividers() {
                 <StyledToggleButtonGroup
                     size="small"
                     value={formats}
+                    exclusive
                     onChange={handleFormat}
                     aria-label="text formatting"
                 >
@@ -122,6 +150,14 @@ export default function CustomizedDividers() {
                     </CustomToggleButton>
                 </StyledToggleButtonGroup>
             </Paper>
+
+            {/* 隐藏的文件上传输入框 */}
+            <input
+                ref={fileInputRef}
+                type="file"
+                style={{ display: 'none' }} // 隐藏文件选择框
+                onChange={handleFileChange} // 选择文件后不做任何处理
+            />
         </div>
     );
 }

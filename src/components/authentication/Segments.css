@@ -53,7 +53,7 @@
   border-radius: 10px;
   padding: 10px; /* 输入框内边距 */
   font-size: 20px;
-  line-height: 1.5; /* 文本行高 */
+  line-height: 1.0; /* 文本行高 */
   color: #333; /* 文本颜色 */
   background-color: #fff; /* 背景颜色 */
   box-sizing: border-box;

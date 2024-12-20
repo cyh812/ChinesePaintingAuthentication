@@ -17,6 +17,7 @@ import Segments from "./components/authentication/Segments";
 import Storyline from "./components/authentication/Storyline";
 import StageMenu from "./components/authentication/StageMenu"
 import NestedList from "./components/authentication/NestedList"
+import Legend from "./components/authentication/Legend"
 
 // Define image, embedding and model paths
 const IMAGE_PATH = "/assets/data/1.png";
@@ -31,6 +32,20 @@ const App = () => {
   } = useContext(AppContext)!;
   const [model, setModel] = useState<InferenceSession | null>(null); // ONNX model
   const [tensor, setTensor] = useState<Tensor | null>(null); // Image embedding tensor
+
+  const [showStage, setShowStage] = useState(false);  // 控制 StageMenu 显示与否
+  const handleShowStage = () => {
+    setShowStage(true); // 调整缩放值
+  };
+
+  const [zoomLevel, setZoomLevel] = useState(0.9);
+  const handleZoomIn = () => {
+    setZoomLevel(zoomLevel + 0.1); // 调整缩放值
+  };
+
+  const handleZoomOut = () => {
+    setZoomLevel(zoomLevel - 0.1); // 调整缩放值
+  };
 
   // The ONNX model expects the input to be rescaled to 1024. 
   // The modelScale state variable keeps track of the scale values.
@@ -137,15 +152,16 @@ const App = () => {
     <div className="bottom-container">
       <div className="left-side">
         <div className="left-side-border">
-        <StageMenu />
-        <Stage />
+          <StageMenu onZoomIn={handleZoomIn} onZoomOut={handleZoomOut} showStage={handleShowStage} />
+          {showStage && <Stage zoomLevel={zoomLevel} />}
         </div>
       </div>
       <div className="right-side">
         <div className="right-side-top">
           <div className="right-side-top-left">
-            <NestedList/>
+            <NestedList />
             <Storyline />
+            <Legend/>
             {/* <KG /> */}
           </div>
           {/* storyline部分，暂时不需要了 */}
