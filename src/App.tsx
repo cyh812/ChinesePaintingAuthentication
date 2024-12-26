@@ -13,7 +13,7 @@ import npyjs from "npyjs";
 import "./App.css"
 
 import KG from "./components/authentication/KnowledgeGraph"
-import Segments from "./components/authentication/Segments";
+import LLM from "./components/authentication/LLM_QA";
 import Storyline from "./components/authentication/Storyline";
 import StageMenu from "./components/authentication/StageMenu"
 import NestedList from "./components/authentication/NestedList"
@@ -171,7 +171,7 @@ const App = () => {
         </div>
         {/* 大模型对话输入框 */}
         <div className="right-side-buttom">
-          <Segments />
+          <LLM />
         </div>
       </div>
     </div>

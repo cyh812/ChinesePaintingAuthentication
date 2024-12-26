@@ -7,7 +7,8 @@ const Storyline = () => {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const [nodesData, setNodesData] = useState([]);
   const [linksData, setLinksData] = useState([]);
-
+  const [isRendered, setIsRendered] = useState(false); // 控制图表渲染
+  const [dataurl, setdataurl] = useState("../../assets/temp/data1.json")
 
 
   // 预先加载四个自定义的图像（PNG/SVG素材）
@@ -15,7 +16,8 @@ const Storyline = () => {
     "P": "../../assets/img/painting.png",
     "S": "../../assets/img/seal.png",
     "A": "../../assets/img/people.png",
-    "L": "../../assets/img/logo.png"
+    "L": "../../assets/img/location.png",
+    "O": "../../assets/temp/1.png"
   }
 
   useEffect(() => {
@@ -37,9 +39,41 @@ const Storyline = () => {
     };
   }, []);
 
+  // 按键事件：监听 "O" 键
   useEffect(() => {
+    const handleKeyDown1 = (event) => {
+      if (event.key === "1") {
+        setIsRendered(true); // 按下 "O" 键后设置渲染状态为 true
+      }
+    };
+    const handleKeyDown2 = (event) => {
+      if (event.key === "2") {
+        setdataurl("../../assets/temp/data2.json")
+      }
+    };
+
+    const handleKeyDown3 = (event) => {
+      if (event.key === "3") {
+        setdataurl("../../assets/temp/data3.json")
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown1);
+    window.addEventListener("keydown", handleKeyDown2);
+    window.addEventListener("keydown", handleKeyDown3);
+
+    // 清理事件监听器
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown1);
+      window.removeEventListener("keydown", handleKeyDown2);
+      window.removeEventListener("keydown", handleKeyDown3);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isRendered) return; // 只有在需要渲染时才加载数据
     // 加载包含节点和连边数据的data.json文件
-    d3.json("../../assets/data/data.json") // 替换为你的实际文件路径
+    d3.json(dataurl) // 替换为你的实际文件路径
       .then((data) => {
         setNodesData(data.nodes); // 设置节点数据
         setLinksData(data.links); // 设置连边数据
@@ -47,7 +81,7 @@ const Storyline = () => {
       .catch((error) => {
         console.error("Error loading data:", error);
       });
-  }, []);
+  }, [isRendered, dataurl]);
 
 
   useEffect(() => {
@@ -137,15 +171,14 @@ const Storyline = () => {
       .style('border-radius', '10px')
       .style('padding', '10px')
       .style('box-shadow', '0px 4px 8px rgba(0, 0, 0, 0.1)')
-      .style('width', '150px');
+      .style('width', '350px');
 
     // 显示卡片的hover事件
     node
       .on("mouseover", function (event, d) {
         customCard.transition().duration(200).style('visibility', 'visible');
         customCard.html(`
-    <h4>${d.name}</h4>
-    <p>更多信息...</p>
+<img src="${d.url}" alt="Node Image" style="width: 500px; height: auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);" />
   `)
           .style('left', `${event.pageX + 30}px`)
           .style('top', `${event.pageY - 50}px`);
@@ -164,22 +197,90 @@ const Storyline = () => {
       .selectAll('path')
       .data(linksData)
       .enter().append('path')
-      .attr('fill', '#C52E34')
+      .attr('fill', d => d.info.name == 'P-P' ? 'blue' : 'red') 
       .attr('opacity', 0.9);
+
+    // 创建卡片容器
+    const customCardonArc1 = d3.select('body')
+      .append('div')
+      .attr('class', 'custom-card')
+      .style('position', 'absolute')
+      .style('visibility', 'hidden')
+      .style('background-color', '#fff')
+      .style('border', '1px solid #ccc')
+      .style('border-radius', '10px')
+      .style('padding', '5px')
+      .style('box-shadow', '0px 4px 8px rgba(0, 0, 0, 0.1)')
+      .style('width', '200px'); // 卡片宽度
+
+    // 创建卡片容器 印章-印章
+    const customCardonArc2 = d3.select('body')
+      .append('div')
+      .attr('class', 'custom-card')
+      .style('position', 'absolute')
+      .style('visibility', 'hidden')
+      .style('background-color', '#fff')
+      .style('border', '1px solid #ccc')
+      .style('border-radius', '10px')
+      .style('padding', '5px')
+      .style('box-shadow', '0px 4px 8px rgba(0, 0, 0, 0.1)')
+      .style('width', '200px'); // 卡片宽度
+
+    // 添加图片到卡片内容
+    //   const updateCardContent = (image1, image2) => {
+    //     customCardonArc.html(`
+    //   <div style="display: flex; justify-content: space-between; align-items: center;">
+    //     <img src="${image1}" alt="Image 1" style="width: 50px; height: 50px; object-fit: cover; border-radius: 5px;" />
+    //     <img src="${image2}" alt="Image 2" style="width: 50px; height: 50px; object-fit: cover; border-radius: 5px;" />
+    //   </div>
+    // `);
+    //   };
+
+    const updateCardContent1 = (image1) => {
+      customCardonArc1.html(`
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <img src="${image1}" alt="Image 1" style="width: 200px; height: 120px; border-radius: 5px;" />
+    </div>
+  `);
+    };
+
+    const updateCardContent2 = (image1) => {
+      customCardonArc2.html(`
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <img src="${image1}" alt="Image 1" style="width: 200px; height: 120px; border-radius: 5px;" />
+    </div>
+  `);
+    };
 
     // 显示卡片的hover事件
     arc
       .on("mouseover", function (event, d) {
-        customCard.transition().duration(200).style('visibility', 'visible');
-        customCard.html(`
-  <h4>扇形</h4>
-  <p>更多信息...</p>
-`)
-          .style('left', `${event.pageX - 75}px`)
-          .style('top', `${event.pageY - 75}px`);
+        if (d.info.name == "P-P") {
+          const image1 = d.image1 || '../../assets/img/temp/L1.png'; // 替换为节点对应的图片路径
+          //const image2 = d.image2 || '../../assets/img/test/”清湘老人“朱文印.png'; // 替换为节点对应的图片路径  
+          updateCardContent1(image1); // 更新卡片内容
+        }
+        if (d.info.name == "P-S") {
+          const image1 = d.image1 || '../../assets/img/temp/L2.png'; // 替换为节点对应的图片路径
+          //const image2 = d.image2 || '../../assets/img/test/”清湘老人“朱文印.png'; // 替换为节点对应的图片路径  
+          updateCardContent2(image1); // 更新卡片内容
+        }
+
+
+
+        customCardonArc1
+          .style('visibility', 'visible')
+          .style('left', `${event.pageX - 105}px`)
+          .style('top', `${event.pageY - 150}px`);
+
+        customCardonArc2
+          .style('visibility', 'visible')
+          .style('left', `${event.pageX - 105}px`)
+          .style('top', `${event.pageY - 150}px`);
       })
       .on("mouseout", function () {
-        customCard.transition().duration(200).style('visibility', 'hidden');
+        customCardonArc1.transition().duration(200).style('visibility', 'hidden');
+        customCardonArc2.transition().duration(200).style('visibility', 'hidden');
       });
 
     const parsedLinksData = linksData.map(link => ({
@@ -197,7 +298,7 @@ const Storyline = () => {
       .attr("width", 100) // 按钮宽度
       .attr("height", 30) // 按钮高度
       .append("xhtml:button")
-      .text("Click   \|   9")
+      .text("创作   \|")
       .style("width", "100%")
       .style("height", "100%")
       .style("background-color", "#000000")
@@ -242,7 +343,7 @@ const Storyline = () => {
         .attr("y", d => (d.source.y + d.target.y) / 2 - 15);
 
       arc.attr('d', d => {
-        if ((d.source.category == "P" || d.source.category == "S") && (d.target.category == "P" || d.target.category == "S")) {
+        if (d.info.name == "P-P") {
           const x1 = d.source.x;
           const y1 = d.source.y;
           const x2 = d.target.x;
@@ -253,7 +354,31 @@ const Storyline = () => {
           const centerY = (y1 + y2) / 2;
 
           // 动态计算扇形角度
-          const angleRatio = d.angle || 0; // 获取 angle 属性（0-1），默认值为 0
+          const angleRatio = d.info.angle || 0; // 获取 angle 属性（0-1），默认值为 0
+          const startAngle = 0; // 扇形起始角度（0 弧度）
+          const endAngle = 2 * Math.PI * angleRatio; // 根据 angle 映射到 0-2π 范围
+
+          // 使用 arcGenerator 生成路径
+          return arcGenerator({
+            startAngle,
+            endAngle,
+            innerRadius: 0,
+            outerRadius: 30,
+          });
+
+        }
+        else if (d.info.name == "P-S") {
+          const x1 = d.source.x;
+          const y1 = d.source.y;
+          const x2 = d.target.x;
+          const y2 = d.target.y;
+
+          // 计算连边中心
+          const centerX = (x1 + x2) / 2;
+          const centerY = (y1 + y2) / 2;
+
+          // 动态计算扇形角度
+          const angleRatio = d.info.angle || 0; // 获取 angle 属性（0-1），默认值为 0
           const startAngle = 0; // 扇形起始角度（0 弧度）
           const endAngle = 2 * Math.PI * angleRatio; // 根据 angle 映射到 0-2π 范围
 

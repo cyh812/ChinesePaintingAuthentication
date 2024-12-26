@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import OpenAI from "openai";
-import "./Segments.css";
+import "./LLM.css";
 
 // 初始化 OpenAI 客户端
 const openai = new OpenAI({
-  apiKey: "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", // 替换为你的 GPT API Key
+  apiKey: "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", // 替换为你的 GPT API Key
   dangerouslyAllowBrowser: true, // 允许在浏览器中使用 OpenAI 客户端
 });
 
@@ -13,8 +13,43 @@ const Segments = () => {
   const [loading, setLoading] = useState(false); // 控制加载状态
   const [reply, setReply] = useState(""); // 保存 GPT 的回复
 
+  const [selectedImages, setSelectedImages] = useState([]); // 当前选中的图片索引
+  const [imagePaths, setImagePaths] = useState([
+    "../../assets/img/test/D13647-06.png",
+    "../../assets/img/test/D00214-04.png",
+    "../../assets/img/test/D13456.png",
+    "../../assets/img/test/T01.png",
+    "../../assets/img/test/Y60.png",
+  ]); // 图片路径数组
+
+  const [displayedImages, setDisplayedImages] = useState([]); // 动态展示的图片数组
+
+  // 键盘监听事件：按下 "A" 键添加图片
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "a" || e.key === "A") {
+        if (displayedImages.length < imagePaths.length) {
+          setDisplayedImages((prev) => [...prev, imagePaths[prev.length]]);
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [imagePaths, displayedImages]);
+
+  // 单击图片添加或移除选中状态
+  const toggleImageSelection = (index) => {
+    if (selectedImages.includes(index)) {
+      setSelectedImages((prev) => prev.filter((i) => i !== index));
+    } else {
+      setSelectedImages((prev) => [...prev, index]);
+    }
+  };
+
   // 发送请求到 GPT API
   const sendMessageToGPT = async () => {
+    setMessage("")
     if (!message.trim()) return; // 避免发送空消息
 
     setLoading(true); // 开始加载
@@ -54,10 +89,14 @@ const Segments = () => {
     <div className="segments">
       {/* 上方菜单按钮 */}
       <div className="segments-menu">
-        {Array.from({ length: 5 }).map((_, index) => (
-          <button key={index} className="menu-button">
-            菜单{index + 1}
-          </button>
+        {displayedImages.map((imagePath, index) => (
+          <div
+            key={index}
+            className={`menu-image ${selectedImages.includes(index) ? "selected" : ""}`}
+            onClick={() => toggleImageSelection(index)}
+          >
+            <img src={imagePath} alt={`Menu ${index + 1}`} />
+          </div>
         ))}
       </div>
 
@@ -80,12 +119,12 @@ const Segments = () => {
       </div>
 
       {/* 显示 GPT 的回复 */}
-      {reply && (
+      {/* {reply && (
         <div className="segments-reply">
           <h3>GPT 回复：</h3>
           <p>{reply}</p>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

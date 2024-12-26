@@ -1,0 +1,129 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "category": "O",
+            "name": "待鉴定画作",
+            "url": "../../assets/img/temp/P1.png"
+        },
+        {
+            "id": 1,
+            "category": "P",
+            "name": "对菊图",
+            "url": "../../assets/img/temp/P1.png"
+        },
+        {
+            "id": 2,
+            "category": "P",
+            "name": "罗汉四条屏",
+            "url": "../../assets/img/temp/P1.png"
+        },
+        {
+            "id": 3,
+            "category": "P",
+            "name": "陆灏仿王蒙山水轴",
+            "url": "../../assets/img/temp/P1.png"
+        },
+        {
+            "id": 4,
+            "category": "A",
+            "name": "石涛",
+            "url": "../../assets/img/temp/A1.png"
+        },
+        {
+            "id": 5,
+            "category": "A",
+            "name": "陆灏",
+            "url": "../../assets/img/temp/A1.png"
+        },
+        {
+            "id": 6,
+            "category": "S",
+            "name": "“清湘老人”朱文印",
+            "url": "../../assets/img/temp/S1.png"
+        },
+        {
+            "id": 7,
+            "category": "S",
+            "name": "“痴绝”朱文印",
+            "url": "../../assets/img/temp/S1.png"
+        },
+        {
+            "id": 8,
+            "category": "S",
+            "name": "“膏肓子济”白文印",
+            "url": "../../assets/img/temp/S1.png"
+        }
+    ],
+    "links": [
+        {
+            "source": 0,
+            "target": 1,
+            "info": {
+                "name": "P-P",
+                "angle": 0.9
+            }
+        },
+        {
+            "source": 0,
+            "target": 2,
+            "info": {
+                "name": "P-P",
+                "angle": 0.8
+            }
+        },
+        {
+            "source": 0,
+            "target": 3,
+            "info": {
+                "name": "P-P",
+                "angle": 0.95
+            }
+        },
+        {
+            "source": 1,
+            "target": 4,
+            "info": {
+                "name": "创作"
+            }
+        },
+        {
+            "source": 2,
+            "target": 4,
+            "info": {
+                "name": "创作"
+            }
+        },
+        {
+            "source": 3,
+            "target": 5,
+            "info": {
+                "name": "创作"
+            }
+        },
+      {
+            "source": 1,
+            "target": 6,
+            "info": {
+                "name": "P-S",
+                "angle": 0.67
+            }
+        },
+        {
+            "source": 1,
+            "target": 7,
+            "info": {
+                "name": "P-S",
+                "angle": 0.59
+            }
+        },
+        {
+            "source": 1,
+            "target": 8,
+            "info": {
+                "name": "P-S",
+                "angle": 0.59
+            }
+        }
+    ]
+}

@@ -13,31 +13,39 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
 }
 
-/* 上方的菜单按钮容器 */
+/* 图片菜单样式 */
 .segments-menu {
   display: flex;
   justify-content: flex-start; /* 从左向右排列 */
-  gap: 10px; /* 按钮之间的间距 */
+  gap: 10px; /* 图片之间的间距 */
   margin-bottom: 10px;
 }
 
-.menu-button {
+.menu-image {
+  position: relative;
   width: 65px;
   height: 65px;
-  border: none;
-  border-radius: 50%; /* 圆形按钮 */
-  background-color: rgb(209, 241, 25);
-  color: #333; /* 文字颜色 */
-  font-size: 12px;
-  font-weight: bold;
+  border-radius: 10px;
   cursor: pointer;
-  outline: none;
-  transition: background-color 0.3s ease;
+  overflow: hidden; /* 确保图片不会超出容器 */
+  border: 2px solid transparent; /* 默认无边框 */
+  transition: transform 0.3s ease, border 0.3s ease;
 }
 
-.menu-button:hover {
-  background-color: rgb(200, 200, 200); /* 鼠标悬停时的颜色 */
+.menu-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 确保图片保持比例 */
 }
+
+.menu-image:hover {
+  transform: scale(1.1); /* 鼠标悬停时放大 */
+}
+
+.menu-image.selected {
+  border: 2px solid #007bff; /* 选中状态下的边框颜色 */
+}
+
 
 /* 下方输入区域样式 */
 .segments-input-container {

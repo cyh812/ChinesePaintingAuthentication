@@ -13,10 +13,7 @@ import ExpandMore from '@mui/icons-material/ExpandMore';
 import StarBorder from '@mui/icons-material/StarBorder';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
-import { styled } from '@mui/material/styles';
 import SvgIcon from '@mui/material/SvgIcon';
-import { Icon } from "@mui/material"
-import PeopleSvg from '../../assets/icon/people.svg';
 
 // 自定义图标组件
 function PeopleIcon(props) {
@@ -43,10 +40,20 @@ function PaintingIcon(props) {
     );
 }
 
+function LocationIcon(props) {
+    return (
+        <SvgIcon {...props}>
+            <path d="M18.9331 10.5375C18.3206 15.3737 12.4375 22.9102 11.4866 22.8694C10.5332 22.8285 4.50065 15.433 4.04001 10.5375C3.59837 5.84385 6.85989 2 11.4866 2C16.1133 2 19.5253 5.86113 18.9331 10.5375ZM11.4901 3.89722C8.02011 3.89722 5.4555 7.05463 5.90526 10.8824C6.34014 14.5836 10.7751 20.5631 11.4901 20.5965C12.2035 20.6298 16.6447 14.3319 17.0751 10.8824C17.552 7.06042 14.9602 3.89722 11.4901 3.89722ZM11.5011 14.3319C9.43277 14.3319 7.75598 12.6331 7.75598 10.5375C7.75598 8.44189 9.43274 6.74304 11.5011 6.74304C13.5694 6.74304 15.2462 8.44189 15.2462 10.5375C15.2462 12.6331 13.5694 14.3319 11.5011 14.3319ZM11.5011 8.64026C10.4669 8.64026 9.62853 9.48964 9.62853 10.5375C9.62853 11.5853 10.4669 12.4347 11.5011 12.4347C12.5353 12.4347 13.3736 11.5853 13.3736 10.5375C13.3736 9.48964 12.5353 8.64026 11.5011 8.64026Z" />
+        </SvgIcon>
+    );
+}
+
+
 export default function NestedList() {
     const [open1, setOpen1] = React.useState(false);
     const [open2, setOpen2] = React.useState(false);
     const [open3, setOpen3] = React.useState(false);
+    const [open4, setOpen4] = React.useState(false);
 
     const handleClick1 = () => {
         setOpen1(!open1);
@@ -56,6 +63,9 @@ export default function NestedList() {
     };
     const handleClick3 = () => {
         setOpen3(!open3);
+    };
+    const handleClick4 = () => {
+        setOpen4(!open4);
     };
     return (
         <div
@@ -89,7 +99,7 @@ export default function NestedList() {
                     <ListItemIcon>
                         <PeopleIcon sx={{ width: 30, height: 30 }} />
                     </ListItemIcon>
-                    <ListItemText primary="Sent mail" />
+                    <ListItemText primary="人物" />
                     {open1 ? (
                         <ExpandLess sx={{ color: '#000000' }} />
                     ) : (
@@ -102,12 +112,24 @@ export default function NestedList() {
                             <ListItemIcon>
                                 <StarBorder />
                             </ListItemIcon>
-                            <ListItemText primary="Starred" />
+                            <ListItemText primary="石涛" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
                             </IconButton>
                         </ListItemButton>
+
+                        <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <StarBorder />
+                            </ListItemIcon>
+                            <ListItemText primary="陆灏" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+
                     </List>
                 </Collapse>
 
@@ -115,7 +137,7 @@ export default function NestedList() {
                     <ListItemIcon>
                         <PaintingIcon sx={{ width: 30, height: 30 }} />
                     </ListItemIcon>
-                    <ListItemText primary="Drafts" />
+                    <ListItemText primary="艺术作品" />
                     {open2 ? (
                         <ExpandLess sx={{ color: '#000000' }} />
                     ) : (
@@ -128,7 +150,27 @@ export default function NestedList() {
                             <ListItemIcon>
                                 <StarBorder />
                             </ListItemIcon>
-                            <ListItemText primary="Starred" />
+                            <ListItemText primary="对菊图" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <StarBorder />
+                            </ListItemIcon>
+                            <ListItemText primary="罗汉四条屏" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <StarBorder />
+                            </ListItemIcon>
+                            <ListItemText primary="陆灏仿王蒙山水轴" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
@@ -141,7 +183,7 @@ export default function NestedList() {
                     <ListItemIcon>
                         <SealIcon sx={{ width: 30, height: 30 }} />
                     </ListItemIcon>
-                    <ListItemText primary="Inbox" />
+                    <ListItemText primary="印章" />
                     {open3 ? (
                         <ExpandLess sx={{ color: '#000000' }} />
                     ) : (
@@ -154,7 +196,53 @@ export default function NestedList() {
                             <ListItemIcon>
                                 <StarBorder />
                             </ListItemIcon>
-                            <ListItemText primary="Starred" />
+                            <ListItemText primary="“清湘老人”朱文印" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <StarBorder />
+                            </ListItemIcon>
+                            <ListItemText primary="“痴绝”朱文印" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <StarBorder />
+                            </ListItemIcon>
+                            <ListItemText primary="“膏肓子济”白文印" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+                    </List>
+                </Collapse>
+
+                <ListItemButton onClick={handleClick4}>
+                    <ListItemIcon>
+                        <LocationIcon sx={{ width: 30, height: 30 }} />
+                    </ListItemIcon>
+                    <ListItemText primary="地点" />
+                    {open4 ? (
+                        <ExpandLess sx={{ color: '#000000' }} />
+                    ) : (
+                        <ExpandMore sx={{ color: '#000000' }} />
+                    )}
+                </ListItemButton>
+                <Collapse in={open4} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                        <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <StarBorder />
+                            </ListItemIcon>
+                            <ListItemText primary="大涤子堂" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
