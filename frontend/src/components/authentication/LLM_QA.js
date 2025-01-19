@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import OpenAI from "openai";
 import "./LLM.css";
 
-// 初始化 OpenAI 客户端
+// 初始化 Deepseek 客户端
 const openai = new OpenAI({
-  apiKey: "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", // 替换为你的 GPT API Key
+  baseURL: 'https://api.deepseek.com', // 使用 Deepseek 的基础 URL
+  apiKey: "sk-d92a575188954a01b6a4fc4e2d231fe9", // 替换为您的 Deepseek API Key
   dangerouslyAllowBrowser: true, // 允许在浏览器中使用 OpenAI 客户端
 });
 
@@ -12,6 +13,7 @@ const Segments = () => {
   const [message, setMessage] = useState(""); // 控制输入框内容
   const [loading, setLoading] = useState(false); // 控制加载状态
   const [reply, setReply] = useState(""); // 保存 GPT 的回复
+  const [conversationHistory, setConversationHistory] = useState([]);
 
   const [selectedImages, setSelectedImages] = useState([]); // 当前选中的图片索引
   const [imagePaths, setImagePaths] = useState([
@@ -54,20 +56,33 @@ const Segments = () => {
 
     setLoading(true); // 开始加载
 
+    // 更新对话历史，将用户的消息添加到历史中
+    const newConversationHistory = [
+      ...conversationHistory,
+      { role: "user", content: message }
+    ];
+    setConversationHistory(newConversationHistory);
+
     try {
-      // 调用 OpenAI API
+      // 调用 Deepseek API
       const completion = await openai.chat.completions.create({
-        model: "gpt-3.5-turbo", // 模型名
-        messages: [{ role: "user", content: message }],
-        temperature: 0.7, // 控制结果随机性
-        max_tokens: 150, // 回复的最大字数
+        model: "deepseek-chat", // 使用 Deepseek 的模型
+        messages: newConversationHistory, // 用户的消息
+        // temperature: 0.7, // 控制结果随机性
+        // max_tokens: 150, // 回复的最大字数
       });
 
-      const gptReply = completion.choices[0]?.message?.content || "无回复";
-      console.log("GPT 回复：", gptReply);
-      setReply(gptReply); // 将 GPT 回复保存到状态中
+      const deepseekReply = completion.choices[0]?.message?.content || "无回复";
+      console.log("Deepseek 回复：", deepseekReply);
+      setReply(deepseekReply); // 将 Deepseek 回复保存到状态中
+
+      // 更新对话历史，将模型的回复添加到历史中
+      setConversationHistory((prev) => [
+        ...prev,
+        { role: "assistant", content: deepseekReply }
+      ]);
     } catch (error) {
-      console.error("请求 GPT 失败:", error);
+      console.error("请求 Deepseek 失败:", error);
       setReply("请求失败，请稍后重试。");
     } finally {
       setLoading(false); // 停止加载
@@ -89,16 +104,30 @@ const Segments = () => {
     <div className="segments">
       {/* 上方菜单按钮 */}
       <div className="segments-menu">
-        {displayedImages.map((imagePath, index) => (
-          <div
-            key={index}
-            className={`menu-image ${selectedImages.includes(index) ? "selected" : ""}`}
-            onClick={() => toggleImageSelection(index)}
-          >
-            <img src={imagePath} alt={`Menu ${index + 1}`} />
-          </div>
-        ))}
+        <div className="segments-menu1">
+          {displayedImages.map((imagePath, index) => (
+            <div
+              key={index}
+              className={`menu-image ${selectedImages.includes(index) ? "selected" : ""}`}
+              onClick={() => toggleImageSelection(index)}
+            >
+              <img src={imagePath} alt={`Menu ${index + 1}`} />
+            </div>
+          ))}
+        </div>
+        <div className="segments-menu2">
+          {displayedImages.map((imagePath, index) => (
+            <div
+              key={index}
+              className={`menu-image ${selectedImages.includes(index) ? "selected" : ""}`}
+              onClick={() => toggleImageSelection(index)}
+            >
+              <img src={imagePath} alt={`Menu ${index + 1}`} />
+            </div>
+          ))}
+        </div>
       </div>
+
 
       {/* 下方输入区域 */}
       <div className="segments-input-container">
@@ -117,14 +146,6 @@ const Segments = () => {
           {loading ? "发送中..." : "发送"}
         </button>
       </div>
-
-      {/* 显示 GPT 的回复 */}
-      {/* {reply && (
-        <div className="segments-reply">
-          <h3>GPT 回复：</h3>
-          <p>{reply}</p>
-        </div>
-      )} */}
     </div>
   );
 };
