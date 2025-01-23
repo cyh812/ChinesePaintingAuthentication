@@ -5,12 +5,8 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
-import SendIcon from '@mui/icons-material/Send';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
-import StarBorder from '@mui/icons-material/StarBorder';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import SvgIcon from '@mui/material/SvgIcon';
@@ -19,7 +15,8 @@ import SvgIcon from '@mui/material/SvgIcon';
 function PeopleIcon(props) {
     return (
         <SvgIcon {...props}>
-            <path d="M14.2854 5.19648C14.261 5.04354 14.2265 4.89584 14.1828 4.75438H16.0166C16.123 4.75438 16.2093 4.6748 16.2093 4.57665C16.2093 4.4785 16.123 4.39892 16.0166 4.39891H14.0482C13.6776 3.58283 12.9786 3.04883 12.1958 3.04883C11.4131 3.04883 10.7141 3.58284 10.3435 4.39891H8.37544C8.26906 4.39891 8.18281 4.4785 8.18281 4.57665C8.18281 4.6748 8.26905 4.75438 8.37544 4.75438H10.2088C10.1652 4.89584 10.1306 5.04354 10.1063 5.19648L10.011 5.79337C7.03607 6.43352 6.43601 8.35381 6.43601 9.79028C6.43601 10.3979 6.59984 11.1972 6.83733 11.7514C6.83747 11.8232 6.83887 11.8953 6.84156 11.9678C6.65288 11.8361 6.46952 11.7876 6.3159 11.8414C5.87367 12.0001 5.81431 12.9445 6.18107 13.9507C6.54385 14.9463 7.18906 15.6283 7.62834 15.4863C7.65789 15.4936 7.687 15.4984 7.71555 15.5005C8.09545 16.3516 8.5766 17.0988 9.12817 17.6974C9.03728 17.6609 8.92825 17.6734 8.84984 17.7387C8.79484 17.7846 8.76351 17.8499 8.76351 17.9175V18.7693L5.35986 20.0231C7.28296 21.297 9.64379 22.0488 12.1957 22.0488C14.7478 22.0488 17.1085 21.297 19.0317 20.0231L15.6282 18.7693V17.9175C15.6282 17.8499 15.5967 17.7846 15.5417 17.7362C15.4776 17.6828 15.3928 17.6648 15.3142 17.68C15.8618 17.0794 16.3404 16.333 16.7213 15.4898C16.7315 15.4876 16.7419 15.4851 16.7522 15.4822C17.1918 15.6381 17.8453 14.9553 18.2115 13.9507C18.5781 12.9471 18.5161 12.0029 18.0767 11.8414C17.9645 11.8019 17.8398 11.8161 17.7084 11.8752L17.7309 11.827C17.9865 11.2719 18.1658 10.4261 18.1658 9.79028C18.1658 8.31952 17.5367 6.34013 14.3736 5.74906L14.2854 5.19648ZM14.5824 18.3621C13.8627 18.923 13.0616 19.2454 12.2285 19.2454C11.3112 19.2454 10.4293 18.8642 9.65257 18.2031L12.0838 20.701C12.121 20.7018 12.1583 20.7023 12.1957 20.7023C12.2331 20.7023 12.2704 20.7018 12.3075 20.701L14.5824 18.3621Z" />
+            <path d="M18.9852 14.3983C17.3997 12.8956 15.1954 11.961 12.7784 11.961H12.7591C11.773 11.961 10.8835 11.5762 10.2261 10.9531C9.5687 10.3301 9.16265 9.48712 9.16265 8.53421C9.16265 7.5813 9.5687 6.73834 10.2261 6.11528C10.8835 5.49223 11.7923 5.1074 12.7784 5.1074C13.7839 5.1074 14.6734 5.49223 15.3308 6.11528C15.9882 6.73834 16.3942 7.5813 16.3942 8.53421C16.3942 8.95569 16.3169 9.37717 16.1622 9.762C16.0075 10.1651 15.7755 10.5133 15.4855 10.8249C15.3308 10.9898 15.3308 11.2647 15.5241 11.4113C15.6981 11.5579 15.9882 11.5579 16.1429 11.3746C16.5102 10.9898 16.8003 10.55 16.9936 10.0552C17.187 9.57874 17.2837 9.06564 17.2837 8.53421C17.2837 7.36139 16.781 6.29853 15.9688 5.52888C15.4855 5.07075 14.8667 4.70424 14.19 4.50267V4.46602C14.19 4.35606 14.1706 4.22779 14.1513 4.11784C16.1235 4.11784 17.5931 4.08119 17.5931 4.04454C17.5931 4.00789 16.1235 3.95291 14.1126 3.93458C13.8999 3.38483 13.3392 3 12.7011 3C12.0437 3 11.5023 3.38483 11.2896 3.93458C9.47203 3.95291 8.17653 4.00789 8.17653 4.04454C8.17653 4.08119 9.45269 4.09951 11.2509 4.11784C11.1929 4.24611 11.1736 4.35606 11.1736 4.48434V4.57597C10.5742 4.79587 10.0328 5.12572 9.58804 5.5472C8.77594 6.31686 8.27321 7.37972 8.27321 8.55253C8.27321 9.72534 8.77594 10.7882 9.58804 11.5579C9.85874 11.8144 10.1875 12.0526 10.5355 12.2359C9.00797 12.6207 7.65446 13.3721 6.57166 14.3983C4.98613 15.9009 4 17.9717 4 20.2623V20.7388C4.01934 20.977 4.21269 21.1419 4.46406 21.1236C4.71542 21.1053 4.88945 20.922 4.88945 20.6838C4.88945 20.6105 4.88945 20.5372 4.87011 20.4822V20.2807C4.87011 18.2282 5.75956 16.3591 7.17107 15.003C8.60192 13.6653 10.5548 12.8223 12.7204 12.8223H12.7591C14.9247 12.8223 16.897 13.6653 18.3278 15.003C19.7587 16.3591 20.6288 18.2282 20.6288 20.2807V20.4822C20.6288 20.5372 20.6288 20.6105 20.6094 20.6838C20.5901 20.922 20.7835 21.1053 21.0348 21.1236C21.2862 21.1419 21.4795 20.9587 21.4989 20.7205V20.2623C21.5376 17.99 20.5708 15.9009 18.9852 14.3983Z" fill="#566A96" stroke="#566A96" strokeWidth="0.5" />
+            <path d="M4.72925 20.7893H20.7708" stroke="#566A96" strokeWidth="1.5" strokeLinecap="round" />
         </SvgIcon>
     );
 }
@@ -27,7 +24,7 @@ function PeopleIcon(props) {
 function SealIcon(props) {
     return (
         <SvgIcon {...props}>
-            <path d="M20.8263 17.5563H4.57994C3.82163 17.5563 3.20312 18.1769 3.20312 18.9331V20.4052H22.2031V18.9331C22.2031 18.1769 21.5825 17.5563 20.8263 17.5563ZM19.8287 15.2602H14.1901C14.0884 15.0187 14.0333 14.7667 14.0333 14.5061C14.0333 13.7161 14.2409 12.998 14.9802 12.4684C16.4544 11.6614 17.4521 10.0982 17.4521 8.29989C17.4521 5.67547 15.3254 3.54883 12.701 3.54883C10.0766 3.54883 7.94995 5.67547 7.94995 8.29989C7.94995 10.0982 8.94972 11.6614 10.4219 12.4684C11.1632 12.998 11.3687 13.7161 11.3687 14.5061C11.3687 14.7667 11.3136 15.0187 11.2119 15.2602H5.5776V16.9823H19.8287V15.2602ZM4.09276 20.6425H21.3135V20.9877H4.09276V20.6425Z" />
+            <path d="M21.5 20.1364V21.5H4V20.1364H21.5ZM12.7264 4C15.1903 4 16.9366 5.23364 17.2559 7.32409C17.4376 8.51818 16.99 9.68045 15.8689 10.8559C15.4531 11.2923 15.2642 11.9973 15.3838 12.5818C15.5245 13.2668 16.0101 13.6755 16.6091 13.7095L16.6912 13.7118H19.6983L21.1756 18.5455H4.27719L5.75554 13.7118H8.7605C9.39753 13.7118 9.92162 13.2982 10.0684 12.5818C10.188 11.9973 9.99914 11.2923 9.58438 10.8568C8.46278 9.68046 8.01465 8.51818 8.19688 7.32409C8.51514 5.23364 10.263 4 12.7264 4ZM12.7264 5.36364C11.0057 5.36364 9.93497 6.12 9.72348 7.50682C9.60337 8.29455 9.90623 9.08 10.7614 9.97727C11.4836 10.7355 11.7829 11.8536 11.5837 12.825C11.3168 14.1336 10.2296 15.0236 8.88062 15.0732L8.76101 15.0755H6.93361L6.28888 17.1818H19.1634L18.5192 15.0755H16.6912C15.3695 15.0755 14.2776 14.2741 13.9245 13.055L13.8937 12.9395L13.868 12.825C13.6694 11.8532 13.9691 10.735 14.6914 9.97682C15.5465 9.08 15.8494 8.29455 15.7293 7.50682C15.5173 6.12 14.4475 5.36364 12.7264 5.36364Z" fill="#566A96" />
         </SvgIcon>
     );
 }
@@ -35,29 +32,70 @@ function SealIcon(props) {
 function PaintingIcon(props) {
     return (
         <SvgIcon {...props}>
-            <path d="M11.7457 8.64303C11.5443 8.4497 11.3067 8.29665 11.0348 8.18186C10.7609 8.06706 10.4709 8.00866 10.1648 8.00866C9.84863 8.00866 9.5546 8.06505 9.28072 8.18186C9.00683 8.29665 8.77121 8.4497 8.56982 8.64303C8.36843 8.83636 8.20732 9.06393 8.0885 9.32573C7.96767 9.58754 7.90927 9.86545 7.90927 10.1595C7.90927 10.4535 7.96969 10.7314 8.0885 10.9932C8.20934 11.255 8.36843 11.4846 8.56982 11.682C8.77121 11.8793 9.00884 12.0364 9.28072 12.1512C9.5546 12.266 9.84863 12.3244 10.1648 12.3244C10.4709 12.3244 10.7609 12.266 11.0348 12.1512C11.3087 12.0364 11.5443 11.8793 11.7457 11.682C11.9471 11.4846 12.1082 11.255 12.227 10.9932C12.3458 10.7314 12.4062 10.4535 12.4062 10.1595C12.4062 9.86545 12.3458 9.58754 12.227 9.32573C12.1082 9.06192 11.9471 8.83435 11.7457 8.64303ZM19.626 4.54883H5.18853C4.20374 4.54883 3.40625 5.3141 3.40625 6.25861V18.3721C3.40625 19.3166 4.20374 20.0818 5.18853 20.0818H19.624C20.6088 20.0818 21.4062 19.3166 21.4062 18.3721V6.25861C21.4083 5.3141 20.6108 4.54883 19.626 4.54883ZM19.6119 16.0299C19.4206 15.607 19.197 15.176 18.9433 14.735C18.6895 14.294 18.4116 13.8952 18.1095 13.5367C17.8075 13.1783 17.4792 12.8863 17.1248 12.6607C16.7703 12.4352 16.4018 12.3224 16.0171 12.3224C15.566 12.3224 15.1834 12.407 14.8672 12.5761C14.551 12.7473 14.2771 12.9588 14.0476 13.2165C13.818 13.4743 13.6105 13.7502 13.4293 14.0442C13.248 14.3383 13.0648 14.6142 12.8835 14.8719C12.7023 15.1297 12.5029 15.3432 12.2874 15.5124C12.0719 15.6815 11.8162 15.7661 11.5181 15.7661C11.2201 15.7661 10.9663 15.746 10.7569 15.7037C10.5454 15.6614 10.3561 15.609 10.189 15.5446C10.0218 15.4801 9.86474 15.4096 9.72176 15.3311C9.57877 15.2526 9.42169 15.1821 9.25454 15.1176C9.08739 15.0532 8.89607 15.0008 8.67857 14.9585C8.46308 14.9162 8.20732 14.8961 7.90927 14.8961C7.65955 14.8961 7.41386 14.9585 7.16816 15.0814C6.92449 15.2062 6.68685 15.3633 6.45727 15.5567C6.22769 15.75 6.00616 15.9655 5.79672 16.2051C5.58526 16.4448 5.39394 16.6824 5.22075 16.9221V7.03395C5.22075 6.61103 5.57922 6.26868 6.02026 6.26868H18.8124C19.2534 6.26868 19.6119 6.61103 19.6119 7.03395V16.0299Z" />
+            <path d="M21.0274 16.5667C20.9277 16.6839 20.8188 16.8 20.7001 16.9127C20.1079 17.4751 19.2749 17.9488 18.1244 18.0746C17.9288 18.0959 17.7244 18.1074 17.5106 18.1074C16.6473 18.1074 15.8456 17.9469 15.1274 17.626C15.1274 17.626 15.1274 17.626 15.1273 17.626L21.0274 16.5667ZM21.0274 16.5667V19.1465H3.9726V14.3581C3.97549 14.3537 3.97868 14.349 3.98218 14.3438C3.99689 14.3223 4.01294 14.3 4.03202 14.2734C4.04161 14.2601 4.05198 14.2456 4.06332 14.2297L3.87256 14.0938L4.06332 14.2297C4.25546 13.9601 4.59284 13.5305 5.06616 13.1065C6.07782 12.2003 7.18228 11.7517 8.35556 11.7517C9.51057 11.7517 10.5159 12.2029 11.355 13.1089C11.9353 13.7355 12.2312 14.3748 12.2833 14.4937C12.3446 14.6826 12.6328 15.4878 13.3341 16.2923L13.5225 16.1281L13.3341 16.2923C13.7933 16.8192 14.3371 17.2405 14.9504 17.5431L21.0274 16.5667ZM13.4288 14.0846L13.4254 14.0729L13.4208 14.0616L13.414 14.0448C13.414 14.0448 13.414 14.0448 13.414 14.0448C13.3942 13.9956 13.044 13.1433 12.2593 12.2881C11.2027 11.1366 9.85054 10.5212 8.35449 10.5212C7.52971 10.5212 6.72343 10.7006 5.95935 11.053L6.0562 11.263L5.95935 11.053C5.35301 11.3326 4.77945 11.72 4.24517 12.2017L4.24516 12.2018C4.14892 12.2885 4.05818 12.3752 3.9726 12.4607V5.9894H21.0274V13.6864C20.9992 13.8577 20.8779 14.5751 20.4471 15.2904L20.6385 15.4057L20.4471 15.2904C19.8133 16.3426 18.8379 16.8769 17.5108 16.8769C16.1521 16.8769 15.0672 16.4099 14.2624 15.4988C13.6579 14.8145 13.4381 14.1151 13.4335 14.1004C13.4334 14.1002 13.4334 14.1001 13.4334 14.1003L13.4288 14.0846ZM22.25 5.69401C22.25 5.1781 21.8398 4.75 21.3218 4.75H3.67824C3.1602 4.75 2.75 5.1781 2.75 5.69401V19.4202C2.75 19.9361 3.16021 20.3642 3.67824 20.3642H21.3218C21.8398 20.3642 22.25 19.9361 22.25 19.4202V5.69401Z" fill="#566A96" stroke="#566A96" strokeWidth="0.5" />
+            <path d="M15.1467 10.3256C15.1467 10.9326 15.3769 11.5147 15.7866 11.944C16.1963 12.3732 16.752 12.6143 17.3314 12.6143C17.9108 12.6143 18.4665 12.3732 18.8762 11.944C19.2859 11.5147 19.5161 10.9326 19.5161 10.3256C19.5161 9.71858 19.2859 9.13644 18.8762 8.70722C18.4665 8.278 17.9108 8.03687 17.3314 8.03687C16.752 8.03687 16.1963 8.278 15.7866 8.70722C15.3769 9.13644 15.1467 9.71858 15.1467 10.3256Z" fill="white" stroke="#566A96" strokeWidth="2" />
         </SvgIcon>
     );
 }
 
-function LocationIcon(props) {
+function QueryIcon(props) {
     return (
         <SvgIcon {...props}>
-            <path d="M18.9331 10.5375C18.3206 15.3737 12.4375 22.9102 11.4866 22.8694C10.5332 22.8285 4.50065 15.433 4.04001 10.5375C3.59837 5.84385 6.85989 2 11.4866 2C16.1133 2 19.5253 5.86113 18.9331 10.5375ZM11.4901 3.89722C8.02011 3.89722 5.4555 7.05463 5.90526 10.8824C6.34014 14.5836 10.7751 20.5631 11.4901 20.5965C12.2035 20.6298 16.6447 14.3319 17.0751 10.8824C17.552 7.06042 14.9602 3.89722 11.4901 3.89722ZM11.5011 14.3319C9.43277 14.3319 7.75598 12.6331 7.75598 10.5375C7.75598 8.44189 9.43274 6.74304 11.5011 6.74304C13.5694 6.74304 15.2462 8.44189 15.2462 10.5375C15.2462 12.6331 13.5694 14.3319 11.5011 14.3319ZM11.5011 8.64026C10.4669 8.64026 9.62853 9.48964 9.62853 10.5375C9.62853 11.5853 10.4669 12.4347 11.5011 12.4347C12.5353 12.4347 13.3736 11.5853 13.3736 10.5375C13.3736 9.48964 12.5353 8.64026 11.5011 8.64026Z" />
+            <path d="M15.7175 13.9926V5.76758C15.7175 4.94008 15.045 4.26758 14.2175 4.26758H4.40747C3.57997 4.26758 2.90747 4.94008 2.90747 5.76758V13.9951C2.90747 14.8226 3.57997 15.4951 4.40747 15.4951H5.62497V16.8351C5.62497 17.1176 5.78247 17.3751 6.03497 17.5026C6.14247 17.5576 6.25997 17.5851 6.37497 17.5851C6.52997 17.5851 6.68497 17.5376 6.81497 17.4426L9.49997 15.4926H14.2175C15.045 15.4926 15.7175 14.8201 15.7175 13.9926Z" fill="#566A96" />
+            <path d="M20.5925 7.54248H16.575V15.2025C16.575 15.755 16.1275 16.2025 15.575 16.2025H11.27V17.195C11.27 18.0225 11.9425 18.695 12.77 18.695H15.0175L17.6925 20.595C17.8225 20.6875 17.975 20.735 18.1275 20.735C18.2575 20.735 18.3875 20.7025 18.505 20.6325C18.74 20.4975 18.8775 20.24 18.8775 19.97V18.8025H20.5925C21.42 18.8025 22.0925 18.13 22.0925 17.3025V9.04248C22.0925 8.21498 21.42 7.54248 20.5925 7.54248Z" fill="#566A96" />
         </SvgIcon>
     );
 }
 
 
 export default function NestedList() {
-    const [open1, setOpen1] = React.useState(false);
+    // 有缩放的round
     const [open2, setOpen2] = React.useState(false);
     const [open3, setOpen3] = React.useState(false);
     const [open4, setOpen4] = React.useState(false);
+    const [open5, setOpen5] = React.useState(false);
+    const [open6, setOpen6] = React.useState(false);
 
-    const handleClick1 = () => {
-        setOpen1(!open1);
-    };
+    // 每个round的显示
+    const [query1, setquery1] = React.useState(false); // 控制第一个按钮显示
+    const [query2, setquery2] = React.useState(false); // 控制第二个按钮显示
+    const [query3, setquery3] = React.useState(false); // 
+    const [query4, setquery4] = React.useState(false); // 
+    const [query5, setquery5] = React.useState(false); // 
+    const [query6, setquery6] = React.useState(false); // 
+
+    // 每个轮次的对话回答
+    const [text1, setText1] = React.useState('');
+    const [text2, setText2] = React.useState('');
+    const [text3, setText3] = React.useState('');
+    const [text4, setText4] = React.useState('');
+    const [text5, setText5] = React.useState('');
+    const [text6, setText6] = React.useState('');
+
+    // 逐字显示的对话控制
+    const [text1Index, setText1Index] = React.useState(0);
+    const [text2Index, setText2Index] = React.useState(0);
+    const [text3Index, setText3Index] = React.useState(0);
+    const [text4Index, setText4Index] = React.useState(0);
+    const [text5Index, setText5Index] = React.useState(0);
+    const [text6Index, setText6Index] = React.useState(0);
+
+    // 对话框的显示控制
+    const [showquery1, setshowquery1] = React.useState(false);
+    const [showquery2, setshowquery2] = React.useState(false);
+    const [showquery3, setshowquery3] = React.useState(false);
+    const [showquery4, setshowquery4] = React.useState(false);
+    const [showquery5, setshowquery5] = React.useState(false);
+    const [showquery6, setshowquery6] = React.useState(false);
+
+    const message1 = "这是一个较长的预设文本，超过一定宽度后会自动换行，逐字显示效果测试。";
+    const message2 = "这是另一个较长的预设文本，自动换行测试，内容较多，逐字显示。";
+    const message3 = ""
+    const message4 = ""
+    const message5 = ""
+    const message6 = ""
+    const typingSpeed = 100; // 每个字符的显示速度，单位是毫秒
+
     const handleClick2 = () => {
         setOpen2(!open2);
     };
@@ -67,6 +105,161 @@ export default function NestedList() {
     const handleClick4 = () => {
         setOpen4(!open4);
     };
+    const handleClick5 = () => {
+        setOpen5(!open5);
+    };
+    const handleClick6 = () => {
+        setOpen6(!open6);
+    };
+
+    // 当鼠标进入时，启动逐字显示
+    const handleMouseEnter1 = () => {
+        setshowquery1(true);
+    };
+
+    const handleMouseEnter2 = () => {
+        setshowquery2(true);
+    };
+
+    const handleMouseEnter3 = () => {
+        setshowquery3(true);
+    };
+
+    const handleMouseEnter4 = () => {
+        setshowquery4(true);
+    };
+
+    const handleMouseEnter5 = () => {
+        setshowquery5(true);
+    };
+
+    const handleMouseEnter6 = () => {
+        setshowquery6(true);
+    };
+
+    // 当鼠标离开时，停止逐字显示
+    const handleMouseLeave1 = () => {
+        setText1(''); // 重置文本
+        setText1Index(0); // 重置显示位置
+    };
+
+    const handleMouseLeave2 = () => {
+        setText2(''); // 重置文本
+        setText2Index(0); // 重置显示位置
+    };
+
+    const handleMouseLeave3 = () => {
+        setText3(''); // 重置文本
+        setText3Index(0); // 重置显示位置
+    };
+
+    const handleMouseLeave4 = () => {
+        setText4(''); // 重置文本
+        setText4Index(0); // 重置显示位置
+    };
+
+    const handleMouseLeave5 = () => {
+        setText5(''); // 重置文本
+        setText5Index(0); // 重置显示位置
+    };
+
+    const handleMouseLeave6 = () => {
+        setText6(''); // 重置文本
+        setText6Index(0); // 重置显示位置
+    };
+
+    // 逐字显示文本
+    React.useEffect(() => {
+        if (query1 && showquery1 && text1Index < message1.length) {
+            const interval1 = setInterval(() => {
+                setText1((prevText) => prevText + message1[text1Index]);
+                setText1Index((prevIndex) => prevIndex + 1);
+            }, typingSpeed);
+            return () => clearInterval(interval1);
+        }
+    }, [query1, showquery1, text1Index]);
+
+    React.useEffect(() => {
+        if (query2 && showquery2 && text2Index < message2.length) {
+            const interval2 = setInterval(() => {
+                setText2((prevText) => prevText + message2[text2Index]);
+                setText2Index((prevIndex) => prevIndex + 1);
+            }, typingSpeed);
+            return () => clearInterval(interval2);
+        }
+    }, [query2, showquery2, text2Index]);
+
+    React.useEffect(() => {
+        if (query3 && showquery3 && text3Index < message3.length) {
+            const interval3 = setInterval(() => {
+                setText3((prevText) => prevText + message3[text3Index]);
+                setText3Index((prevIndex) => prevIndex + 1);
+            }, typingSpeed);
+            return () => clearInterval(interval3);
+        }
+    }, [query3, showquery3, text3Index]);
+
+    React.useEffect(() => {
+        if (query4 && showquery4 && text4Index < message4.length) {
+            const interval4 = setInterval(() => {
+                setText4((prevText) => prevText + message4[text4Index]);
+                setText4Index((prevIndex) => prevIndex + 1);
+            }, typingSpeed);
+            return () => clearInterval(interval4);
+        }
+    }, [query4, showquery4, text4Index]);
+
+    React.useEffect(() => {
+        if (query5 && showquery5 && text5Index < message5.length) {
+            const interval5 = setInterval(() => {
+                setText5((prevText) => prevText + message5[text5Index]);
+                setText5Index((prevIndex) => prevIndex + 1);
+            }, typingSpeed);
+            return () => clearInterval(interval5);
+        }
+    }, [query5, showquery5, text5Index]);
+
+    React.useEffect(() => {
+        if (query6 && showquery6 && text6Index < message6.length) {
+            const interval6 = setInterval(() => {
+                setText6((prevText) => prevText + message6[text6Index]);
+                setText6Index((prevIndex) => prevIndex + 1);
+            }, typingSpeed);
+            return () => clearInterval(interval6);
+        }
+    }, [query6, showquery6, text6Index]);
+
+    // 监听键盘事件
+    React.useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === 'l' || event.key === 'L') {
+                if (!query1) {
+                    setquery1(true);
+                }
+                else if (!query2) {
+                    setquery2(true)
+                }
+                else if (!query3) {
+                    setquery3(true)
+                }
+                else if (!query4) {
+                    setquery4(true)
+                }
+                else if (!query5) {
+                    setquery5(true)
+                }
+                else if (!query6) {
+                    setquery6(true)
+                }
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [query1, query2, query3, query4, query5, query6]);
+
     return (
         <div
             style={{
@@ -91,64 +284,92 @@ export default function NestedList() {
                 aria-labelledby="nested-list-subheaderX"
                 subheader={
                     <ListSubheader component="div" id="nested-list-subheader">
-                        统计列表
+                        R&Q History
                     </ListSubheader>
                 }
             >
-                <ListItemButton onClick={handleClick1}>
+                {query1 && (<ListItemButton
+                    onMouseEnter={handleMouseEnter1}
+                    onMouseLeave={handleMouseLeave1}
+                    sx={{
+                        position: 'relative',
+                        '&:hover': {
+                            backgroundColor: '#f5f5f5',
+                            '&::after': {
+                                content: `"${text1}"`, // 动态显示文本
+                                position: 'absolute',
+                                top: '50%',
+                                color: 'black',
+                                left: '-420px', // 左侧显示文本框
+                                transform: 'translateY(-50%)',
+                                backgroundColor: '#f0f0f0',
+                                padding: '8px',
+                                borderRadius: '4px',
+                                border: '1px solid #ccc',
+                                visibility: 'visible',
+                                opacity: 1,
+                                width: '400px', // 设置对话框宽度
+                                wordWrap: 'break-word', // 自动换行
+                                whiteSpace: 'normal', // 保证文本能够正常换行
+                                transition: 'visibility 0s, opacity 0.3s ease', // 平滑过渡
+                            },
+                        },
+                    }}
+                >
                     <ListItemIcon>
-                        <PeopleIcon sx={{ width: 30, height: 30 }} />
+                        <QueryIcon sx={{ width: 30, height: 30 }} />
                     </ListItemIcon>
-                    <ListItemText primary="人物" />
-                    {open1 ? (
+                    <ListItemText primary="Round 1" />
+                    {/* {open1 ? (
                         <ExpandLess sx={{ color: '#000000' }} />
                     ) : (
                         <ExpandMore sx={{ color: '#000000' }} />
-                    )}
-                </ListItemButton>
-                <Collapse in={open1} timeout="auto" unmountOnExit>
-                    <List component="div" disablePadding>
-                        <ListItemButton sx={{ pl: 4 }}>
-                            <ListItemIcon>
-                                <StarBorder />
-                            </ListItemIcon>
-                            <ListItemText primary="石涛" />
-                            {/* 添加删除按钮 */}
-                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
-                                <DeleteIcon />
-                            </IconButton>
-                        </ListItemButton>
+                    )} */}
+                </ListItemButton>)}
 
-                        <ListItemButton sx={{ pl: 4 }}>
-                            <ListItemIcon>
-                                <StarBorder />
-                            </ListItemIcon>
-                            <ListItemText primary="陆灏" />
-                            {/* 添加删除按钮 */}
-                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
-                                <DeleteIcon />
-                            </IconButton>
-                        </ListItemButton>
-
-                    </List>
-                </Collapse>
-
-                <ListItemButton onClick={handleClick2}>
+                {query2 && (<ListItemButton onClick={handleClick2}
+                    onMouseEnter={handleMouseEnter2}
+                    onMouseLeave={handleMouseLeave2}
+                    sx={{
+                        position: 'relative',
+                        '&:hover': {
+                            backgroundColor: '#f5f5f5',
+                            '&::after': {
+                                content: `"${text2}"`, // 动态显示文本
+                                position: 'absolute',
+                                top: '50%',
+                                color: 'black',
+                                left: '-420px', // 左侧显示文本框
+                                transform: 'translateY(-50%)',
+                                backgroundColor: '#f0f0f0',
+                                padding: '8px',
+                                borderRadius: '4px',
+                                border: '1px solid #ccc',
+                                visibility: 'visible',
+                                opacity: 1,
+                                width: '400px', // 设置对话框宽度
+                                wordWrap: 'break-word', // 自动换行
+                                whiteSpace: 'normal', // 保证文本能够正常换行
+                                transition: 'visibility 0s, opacity 0.3s ease', // 平滑过渡
+                            },
+                        },
+                    }}
+                >
                     <ListItemIcon>
-                        <PaintingIcon sx={{ width: 30, height: 30 }} />
+                        <QueryIcon sx={{ width: 30, height: 30 }} />
                     </ListItemIcon>
-                    <ListItemText primary="艺术作品" />
+                    <ListItemText primary="Round 2" />
                     {open2 ? (
                         <ExpandLess sx={{ color: '#000000' }} />
                     ) : (
                         <ExpandMore sx={{ color: '#000000' }} />
                     )}
-                </ListItemButton>
+                </ListItemButton>)}
                 <Collapse in={open2} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
                         <ListItemButton sx={{ pl: 4 }}>
                             <ListItemIcon>
-                                <StarBorder />
+                                <PaintingIcon />
                             </ListItemIcon>
                             <ListItemText primary="对菊图" />
                             {/* 添加删除按钮 */}
@@ -158,7 +379,7 @@ export default function NestedList() {
                         </ListItemButton>
                         <ListItemButton sx={{ pl: 4 }}>
                             <ListItemIcon>
-                                <StarBorder />
+                                <SealIcon />
                             </ListItemIcon>
                             <ListItemText primary="罗汉四条屏" />
                             {/* 添加删除按钮 */}
@@ -168,7 +389,7 @@ export default function NestedList() {
                         </ListItemButton>
                         <ListItemButton sx={{ pl: 4 }}>
                             <ListItemIcon>
-                                <StarBorder />
+                                <PeopleIcon />
                             </ListItemIcon>
                             <ListItemText primary="陆灏仿王蒙山水轴" />
                             {/* 添加删除按钮 */}
@@ -179,24 +400,51 @@ export default function NestedList() {
                     </List>
                 </Collapse>
 
-                <ListItemButton onClick={handleClick3}>
+                {query3 && (<ListItemButton onClick={handleClick3}
+                    onMouseEnter={handleMouseEnter3}
+                    onMouseLeave={handleMouseLeave3}
+                    sx={{
+                        position: 'relative',
+                        '&:hover': {
+                            backgroundColor: '#f5f5f5',
+                            '&::after': {
+                                content: `"${text3}"`, // 动态显示文本
+                                position: 'absolute',
+                                top: '50%',
+                                color: 'black',
+                                left: '-420px', // 左侧显示文本框
+                                transform: 'translateY(-50%)',
+                                backgroundColor: '#f0f0f0',
+                                padding: '8px',
+                                borderRadius: '4px',
+                                border: '1px solid #ccc',
+                                visibility: 'visible',
+                                opacity: 1,
+                                width: '400px', // 设置对话框宽度
+                                wordWrap: 'break-word', // 自动换行
+                                whiteSpace: 'normal', // 保证文本能够正常换行
+                                transition: 'visibility 0s, opacity 0.3s ease', // 平滑过渡
+                            },
+                        },
+                    }}
+                >
                     <ListItemIcon>
-                        <SealIcon sx={{ width: 30, height: 30 }} />
+                        <QueryIcon sx={{ width: 30, height: 30 }} />
                     </ListItemIcon>
-                    <ListItemText primary="印章" />
+                    <ListItemText primary="Round 3" />
                     {open3 ? (
                         <ExpandLess sx={{ color: '#000000' }} />
                     ) : (
                         <ExpandMore sx={{ color: '#000000' }} />
                     )}
-                </ListItemButton>
+                </ListItemButton>)}
                 <Collapse in={open3} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
                         <ListItemButton sx={{ pl: 4 }}>
                             <ListItemIcon>
-                                <StarBorder />
+                                <PaintingIcon />
                             </ListItemIcon>
-                            <ListItemText primary="“清湘老人”朱文印" />
+                            <ListItemText primary="对菊图" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
@@ -204,9 +452,9 @@ export default function NestedList() {
                         </ListItemButton>
                         <ListItemButton sx={{ pl: 4 }}>
                             <ListItemIcon>
-                                <StarBorder />
+                                <SealIcon />
                             </ListItemIcon>
-                            <ListItemText primary="“痴绝”朱文印" />
+                            <ListItemText primary="罗汉四条屏" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
@@ -214,9 +462,9 @@ export default function NestedList() {
                         </ListItemButton>
                         <ListItemButton sx={{ pl: 4 }}>
                             <ListItemIcon>
-                                <StarBorder />
+                                <PeopleIcon />
                             </ListItemIcon>
-                            <ListItemText primary="“膏肓子济”白文印" />
+                            <ListItemText primary="陆灏仿王蒙山水轴" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
@@ -225,24 +473,218 @@ export default function NestedList() {
                     </List>
                 </Collapse>
 
-                <ListItemButton onClick={handleClick4}>
+                {query4 && (<ListItemButton onClick={handleClick4}
+                    onMouseEnter={handleMouseEnter4}
+                    onMouseLeave={handleMouseLeave4}
+                    sx={{
+                        position: 'relative',
+                        '&:hover': {
+                            backgroundColor: '#f5f5f5',
+                            '&::after': {
+                                content: `"${text4}"`, // 动态显示文本
+                                position: 'absolute',
+                                top: '50%',
+                                color: 'black',
+                                left: '-420px', // 左侧显示文本框
+                                transform: 'translateY(-50%)',
+                                backgroundColor: '#f0f0f0',
+                                padding: '8px',
+                                borderRadius: '4px',
+                                border: '1px solid #ccc',
+                                visibility: 'visible',
+                                opacity: 1,
+                                width: '400px', // 设置对话框宽度
+                                wordWrap: 'break-word', // 自动换行
+                                whiteSpace: 'normal', // 保证文本能够正常换行
+                                transition: 'visibility 0s, opacity 0.3s ease', // 平滑过渡
+                            },
+                        },
+                    }}
+                >
                     <ListItemIcon>
-                        <LocationIcon sx={{ width: 30, height: 30 }} />
+                        <QueryIcon sx={{ width: 30, height: 30 }} />
                     </ListItemIcon>
-                    <ListItemText primary="地点" />
+                    <ListItemText primary="Round 4" />
                     {open4 ? (
                         <ExpandLess sx={{ color: '#000000' }} />
                     ) : (
                         <ExpandMore sx={{ color: '#000000' }} />
                     )}
-                </ListItemButton>
+                </ListItemButton>)}
                 <Collapse in={open4} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
                         <ListItemButton sx={{ pl: 4 }}>
                             <ListItemIcon>
-                                <StarBorder />
+                                <PaintingIcon />
                             </ListItemIcon>
-                            <ListItemText primary="大涤子堂" />
+                            <ListItemText primary="对菊图" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <SealIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="罗汉四条屏" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <PeopleIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="陆灏仿王蒙山水轴" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+                    </List>
+                </Collapse>
+
+                {query5 && (<ListItemButton onClick={handleClick5}
+                    onMouseEnter={handleMouseEnter5}
+                    onMouseLeave={handleMouseLeave5}
+                    sx={{
+                        position: 'relative',
+                        '&:hover': {
+                            backgroundColor: '#f5f5f5',
+                            '&::after': {
+                                content: `"${text5}"`, // 动态显示文本
+                                position: 'absolute',
+                                top: '50%',
+                                color: 'black',
+                                left: '-420px', // 左侧显示文本框
+                                transform: 'translateY(-50%)',
+                                backgroundColor: '#f0f0f0',
+                                padding: '8px',
+                                borderRadius: '4px',
+                                border: '1px solid #ccc',
+                                visibility: 'visible',
+                                opacity: 1,
+                                width: '400px', // 设置对话框宽度
+                                wordWrap: 'break-word', // 自动换行
+                                whiteSpace: 'normal', // 保证文本能够正常换行
+                                transition: 'visibility 0s, opacity 0.3s ease', // 平滑过渡
+                            },
+                        },
+                    }}
+                >
+                    <ListItemIcon>
+                        <QueryIcon sx={{ width: 30, height: 30 }} />
+                    </ListItemIcon>
+                    <ListItemText primary="Round 5" />
+                    {open5 ? (
+                        <ExpandLess sx={{ color: '#000000' }} />
+                    ) : (
+                        <ExpandMore sx={{ color: '#000000' }} />
+                    )}
+                </ListItemButton>)}
+                <Collapse in={open5} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                        <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <PaintingIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="对菊图" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <SealIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="罗汉四条屏" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <PeopleIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="陆灏仿王蒙山水轴" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+                    </List>
+                </Collapse>
+
+
+                {query6 && (<ListItemButton
+                    onClick={handleClick6}
+                    onMouseEnter={handleMouseEnter6}
+                    onMouseLeave={handleMouseLeave6}
+                    sx={{
+                        position: 'relative',
+                        '&:hover': {
+                            backgroundColor: '#f5f5f5',
+                            '&::after': {
+                                content: `"${text6}"`, // 动态显示文本
+                                position: 'absolute',
+                                top: '50%',
+                                color: 'black',
+                                left: '-420px', // 左侧显示文本框
+                                transform: 'translateY(-50%)',
+                                backgroundColor: '#f0f0f0',
+                                padding: '8px',
+                                borderRadius: '4px',
+                                border: '1px solid #ccc',
+                                visibility: 'visible',
+                                opacity: 1,
+                                width: '400px', // 设置对话框宽度
+                                wordWrap: 'break-word', // 自动换行
+                                whiteSpace: 'normal', // 保证文本能够正常换行
+                                transition: 'visibility 0s, opacity 0.3s ease', // 平滑过渡
+                            },
+                        },
+                    }}>
+                    <ListItemIcon>
+                        <QueryIcon sx={{ width: 30, height: 30 }} />
+                    </ListItemIcon>
+                    <ListItemText primary="Round 6" />
+                    {open6 ? (
+                        <ExpandLess sx={{ color: '#000000' }} />
+                    ) : (
+                        <ExpandMore sx={{ color: '#000000' }} />
+                    )}
+                </ListItemButton>)}
+                <Collapse in={open6} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                        <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <PaintingIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="对菊图" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <SealIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="罗汉四条屏" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <PeopleIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="陆灏仿王蒙山水轴" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
