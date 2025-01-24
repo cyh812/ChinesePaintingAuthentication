@@ -24,12 +24,21 @@ const Segments = () => {
     "../../assets/img/test/Y60.png",
   ]); // 图片路径数组
 
+  const [imagePaths2, setImagePaths2] = useState([
+    "../../assets/img/test/D13647-06.png",
+    "../../assets/img/test/D00214-04.png",
+    "../../assets/img/test/D13456.png",
+    "../../assets/img/test/T01.png",
+    "../../assets/img/test/Y60.png",
+  ]); // 图片路径数组
+
   const [displayedImages, setDisplayedImages] = useState([]); // 动态展示的图片数组
+  const [displayedImages2, setDisplayedImages2] = useState([]); // 动态展示的图片数组
 
   // 键盘监听事件：按下 "A" 键添加图片
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === "a" || e.key === "A") {
+      if (e.key === "1") {
         if (displayedImages.length < imagePaths.length) {
           setDisplayedImages((prev) => [...prev, imagePaths[prev.length]]);
         }
@@ -39,6 +48,20 @@ const Segments = () => {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [imagePaths, displayedImages]);
+
+  // 键盘监听事件：按下 "b" 键添加图片
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ( e.key === "2") {
+        if (displayedImages2.length < imagePaths2.length) {
+          setDisplayedImages2((prev) => [...prev, imagePaths2[prev.length]]);
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [imagePaths2, displayedImages2]);
 
   // 单击图片添加或移除选中状态
   const toggleImageSelection = (index) => {
@@ -116,7 +139,7 @@ const Segments = () => {
           ))}
         </div>
         <div className="segments-menu2">
-          {displayedImages.map((imagePath, index) => (
+          {displayedImages2.map((imagePath, index) => (
             <div
               key={index}
               className={`menu-image ${selectedImages.includes(index) ? "selected" : ""}`}
