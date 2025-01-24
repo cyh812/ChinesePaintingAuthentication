@@ -51,7 +51,7 @@ const Storyline = () => {
     const handleKeyDown = (event) => {
       if (event.key === "3") {
         setdataurl(urllist[flag])
-        setIsRendered(true); 
+        setIsRendered(true);
         flag++;
       }
     };
@@ -165,22 +165,63 @@ const Storyline = () => {
       .style('border-radius', '10px')
       .style('padding', '10px')
       .style('box-shadow', '0px 4px 8px rgba(0, 0, 0, 0.1)')
-      .style('width', '350px');
+      .style('width', '350px')
+      .style('background-color', 'brown')
+      .style('display', 'flex')  // 使用flexbox布局
+      .style('flex-direction', 'row')  // 水平排列
+      .style('align-items', 'center')  // 垂直居中对齐
 
     // 显示卡片的hover事件
     node
       .on("mouseover", function (event, d) {
         customCard.transition().duration(200).style('visibility', 'visible');
-        customCard.html(`
-<img src="${d.url}" alt="Node Image" style="width: 500px; height: auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);" />
-  `)
-          .style('left', `${event.pageX + 30}px`)
+
+        if (d.category === "P") {
+          customCard.html(`
+            <div>
+          <img src="${d.url}" alt="Node Image" style="width: 250px; height: auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(255, 1, 1, 0.3);" />
+            </div>
+            &nbsp;&nbsp;
+            <div style="width: 100px; background-color: #f9f9f9; padding: 3px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+          <p><strong>作者:</strong> ${d.id}</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作品: </strong>只因你太美，只因你太美，只因你太美，只因你太美，</p>
+        </div>
+        `)
+        }
+        else if (d.category === "A") {
+          customCard.html(`
+            <div>
+          <img src="${d.url}" alt="Node Image" style="width: 150px; height: auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(255, 1, 1, 0.3);" />
+            </div>
+            &nbsp;&nbsp;
+            <div style="width: 200px; background-color: #f9f9f9; padding: 3px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+          <p><strong>作者:</strong> ${d.id}</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作品: </strong>只因你太美，只因你太美，只因你太美，只因你太美，</p>
+        </div>
+        `)
+        }
+        else if (d.category === "S") {
+          customCard.html(`
+            <div>
+          <img src="${d.url}" alt="Node Image" style="width: 100px; height: auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(255, 1, 1, 0.3);" />
+            </div>
+            &nbsp;&nbsp;
+            <div style="width: 250px; background-color: #f9f9f9; padding: 3px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+          <p><strong>作者:</strong> ${d.id}</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作品: </strong>只因你太美，只因你太美，只因你太美，只因你太美，</p>
+        </div>
+        `)
+        }
+
+
+        customCard.style('left', `${event.pageX + 30}px`)
           .style('top', `${event.pageY - 50}px`);
       })
       .on("mouseout", function () {
         customCard.transition().duration(200).style('visibility', 'hidden');
       });
-
+    // .style('left', `${event.pageX + 30}px`)
+    // .style('top', `${event.pageY - 50}px`);
     // 创建扇形生成器
     const arcGenerator = d3.arc()
       .innerRadius(0) // 内半径
@@ -191,7 +232,7 @@ const Storyline = () => {
       .selectAll('path')
       .data(linksData)
       .enter().append('path')
-      .attr('fill', d => d.info.name == 'P-P' ? 'blue' : 'red') 
+      .attr('fill', d => d.info.name == 'P-P' ? 'blue' : 'red')
       .attr('opacity', 0.9);
 
     // 创建卡片容器

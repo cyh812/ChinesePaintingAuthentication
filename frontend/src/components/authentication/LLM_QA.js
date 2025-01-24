@@ -16,20 +16,19 @@ const Segments = () => {
   const [conversationHistory, setConversationHistory] = useState([]);
 
   const [selectedImages, setSelectedImages] = useState([]); // 当前选中的图片索引
+  const [selectedImages2, setSelectedImages2] = useState([]); // 当前选中的图片索引
   const [imagePaths, setImagePaths] = useState([
-    "../../assets/img/test/D13647-06.png",
-    "../../assets/img/test/D00214-04.png",
-    "../../assets/img/test/D13456.png",
-    "../../assets/img/test/T01.png",
-    "../../assets/img/test/Y60.png",
+    "../../assets/img/left/1.png",
+    "../../assets/img/left/2.png",
+    "../../assets/img/left/3.png",
+    "../../assets/img/left/4.png",
+    "../../assets/img/left/5.png",
+    "../../assets/img/left/6.png",
   ]); // 图片路径数组
 
   const [imagePaths2, setImagePaths2] = useState([
-    "../../assets/img/test/D13647-06.png",
-    "../../assets/img/test/D00214-04.png",
-    "../../assets/img/test/D13456.png",
-    "../../assets/img/test/T01.png",
-    "../../assets/img/test/Y60.png",
+    "../../assets/img/right/1.png",
+    "../../assets/img/right/2.jpg",
   ]); // 图片路径数组
 
   const [displayedImages, setDisplayedImages] = useState([]); // 动态展示的图片数组
@@ -69,6 +68,14 @@ const Segments = () => {
       setSelectedImages((prev) => prev.filter((i) => i !== index));
     } else {
       setSelectedImages((prev) => [...prev, index]);
+    }
+  };
+
+  const toggleImageSelection2 = (index) => {
+    if (selectedImages2.includes(index)) {
+      setSelectedImages2((prev) => prev.filter((i) => i !== index));
+    } else {
+      setSelectedImages2((prev) => [...prev, index]);
     }
   };
 
@@ -142,8 +149,8 @@ const Segments = () => {
           {displayedImages2.map((imagePath, index) => (
             <div
               key={index}
-              className={`menu-image ${selectedImages.includes(index) ? "selected" : ""}`}
-              onClick={() => toggleImageSelection(index)}
+              className={`menu-image ${selectedImages2.includes(index) ? "selected" : ""}`}
+              onClick={() => toggleImageSelection2(index)}
             >
               <img src={imagePath} alt={`Menu ${index + 1}`} />
             </div>

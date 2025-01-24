@@ -232,7 +232,7 @@ export default function NestedList() {
     // 监听键盘事件
     React.useEffect(() => {
         const handleKeyDown = (event) => {
-            if ( event.key === '3') {
+            if (event.key === '3') {
                 if (!query1) {
                     setquery1(true);
                 }
@@ -371,7 +371,7 @@ export default function NestedList() {
                             <ListItemIcon>
                                 <PaintingIcon />
                             </ListItemIcon>
-                            <ListItemText primary="对菊图" />
+                            <ListItemText primary="秋林人醉图" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
@@ -379,9 +379,9 @@ export default function NestedList() {
                         </ListItemButton>
                         <ListItemButton sx={{ pl: 4 }}>
                             <ListItemIcon>
-                                <SealIcon />
+                                <PaintingIcon />
                             </ListItemIcon>
-                            <ListItemText primary="罗汉四条屏" />
+                            <ListItemText primary="江南春霭图" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
@@ -389,9 +389,39 @@ export default function NestedList() {
                         </ListItemButton>
                         <ListItemButton sx={{ pl: 4 }}>
                             <ListItemIcon>
-                                <PeopleIcon />
+                                <PaintingIcon />
                             </ListItemIcon>
-                            <ListItemText primary="陆灏仿王蒙山水轴" />
+                            <ListItemText primary="太白诗意山水图" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <PaintingIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="古木垂阴图" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <PaintingIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="山林乐事图" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <PaintingIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="长干图" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
@@ -442,9 +472,9 @@ export default function NestedList() {
                     <List component="div" disablePadding>
                         <ListItemButton sx={{ pl: 4 }}>
                             <ListItemIcon>
-                                <PaintingIcon />
+                                <SealIcon />
                             </ListItemIcon>
-                            <ListItemText primary="对菊图" />
+                            <ListItemText primary="清湘老人" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
@@ -454,7 +484,17 @@ export default function NestedList() {
                             <ListItemIcon>
                                 <SealIcon />
                             </ListItemIcon>
-                            <ListItemText primary="罗汉四条屏" />
+                            <ListItemText primary="膏盲子济" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <SealIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="唐云审定" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
@@ -464,7 +504,7 @@ export default function NestedList() {
                             <ListItemIcon>
                                 <PeopleIcon />
                             </ListItemIcon>
-                            <ListItemText primary="陆灏仿王蒙山水轴" />
+                            <ListItemText primary="石涛" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
@@ -517,6 +557,16 @@ export default function NestedList() {
                             <ListItemIcon>
                                 <PaintingIcon />
                             </ListItemIcon>
+                            <ListItemText primary="花果图" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <PaintingIcon />
+                            </ListItemIcon>
                             <ListItemText primary="对菊图" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
@@ -525,9 +575,9 @@ export default function NestedList() {
                         </ListItemButton>
                         <ListItemButton sx={{ pl: 4 }}>
                             <ListItemIcon>
-                                <SealIcon />
+                                <PaintingIcon />
                             </ListItemIcon>
-                            <ListItemText primary="罗汉四条屏" />
+                            <ListItemText primary="花卉（十二开）" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
@@ -535,9 +585,9 @@ export default function NestedList() {
                         </ListItemButton>
                         <ListItemButton sx={{ pl: 4 }}>
                             <ListItemIcon>
-                                <PeopleIcon />
+                                <PaintingIcon />
                             </ListItemIcon>
-                            <ListItemText primary="陆灏仿王蒙山水轴" />
+                            <ListItemText primary="山水花卉（十二开）" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
@@ -590,27 +640,7 @@ export default function NestedList() {
                             <ListItemIcon>
                                 <PaintingIcon />
                             </ListItemIcon>
-                            <ListItemText primary="对菊图" />
-                            {/* 添加删除按钮 */}
-                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
-                                <DeleteIcon />
-                            </IconButton>
-                        </ListItemButton>
-                        <ListItemButton sx={{ pl: 4 }}>
-                            <ListItemIcon>
-                                <SealIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="罗汉四条屏" />
-                            {/* 添加删除按钮 */}
-                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
-                                <DeleteIcon />
-                            </IconButton>
-                        </ListItemButton>
-                        <ListItemButton sx={{ pl: 4 }}>
-                            <ListItemIcon>
-                                <PeopleIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="陆灏仿王蒙山水轴" />
+                            <ListItemText primary="余杭看山图" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
@@ -664,7 +694,7 @@ export default function NestedList() {
                             <ListItemIcon>
                                 <PaintingIcon />
                             </ListItemIcon>
-                            <ListItemText primary="对菊图" />
+                            <ListItemText primary="东岑嫩绿图" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
@@ -672,19 +702,9 @@ export default function NestedList() {
                         </ListItemButton>
                         <ListItemButton sx={{ pl: 4 }}>
                             <ListItemIcon>
-                                <SealIcon />
+                                <PaintingIcon />
                             </ListItemIcon>
-                            <ListItemText primary="罗汉四条屏" />
-                            {/* 添加删除按钮 */}
-                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
-                                <DeleteIcon />
-                            </IconButton>
-                        </ListItemButton>
-                        <ListItemButton sx={{ pl: 4 }}>
-                            <ListItemIcon>
-                                <PeopleIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="陆灏仿王蒙山水轴" />
+                            <ListItemText primary="为拱北作山水" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
