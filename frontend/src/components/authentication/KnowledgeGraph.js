@@ -39,22 +39,22 @@ const Storyline = () => {
     };
   }, []);
 
-  // 按键事件：监听 "O" 键
+
   useEffect(() => {
     const handleKeyDown1 = (event) => {
-      if (event.key === "1") {
-        setIsRendered(true); // 按下 "O" 键后设置渲染状态为 true
+      if (event.key === "4") {
+        setIsRendered(true); // 
       }
     };
     const handleKeyDown2 = (event) => {
-      if (event.key === "2") {
+      if (event.key === "4") {
         setdataurl("../../assets/data/data.json")
       }
     };
 
     const handleKeyDown3 = (event) => {
-      if (event.key === "3") {
-        setIsRendered(true); // 按下 "O" 键后设置渲染状态为 true
+      if (event.key === "4") {
+        setIsRendered(true); 
       }
     };
 
