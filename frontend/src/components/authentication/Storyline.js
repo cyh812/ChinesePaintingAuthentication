@@ -8,7 +8,7 @@ const Storyline = () => {
   const [nodesData, setNodesData] = useState([]);
   const [linksData, setLinksData] = useState([]);
   const [isRendered, setIsRendered] = useState(false); // 控制图表渲染
-  const [dataurl, setdataurl] = useState("../../assets/temp/data1.json")
+  const [dataurl, setdataurl] = useState(" ")
 
 
   // 预先加载四个自定义的图像（PNG/SVG素材）
@@ -20,6 +20,13 @@ const Storyline = () => {
     "O": "../../assets/temp/1.png"
   }
 
+  const urllist = [
+    "../../assets/temp/data1.json",
+    "../../assets/temp/data2.json",
+    "../../assets/temp/data3.json"
+  ]
+
+  var flag = 0
   useEffect(() => {
     // 获取容器的实际宽度和高度
     const updateDimensions = () => {
@@ -39,34 +46,21 @@ const Storyline = () => {
     };
   }, []);
 
-  // 按键事件：监听 "O" 键
+  // 按键事件
   useEffect(() => {
-    const handleKeyDown1 = (event) => {
-      if (event.key === "1") {
-        setIsRendered(true); // 按下 "O" 键后设置渲染状态为 true
-      }
-    };
-    const handleKeyDown2 = (event) => {
-      if (event.key === "2") {
-        setdataurl("../../assets/temp/data2.json")
-      }
-    };
-
-    const handleKeyDown3 = (event) => {
+    const handleKeyDown = (event) => {
       if (event.key === "3") {
-        setdataurl("../../assets/temp/data3.json")
+        setdataurl(urllist[flag])
+        setIsRendered(true); 
+        flag++;
       }
     };
 
-    window.addEventListener("keydown", handleKeyDown1);
-    window.addEventListener("keydown", handleKeyDown2);
-    window.addEventListener("keydown", handleKeyDown3);
+    window.addEventListener("keydown", handleKeyDown);
 
     // 清理事件监听器
     return () => {
-      window.removeEventListener("keydown", handleKeyDown1);
-      window.removeEventListener("keydown", handleKeyDown2);
-      window.removeEventListener("keydown", handleKeyDown3);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
