@@ -34,8 +34,8 @@ function PaintingIcon(props) {
 function PaintingPieIcon(props) {
     return (
         <SvgIcon {...props}>
-            <path d="M13 12V3C11.22 3 9.47991 3.52784 7.99987 4.51677C6.51983 5.50571 5.36628 6.91131 4.68509 8.55585C4.0039 10.2004 3.82567 12.01 4.17294 13.7558C4.5202 15.5016 5.37737 17.1053 6.63604 18.364C7.89471 19.6226 9.49836 20.4798 11.2442 20.8271C12.99 21.1743 14.7996 20.9961 16.4442 20.3149C18.0887 19.6337 19.4943 18.4802 20.4832 17.0001C21.4722 15.5201 22 13.78 22 12H13Z" fill="#4352D4" />
-            <path opacity="0.2" d="M14 3V11H22C21.6941 8.98766 20.7527 7.12586 19.3134 5.68657C17.8741 4.24728 16.0123 3.30592 14 3Z" fill="#4352D4" />
+            <path d="M13 12V3C11.22 3 9.47991 3.52784 7.99987 4.51677C6.51983 5.50571 5.36628 6.91131 4.68509 8.55585C4.0039 10.2004 3.82567 12.01 4.17294 13.7558C4.5202 15.5016 5.37737 17.1053 6.63604 18.364C7.89471 19.6226 9.49836 20.4798 11.2442 20.8271C12.99 21.1743 14.7996 20.9961 16.4442 20.3149C18.0887 19.6337 19.4943 18.4802 20.4832 17.0001C21.4722 15.5201 22 13.78 22 12H13Z" fill="#1A1AFF" />
+            <path opacity="0.2" d="M14 3V11H22C21.6941 8.98766 20.7527 7.12586 19.3134 5.68657C17.8741 4.24728 16.0123 3.30592 14 3Z" fill="#1A1AFF" />
         </SvgIcon>
     );
 }
@@ -43,8 +43,8 @@ function PaintingPieIcon(props) {
 function SealPieIcon(props) {
     return (
         <SvgIcon {...props}>
-            <path d="M13 12V3C11.22 3 9.47991 3.52784 7.99987 4.51677C6.51983 5.50571 5.36628 6.91131 4.68509 8.55585C4.0039 10.2004 3.82567 12.01 4.17294 13.7558C4.5202 15.5016 5.37737 17.1053 6.63604 18.364C7.89471 19.6226 9.49836 20.4798 11.2442 20.8271C12.99 21.1743 14.7996 20.9961 16.4442 20.3149C18.0887 19.6337 19.4943 18.4802 20.4832 17.0001C21.4722 15.5201 22 13.78 22 12H13Z" fill="#4352D4" />
-            <path opacity="0.2" d="M14 3V11H22C21.6941 8.98766 20.7527 7.12586 19.3134 5.68657C17.8741 4.24728 16.0123 3.30592 14 3Z" fill="#4352D4" />
+            <path d="M13 12V3C11.22 3 9.47991 3.52784 7.99987 4.51677C6.51983 5.50571 5.36628 6.91131 4.68509 8.55585C4.0039 10.2004 3.82567 12.01 4.17294 13.7558C4.5202 15.5016 5.37737 17.1053 6.63604 18.364C7.89471 19.6226 9.49836 20.4798 11.2442 20.8271C12.99 21.1743 14.7996 20.9961 16.4442 20.3149C18.0887 19.6337 19.4943 18.4802 20.4832 17.0001C21.4722 15.5201 22 13.78 22 12H13Z" fill="#FF1A1A" />
+            <path opacity="0.2" d="M14 3V11H22C21.6941 8.98766 20.7527 7.12586 19.3134 5.68657C17.8741 4.24728 16.0123 3.30592 14 3Z" fill="#FF1A1A" />
         </SvgIcon>
     );
 }
@@ -58,9 +58,9 @@ function ReferenceIcon(props) {
 }
 
 const Legend = () => {
-    const [value1, setValue1] = React.useState(30);
-    const [value2, setValue2] = React.useState(30);
-    const [value3, setValue3] = React.useState(30);
+    const [value1, setValue1] = React.useState(0.3);
+    const [value2, setValue2] = React.useState(0.3);
+    const [value3, setValue3] = React.useState(0.5);
 
     const handleChange1 = (event, newValue) => {
         setValue1(newValue);
@@ -82,54 +82,120 @@ const Legend = () => {
             backgroundColor: '#ffffff', // 背景颜色
             boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', // 添加阴影
             padding: '1px',      // 内边距
-            width: '1150px',      // 设置菜单宽度
+            width: '1450px',      // 设置菜单宽度
             height: '50px',
             color: "black",
             display: "flex",
             flexDirection: "row",
             alignItems: "center"
         }}>
-            <Box sx={{ width: 300 }}>
-                <Stack spacing={2} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
-                    <div>image similarity</div>
-                    <PaintingPieIcon/>
-                    <Slider aria-label="Volume" value={value1}  valueLabelDisplay="auto" onChange={handleChange1} />
+            <Box sx={{ width: 320, marginRight: 5, marginLeft: 2 }}>
+                <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
+                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap' }}>Image Similarity :</div>
+                    <Slider aria-label="Volume" value={value1} valueLabelDisplay="auto"
+                        min={0}   // 设置最小值为 0
+                        max={1}
+                        step={0.01}
+                        sx={{
+                            '& .MuiSlider-rail': {
+                                backgroundColor: '#f0dec6',  // 设置轨道颜色
+                            },
+                            '& .MuiSlider-track': {
+                                backgroundColor: '#DC912C',  // 设置滑块轨道颜色
+                                border: '1px solid #DC912C', // 这里设置了边框颜色为粉色
+                            },
+                            '& .MuiSlider-thumb': {
+                                backgroundColor: '#AB8039',  // 设置滑块颜色
+                            },
+                            '& .MuiSlider-thumb:hover': {
+                                boxShadow: '0px 0px 0px 8px rgba(240, 222, 198, 0.5)', // 增加透明背景阴影
+                            },
+                            '& .MuiSlider-thumb.Mui-active': {
+                                boxShadow: '0px 0px 0px 14px rgba(240, 222, 198, 0.5)', // 增加透明背景阴影
+                            }
+                        }}
+                        onChange={handleChange1} />
+                    <PaintingPieIcon />
                 </Stack>
             </Box>
 
-            <Box sx={{ width: 300 }}>
-                <Stack spacing={2} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
-                    <div>Seal similarity</div>
-                    <SealPieIcon/>
-                    <Slider aria-label="Volume" value={value2} valueLabelDisplay="auto" onChange={handleChange2} />
+            <Box sx={{ width: 300, marginRight: 5 }}>
+                <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
+                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap' }}>Seal Similarity :</div>
+                    <Slider aria-label="Volume" value={value2} valueLabelDisplay="auto"
+                        min={0}   // 设置最小值为 0
+                        max={1}
+                        step={0.01}
+                        sx={{
+                            '& .MuiSlider-rail': {
+                                backgroundColor: '#f0dec6',  // 设置轨道颜色
+                            },
+                            '& .MuiSlider-track': {
+                                backgroundColor: '#DC912C',  // 设置滑块轨道颜色
+                                border: '1px solid #DC912C', // 这里设置了边框颜色为粉色
+                            },
+                            '& .MuiSlider-thumb': {
+                                backgroundColor: '#AB8039',  // 设置滑块颜色
+                            },
+                            '& .MuiSlider-thumb:hover': {
+                                boxShadow: '0px 0px 0px 8px rgba(240, 222, 198, 0.5)', // 增加透明背景阴影
+                            },
+                            '& .MuiSlider-thumb.Mui-active': {
+                                boxShadow: '0px 0px 0px 14px rgba(240, 222, 198, 0.5)', // 增加透明背景阴影
+                            }
+                        }}
+                        onChange={handleChange2} />
+                    <SealPieIcon />
                 </Stack>
             </Box>
 
-            <Box sx={{ width: 300 }}>
-                <Stack spacing={2} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
-                    <div>r similarity</div>
-                    <ReferenceIcon/>
-                    <Slider aria-label="Volume" value={value3} valueLabelDisplay="auto" onChange={handleChange3} />
+            <Box sx={{ width: 300, marginRight: 10 }}>
+                <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
+                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap' }}>Text Similarity :</div>
+                    <Slider aria-label="Volume" value={value3} valueLabelDisplay="auto"
+                        min={0}   // 设置最小值为 0
+                        max={1}
+                        step={0.01}
+                        sx={{
+                            '& .MuiSlider-rail': {
+                                backgroundColor: '#f0dec6',  // 设置轨道颜色
+                            },
+                            '& .MuiSlider-track': {
+                                backgroundColor: '#DC912C',  // 设置滑块轨道颜色
+                                border: '1px solid #DC912C', // 这里设置了边框颜色为粉色
+                            },
+                            '& .MuiSlider-thumb': {
+                                backgroundColor: '#AB8039',  // 设置滑块颜色
+                            },
+                            '& .MuiSlider-thumb:hover': {
+                                boxShadow: '0px 0px 0px 8px rgba(240, 222, 198, 0.5)', // 增加透明背景阴影
+                            },
+                            '& .MuiSlider-thumb.Mui-active': {
+                                boxShadow: '0px 0px 0px 14px rgba(240, 222, 198, 0.5)', // 增加透明背景阴影
+                            }
+                        }}
+                        onChange={handleChange3} />
+                    <ReferenceIcon />
                 </Stack>
             </Box>
 
-            <Box sx={{ width: 100 }}>
-                <Stack spacing={2} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
-                    <div>Person</div>
+            <Box sx={{ width: 100, marginRight: 2 }}>
+                <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
+                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap' }}>Person</div>
                     <PeopleIcon />
                 </Stack>
             </Box>
 
-            <Box sx={{ width: 120 }}>
-                <Stack spacing={2} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
-                    <div>Artwork</div>
+            <Box sx={{ width: 120, marginRight: 2 }}>
+                <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
+                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap' }}>Artwork</div>
                     <PaintingIcon />
                 </Stack>
             </Box>
 
             <Box sx={{ width: 100 }}>
-                <Stack spacing={2} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
-                    <div>Seal</div>
+                <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
+                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap' }}>Seal</div>
                     <SealIcon />
                 </Stack>
             </Box>
