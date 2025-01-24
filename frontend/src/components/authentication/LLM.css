@@ -32,7 +32,7 @@
   justify-content: flex-start; /* 从左向右排列 */
   gap: 10px; /* 图片之间的间距 */
   margin-bottom: 10px;
-  border-right: 2px solid #ccc; /* 在右边添加一个竖线 */
+  border-right: 3px solid #000000; /* 在右边添加一个竖线 */
 }
 
 .segments-menu2 {
