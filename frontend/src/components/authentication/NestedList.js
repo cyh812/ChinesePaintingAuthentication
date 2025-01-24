@@ -232,7 +232,7 @@ export default function NestedList() {
     // 监听键盘事件
     React.useEffect(() => {
         const handleKeyDown = (event) => {
-            if (event.key === 'l' || event.key === 'L') {
+            if ( event.key === '3') {
                 if (!query1) {
                     setquery1(true);
                 }
