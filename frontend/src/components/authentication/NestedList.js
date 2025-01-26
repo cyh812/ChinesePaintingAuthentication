@@ -88,12 +88,12 @@ export default function NestedList() {
     const [showquery5, setshowquery5] = React.useState(false);
     const [showquery6, setshowquery6] = React.useState(false);
 
-    const message1 = "这是一个较长的预设文本，超过一定宽度后会自动换行，逐字显示效果测试。";
-    const message2 = "这是另一个较长的预设文本，自动换行测试，内容较多，逐字显示。";
-    const message3 = ""
-    const message4 = ""
-    const message5 = ""
-    const message6 = ""
+    const message1 = "我可以通过图像匹配、印章匹配以及文本资料检索等功能，帮助您进行中国古画的鉴定。通过比对画作的图像特征、印章信息及历史文献资料，我可以提供辅助判断，帮助您确认画作的作者、创作时间、艺术风格等关键信息。";
+    const message2 = `根据图像匹配模块的结果，以下几幅画作与您提供的片段存在相似之处：                                               《秋林人醉图》 石涛 (清代)                                                 《江南春霭图》 石涛 (清代)                                         《太白诗意山水图》 石涛 (清代)                                           《古木垂阴图》 石涛 (清代)                                              《山林乐事图》 石涛 (清代)                                             《长干图》 石涛 (清代)                                                    这些画作的某些部分与您的片段非常相似，可能是相同或类似的艺术元素。`;
+    const message3 = "根据印章匹配模块的结果，匹配到了两个石涛的印章，分别是“清湘老人”和“膏盲子济”两个创作者印, 另外一个印章则是名为“唐云审定”的收藏印章。"
+    const message4 = "根据印章“清湘老人”的匹配结果，在石涛的《花果图》《花卉（十二开）》《山水花卉（十二开）》等作品中均用过此印章，此外，系统检测到更多使用该印章的作品，您可以继续查阅数据库获取更多相关画作及完整信息。"
+    const message5 = "根据相关资料，大涤堂的建立时间和地点可以追溯到以下信息：                                                                         1.大涤堂与石涛在扬州大东门外的活动密切相关，且大涤子号的产生与康熙三十一年（1692年）冬石涛回到扬州有关。                                                          2.石涛在康熙三十三年（1694年）正式在作品上使用“大涤子”款，并在康熙三十五年（1696年）后大量使用，期间也出现了“大涤堂”印章。                                                         因此，大涤堂大致建成时间应为康熙三十年代初期，地点为扬州大东门外。"
+    const message6 = "根据相关资料，大涤草堂确实出现在石涛的其他作品中，以下是一些例子：                                                       1.《东岑嫩绿图》：题款中提到“写于大涤草堂”，表明该作品创作于康熙三十五年（1696）以后。                                                        2.《江南春霭图》：题款中提到“大涤堂下”，明确标明该作品与大涤堂有关。                                                          3.《为拱北作山水》：这幅画曾被记录为“大涤堂图”，并且题跋中提到“大涤堂下”。                                                 因此，石涛在多个作品中提到大涤草堂，特别是在他晚期的作品中。"
     const typingSpeed = 100; // 每个字符的显示速度，单位是毫秒
 
     const handleClick2 = () => {
@@ -184,7 +184,7 @@ export default function NestedList() {
             const interval2 = setInterval(() => {
                 setText2((prevText) => prevText + message2[text2Index]);
                 setText2Index((prevIndex) => prevIndex + 1);
-            }, typingSpeed);
+            }, 10);
             return () => clearInterval(interval2);
         }
     }, [query2, showquery2, text2Index]);
@@ -214,7 +214,7 @@ export default function NestedList() {
             const interval5 = setInterval(() => {
                 setText5((prevText) => prevText + message5[text5Index]);
                 setText5Index((prevIndex) => prevIndex + 1);
-            }, typingSpeed);
+            }, 20);
             return () => clearInterval(interval5);
         }
     }, [query5, showquery5, text5Index]);
@@ -224,7 +224,7 @@ export default function NestedList() {
             const interval6 = setInterval(() => {
                 setText6((prevText) => prevText + message6[text6Index]);
                 setText6Index((prevIndex) => prevIndex + 1);
-            }, typingSpeed);
+            }, 20);
             return () => clearInterval(interval6);
         }
     }, [query6, showquery6, text6Index]);
@@ -349,7 +349,7 @@ export default function NestedList() {
                                 opacity: 1,
                                 width: '400px', // 设置对话框宽度
                                 wordWrap: 'break-word', // 自动换行
-                                whiteSpace: 'normal', // 保证文本能够正常换行
+                                whiteSpace: 'pre-wrap', // 保证文本能够正常换行
                                 transition: 'visibility 0s, opacity 0.3s ease', // 平滑过渡
                             },
                         },
@@ -618,7 +618,7 @@ export default function NestedList() {
                                 opacity: 1,
                                 width: '400px', // 设置对话框宽度
                                 wordWrap: 'break-word', // 自动换行
-                                whiteSpace: 'normal', // 保证文本能够正常换行
+                                whiteSpace: 'pre-wrap', // 保证文本能够正常换行
                                 transition: 'visibility 0s, opacity 0.3s ease', // 平滑过渡
                             },
                         },
@@ -673,7 +673,7 @@ export default function NestedList() {
                                 opacity: 1,
                                 width: '400px', // 设置对话框宽度
                                 wordWrap: 'break-word', // 自动换行
-                                whiteSpace: 'normal', // 保证文本能够正常换行
+                                whiteSpace: 'pre-wrap', // 保证文本能够正常换行
                                 transition: 'visibility 0s, opacity 0.3s ease', // 平滑过渡
                             },
                         },

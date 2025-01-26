@@ -12,7 +12,6 @@ const ort = require("onnxruntime-web");
 import npyjs from "npyjs";
 import "./App.css"
 
-import KG from "./components/authentication/KnowledgeGraph"
 import LLM from "./components/authentication/LLM_QA";
 import Storyline from "./components/authentication/Storyline";
 import StageMenu from "./components/authentication/StageMenu"

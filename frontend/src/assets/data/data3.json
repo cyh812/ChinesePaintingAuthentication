@@ -100,7 +100,7 @@
     {
       "id": "S60",
       "category": "S",
-      "url": "../../assets/img/seal/",
+      "url": "../../assets/img/seal/清湘老人.png",
       "拥有者": "石涛",
       "名称": "清湘老人",
       "单位": "上海博物馆编《中国书画家印鉴款识》（文物出版社，1987.12）"
@@ -108,7 +108,7 @@
     {
       "id": "S25",
       "category": "S",
-      "url": "../../assets/img/seal/",
+      "url": "../../assets/img/seal/膏肓子济.png",
       "拥有者": "石涛",
       "名称": "膏盲子济",
       "单位": "上海博物馆编《中国书画家印鉴款识》（文物出版社，1987.12）"
@@ -116,7 +116,7 @@
     {
       "id": "S100",
       "category": "S",
-      "url": "../../assets/img/seal/",
+      "url": "",
       "拥有者": "唐云",
       "名称": "唐云审定",
       "单位": "上海博物馆编《中国书画家印鉴款识》（文物出版社，1987.12）"
@@ -124,7 +124,7 @@
     {
       "id": "1420",
       "category": "A",
-      "url": "../../assets/img/person/",
+      "url": "../../assets/img/person/石涛.jpg",
       "人物名字": "石涛",
       "名字拼音": "Shi Tao",
       "字号": "原名朱去极，僧名元济，一作原济，别署阿长、大滌子、钝根、石道人、苦瓜和尚、瞎尊者、清湘陈人、清湘老人、清湘遗人、零丁老人",
@@ -139,70 +139,70 @@
       "source": 0,
       "target": "D001439",
       "info": {
-        "name": "P-P",
-        "angle": 0.9,
-        "url1": "../../assets/img/segment/0_1.png",
-        "url2": "../../assets/img/segment/D001439.png"
-      }
+          "name": "P-P",
+          "angle": 0.49,
+          "url1":"../../assets/img/segment/0_1.png",
+          "url2":"../../assets/img/segment/D001439.png"
+      }    
     },
     {
       "source": 0,
       "target": "D002081",
       "info": {
-        "name": "P-P",
-        "angle": 0.9,
-        "url1": "../../assets/img/segment/0_1.png",
-        "url2": "../../assets/img/segment/"
-      }
+          "name": "P-P",
+          "angle": 0.62,
+          "url1":"../../assets/img/segment/0_1.png",
+          "url2":"../../assets/img/segment/D002081.png"
+      }    
     },
     {
       "source": 0,
       "target": "D004391",
       "info": {
-        "name": "P-P",
-        "angle": 0.9,
-        "url1": "../../assets/img/segment/0_1.png",
-        "url2": "../../assets/img/segment/"
-      }
+          "name": "P-P",
+          "angle": 0.58,
+          "url1":"../../assets/img/segment/0_1.png",
+          "url2":"../../assets/img/segment/D004391.png"
+      }    
     },
     {
       "source": 0,
       "target": "D009166",
       "info": {
-        "name": "P-P",
-        "angle": 0.9,
-        "url1": "../../assets/img/segment/0_1.png",
-        "url2": "../../assets/img/segment/"
-      }
+          "name": "P-P",
+          "angle": 0.45,
+          "url1":"../../assets/img/segment/0_1.png",
+          "url2":"../../assets/img/segment/D009166.png"
+      }    
     },
     {
       "source": 0,
       "target": "D011485",
       "info": {
-        "name": "P-P",
-        "angle": 0.9,
-        "url1": "../../assets/img/segment/0_1.png",
-        "url2": "../../assets/img/segment/"
-      }
+          "name": "P-P",
+          "angle": 0.61,
+          "url1":"../../assets/img/segment/0_1.png",
+          "url2":"../../assets/img/segment/D011485.png"
+      }    
     },
     {
       "source": 0,
       "target": "D011519",
       "info": {
-        "name": "P-P",
-        "angle": 0.9,
-        "url1": "../../assets/img/segment/0_1.png",
-        "url2": "../../assets/img/segment/"
-      }
+          "name": "P-P",
+          "angle": 0.53,
+          "url1":"../../assets/img/segment/0_1.png",
+          "url2":""
+      }    
     },
     {
       "source": 0,
       "target": "S60",
       "info": {
         "name": "S-S",
-        "angle": 0.9,
-        "url1": "../../assets/img/segment/0_1.png",
-        "url2": "../../assets/img/segment/"
+        "angle": 0.72,
+        "url1": "../../assets/img/segment/seal1.png",
+        "url2": "../../assets/img/segment/seal2.png"
       }
     },
     {
@@ -210,9 +210,9 @@
       "target": "S25",
       "info": {
         "name": "S-S",
-        "angle": 0.9,
-        "url1": "../../assets/img/segment/0_1.png",
-        "url2": "../../assets/img/segment/"
+        "angle": 0.68,
+        "url1": "../../assets/img/segment/seal1.png",
+        "url2": "../../assets/img/segment/seal2.png"
       }
     },
     {
@@ -220,9 +220,9 @@
       "target": "S100",
       "info": {
         "name": "S-S",
-        "angle": 0.9,
-        "url1": "../../assets/img/segment/0_1.png",
-        "url2": "../../assets/img/segment/"
+        "angle": 0.56,
+        "url1": "../../assets/img/segment/seal1.png",
+        "url2": "../../assets/img/segment/seal2.png"
       }
     },
     {

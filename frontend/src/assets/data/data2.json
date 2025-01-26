@@ -104,7 +104,7 @@
       "target": "D001439",
       "info": {
           "name": "P-P",
-          "angle": 0.9,
+          "angle": 0.49,
           "url1":"../../assets/img/segment/0_1.png",
           "url2":"../../assets/img/segment/D001439.png"
       }    
@@ -114,9 +114,9 @@
       "target": "D002081",
       "info": {
           "name": "P-P",
-          "angle": 0.9,
+          "angle": 0.62,
           "url1":"../../assets/img/segment/0_1.png",
-          "url2":"../../assets/img/segment/"
+          "url2":"../../assets/img/segment/D002081.png"
       }    
     },
     {
@@ -124,9 +124,9 @@
       "target": "D004391",
       "info": {
           "name": "P-P",
-          "angle": 0.9,
+          "angle": 0.58,
           "url1":"../../assets/img/segment/0_1.png",
-          "url2":"../../assets/img/segment/"
+          "url2":"../../assets/img/segment/D004391.png"
       }    
     },
     {
@@ -134,9 +134,9 @@
       "target": "D009166",
       "info": {
           "name": "P-P",
-          "angle": 0.9,
+          "angle": 0.45,
           "url1":"../../assets/img/segment/0_1.png",
-          "url2":"../../assets/img/segment/"
+          "url2":"../../assets/img/segment/D009166.png"
       }    
     },
     {
@@ -144,9 +144,9 @@
       "target": "D011485",
       "info": {
           "name": "P-P",
-          "angle": 0.9,
+          "angle": 0.61,
           "url1":"../../assets/img/segment/0_1.png",
-          "url2":"../../assets/img/segment/"
+          "url2":"../../assets/img/segment/D011485.png"
       }    
     },
     {
@@ -154,9 +154,9 @@
       "target": "D011519",
       "info": {
           "name": "P-P",
-          "angle": 0.9,
+          "angle": 0.53,
           "url1":"../../assets/img/segment/0_1.png",
-          "url2":"../../assets/img/segment/"
+          "url2":""
       }    
     }
   ]

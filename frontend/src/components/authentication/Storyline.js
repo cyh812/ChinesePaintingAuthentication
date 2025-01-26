@@ -166,7 +166,7 @@ const Storyline = () => {
       .style('padding', '10px')
       .style('box-shadow', '0px 4px 8px rgba(0, 0, 0, 0.1)')
       .style('width', '350px')
-      .style('background-color', 'brown')
+      .style('background-color', 'white')
       .style('display', 'flex')  // 使用flexbox布局
       .style('flex-direction', 'row')  // 水平排列
       .style('align-items', 'center')  // 垂直居中对齐
@@ -179,12 +179,16 @@ const Storyline = () => {
         if (d.category === "P") {
           customCard.html(`
             <div>
-          <img src="${d.url}" alt="Node Image" style="width: 250px; height: auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(255, 1, 1, 0.3);" />
+          <img src="${d.url}" alt="Node Image" style="width: 250px; height: auto; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);" />
             </div>
             &nbsp;&nbsp;
-            <div style="width: 100px; background-color: #f9f9f9; padding: 3px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-          <p><strong>作者:</strong> ${d.id}</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作品: </strong>只因你太美，只因你太美，只因你太美，只因你太美，</p>
+            <div style="width: 100px; background-color: #f0f0f0; padding: 3px; border-radius: 5px;">
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作品: </strong>只因你太美</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作者: </strong>只因你太美</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">创作时间: </strong>只因你太美</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">用色: </strong>只因你太美</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">尺寸: </strong>只因你太美</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">形制: </strong>只因你太美</p>
         </div>
         `)
         }
@@ -194,10 +198,15 @@ const Storyline = () => {
           <img src="${d.url}" alt="Node Image" style="width: 150px; height: auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(255, 1, 1, 0.3);" />
             </div>
             &nbsp;&nbsp;
-            <div style="width: 200px; background-color: #f9f9f9; padding: 3px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-          <p><strong>作者:</strong> ${d.id}</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作品: </strong>只因你太美，只因你太美，只因你太美，只因你太美，</p>
-        </div>
+            <div style="width: 200px; background-color:#f0f0f0; padding: 3px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+             <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作品: </strong>只因你太美</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">姓名: </strong>只因你太美</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">名字拼音: </strong>只因你太美</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">字号: </strong>只因你太美</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">所属朝代: </strong>只因你太美</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">生卒年代: </strong>只因你太美</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">籍贯: </strong>只因你太美</p>
+            </div>
         `)
         }
         else if (d.category === "S") {
@@ -206,9 +215,10 @@ const Storyline = () => {
           <img src="${d.url}" alt="Node Image" style="width: 100px; height: auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(255, 1, 1, 0.3);" />
             </div>
             &nbsp;&nbsp;
-            <div style="width: 250px; background-color: #f9f9f9; padding: 3px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-          <p><strong>作者:</strong> ${d.id}</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作品: </strong>只因你太美，只因你太美，只因你太美，只因你太美，</p>
+            <div style="width: 250px; background-color:#f0f0f0; padding: 3px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">拥有者: </strong>只因你太美</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">名称: </strong>只因你太美，只因你太美，只因你太美，只因你太美，</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">收录: </strong>只因你太美</p>
         </div>
         `)
         }
@@ -220,8 +230,7 @@ const Storyline = () => {
       .on("mouseout", function () {
         customCard.transition().duration(200).style('visibility', 'hidden');
       });
-    // .style('left', `${event.pageX + 30}px`)
-    // .style('top', `${event.pageY - 50}px`);
+
     // 创建扇形生成器
     const arcGenerator = d3.arc()
       .innerRadius(0) // 内半径
@@ -246,7 +255,7 @@ const Storyline = () => {
       .style('border-radius', '10px')
       .style('padding', '5px')
       .style('box-shadow', '0px 4px 8px rgba(0, 0, 0, 0.1)')
-      .style('width', '200px'); // 卡片宽度
+      .style('width', '250px'); // 卡片宽度
 
     // 创建卡片容器 印章-印章
     const customCardonArc2 = d3.select('body')
@@ -259,30 +268,48 @@ const Storyline = () => {
       .style('border-radius', '10px')
       .style('padding', '5px')
       .style('box-shadow', '0px 4px 8px rgba(0, 0, 0, 0.1)')
-      .style('width', '200px'); // 卡片宽度
-
-    // 添加图片到卡片内容
-    //   const updateCardContent = (image1, image2) => {
-    //     customCardonArc.html(`
-    //   <div style="display: flex; justify-content: space-between; align-items: center;">
-    //     <img src="${image1}" alt="Image 1" style="width: 50px; height: 50px; object-fit: cover; border-radius: 5px;" />
-    //     <img src="${image2}" alt="Image 2" style="width: 50px; height: 50px; object-fit: cover; border-radius: 5px;" />
-    //   </div>
-    // `);
-    //   };
+      .style('width', '250px'); // 卡片宽度
 
     const updateCardContent1 = (image1) => {
       customCardonArc1.html(`
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-      <img src="${image1}" alt="Image 1" style="width: 200px; height: 120px; border-radius: 5px;" />
+    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+      <!-- 上面三张图片并排 -->
+      <img src="${image1}" alt="Image 1" style="width: 90px; height: auto; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);" />
+      <img src="../../assets/img/similar.png" alt="Image 2" style="width: 30px; height: 30px;align-self: center;" />
+      <img src="${image1}" alt="Image 3" style="width: 90px; height: auto; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);" />
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; background-color: #f0f0f0; border-radius: 5px; padding:3px">
+      <!-- 下部左侧图片 -->
+      <img src="../../assets/img/rank.png" alt="Left Image" style="width: 35px; height: 35px; margin-left:30px" />
+      
+      <!-- 右侧文字，显示similarity和ranking -->
+      <div style="margin-right: 40px; text-align: left;">
+        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Similarity:</strong>/10</p>
+        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Ranking:</strong>/10</p>
+      </div>
     </div>
   `);
     };
 
     const updateCardContent2 = (image1) => {
       customCardonArc2.html(`
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-      <img src="${image1}" alt="Image 1" style="width: 200px; height: 120px; border-radius: 5px;" />
+    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+      <!-- 上面三张图片并排 -->
+      <img src="${image1}" alt="Image 1" style="width: 90px; height: auto; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);" />
+      <img src="../../assets/img/similar.png" alt="Image 2" style="width: 30px; height: 30px;align-self: center;" />
+      <img src="${image1}" alt="Image 3" style="width: 90px; height: auto; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);" />
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; background-color: #f0f0f0; border-radius: 5px; padding:3px">
+      <!-- 下部左侧图片 -->
+      <img src="../../assets/img/rank2.png" alt="Left Image" style="width: 35px; height: 35px; margin-left:30px" />
+      
+      <!-- 右侧文字，显示similarity和ranking -->
+      <div style="margin-right: 40px; text-align: left;">
+        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Similarity:</strong>/10</p>
+        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Ranking:</strong>/10</p>
+      </div>
     </div>
   `);
     };
@@ -294,24 +321,30 @@ const Storyline = () => {
           const image1 = d.image1 || '../../assets/img/temp/L1.png'; // 替换为节点对应的图片路径
           //const image2 = d.image2 || '../../assets/img/test/”清湘老人“朱文印.png'; // 替换为节点对应的图片路径  
           updateCardContent1(image1); // 更新卡片内容
+          customCardonArc1
+            .style('visibility', 'visible')
+          customCardonArc2
+            .style('visibility', 'hidden')
         }
         if (d.info.name == "P-S") {
           const image1 = d.image1 || '../../assets/img/temp/L2.png'; // 替换为节点对应的图片路径
           //const image2 = d.image2 || '../../assets/img/test/”清湘老人“朱文印.png'; // 替换为节点对应的图片路径  
           updateCardContent2(image1); // 更新卡片内容
+
+          customCardonArc1
+            .style('visibility', 'hidden')
+          customCardonArc2
+            .style('visibility', 'visible')
         }
 
-
-
         customCardonArc1
-          .style('visibility', 'visible')
           .style('left', `${event.pageX - 105}px`)
           .style('top', `${event.pageY - 150}px`);
 
         customCardonArc2
-          .style('visibility', 'visible')
           .style('left', `${event.pageX - 105}px`)
           .style('top', `${event.pageY - 150}px`);
+
       })
       .on("mouseout", function () {
         customCardonArc1.transition().duration(200).style('visibility', 'hidden');
@@ -330,20 +363,106 @@ const Storyline = () => {
       .data(filteredLinks)
       .enter()
       .append("foreignObject")
-      .attr("width", 100) // 按钮宽度
+      .attr("width", 160) // 按钮宽度
       .attr("height", 30) // 按钮高度
-      .append("xhtml:button")
-      .text("创作   \|")
+      .append("xhtml:div")
       .style("width", "100%")
       .style("height", "100%")
-      .style("background-color", "#000000")
-      .style("color", "white")
-      .style("border-color", "black")
+      .style("background-color", "#f0dec6")
+      .style("color", "gray")
+      .style("border", "1px solid black")
+      .style("font-weight", "bold")
       .style("border-radius", "5px")
       .style("cursor", "pointer")
-      .on("click", (event, d) => {
-        alert(`Button clicked on link between ${d.source.name} and ${d.target.name}`);
-      });
+      .style("display", "flex")
+      .style("align-items", "center")
+      .style("justify-content", "center")
+      .style("padding", "1px")
+      .html(d => `
+        <div style="text-align: right;">
+          <p style="font-size: 14px; margin: 0;">${d.source.name} \| </p>
+        </div>
+        <img src="../../assets/img/reference.png" alt="Icon" style="width: 17px; height: 20px; margin-left: 3px;" />
+        <div style="text-align: left;">
+          <p style="font-size: 14px; margin-left: 3px;">${d.target.id}</p>
+        </div>
+      `);
+
+
+    // 显示自定义卡片
+    const customCard3 = d3.select('body').append('div')
+      .attr('class', 'custom-card')
+      .style('position', 'absolute')
+      .style('visibility', 'hidden')
+      .style('background-color', '#fff')
+      .style('border', '1px solid #ccc')
+      .style('border-radius', '10px')
+      .style('padding', '10px')
+      .style('box-shadow', '0px 4px 8px rgba(0, 0, 0, 0.1)')
+      .style('width', '300px')
+      .style('font-size', '12px');
+
+    // 设置点击事件显示或隐藏卡片
+    buttons.on("click", function (event, d) {
+      // 判断卡片当前是否可见，如果可见则隐藏，否则显示
+      const isVisible = customCard3.style('visibility') === 'visible';
+
+      if (isVisible) {
+        // 隐藏卡片
+        customCard3.transition().duration(200).style('visibility', 'hidden');
+      } else {
+        // 显示卡片
+        customCard3.transition().duration(200).style('visibility', 'visible');
+
+        // 构建卡片内容
+        let cardContent = `
+      `;
+        // 遍历 linksData，找到与 d.source 和 d.target 匹配的 link
+        const matchedLink = linksData.find(link =>
+          (link.source.id === d.source.id && link.target.id === d.target.id) ||
+          (link.source.id === d.target.id && link.target.id === d.source.id)
+        );
+
+        // 如果找到匹配的 link，显示 info.reference
+        if (matchedLink && matchedLink.info && matchedLink.info.reference) {
+          const entries = Object.entries(matchedLink.info.reference);
+          entries.forEach((([key, value], index) => {
+            cardContent += `
+              <!-- 给value添加灰色圆角背景 -->
+              <p style="font-size: 12px; margin: 0; background-color: #f0f0f0; border-radius: 8px; padding: 5px;">${value}</p>
+              <!-- 添加直线 -->
+              <div style="border-bottom: 1px solid #ccc; width: 190px; margin-top: 5px;"></div>
+              <div style="display: flex; align-items: center; margin-top: 5px;justify-content: space-between;">
+                <p style="font-size: 12px; margin-right: 5px; font-weight: bold;">${key}</p>
+                <img src="../../assets/img/reference.png" alt="Icon" style="width: 17px; height: 20px; margin-right: 5px; cursor: pointer;" onclick="window.open('https://www.baidu.com', '_blank');" />
+              </div>
+            `;
+
+            // 如果不是最后一条，添加 <br>
+            if (index !== entries.length - 1) {
+              cardContent += `<br>`;
+            }
+          }));
+        }
+
+        customCard3.html(cardContent)
+          .style('left', `${event.pageX + 50}px`)  // 鼠标位置 + 偏移量
+          .style('top', `${event.pageY - 100}px`); // 鼠标位置 + 偏移量
+      }
+    });
+
+    //   // 在 hover 时显示卡片
+    //   buttons.on("mouseover", function (event, d) {
+    //     customCard3.transition().duration(200).style('visibility', 'visible');
+    //     customCard3.html(`
+    //   <strong>Source:</strong> ${d.source.name} <br>
+    //   <strong>Target:</strong> ${d.target.name} <br>
+    //   <strong>Category:</strong> ${d.source.category} <br>
+    // `)
+    //       .style('left', `${event.pageX + 30}px`)
+    //       .style('top', `${event.pageY - 50}px`);
+    //   })
+
 
     // 力导向布局
     const simulation = d3.forceSimulation(nodesData)
