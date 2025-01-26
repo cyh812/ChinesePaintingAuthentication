@@ -21,9 +21,12 @@ const Storyline = () => {
   }
 
   const urllist = [
-    "../../assets/temp/data1.json",
-    "../../assets/temp/data2.json",
-    "../../assets/temp/data3.json"
+    "../../assets/data/data1.json",
+    "../../assets/data/data2.json",
+    "../../assets/data/data3.json",
+    "../../assets/data/data4.json",
+    "../../assets/data/data5.json",
+    "../../assets/data/data6.json"
   ]
 
   var flag = 0
@@ -178,17 +181,17 @@ const Storyline = () => {
 
         if (d.category === "P") {
           customCard.html(`
-            <div>
-          <img src="${d.url}" alt="Node Image" style="width: 250px; height: auto; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);" />
+            <div style="width: 250px; height: auto;">
+          <img src="${d.url}" alt="Node Image" style="border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);" />
             </div>
             &nbsp;&nbsp;
             <div style="width: 100px; background-color: #f0f0f0; padding: 3px; border-radius: 5px;">
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作品: </strong>只因你太美</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作者: </strong>只因你太美</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">创作时间: </strong>只因你太美</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">用色: </strong>只因你太美</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">尺寸: </strong>只因你太美</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">形制: </strong>只因你太美</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作品: </strong>${d.name}</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作者: </strong>${d.作者}</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">创作时间: </strong>${d.创作时间}}</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">用色: </strong>${d.用色}</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">尺寸: </strong>${d.尺寸}</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">形制: </strong>${d.形制}</p>
         </div>
         `)
         }
@@ -199,13 +202,12 @@ const Storyline = () => {
             </div>
             &nbsp;&nbsp;
             <div style="width: 200px; background-color:#f0f0f0; padding: 3px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-             <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作品: </strong>只因你太美</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">姓名: </strong>只因你太美</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">名字拼音: </strong>只因你太美</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">字号: </strong>只因你太美</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">所属朝代: </strong>只因你太美</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">生卒年代: </strong>只因你太美</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">籍贯: </strong>只因你太美</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">姓名: </strong>${d.name}</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">名字拼音: </strong>${d.名字拼音}</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">字号: </strong>${d.字号}</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">所属朝代: </strong>${d.所属朝代}</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">生卒年代: </strong>${d.生卒年代}</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">籍贯: </strong>${d.籍贯}</p>
             </div>
         `)
         }
@@ -216,9 +218,9 @@ const Storyline = () => {
             </div>
             &nbsp;&nbsp;
             <div style="width: 250px; background-color:#f0f0f0; padding: 3px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">拥有者: </strong>只因你太美</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">名称: </strong>只因你太美，只因你太美，只因你太美，只因你太美，</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">收录: </strong>只因你太美</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">拥有者: </strong>${d.拥有者}</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">名称: </strong>${d.name}</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">收录: </strong>${d.单位}</p>
         </div>
         `)
         }
@@ -270,13 +272,13 @@ const Storyline = () => {
       .style('box-shadow', '0px 4px 8px rgba(0, 0, 0, 0.1)')
       .style('width', '250px'); // 卡片宽度
 
-    const updateCardContent1 = (image1) => {
+    const updateCardContent1 = (image1,image2,similar) => {
       customCardonArc1.html(`
     <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
       <!-- 上面三张图片并排 -->
       <img src="${image1}" alt="Image 1" style="width: 90px; height: auto; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);" />
       <img src="../../assets/img/similar.png" alt="Image 2" style="width: 30px; height: 30px;align-self: center;" />
-      <img src="${image1}" alt="Image 3" style="width: 90px; height: auto; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);" />
+      <img src="${image2}" alt="Image 3" style="width: 90px; height: auto; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);" />
     </div>
 
     <div style="display: flex; justify-content: space-between; align-items: center; background-color: #f0f0f0; border-radius: 5px; padding:3px">
@@ -285,20 +287,20 @@ const Storyline = () => {
       
       <!-- 右侧文字，显示similarity和ranking -->
       <div style="margin-right: 40px; text-align: left;">
-        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Similarity:</strong>/10</p>
-        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Ranking:</strong>/10</p>
+        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Similarity:</strong>${similar}</p>
+        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Ranking:</strong>2/10</p>
       </div>
     </div>
   `);
     };
 
-    const updateCardContent2 = (image1) => {
+    const updateCardContent2 = (image1,image2,similar) => {
       customCardonArc2.html(`
     <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
       <!-- 上面三张图片并排 -->
       <img src="${image1}" alt="Image 1" style="width: 90px; height: auto; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);" />
       <img src="../../assets/img/similar.png" alt="Image 2" style="width: 30px; height: 30px;align-self: center;" />
-      <img src="${image1}" alt="Image 3" style="width: 90px; height: auto; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);" />
+      <img src="${image2}" alt="Image 3" style="width: 90px; height: auto; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);" />
     </div>
 
     <div style="display: flex; justify-content: space-between; align-items: center; background-color: #f0f0f0; border-radius: 5px; padding:3px">
@@ -307,7 +309,7 @@ const Storyline = () => {
       
       <!-- 右侧文字，显示similarity和ranking -->
       <div style="margin-right: 40px; text-align: left;">
-        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Similarity:</strong>/10</p>
+        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Similarity:</strong>${similar}</p>
         <p style="font-size: 13px; color: #666;"><strong style="color: black;">Ranking:</strong>/10</p>
       </div>
     </div>
@@ -318,18 +320,20 @@ const Storyline = () => {
     arc
       .on("mouseover", function (event, d) {
         if (d.info.name == "P-P") {
-          const image1 = d.image1 || '../../assets/img/temp/L1.png'; // 替换为节点对应的图片路径
-          //const image2 = d.image2 || '../../assets/img/test/”清湘老人“朱文印.png'; // 替换为节点对应的图片路径  
-          updateCardContent1(image1); // 更新卡片内容
+          const image1 = d.info.url1 !== "" ? d.info.url1 : '../../assets/img/test/L1.png';
+          const image2 = d.info.url2 !== "" ? d.info.url2 : '../../assets/img/test/L1.png';
+          const similar = d.info.angle;
+          updateCardContent1(image1,image2,similar); // 更新卡片内容
           customCardonArc1
             .style('visibility', 'visible')
           customCardonArc2
             .style('visibility', 'hidden')
         }
-        if (d.info.name == "P-S") {
-          const image1 = d.image1 || '../../assets/img/temp/L2.png'; // 替换为节点对应的图片路径
-          //const image2 = d.image2 || '../../assets/img/test/”清湘老人“朱文印.png'; // 替换为节点对应的图片路径  
-          updateCardContent2(image1); // 更新卡片内容
+        if (d.info.name == "S-S") {
+          const image1 = d.info.url1 !== "" ? d.info.url1 : '../../assets/img/test/L1.png';
+          const image2 = d.info.url2 !== "" ? d.info.url2 : '../../assets/img/test/L1.png';
+          const similar = d.info.angle;
+          updateCardContent2(image1,image2,similar); // 更新卡片内容
 
           customCardonArc1
             .style('visibility', 'hidden')
@@ -356,9 +360,15 @@ const Storyline = () => {
       target: nodesData.find(node => node.id === link.target),
     }));
 
-    const filteredLinks = parsedLinksData.filter(
-      d => d.source?.category === "A" || d.target?.category === "A"
+    // const filteredLinks = parsedLinksData.filter(
+    //   d => d.info?.name === "R-R" || d.info?.name === "P-S"
+    // );
+
+    const filteredLinks = linksData.filter(
+      d => d.info?.name === "R-R" || d.info?.name === "P-S"
     );
+    console.log(filteredLinks)
+    // console.log(filteredLinks)
     const buttons = graphGroup.selectAll("foreignObject")
       .data(filteredLinks)
       .enter()
@@ -380,11 +390,11 @@ const Storyline = () => {
       .style("padding", "1px")
       .html(d => `
         <div style="text-align: right;">
-          <p style="font-size: 14px; margin: 0;">${d.source.name} \| </p>
+          <p style="font-size: 14px; margin: 0;">${d.info.kind} \| </p>
         </div>
         <img src="../../assets/img/reference.png" alt="Icon" style="width: 17px; height: 20px; margin-left: 3px;" />
         <div style="text-align: left;">
-          <p style="font-size: 14px; margin-left: 3px;">${d.target.id}</p>
+          <p style="font-size: 14px; margin-left: 3px;">${d.info.number}</p>
         </div>
       `);
 
@@ -521,7 +531,7 @@ const Storyline = () => {
           });
 
         }
-        else if (d.info.name == "P-S") {
+        else if (d.info.name == "S-S") {
           const x1 = d.source.x;
           const y1 = d.source.y;
           const x2 = d.target.x;
