@@ -179,13 +179,15 @@ const Storyline = () => {
       .on("mouseover", function (event, d) {
         customCard.transition().duration(200).style('visibility', 'visible');
 
+        //画作节点
         if (d.category === "P") {
           customCard.html(`
-            <div style="width: 250px; height: auto;">
-          <img src="${d.url}" alt="Node Image" style="border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);" />
-            </div>
+<div style="width: 150px; height: 150px; overflow: hidden; position: relative;">
+  <img src="${d.url}" alt="Node Image" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);" />
+</div>
+
             &nbsp;&nbsp;
-            <div style="width: 100px; background-color: #f0f0f0; padding: 3px; border-radius: 5px;">
+            <div style="width: 200px; background-color: #f0f0f0; padding: 3px; border-radius: 5px;">
           <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作品: </strong>${d.name}</p>
           <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作者: </strong>${d.作者}</p>
           <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">创作时间: </strong>${d.创作时间}}</p>
@@ -195,10 +197,11 @@ const Storyline = () => {
         </div>
         `)
         }
+        //画家节点
         else if (d.category === "A") {
           customCard.html(`
             <div>
-          <img src="${d.url}" alt="Node Image" style="width: 150px; height: auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(255, 1, 1, 0.3);" />
+          <img src="${d.url}" alt="Node Image" style="width: 150px; height: auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);" />
             </div>
             &nbsp;&nbsp;
             <div style="width: 200px; background-color:#f0f0f0; padding: 3px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
@@ -211,10 +214,11 @@ const Storyline = () => {
             </div>
         `)
         }
+        //印章节点
         else if (d.category === "S") {
           customCard.html(`
             <div>
-          <img src="${d.url}" alt="Node Image" style="width: 100px; height: auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(255, 1, 1, 0.3);" />
+          <img src="${d.url}" alt="Node Image" style="width: 100px; height: auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);" />
             </div>
             &nbsp;&nbsp;
             <div style="width: 250px; background-color:#f0f0f0; padding: 3px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
@@ -270,15 +274,16 @@ const Storyline = () => {
       .style('border-radius', '10px')
       .style('padding', '5px')
       .style('box-shadow', '0px 4px 8px rgba(0, 0, 0, 0.1)')
-      .style('width', '250px'); // 卡片宽度
+      .style('width', '200px'); // 卡片宽度
 
-    const updateCardContent1 = (image1,image2,similar) => {
+    const updateCardContent1 = (image1, image2, similar) => {
+      //图像切片连边
       customCardonArc1.html(`
     <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
       <!-- 上面三张图片并排 -->
-      <img src="${image1}" alt="Image 1" style="width: 90px; height: auto; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);" />
+      <img src="${image1}" alt="Image 1" style="width: 90px; height: auto;" />
       <img src="../../assets/img/similar.png" alt="Image 2" style="width: 30px; height: 30px;align-self: center;" />
-      <img src="${image2}" alt="Image 3" style="width: 90px; height: auto; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);" />
+      <img src="${image2}" alt="Image 3" style="width: 90px; height: auto;" />
     </div>
 
     <div style="display: flex; justify-content: space-between; align-items: center; background-color: #f0f0f0; border-radius: 5px; padding:3px">
@@ -293,24 +298,24 @@ const Storyline = () => {
     </div>
   `);
     };
-
-    const updateCardContent2 = (image1,image2,similar) => {
+    // 印章相似度连边
+    const updateCardContent2 = (image1, image2, similar) => {
       customCardonArc2.html(`
     <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
       <!-- 上面三张图片并排 -->
-      <img src="${image1}" alt="Image 1" style="width: 90px; height: auto; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);" />
+      <img src="${image1}" alt="Image 1" style="width: 55px; height: auto; margin-left:10px " />
       <img src="../../assets/img/similar.png" alt="Image 2" style="width: 30px; height: 30px;align-self: center;" />
-      <img src="${image2}" alt="Image 3" style="width: 90px; height: auto; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);" />
+      <img src="${image2}" alt="Image 3" style="width: 55px; height: auto; margin-right:10px" />
     </div>
 
     <div style="display: flex; justify-content: space-between; align-items: center; background-color: #f0f0f0; border-radius: 5px; padding:3px">
       <!-- 下部左侧图片 -->
-      <img src="../../assets/img/rank2.png" alt="Left Image" style="width: 35px; height: 35px; margin-left:30px" />
+      <img src="../../assets/img/rank2.png" alt="Left Image" style="width: 35px; height: 35px; margin-left:20px" />
       
       <!-- 右侧文字，显示similarity和ranking -->
-      <div style="margin-right: 40px; text-align: left;">
-        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Similarity:</strong>${similar}</p>
-        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Ranking:</strong>/10</p>
+      <div style="margin-right: 10px; text-align: left;">
+        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Similarity: </strong>${similar}</p>
+        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Ranking: </strong>1/10</p>
       </div>
     </div>
   `);
@@ -323,7 +328,7 @@ const Storyline = () => {
           const image1 = d.info.url1 !== "" ? d.info.url1 : '../../assets/img/test/L1.png';
           const image2 = d.info.url2 !== "" ? d.info.url2 : '../../assets/img/test/L1.png';
           const similar = d.info.angle;
-          updateCardContent1(image1,image2,similar); // 更新卡片内容
+          updateCardContent1(image1, image2, similar); // 更新卡片内容
           customCardonArc1
             .style('visibility', 'visible')
           customCardonArc2
@@ -333,7 +338,7 @@ const Storyline = () => {
           const image1 = d.info.url1 !== "" ? d.info.url1 : '../../assets/img/test/L1.png';
           const image2 = d.info.url2 !== "" ? d.info.url2 : '../../assets/img/test/L1.png';
           const similar = d.info.angle;
-          updateCardContent2(image1,image2,similar); // 更新卡片内容
+          updateCardContent2(image1, image2, similar); // 更新卡片内容
 
           customCardonArc1
             .style('visibility', 'hidden')
@@ -373,14 +378,14 @@ const Storyline = () => {
       .data(filteredLinks)
       .enter()
       .append("foreignObject")
-      .attr("width", 160) // 按钮宽度
+      .attr("width", 80) // 按钮宽度
       .attr("height", 30) // 按钮高度
       .append("xhtml:div")
       .style("width", "100%")
       .style("height", "100%")
-      .style("background-color", "#f0dec6")
+      .style("background-color", "#ffffff")
       .style("color", "gray")
-      .style("border", "1px solid black")
+      // .style("border", "1px solid black")
       .style("font-weight", "bold")
       .style("border-radius", "5px")
       .style("cursor", "pointer")
