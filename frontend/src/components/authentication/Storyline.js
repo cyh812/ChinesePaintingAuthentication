@@ -194,6 +194,8 @@ const Storyline = () => {
           <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">用色: </strong>${d.用色}</p>
           <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">尺寸: </strong>${d.尺寸}</p>
           <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">形制: </strong>${d.形制}</p>
+                    <p style="font-size: 15px; color: #666; word-wrap: break-word; text-align: center;">
+                <strong style="color: blue;">查看详情</strong></p>
         </div>
         `)
         }
@@ -211,7 +213,9 @@ const Storyline = () => {
           <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">所属朝代: </strong>${d.所属朝代}</p>
           <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">生卒年代: </strong>${d.生卒年代}</p>
           <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">籍贯: </strong>${d.籍贯}</p>
-            </div>
+          <p style="font-size: 15px; color: #666; word-wrap: break-word; text-align: center;">
+                <strong style="color: blue;">查看详情</strong></p>
+          </div>
         `)
         }
         //印章节点
@@ -225,7 +229,9 @@ const Storyline = () => {
           <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">拥有者: </strong>${d.拥有者}</p>
           <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">名称: </strong>${d.name}</p>
           <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">收录: </strong>${d.单位}</p>
-        </div>
+                  <p style="font-size: 15px; color: #666; word-wrap: break-word; text-align: center;">
+                <strong style="color: blue;">查看详情</strong></p>
+          </div>
         `)
         }
 
@@ -242,13 +248,28 @@ const Storyline = () => {
       .innerRadius(0) // 内半径
       .outerRadius(10) // 外半径
 
+    const ImageLinks = linksData.filter(
+      d => d.info?.name === "P-P" || d.info?.name === "S-S"
+    );
+
+    // 创建圆形
+    const circle = svg.append('g')
+      .selectAll('circle')
+      .data(ImageLinks)
+      .enter().append('circle')
+      .attr('fill', d => d.info.name == 'P-P' ? '#C4C4FF' : '#FFB7B7')
+      .attr('r', 8)  // 圆的半径
+      .attr('opacity', 1);
+
     // 创建扇形（路径）
     const arc = svg.append('g')
       .selectAll('path')
-      .data(linksData)
+      .data(ImageLinks)
       .enter().append('path')
       .attr('fill', d => d.info.name == 'P-P' ? 'blue' : 'red')
       .attr('opacity', 0.9);
+
+
 
     // 创建卡片容器
     const customCardonArc1 = d3.select('body')
@@ -513,15 +534,6 @@ const Storyline = () => {
 
       arc.attr('d', d => {
         if (d.info.name == "P-P") {
-          const x1 = d.source.x;
-          const y1 = d.source.y;
-          const x2 = d.target.x;
-          const y2 = d.target.y;
-
-          // 计算连边中心
-          const centerX = (x1 + x2) / 2;
-          const centerY = (y1 + y2) / 2;
-
           // 动态计算扇形角度
           const angleRatio = d.info.angle || 0; // 获取 angle 属性（0-1），默认值为 0
           const startAngle = 0; // 扇形起始角度（0 弧度）
@@ -537,15 +549,6 @@ const Storyline = () => {
 
         }
         else if (d.info.name == "S-S") {
-          const x1 = d.source.x;
-          const y1 = d.source.y;
-          const x2 = d.target.x;
-          const y2 = d.target.y;
-
-          // 计算连边中心
-          const centerX = (x1 + x2) / 2;
-          const centerY = (y1 + y2) / 2;
-
           // 动态计算扇形角度
           const angleRatio = d.info.angle || 0; // 获取 angle 属性（0-1），默认值为 0
           const startAngle = 0; // 扇形起始角度（0 弧度）
@@ -574,7 +577,23 @@ const Storyline = () => {
           // 平移到连边中心
           return `translate(${centerX}, ${centerY})`;
         });
+        
+      circle.attr('transform', d => {
+        if (d.info.name == "P-P" || d.info.name == "S-S") {
+          const x1 = d.source.x;
+          const y1 = d.source.y;
+          const x2 = d.target.x;
+          const y2 = d.target.y;
 
+          // 计算连边的中心点
+          const centerX = (x1 + x2) / 2;
+          const centerY = (y1 + y2) / 2;
+
+          // 平移到连边中心
+          return `translate(${centerX}, ${centerY})`;
+        }
+
+      });
       updateLinks();
     }
 
