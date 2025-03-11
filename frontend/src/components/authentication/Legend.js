@@ -3,6 +3,13 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Slider from '@mui/material/Slider';
 import SvgIcon from '@mui/material/SvgIcon';
+import MuiInput from '@mui/material/Input';
+import { styled } from '@mui/material/styles';
+import VolumeUp from '@mui/icons-material/VolumeUp';
+
+const Input = styled(MuiInput)`
+  width: 42px;
+`;
 
 // 自定义图标组件
 function PeopleIcon(props) {
@@ -57,23 +64,111 @@ function ReferenceIcon(props) {
     );
 }
 
-const Legend = () => {
-    const [value1, setValue1] = React.useState(0.3);
-    const [value2, setValue2] = React.useState(0.3);
-    const [value3, setValue3] = React.useState(0.5);
+function ReferenceIcon2(props) {
+    return (
+        <SvgIcon {...props}>
+            <path d="M16.2917 3.1625C16.0083 3.1625 15.5833 3.45 15.5833 3.88125V20.125C15.5833 20.8438 15.1583 21.5625 14.45 21.5625H2.975C2.125 21.5625 1.41667 20.8438 1.41667 20.125V18.6875C1.41667 17.9688 2.125 17.25 2.83333 17.25H13.8833C14.1667 17.25 14.1667 17.1062 14.1667 16.8188V2.875C14.1667 1.4375 13.4583 0 11.9 0H2.975C1.55833 0 0 1.29375 0 2.875V20.125C0 20.125 0 20.125 0 20.2688C0 20.4125 0 20.4125 0 20.5563C0.141667 21.85 1.41667 22.8563 2.55 23H2.69167C2.69167 23 2.69167 23 2.83333 23H14.45C15.8667 23 17 21.7063 17 20.125V3.88125C17 3.45 16.575 3.1625 16.2917 3.1625ZM2.975 1.4375H12.0417C12.325 1.4375 12.75 1.86875 12.75 2.875V15.8125H2.83333C2.26667 15.8125 1.41667 16.2438 1.41667 16.5313V2.875C1.41667 2.15625 2.26667 1.4375 2.975 1.4375Z" fill="#566A96" />
+            <path d="M13.8833 18.6875H3.11659C2.83325 18.6875 2.54992 18.975 2.54992 19.4063C2.54992 19.8375 2.83325 20.125 3.11659 20.125H13.7416C14.0249 20.125 14.3083 19.8375 14.3083 19.4063C14.3083 18.975 14.1666 18.6875 13.8833 18.6875Z" fill="#566A96" />
+        </SvgIcon>
+    );
+}
 
-    const handleChange1 = (event, newValue) => {
-        setValue1(newValue);
+const minDistance = 0.01;
+
+const Legend = () => {
+    const [value1, setValue1] = React.useState([0.2, 0.37]);
+
+    // Slider 变动时，按拖动的 thumb 更新对应值
+    const handleSliderChange = (event, newValue, activeThumb) => {
+        if (!Array.isArray(newValue)) return;
+        if (activeThumb === 0) {
+            setValue1([Math.min(newValue[0], value1[1] - minDistance), value1[1]]);
+        } else {
+            setValue1([value1[0], Math.max(newValue[1], value1[0] + minDistance)]);
+        }
     };
-    const handleChange2 = (event, newValue) => {
-        setValue2(newValue);
+
+    // 左侧 Input 变化
+    const handleLeftInputChange = (event) => {
+        let newLeft = Number(event.target.value);
+        // 限制最小值为 0，最大值不能超过右侧值 - minDistance
+        newLeft = Math.max(newLeft, 0);
+        newLeft = Math.min(newLeft, value1[1] - minDistance);
+        setValue1([newLeft, value1[1]]);
     };
-    const handleChange3 = (event, newValue) => {
-        setValue3(newValue);
+
+    // 右侧 Input 变化
+    const handleRightInputChange = (event) => {
+        let newRight = Number(event.target.value);
+        // 限制最大值为 100，最小值不能低于左侧值 + minDistance
+        newRight = Math.min(newRight, 1);
+        newRight = Math.max(newRight, value1[0] + minDistance);
+        setValue1([value1[0], newRight]);
     };
-    // function valuetext(value) {
-    //     return `${value}`;
-    // }
+
+    // 失去焦点时，再次校验左侧值
+    const handleLeftBlur = () => {
+        let newLeft = value1[0];
+        if (newLeft < 0) newLeft = 0;
+        if (newLeft > value1[1] - minDistance) newLeft = value1[1] - minDistance;
+        setValue1([newLeft, value1[1]]);
+    };
+
+    // 失去焦点时，再次校验右侧值
+    const handleRightBlur = () => {
+        let newRight = value1[1];
+        if (newRight > 1) newRight = 1;
+        if (newRight < value1[0] + minDistance) newRight = value1[0] + minDistance;
+        setValue1([value1[0], newRight]);
+    };
+
+    const [value2, setValue2] = React.useState([0.3, 0.77]);
+
+    // Slider 变动时，按拖动的 thumb 更新对应值
+    const handleSliderChange2 = (event, newValue, activeThumb) => {
+        if (!Array.isArray(newValue)) return;
+        if (activeThumb === 0) {
+            setValue1([Math.min(newValue[0], value1[1] - minDistance), value1[1]]);
+        } else {
+            setValue1([value1[0], Math.max(newValue[1], value1[0] + minDistance)]);
+        }
+    };
+
+    // 左侧 Input 变化
+    const handleLeftInputChange2 = (event) => {
+        let newLeft = Number(event.target.value);
+        // 限制最小值为 0，最大值不能超过右侧值 - minDistance
+        newLeft = Math.max(newLeft, 0);
+        newLeft = Math.min(newLeft, value1[1] - minDistance);
+        setValue1([newLeft, value1[1]]);
+    };
+
+    // 右侧 Input 变化
+    const handleRightInputChange2 = (event) => {
+        let newRight = Number(event.target.value);
+        // 限制最大值为 100，最小值不能低于左侧值 + minDistance
+        newRight = Math.min(newRight, 1);
+        newRight = Math.max(newRight, value1[0] + minDistance);
+        setValue1([value1[0], newRight]);
+    };
+
+    // 失去焦点时，再次校验左侧值
+    const handleLeftBlur2 = () => {
+        let newLeft = value1[0];
+        if (newLeft < 0) newLeft = 0;
+        if (newLeft > value1[1] - minDistance) newLeft = value1[1] - minDistance;
+        setValue1([newLeft, value1[1]]);
+    };
+
+    // 失去焦点时，再次校验右侧值
+    const handleRightBlur2 = () => {
+        let newRight = value1[1];
+        if (newRight > 1) newRight = 1;
+        if (newRight < value1[0] + minDistance) newRight = value1[0] + minDistance;
+        setValue1([value1[0], newRight]);
+    };
+
+
     return (
         <div style={{
             position: 'absolute', // 悬浮效果
@@ -82,121 +177,126 @@ const Legend = () => {
             backgroundColor: '#ffffff', // 背景颜色
             boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', // 添加阴影
             padding: '1px',      // 内边距
-            width: '1450px',      // 设置菜单宽度
-            height: '50px',
+            width: '1550px',      // 设置菜单宽度
+            height: '70px',
             color: "black",
             display: "flex",
             flexDirection: "row",
-            alignItems: "center"
+            alignItems: "center",
+            borderRadius: "10px",
+            border: '2px solid #ddd' /* 添加边框 */
         }}>
-            <Box sx={{ width: 320, marginRight: 5, marginLeft: 2 }}>
+            <Box sx={{ width: 650, marginRight: 1, marginLeft: 1, backgroundColor: '#f7f7f7', borderRadius: '20px' }}>
                 <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
-                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap' }}>Image Similarity :</div>
-                    <Slider aria-label="Volume" value={value1} valueLabelDisplay="auto"
-                        min={0}   // 设置最小值为 0
-                        max={1}
-                        step={0.01}
-                        sx={{
-                            '& .MuiSlider-rail': {
-                                backgroundColor: '#f0dec6',  // 设置轨道颜色
-                            },
-                            '& .MuiSlider-track': {
-                                backgroundColor: '#DC912C',  // 设置滑块轨道颜色
-                                border: '1px solid #DC912C', // 这里设置了边框颜色为粉色
-                            },
-                            '& .MuiSlider-thumb': {
-                                backgroundColor: '#AB8039',  // 设置滑块颜色
-                            },
-                            '& .MuiSlider-thumb:hover': {
-                                boxShadow: '0px 0px 0px 8px rgba(240, 222, 198, 0.5)', // 增加透明背景阴影
-                            },
-                            '& .MuiSlider-thumb.Mui-active': {
-                                boxShadow: '0px 0px 0px 14px rgba(240, 222, 198, 0.5)', // 增加透明背景阴影
-                            }
+                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap', borderRight: '5px solid #ffffff', padding: '5px 15px', fontSize: '18px' }}>Image Similarity </div>
+                    <Input sx={{ width: 50 }}
+                        value={value1[0]}
+                        size="small"
+                        onChange={handleLeftInputChange}
+                        onBlur={handleLeftBlur}
+                        inputProps={{
+                            step: 0.01,
+                            min: 0,
+                            max: 1,
+                            type: 'number',
+                            'aria-labelledby': 'input-slider',
                         }}
-                        onChange={handleChange1} />
-                    <PaintingPieIcon />
-                </Stack>
-            </Box>
-
-            <Box sx={{ width: 300, marginRight: 5 }}>
-                <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
-                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap' }}>Seal Similarity :</div>
-                    <Slider aria-label="Volume" value={value2} valueLabelDisplay="auto"
-                        min={0}   // 设置最小值为 0
-                        max={1}
+                    />
+                    <Slider
+                        getAriaLabel={() => 'Minimum distance'}
+                        value={value1}
+                        onChange={handleSliderChange}
+                        valueLabelDisplay="auto"
+                        disableSwap
                         step={0.01}
-                        sx={{
-                            '& .MuiSlider-rail': {
-                                backgroundColor: '#f0dec6',  // 设置轨道颜色
-                            },
-                            '& .MuiSlider-track': {
-                                backgroundColor: '#DC912C',  // 设置滑块轨道颜色
-                                border: '1px solid #DC912C', // 这里设置了边框颜色为粉色
-                            },
-                            '& .MuiSlider-thumb': {
-                                backgroundColor: '#AB8039',  // 设置滑块颜色
-                            },
-                            '& .MuiSlider-thumb:hover': {
-                                boxShadow: '0px 0px 0px 8px rgba(240, 222, 198, 0.5)', // 增加透明背景阴影
-                            },
-                            '& .MuiSlider-thumb.Mui-active': {
-                                boxShadow: '0px 0px 0px 14px rgba(240, 222, 198, 0.5)', // 增加透明背景阴影
-                            }
-                        }}
-                        onChange={handleChange2} />
-                    <SealPieIcon />
-                </Stack>
-            </Box>
-
-            <Box sx={{ width: 300, marginRight: 10 }}>
-                <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
-                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap' }}>Text Similarity :</div>
-                    <Slider aria-label="Volume" value={value3} valueLabelDisplay="auto"
-                        min={0}   // 设置最小值为 0
+                        min={0}
                         max={1}
-                        step={0.01}
-                        sx={{
-                            '& .MuiSlider-rail': {
-                                backgroundColor: '#f0dec6',  // 设置轨道颜色
-                            },
-                            '& .MuiSlider-track': {
-                                backgroundColor: '#DC912C',  // 设置滑块轨道颜色
-                                border: '1px solid #DC912C', // 这里设置了边框颜色为粉色
-                            },
-                            '& .MuiSlider-thumb': {
-                                backgroundColor: '#AB8039',  // 设置滑块颜色
-                            },
-                            '& .MuiSlider-thumb:hover': {
-                                boxShadow: '0px 0px 0px 8px rgba(240, 222, 198, 0.5)', // 增加透明背景阴影
-                            },
-                            '& .MuiSlider-thumb.Mui-active': {
-                                boxShadow: '0px 0px 0px 14px rgba(240, 222, 198, 0.5)', // 增加透明背景阴影
-                            }
+                        sx={{ mx: 2, width: 200 }}
+                    />
+                    <Input sx={{ width: 50 }}
+                        value={value1[1]}
+                        size="small"
+                        onChange={handleRightInputChange}
+                        onBlur={handleRightBlur}
+                        inputProps={{
+                            step: 0.01,
+                            min: 0,
+                            max: 1,
+                            type: 'number',
+                            'aria-labelledby': 'input-slider',
                         }}
-                        onChange={handleChange3} />
-                    <ReferenceIcon />
+                    />
                 </Stack>
             </Box>
 
-            <Box sx={{ width: 100, marginRight: 2 }}>
+            <Box sx={{ width: 630, marginRight: 2, marginLeft: 2, backgroundColor: '#f7f7f7', borderRadius: '20px' }}>
                 <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
-                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap' }}>Person</div>
-                    <PeopleIcon />
+                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap', borderRight: '5px solid #ffffff', padding: '5px 15px', fontSize: '18px' }}>Seal Similarity </div>
+                    <Input sx={{ width: 50 }}
+                        value={value1[0]}
+                        size="small"
+                        onChange={handleLeftInputChange2}
+                        onBlur={handleLeftBlur2}
+                        inputProps={{
+                            step: 0.01,
+                            min: 0,
+                            max: 1,
+                            type: 'number',
+                            'aria-labelledby': 'input-slider',
+                        }}
+                    />
+                    <Slider
+                        getAriaLabel={() => 'Minimum distance'}
+                        value={value1}
+                        onChange={handleSliderChange2}
+                        valueLabelDisplay="auto"
+                        disableSwap
+                        step={0.01}
+                        min={0}
+                        max={1}
+                        sx={{ mx: 2, width: 200 }}
+                    />
+                    <Input sx={{ width: 50 }}
+                        value={value1[1]}
+                        size="small"
+                        onChange={handleRightInputChange2}
+                        onBlur={handleRightBlur2}
+                        inputProps={{
+                            step: 0.01,
+                            min: 0,
+                            max: 1,
+                            type: 'number',
+                            'aria-labelledby': 'input-slider',
+                        }}
+                    />
                 </Stack>
             </Box>
 
-            <Box sx={{ width: 120, marginRight: 2 }}>
+            <Box sx={{ width: 100, marginRight: 3 }}>
                 <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
-                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap' }}>Artwork</div>
-                    <PaintingIcon />
+                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap', fontSize: '18px' }}>Author</div>
+                    <PeopleIcon sx={{ transform: 'scale(1.5)' }} />
                 </Stack>
             </Box>
 
-            <Box sx={{ width: 100 }}>
+            <Box sx={{ width: 120, marginRight: 3 }}>
                 <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
-                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap' }}>Seal</div>
-                    <SealIcon />
+                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap', fontSize: '18px' }}>Painting</div>
+                    <PaintingIcon sx={{ transform: 'scale(1.5)' }} />
+                </Stack>
+            </Box>
+
+            <Box sx={{ width: 100, marginRight: 1 }}>
+                <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
+                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap', fontSize: '18px' }}>Seal</div>
+                    <SealIcon sx={{ transform: 'scale(1.5)' }} />
+                </Stack>
+            </Box>
+
+            <Box sx={{ width: 120, marginRight: 0 }}>
+                <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
+                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap', fontSize: '18px' }}>Literature</div>
+                    <ReferenceIcon2 sx={{ transform: 'scale(1.3)' }} />
                 </Stack>
             </Box>
         </div>

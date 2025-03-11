@@ -48,7 +48,7 @@ const Segments = () => {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [imagePaths, displayedImages]);
 
-  // 键盘监听事件：按下 "b" 键添加图片
+  // 键盘监听事件：按下 2 键添加图片
   useEffect(() => {
     const handleKeyDown = (e) => {
       if ( e.key === "2") {
@@ -165,15 +165,17 @@ const Segments = () => {
           className="segments-input"
           value={message}
           onChange={handleInputChange}
-          placeholder="请输入消息..."
+          placeholder="" // 填写“请输入消息”
           disabled={loading} /* 加载时禁用输入 */
         />
-        <button
+        <button style={{
+          fontSize: 20
+        }}
           className="send-button"
           onClick={handleSendClick}
           disabled={loading} /* 加载时禁用按钮 */
         >
-          {loading ? "发送中..." : "发送"}
+          {loading ? "sending" : "send"}
         </button>
       </div>
     </div>

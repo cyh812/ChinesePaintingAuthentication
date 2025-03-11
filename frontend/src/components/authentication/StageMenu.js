@@ -90,7 +90,7 @@ export default function StageMenu({ onZoomIn, onZoomOut, showStage }) {
             style={{
                 position: 'absolute', // 绝对定位
                 bottom: '10px',          // 距离顶部 10px
-                left: '50px',         // 距离左侧 10px
+                left: '58px',         // 距离左侧 10px
                 zIndex: 10,           // 确保在最上层
                 backgroundColor: 'rgba(255, 255, 255, 0.9)', // 半透明背景
                 boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)', // 添加阴影

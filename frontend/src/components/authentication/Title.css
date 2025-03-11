@@ -1,0 +1,31 @@
+  /* 标题和 icon 容器 */
+  .title-container {
+      display: flex;
+      align-items: center;
+      /* 垂直居中对齐 icon 和 title */
+      justify-content: flex-start;
+      /* 左对齐 */
+      margin-left: 1%;
+      /* 距离左侧 5% */
+      height: 100%;
+      /* 确保容器占满整个高度 */
+  }
+
+  /* 自定义 icon 样式 */
+  .icon {
+      width: 40px;
+      /* 设置 icon 的大小 */
+      height: 40px;
+      margin-right: 10px;
+      /* icon 和标题之间的间距 */
+  }
+
+  .title {
+      font-family: Arial, sans-serif;
+      /* 设置标题字体为 Arial */
+      font-size: 25px;
+      /* 标题字体大小 */
+      color: #8a6746;
+      /* 标题颜色 */
+      font-weight: bolder;
+  }

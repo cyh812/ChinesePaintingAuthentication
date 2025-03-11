@@ -47,6 +47,30 @@ function QueryIcon(props) {
     );
 }
 
+function MyExpandMore() {
+    return (
+      <ExpandMore
+        sx={{
+          color: '#FFFFFF',
+          backgroundColor: '#6275AC', // 你可以根据需要设置背景颜色
+          borderRadius: '50%',
+        }}
+      />
+    );
+  }
+
+function MyExpandLess() {
+return (
+    <ExpandLess
+    sx={{
+        color: '#FFFFFF',
+        backgroundColor: '#6275AC', // 你可以根据需要设置背景颜色
+        borderRadius: '50%',
+    }}
+    />
+);
+}
+
 
 export default function NestedList() {
     // 有缩放的round
@@ -264,14 +288,14 @@ export default function NestedList() {
         <div
             style={{
                 position: 'absolute', // 悬浮效果
-                top: '10px',          // 距离顶部 10px
-                right: '10px',         // 距离左侧 10px
+                top: '20px',          // 距离顶部 10px
+                right: '20px',         // 距离左侧 10px
                 zIndex: 1000,         // 确保在其他内容之上
                 backgroundColor: '#ffffff', // 背景颜色
                 boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)', // 添加阴影
                 borderRadius: '8px', // 圆角
                 padding: '8px',      // 内边距
-                width: '300px',      // 设置菜单宽度
+                width: '330px',      // 设置菜单宽度
             }}
         >
             <List
@@ -283,7 +307,11 @@ export default function NestedList() {
                 component="nav"
                 aria-labelledby="nested-list-subheaderX"
                 subheader={
-                    <ListSubheader component="div" id="nested-list-subheader">
+                    <ListSubheader component="div" id="nested-list-subheader" style={{
+                        fontSize: '16px',
+                        fontWeight: 'bold',
+                        color:'black'
+                    }}>
                         R&Q History
                     </ListSubheader>
                 }
@@ -360,9 +388,9 @@ export default function NestedList() {
                     </ListItemIcon>
                     <ListItemText primary="Round 2" />
                     {open2 ? (
-                        <ExpandLess sx={{ color: '#000000' }} />
+                        <MyExpandLess sx={{ color: '#000000' }} />
                     ) : (
-                        <ExpandMore sx={{ color: '#000000' }} />
+                        <MyExpandMore sx={{ color: '#000000' }} />
                     )}
                 </ListItemButton>)}
                 <Collapse in={open2} timeout="auto" unmountOnExit>
@@ -463,9 +491,9 @@ export default function NestedList() {
                     </ListItemIcon>
                     <ListItemText primary="Round 3" />
                     {open3 ? (
-                        <ExpandLess sx={{ color: '#000000' }} />
+                        <MyExpandLess sx={{ color: '#000000' }} />
                     ) : (
-                        <ExpandMore sx={{ color: '#000000' }} />
+                        <MyExpandMore sx={{ color: '#000000' }} />
                     )}
                 </ListItemButton>)}
                 <Collapse in={open3} timeout="auto" unmountOnExit>
@@ -546,9 +574,9 @@ export default function NestedList() {
                     </ListItemIcon>
                     <ListItemText primary="Round 4" />
                     {open4 ? (
-                        <ExpandLess sx={{ color: '#000000' }} />
+                        <MyExpandLess sx={{ color: '#000000' }} />
                     ) : (
-                        <ExpandMore sx={{ color: '#000000' }} />
+                        <MyExpandMore sx={{ color: '#000000' }} />
                     )}
                 </ListItemButton>)}
                 <Collapse in={open4} timeout="auto" unmountOnExit>
@@ -629,9 +657,9 @@ export default function NestedList() {
                     </ListItemIcon>
                     <ListItemText primary="Round 5" />
                     {open5 ? (
-                        <ExpandLess sx={{ color: '#000000' }} />
+                        <MyExpandLess sx={{ color: '#000000' }} />
                     ) : (
-                        <ExpandMore sx={{ color: '#000000' }} />
+                        <MyExpandMore sx={{ color: '#000000' }} />
                     )}
                 </ListItemButton>)}
                 <Collapse in={open5} timeout="auto" unmountOnExit>
@@ -683,9 +711,9 @@ export default function NestedList() {
                     </ListItemIcon>
                     <ListItemText primary="Round 6" />
                     {open6 ? (
-                        <ExpandLess sx={{ color: '#000000' }} />
+                        <MyExpandLess sx={{ color: '#000000' }} />
                     ) : (
-                        <ExpandMore sx={{ color: '#000000' }} />
+                        <MyExpandMore sx={{ color: '#000000' }} />
                     )}
                 </ListItemButton>)}
                 <Collapse in={open6} timeout="auto" unmountOnExit>

@@ -16,7 +16,7 @@ const Storyline = () => {
     "P": "../../assets/img/painting.png",
     "S": "../../assets/img/seal.png",
     "A": "../../assets/img/people.png",
-    "L": "../../assets/img/location.png",
+    "R": "../../assets/img/references.png",
     "O": "../../assets/temp/1.png"
   }
 
@@ -399,8 +399,8 @@ const Storyline = () => {
       .data(filteredLinks)
       .enter()
       .append("foreignObject")
-      .attr("width", 80) // 按钮宽度
-      .attr("height", 30) // 按钮高度
+      .attr("width", 25) // 按钮宽度
+      .attr("height", 25) // 按钮高度
       .append("xhtml:div")
       .style("width", "100%")
       .style("height", "100%")
@@ -415,13 +415,7 @@ const Storyline = () => {
       .style("justify-content", "center")
       .style("padding", "1px")
       .html(d => `
-        <div style="text-align: right;">
-          <p style="font-size: 14px; margin: 0;">${d.info.kind} \| </p>
-        </div>
-        <img src="../../assets/img/reference.png" alt="Icon" style="width: 17px; height: 20px; margin-left: 3px;" />
-        <div style="text-align: left;">
-          <p style="font-size: 14px; margin-left: 3px;">${d.info.number}</p>
-        </div>
+        <img src="../../assets/img/reference-blue.png" alt="Icon" style="width: 17px; height: 20px;margin-left:3px" />
       `);
 
 
@@ -529,8 +523,8 @@ const Storyline = () => {
         .attr("y", (d) => d.y + 35);
 
       graphGroup.selectAll("foreignObject")
-        .attr("x", d => (d.source.x + d.target.x) / 2 - 50) // foreignObject 的位置
-        .attr("y", d => (d.source.y + d.target.y) / 2 - 15);
+        .attr("x", d => (d.source.x + d.target.x) / 2 - 15) // foreignObject 的位置
+        .attr("y", d => (d.source.y + d.target.y) / 2 - 10);
 
       arc.attr('d', d => {
         if (d.info.name == "P-P") {

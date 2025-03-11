@@ -17,6 +17,7 @@ import Storyline from "./components/authentication/Storyline";
 import StageMenu from "./components/authentication/StageMenu"
 import NestedList from "./components/authentication/NestedList"
 import Legend from "./components/authentication/Legend"
+import Title from "./components/authentication/Title" 
 
 // Define image, embedding and model paths
 const IMAGE_PATH = "/assets/data/1.png";
@@ -141,12 +142,7 @@ const App = () => {
 
   return <>
     <div className="top-bar">
-      <div className="title-container">
-        <img src="./assets/img/logo.png" alt="Custom Icon" className="icon" />
-        <span className="title">
-          Chinese Ancient Paintings Authentication Interactive Visualization System
-        </span>
-      </div>
+      <Title/>
     </div>
     <div className="bottom-container">
       <div className="left-side">
@@ -160,7 +156,7 @@ const App = () => {
           <div className="right-side-top-left">
             <NestedList />
             <Storyline />
-            <Legend/>
+            <Legend />
             {/* <KG /> */}
           </div>
           {/* storyline部分，暂时不需要了 */}
