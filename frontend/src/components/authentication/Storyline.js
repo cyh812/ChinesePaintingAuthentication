@@ -234,7 +234,7 @@ const Storyline = () => {
           </div>
         `)
         }
-
+        //加一个文献节点
 
         customCard.style('left', `${event.pageX + 30}px`)
           .style('top', `${event.pageY - 50}px`);
@@ -271,7 +271,7 @@ const Storyline = () => {
 
 
 
-    // 创建卡片容器
+    // 创建卡片容器（扇形的）
     const customCardonArc1 = d3.select('body')
       .append('div')
       .attr('class', 'custom-card')
@@ -284,7 +284,7 @@ const Storyline = () => {
       .style('box-shadow', '0px 4px 8px rgba(0, 0, 0, 0.1)')
       .style('width', '250px'); // 卡片宽度
 
-    // 创建卡片容器 印章-印章
+    // 创建卡片容器 （印章-印章）
     const customCardonArc2 = d3.select('body')
       .append('div')
       .attr('class', 'custom-card')
@@ -390,10 +390,10 @@ const Storyline = () => {
     //   d => d.info?.name === "R-R" || d.info?.name === "P-S"
     // );
 
+    // 过滤文献-温馨，图-印章关系   R-P R-A
     const filteredLinks = linksData.filter(
       d => d.info?.name === "R-R" || d.info?.name === "P-S"
     );
-    console.log(filteredLinks)
     // console.log(filteredLinks)
     const buttons = graphGroup.selectAll("foreignObject")
       .data(filteredLinks)
@@ -414,9 +414,15 @@ const Storyline = () => {
       .style("align-items", "center")
       .style("justify-content", "center")
       .style("padding", "1px")
-      .html(d => `
-        <img src="../../assets/img/reference-blue.png" alt="Icon" style="width: 17px; height: 20px;margin-left:3px" />
-      `);
+      .html(d => {
+        // 根据 d.info?.name 的值动态设置 src
+        const iconSrc = d.info?.name === "R-R"
+          ? "../../assets/img/reference-blue.png"
+          : "../../assets/img/reference-red.png"; // 假设 P-S 使用红色图标
+        return `
+      <img src="${iconSrc}" alt="Icon" style="width: 17px; height: 20px; margin-left: 3px;" />
+    `;
+      });
 
 
     // 显示自定义卡片
@@ -571,7 +577,7 @@ const Storyline = () => {
           // 平移到连边中心
           return `translate(${centerX}, ${centerY})`;
         });
-        
+
       circle.attr('transform', d => {
         if (d.info.name == "P-P" || d.info.name == "S-S") {
           const x1 = d.source.x;

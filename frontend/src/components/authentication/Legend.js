@@ -128,9 +128,9 @@ const Legend = () => {
     const handleSliderChange2 = (event, newValue, activeThumb) => {
         if (!Array.isArray(newValue)) return;
         if (activeThumb === 0) {
-            setValue1([Math.min(newValue[0], value1[1] - minDistance), value1[1]]);
+            setValue2([Math.min(newValue[0], value2[1] - minDistance), value2[1]]);
         } else {
-            setValue1([value1[0], Math.max(newValue[1], value1[0] + minDistance)]);
+            setValue2([value2[0], Math.max(newValue[1], value1[0] + minDistance)]);
         }
     };
 
@@ -140,7 +140,7 @@ const Legend = () => {
         // 限制最小值为 0，最大值不能超过右侧值 - minDistance
         newLeft = Math.max(newLeft, 0);
         newLeft = Math.min(newLeft, value1[1] - minDistance);
-        setValue1([newLeft, value1[1]]);
+        setValue2([newLeft, value2[1]]);
     };
 
     // 右侧 Input 变化
@@ -148,24 +148,24 @@ const Legend = () => {
         let newRight = Number(event.target.value);
         // 限制最大值为 100，最小值不能低于左侧值 + minDistance
         newRight = Math.min(newRight, 1);
-        newRight = Math.max(newRight, value1[0] + minDistance);
-        setValue1([value1[0], newRight]);
+        newRight = Math.max(newRight, value2[0] + minDistance);
+        setValue2([value2[0], newRight]);
     };
 
     // 失去焦点时，再次校验左侧值
     const handleLeftBlur2 = () => {
-        let newLeft = value1[0];
+        let newLeft = value2[0];
         if (newLeft < 0) newLeft = 0;
-        if (newLeft > value1[1] - minDistance) newLeft = value1[1] - minDistance;
-        setValue1([newLeft, value1[1]]);
+        if (newLeft > value2[1] - minDistance) newLeft = value2[1] - minDistance;
+        setValue2([newLeft, value2[1]]);
     };
 
     // 失去焦点时，再次校验右侧值
     const handleRightBlur2 = () => {
-        let newRight = value1[1];
+        let newRight = value2[1];
         if (newRight > 1) newRight = 1;
-        if (newRight < value1[0] + minDistance) newRight = value1[0] + minDistance;
-        setValue1([value1[0], newRight]);
+        if (newRight < value2[0] + minDistance) newRight = value2[0] + minDistance;
+        setValue2([value2[0], newRight]);
     };
 
 
@@ -233,7 +233,7 @@ const Legend = () => {
                 <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
                     <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap', borderRight: '5px solid #ffffff', padding: '5px 15px', fontSize: '18px' }}>Seal Similarity </div>
                     <Input sx={{ width: 50 }}
-                        value={value1[0]}
+                        value={value2[0]}
                         size="small"
                         onChange={handleLeftInputChange2}
                         onBlur={handleLeftBlur2}
@@ -247,7 +247,7 @@ const Legend = () => {
                     />
                     <Slider
                         getAriaLabel={() => 'Minimum distance'}
-                        value={value1}
+                        value={value2}
                         onChange={handleSliderChange2}
                         valueLabelDisplay="auto"
                         disableSwap
@@ -257,7 +257,7 @@ const Legend = () => {
                         sx={{ mx: 2, width: 200 }}
                     />
                     <Input sx={{ width: 50 }}
-                        value={value1[1]}
+                        value={value2[1]}
                         size="small"
                         onChange={handleRightInputChange2}
                         onBlur={handleRightBlur2}

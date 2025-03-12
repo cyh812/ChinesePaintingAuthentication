@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import OpenAI from "openai";
+import SvgIcon from '@mui/material/SvgIcon';
 import "./LLM.css";
 
 // 初始化 Deepseek 客户端
@@ -8,6 +9,14 @@ const openai = new OpenAI({
   apiKey: "sk-d92a575188954a01b6a4fc4e2d231fe9", // 替换为您的 Deepseek API Key
   dangerouslyAllowBrowser: true, // 允许在浏览器中使用 OpenAI 客户端
 });
+
+function Send(props) {
+  return (
+    <SvgIcon {...props} viewBox="0 0 32 32">
+      <path d="M27.6367 15.1132L1.19533 0.9765C0.812515 0.785094 0.347671 1.08587 0.402359 1.49603L2.45314 25.914C2.48048 26.2968 2.8633 26.5156 3.21876 26.3788L11.75 22.7968L16.4258 28.1015C16.7266 28.4296 17.2461 28.2929 17.3555 27.8827L19.5977 19.4882L27.6367 16.0976C28.0195 15.9062 28.0469 15.332 27.6367 15.1132ZM16.4258 25.5585L13.9649 21.1835L1.38673 1.76947L18.0664 18.996L16.4258 25.5585Z" fill="#FDFDFD" />
+    </SvgIcon>
+  );
+}
 
 const Segments = () => {
   const [message, setMessage] = useState(""); // 控制输入框内容
@@ -51,7 +60,7 @@ const Segments = () => {
   // 键盘监听事件：按下 2 键添加图片
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if ( e.key === "2") {
+      if (e.key === "2") {
         if (displayedImages2.length < imagePaths2.length) {
           setDisplayedImages2((prev) => [...prev, imagePaths2[prev.length]]);
         }
@@ -136,23 +145,97 @@ const Segments = () => {
       <div className="segments-menu">
         <div className="segments-menu1">
           {displayedImages.map((imagePath, index) => (
-            <div
-              key={index}
-              className={`menu-image ${selectedImages.includes(index) ? "selected" : ""}`}
-              onClick={() => toggleImageSelection(index)}
-            >
-              <img src={imagePath} alt={`Menu ${index + 1}`} />
+            <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+              <div
+                key={index}
+                className={`menu-image ${selectedImages.includes(index) ? "selected" : ""}`}
+                onClick={() => toggleImageSelection(index)}
+              >
+                <img src={imagePath} alt={`Menu ${index + 1}`} />
+              </div>
+              {selectedImages.includes(index) && <div key={index} style={{ display: "flex", flexDirection: "column", height: "75px", marginLeft: "10px", backgroundColor: "#FCFCFC", borderRadius: "5px", justifyContent: "space-around", alignItems: "center" }}>
+                <button
+                  style={{
+                    background: "none",
+                    border: "none",
+                    padding: 0,
+                    cursor: "pointer",
+                    marginBottom: "5px", // 按钮之间的间距
+                  }}
+                  onClick={(e) => {
+                  }}
+                >
+                  <img src="../../assets/img/b1.png" alt="Button 1" style={{ width: "24px", height: "24px" }} />
+                </button>
+                <div
+                  style={{
+                    width: "80%",
+                    height: "1px",
+                    backgroundColor: "#DDD", // 分割线颜色
+                    margin: "4px 0", // 分割线与按钮的间距
+                  }}
+                />
+                <button
+                  style={{
+                    background: "none",
+                    border: "none",
+                    padding: 0,
+                    cursor: "pointer",
+                  }}
+                  onClick={(e) => {
+                  }}
+                >
+                  <img src="../../assets/img/b2.png" alt="Button 2" style={{ width: "24px", height: "24px" }} />
+                </button>
+              </div>}
             </div>
           ))}
         </div>
         <div className="segments-menu2">
           {displayedImages2.map((imagePath, index) => (
-            <div
-              key={index}
-              className={`menu-image ${selectedImages2.includes(index) ? "selected" : ""}`}
-              onClick={() => toggleImageSelection2(index)}
-            >
-              <img src={imagePath} alt={`Menu ${index + 1}`} />
+            <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+              <div
+                key={index}
+                className={`menu-image ${selectedImages2.includes(index) ? "selected" : ""}`}
+                onClick={() => toggleImageSelection2(index)}
+              >
+                <img src={imagePath} alt={`Menu ${index + 1}`} />
+              </div>
+              {selectedImages2.includes(index) && <div key={index} style={{ display: "flex", flexDirection: "column", height: "75px", marginLeft: "10px", backgroundColor: "#FCFCFC", borderRadius: "5px", justifyContent: "space-around", alignItems: "center" }}>
+                <button
+                  style={{
+                    background: "none",
+                    border: "none",
+                    padding: 0,
+                    cursor: "pointer",
+                    marginBottom: "5px", // 按钮之间的间距
+                  }}
+                  onClick={(e) => {
+                  }}
+                >
+                  <img src="../../assets/img/b1.png" alt="Button 1" style={{ width: "24px", height: "24px" }} />
+                </button>
+                <div
+                  style={{
+                    width: "80%",
+                    height: "1px",
+                    backgroundColor: "#DDD", // 分割线颜色
+                    margin: "4px 0", // 分割线与按钮的间距
+                  }}
+                />
+                <button
+                  style={{
+                    background: "none",
+                    border: "none",
+                    padding: 0,
+                    cursor: "pointer",
+                  }}
+                  onClick={(e) => {
+                  }}
+                >
+                  <img src="../../assets/img/b2.png" alt="Button 2" style={{ width: "24px", height: "24px" }} />
+                </button>
+              </div>}
             </div>
           ))}
         </div>
@@ -175,7 +258,11 @@ const Segments = () => {
           onClick={handleSendClick}
           disabled={loading} /* 加载时禁用按钮 */
         >
-          {loading ? "sending" : "send"}
+          {loading ? (
+            <CircularProgress size={30} /> // 假设你使用了一个加载动画组件
+          ) : (
+            <Send sx={{ transform: 'scale(1.5) translateX(3px)' }} /> // 使用自定义的 SendIcon
+          )}
         </button>
       </div>
     </div>
