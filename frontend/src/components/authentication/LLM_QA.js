@@ -36,8 +36,8 @@ const Segments = () => {
   ]); // 图片路径数组
 
   const [imagePaths2, setImagePaths2] = useState([
-    "../../assets/img/right/1.png",
     "../../assets/img/right/2.jpg",
+    "../../assets/img/right/1.jpg",
   ]); // 图片路径数组
 
   const [displayedImages, setDisplayedImages] = useState([]); // 动态展示的图片数组
@@ -79,7 +79,6 @@ const Segments = () => {
       setSelectedImages((prev) => [...prev, index]);
     }
   };
-
   const toggleImageSelection2 = (index) => {
     if (selectedImages2.includes(index)) {
       setSelectedImages2((prev) => prev.filter((i) => i !== index));
@@ -137,6 +136,8 @@ const Segments = () => {
   // 点击发送按钮
   const handleSendClick = () => {
     sendMessageToGPT();
+    setSelectedImages([]);
+    setSelectedImages2([]);
   };
 
   return (
@@ -258,11 +259,9 @@ const Segments = () => {
           onClick={handleSendClick}
           disabled={loading} /* 加载时禁用按钮 */
         >
-          {loading ? (
-            <CircularProgress size={30} /> // 假设你使用了一个加载动画组件
-          ) : (
-            <Send sx={{ transform: 'scale(1.5) translateX(3px)' }} /> // 使用自定义的 SendIcon
-          )}
+
+            <Send sx={{ transform: 'scale(1.5) translateX(3px)' }} /> 
+          
         </button>
       </div>
     </div>

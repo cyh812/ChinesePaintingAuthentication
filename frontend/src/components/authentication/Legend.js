@@ -76,7 +76,7 @@ function ReferenceIcon2(props) {
 const minDistance = 0.01;
 
 const Legend = () => {
-    const [value1, setValue1] = React.useState([0.2, 0.37]);
+    const [value1, setValue1] = React.useState([0.5, 0.8]);
 
     // Slider 变动时，按拖动的 thumb 更新对应值
     const handleSliderChange = (event, newValue, activeThumb) => {
@@ -194,13 +194,6 @@ const Legend = () => {
                         size="small"
                         onChange={handleLeftInputChange}
                         onBlur={handleLeftBlur}
-                        inputProps={{
-                            step: 0.01,
-                            min: 0,
-                            max: 1,
-                            type: 'number',
-                            'aria-labelledby': 'input-slider',
-                        }}
                     />
                     <Slider
                         getAriaLabel={() => 'Minimum distance'}
@@ -213,18 +206,11 @@ const Legend = () => {
                         max={1}
                         sx={{ mx: 2, width: 200 }}
                     />
-                    <Input sx={{ width: 50 }}
+                    <Input sx={{ width: 50, paddingLeft: 2 }}
                         value={value1[1]}
                         size="small"
                         onChange={handleRightInputChange}
                         onBlur={handleRightBlur}
-                        inputProps={{
-                            step: 0.01,
-                            min: 0,
-                            max: 1,
-                            type: 'number',
-                            'aria-labelledby': 'input-slider',
-                        }}
                     />
                 </Stack>
             </Box>
@@ -237,13 +223,6 @@ const Legend = () => {
                         size="small"
                         onChange={handleLeftInputChange2}
                         onBlur={handleLeftBlur2}
-                        inputProps={{
-                            step: 0.01,
-                            min: 0,
-                            max: 1,
-                            type: 'number',
-                            'aria-labelledby': 'input-slider',
-                        }}
                     />
                     <Slider
                         getAriaLabel={() => 'Minimum distance'}
@@ -256,18 +235,11 @@ const Legend = () => {
                         max={1}
                         sx={{ mx: 2, width: 200 }}
                     />
-                    <Input sx={{ width: 50 }}
+                    <Input sx={{ width: 50, paddingLeft: 2}}
                         value={value2[1]}
                         size="small"
                         onChange={handleRightInputChange2}
                         onBlur={handleRightBlur2}
-                        inputProps={{
-                            step: 0.01,
-                            min: 0,
-                            max: 1,
-                            type: 'number',
-                            'aria-labelledby': 'input-slider',
-                        }}
                     />
                 </Stack>
             </Box>

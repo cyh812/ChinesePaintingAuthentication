@@ -43,7 +43,7 @@
   justify-content: flex-start; /* 从左向右排列 */
   gap: 50px; /* 图片之间的间距 */
   /* margin-bottom: 10px; */
-  margin-left:10px ;
+  margin-left:20px ;
 }
 
 .menu-image {

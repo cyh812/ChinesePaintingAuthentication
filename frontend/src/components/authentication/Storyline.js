@@ -17,14 +17,14 @@ const Storyline = () => {
     "S": "../../assets/img/seal.png",
     "A": "../../assets/img/people.png",
     "R": "../../assets/img/references.png",
-    "O": "../../assets/temp/1.png"
+    "O": "../../assets/img/painting.png"
   }
 
   const urllist = [
     "../../assets/data/data1.json",
     "../../assets/data/data2.json",
     "../../assets/data/data3.json",
-    "../../assets/data/data4.json",
+    "../../assets/data/data3.json",
     "../../assets/data/data5.json",
     "../../assets/data/data6.json"
   ]
@@ -257,8 +257,8 @@ const Storyline = () => {
       .selectAll('circle')
       .data(ImageLinks)
       .enter().append('circle')
-      .attr('fill', d => d.info.name == 'P-P' ? '#C4C4FF' : '#FFB7B7')
-      .attr('r', 8)  // 圆的半径
+      .attr('fill', d => d.info.name == 'P-P' ? '#E5EFF6' : '#FFB7B7')
+      .attr('r', 10)  // 圆的半径
       .attr('opacity', 1);
 
     // 创建扇形（路径）
@@ -266,7 +266,7 @@ const Storyline = () => {
       .selectAll('path')
       .data(ImageLinks)
       .enter().append('path')
-      .attr('fill', d => d.info.name == 'P-P' ? 'blue' : 'red')
+      .attr('fill', d => d.info.name == 'P-P' ? '#4B80FA' : 'red')
       .attr('opacity', 0.9);
 
 
@@ -314,7 +314,7 @@ const Storyline = () => {
       <!-- 右侧文字，显示similarity和ranking -->
       <div style="margin-right: 40px; text-align: left;">
         <p style="font-size: 13px; color: #666;"><strong style="color: black;">Similarity:</strong>${similar}</p>
-        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Ranking:</strong>2/10</p>
+        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Ranking:</strong>2/6</p>
       </div>
     </div>
   `);
@@ -336,7 +336,7 @@ const Storyline = () => {
       <!-- 右侧文字，显示similarity和ranking -->
       <div style="margin-right: 10px; text-align: left;">
         <p style="font-size: 13px; color: #666;"><strong style="color: black;">Similarity: </strong>${similar}</p>
-        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Ranking: </strong>1/10</p>
+        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Ranking: </strong>1/3</p>
       </div>
     </div>
   `);
@@ -390,15 +390,16 @@ const Storyline = () => {
     //   d => d.info?.name === "R-R" || d.info?.name === "P-S"
     // );
 
-    // 过滤文献-温馨，图-印章关系   R-P R-A
-    const filteredLinks = linksData.filter(
-      d => d.info?.name === "R-R" || d.info?.name === "P-S"
+    // 过滤文献-，图-印章关系   R-P R-A
+    const filteredLinks_attribution = linksData.filter(
+      d => d.info?.name === "P-A" || d.info?.name === "P-S" || d.info?.name === "A-S" 
     );
     // console.log(filteredLinks)
-    const buttons = graphGroup.selectAll("foreignObject")
-      .data(filteredLinks)
+    const button_attribution = graphGroup.selectAll("foreignObject.attribution")
+      .data(filteredLinks_attribution)
       .enter()
       .append("foreignObject")
+      .attr("class", "attribution") // 添加类名
       .attr("width", 25) // 按钮宽度
       .attr("height", 25) // 按钮高度
       .append("xhtml:div")
@@ -416,11 +417,51 @@ const Storyline = () => {
       .style("padding", "1px")
       .html(d => {
         // 根据 d.info?.name 的值动态设置 src
-        const iconSrc = d.info?.name === "R-R"
-          ? "../../assets/img/reference-blue.png"
-          : "../../assets/img/reference-red.png"; // 假设 P-S 使用红色图标
+        let iconSrc = ""; 
+        if (d.info?.name === "P-S" || d.info?.name === "A-S"){
+          iconSrc = "../../assets/img/seal-red.png"
+        }
+        else{
+          iconSrc = "../../assets/img/seal-blue.png"
+        }
         return `
-      <img src="${iconSrc}" alt="Icon" style="width: 17px; height: 20px; margin-left: 3px;" />
+          <img src="${iconSrc}" alt="Icon" style="width: 20px; height: 20px; margin-left: 3px;" />
+        `;
+      });
+
+    // 过滤文献-温馨，图-印章关系   R-P R-A
+    const filteredLinks = linksData.filter(
+      d => d.info?.name === "A-R" || d.info?.name === "P-R"
+    );
+    console.log(filteredLinks)
+    // console.log(filteredLinks)
+    const buttons = graphGroup.selectAll("foreignObject.reference")
+      .data(filteredLinks)
+      .enter()
+      .append("foreignObject")
+      .attr("class", "reference") // 添加类名
+      .attr("width", 25) // 按钮宽度
+      .attr("height", 25) // 按钮高度
+      .append("xhtml:div")
+      .style("width", "100%")
+      .style("height", "100%")
+      .style("background-color", "#ffffff")
+      .style("color", "gray")
+      // .style("border", "1px solid black")
+      .style("font-weight", "bold")
+      .style("border-radius", "5px")
+      .style("cursor", "pointer")
+      .style("display", "flex")
+      .style("align-items", "center")
+      .style("justify-content", "center")
+      .style("padding", "1px")
+      .html(d => {
+        // 根据 d.info?.name 的值动态设置 src
+        let iconSrc2 = d.info?.name === "P-R"
+          ? "../../assets/img/reference-green.png"
+          : "../../assets/img/reference-blue.png"; // 假设 P-S 使用红色图标
+        return `
+      <img src="${iconSrc2}" alt="Icon" style="width: 17px; height: 20px; margin-left: 3px;" />
     `;
       });
 
@@ -531,6 +572,10 @@ const Storyline = () => {
       graphGroup.selectAll("foreignObject")
         .attr("x", d => (d.source.x + d.target.x) / 2 - 15) // foreignObject 的位置
         .attr("y", d => (d.source.y + d.target.y) / 2 - 10);
+
+      // graphGroup_attribution.selectAll("foreignObject")
+      //   .attr("x", d => (d.source.x + d.target.x) / 2 - 15) // foreignObject 的位置
+      //   .attr("y", d => (d.source.y + d.target.y) / 2 - 10);
 
       arc.attr('d', d => {
         if (d.info.name == "P-P") {

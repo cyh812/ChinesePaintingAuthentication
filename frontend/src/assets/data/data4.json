@@ -3,7 +3,7 @@
     {
       "id": 0,
       "category": "O",
-      "name": "Undefined Painting",
+      "name": "鉴定目标",
       "url": "../../assets/img/temp/P1.png"
     },
     {
@@ -134,6 +134,30 @@
       "简介": "清初画家。明靖江王之后，出家为僧。半世云游，饱览名山大川，是以所画山水，笔法恣肆，离奇苍古而又能细秀妥帖，为清初山水画大家。画花卉也别有生趣。晚年定居扬州。著有《画语录》、《画谱》。"
     },
     {
+      "id": "S1",
+      "category": "S",
+      "url": "",
+      "拥有者": "",
+      "name": "印章1",
+      "单位": ""
+    },
+    {
+      "id": "S2",
+      "category": "S",
+      "url": "",
+      "拥有者": "",
+      "name": "印章2",
+      "单位": ""
+    },
+    {
+      "id": "S3",
+      "category": "S",
+      "url": "",
+      "拥有者": "",
+      "name": "印章3",
+      "单位": ""
+    },
+    {
       "id": "D002761",
       "category": "P",
       "url": "../../assets/img/painting/D002761.png",
@@ -156,10 +180,10 @@
       "尺寸": "99.7*40.2",
       "形制": "",
       "文献": [
-          "四僧绘画",
-          "大涤子传",
-          "清湘书画稿",
-          "石涛:清初中国的绘画与现代性"
+        "四僧绘画",
+        "大涤子传",
+        "清湘书画稿",
+        "石涛:清初中国的绘画与现代性"
       ]
     },
     {
@@ -167,15 +191,15 @@
       "category": "P",
       "url": "",
       "作者": "石涛",
-      "name": "花卉（十二开）",
+      "name": "花卉<十二开>",
       "创作时间": "清代",
       "用色": "纸本设色",
       "尺寸": "各31.2*20.4",
       "形制": "",
       "文献": [
-          "明月清风:至乐楼藏明末清初书画选",
-          "清湘老人题记",
-          "石涛的余杭看山图"
+        "明月清风:至乐楼藏明末清初书画选",
+        "清湘老人题记",
+        "石涛的余杭看山图"
       ]
     },
     {
@@ -183,7 +207,7 @@
       "category": "P",
       "url": "../../assets/img/painting/D011490.png",
       "作者": "石涛",
-      "name": "山水花卉（十二开）",
+      "name": "山水花卉<十二开>",
       "创作时间": "清代",
       "用色": "纸本设色",
       "尺寸": "各24.5*38",
@@ -196,64 +220,94 @@
       "source": 0,
       "target": "D001439",
       "info": {
-          "name": "P-P",
-          "angle": 0.49,
-          "url1":"../../assets/img/segment/0_1.png",
-          "url2":"../../assets/img/segment/D001439.png"
-      }    
+        "name": "P-P",
+        "angle": 0.49,
+        "url1": "../../assets/img/segment/0_1.png",
+        "url2": "../../assets/img/segment/D001439.png"
+      }
     },
     {
       "source": 0,
       "target": "D002081",
       "info": {
-          "name": "P-P",
-          "angle": 0.62,
-          "url1":"../../assets/img/segment/0_1.png",
-          "url2":"../../assets/img/segment/D002081.png"
-      }    
+        "name": "P-P",
+        "angle": 0.62,
+        "url1": "../../assets/img/segment/0_1.png",
+        "url2": "../../assets/img/segment/D002081.png"
+      }
     },
     {
       "source": 0,
       "target": "D004391",
       "info": {
-          "name": "P-P",
-          "angle": 0.58,
-          "url1":"../../assets/img/segment/0_1.png",
-          "url2":"../../assets/img/segment/D004391.png"
-      }    
+        "name": "P-P",
+        "angle": 0.58,
+        "url1": "../../assets/img/segment/0_1.png",
+        "url2": "../../assets/img/segment/D004391.png"
+      }
     },
     {
       "source": 0,
       "target": "D009166",
       "info": {
-          "name": "P-P",
-          "angle": 0.45,
-          "url1":"../../assets/img/segment/0_1.png",
-          "url2":"../../assets/img/segment/D009166.png"
-      }    
+        "name": "P-P",
+        "angle": 0.45,
+        "url1": "../../assets/img/segment/0_1.png",
+        "url2": "../../assets/img/segment/D009166.png"
+      }
     },
     {
       "source": 0,
       "target": "D011485",
       "info": {
-          "name": "P-P",
-          "angle": 0.61,
-          "url1":"../../assets/img/segment/0_1.png",
-          "url2":"../../assets/img/segment/D011485.png"
-      }    
+        "name": "P-P",
+        "angle": 0.61,
+        "url1": "../../assets/img/segment/0_1.png",
+        "url2": "../../assets/img/segment/D011485.png"
+      }
     },
     {
       "source": 0,
       "target": "D011519",
       "info": {
-          "name": "P-P",
-          "angle": 0.53,
-          "url1":"../../assets/img/segment/0_1.png",
-          "url2":""
-      }    
+        "name": "P-P",
+        "angle": 0.53,
+        "url1": "../../assets/img/segment/0_1.png",
+        "url2": ""
+      }
     },
     {
       "source": 0,
+      "target": "S1",
+      "info": {
+        "name": "P-S",
+        "angle": 0.72,
+        "url1": "../../assets/img/segment/seal1.png",
+        "url2": "../../assets/img/segment/seal2.png"
+      }
+    },
+    {
+      "source": 0,
+      "target": "S2",
+      "info": {
+        "name": "P-S",
+        "angle": 0.68,
+        "url1": "../../assets/img/segment/seal1.png",
+        "url2": "../../assets/img/segment/seal2.png"
+      }
+    },
+    {
+      "source": 0,
+      "target": "S3",
+      "info": {
+        "name": "P-S",
+        "angle": 0.56,
+        "url1": "../../assets/img/segment/seal1.png",
+        "url2": "../../assets/img/segment/seal2.png"
+      }
+    },
+    {
+      "source": "S1",
       "target": "S60",
       "info": {
         "name": "S-S",
@@ -263,7 +317,7 @@
       }
     },
     {
-      "source": 0,
+      "source": "S2",
       "target": "S25",
       "info": {
         "name": "S-S",
@@ -273,7 +327,7 @@
       }
     },
     {
-      "source": 0,
+      "source": "S3",
       "target": "S100",
       "info": {
         "name": "S-S",
@@ -286,24 +340,20 @@
       "source": "1420",
       "target": "S60",
       "info": {
-        "name": "R-R",
+        "name": "A-S",
         "kind": "归属",
         "number": 1,
-        "reference":{
-
-        }
+        "reference": {}
       }
     },
     {
       "source": "1420",
       "target": "S25",
       "info": {
-        "name": "R-R",
+        "name": "A-S",
         "kind": "归属",
         "number": 1,
-        "reference":{
-          
-        }
+        "reference": {}
       }
     },
     {
@@ -313,9 +363,7 @@
         "name": "P-S",
         "kind": "包含",
         "number": 1,
-        "reference":{
-          
-        }
+        "reference": {}
       }
     },
     {
@@ -325,9 +373,7 @@
         "name": "P-S",
         "kind": "包含",
         "number": 1,
-        "reference":{
-          
-        }
+        "reference": {}
       }
     },
     {
@@ -337,9 +383,7 @@
         "name": "P-S",
         "kind": "包含",
         "number": 1,
-        "reference":{
-          
-        }
+        "reference": {}
       }
     },
     {
@@ -349,9 +393,7 @@
         "name": "P-S",
         "kind": "包含",
         "number": 1,
-        "reference":{
-          
-        }
+        "reference": {}
       }
     }
   ]
