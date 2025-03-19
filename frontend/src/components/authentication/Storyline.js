@@ -458,8 +458,8 @@ const Storyline = () => {
       .html(d => {
         // 根据 d.info?.name 的值动态设置 src
         let iconSrc2 = d.info?.name === "P-R"
-          ? "../../assets/img/reference-green.png"
-          : "../../assets/img/reference-blue.png"; // 假设 P-S 使用红色图标
+          ? "../../assets/img/reference-blue.png"
+          : "../../assets/img/reference-green.png"; // 假设 P-S 使用红色图标
         return `
       <img src="${iconSrc2}" alt="Icon" style="width: 17px; height: 20px; margin-left: 3px;" />
     `;
