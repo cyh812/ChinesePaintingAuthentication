@@ -180,7 +180,7 @@ const Storyline = () => {
         customCard.transition().duration(200).style('visibility', 'visible');
 
         //画作节点
-        if (d.category === "P") {
+        if (d.category === "P" || d.category === "O") {
           customCard.html(`
 <div style="width: 150px; height: 150px; overflow: hidden; position: relative;">
   <img src="${d.url}" alt="Node Image" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);" />
@@ -190,7 +190,7 @@ const Storyline = () => {
             <div style="width: 200px; background-color: #f0f0f0; padding: 3px; border-radius: 5px;">
           <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作品: </strong>${d.name}</p>
           <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作者: </strong>${d.作者}</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">创作时间: </strong>${d.创作时间}}</p>
+          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">创作时间: </strong>${d.创作时间}</p>
           <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">用色: </strong>${d.用色}</p>
           <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">尺寸: </strong>${d.尺寸}</p>
           <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">形制: </strong>${d.形制}</p>
@@ -235,7 +235,7 @@ const Storyline = () => {
         `)
         }
         //加一个文献节点
-
+        
         customCard.style('left', `${event.pageX + 30}px`)
           .style('top', `${event.pageY - 50}px`);
       })
@@ -503,6 +503,7 @@ const Storyline = () => {
         // 如果找到匹配的 link，显示 info.reference
         if (matchedLink && matchedLink.info && matchedLink.info.reference) {
           const entries = Object.entries(matchedLink.info.reference);
+          const url = matchedLink.info.url || "https://www.baidu.com"; // 统一用顶层的 url
           entries.forEach((([key, value], index) => {
             cardContent += `
               <!-- 给value添加灰色圆角背景 -->
@@ -511,7 +512,7 @@ const Storyline = () => {
               <div style="border-bottom: 1px solid #ccc; width: 190px; margin-top: 5px;"></div>
               <div style="display: flex; align-items: center; margin-top: 5px;justify-content: space-between;">
                 <p style="font-size: 12px; margin-right: 5px; font-weight: bold;">${key}</p>
-                <img src="../../assets/img/reference.png" alt="Icon" style="width: 17px; height: 20px; margin-right: 5px; cursor: pointer;" onclick="window.open('https://www.baidu.com', '_blank');" />
+                <img src="../../assets/img/reference.png" alt="Icon" style="width: 17px; height: 20px; margin-right: 5px; cursor: pointer;" onclick="window.open('${url}', '_blank');" />
               </div>
             `;
 

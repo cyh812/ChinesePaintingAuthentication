@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Title.css";
-// import FormControl from '@mui/material/FormControl';
-// import Select from '@mui/material/Select';
-// import InputLabel from '@mui/material/InputLabel';
 import { MenuItem, FormControl, Select, InputLabel } from "@mui/material";
 
 
@@ -15,11 +12,13 @@ const Title = () => {
 
     return (
         <div className="title-container">
-            <img src="./assets/img/logo.png" alt="Custom Icon" className="icon" />
-            <span className="title">
-                Chinese Ancient Paintings Authentication Interactive Visualization System
-            </span>
-            <div style={{ width: "150px", marginLeft: "1000px" }}>
+            <div className="title-left">
+                <img src="./assets/img/logo.png" alt="Custom Icon" className="icon" />
+                <span className="title">
+                    Chinese Ancient Paintings Authentication Interactive Visualization System
+                </span>
+            </div>
+            <div className="lang">
                 <FormControl fullWidth>
                     <Select
                         labelId="demo-simple-select-label"

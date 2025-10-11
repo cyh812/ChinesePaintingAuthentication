@@ -37,7 +37,7 @@ const Segments = () => {
 
   const [imagePaths2, setImagePaths2] = useState([
     "../../assets/img/right/2.jpg",
-    "../../assets/img/right/1.jpg",
+    "../../assets/img/right/1.png",
   ]); // 图片路径数组
 
   const [displayedImages, setDisplayedImages] = useState([]); // 动态展示的图片数组
