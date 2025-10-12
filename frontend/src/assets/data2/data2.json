@@ -1,0 +1,189 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "category": "O",
+      "name": "余杭看山图",
+      "url": "../../assets/img/temp/1.png"
+    },
+    {
+      "id": "S1",
+      "category": "S",
+      "url": "",
+      "拥有者": "",
+      "name": "",
+      "单位": ""
+    },
+    {
+      "id": "S2",
+      "category": "S",
+      "url": "",
+      "拥有者": "石涛",
+      "name": "前有龙眠济(兰竹图)",
+      "单位": ""
+    },
+    {
+      "id": "S3",
+      "category": "S",
+      "url": "",
+      "拥有者": "石涛",
+      "name": "前有龙眠济(山水<十开>)",
+      "单位": ""
+    },
+    {
+      "id": "S4",
+      "category": "S",
+      "url": "",
+      "拥有者": "石涛",
+      "name": "前有龙眠济(山水花卉<十二开>)",
+      "单位": ""
+    },
+    {
+      "id": "1420",
+      "category": "A",
+      "url": "../../assets/img/person/石涛.jpg",
+      "name": "石涛",
+      "名字拼音": "Shi Tao",
+      "字号": "原名朱去极，僧名元济，一作原济，别署阿长、大滌子、钝根、石道人、苦瓜和尚、瞎尊者、清湘陈人、清湘老人、清湘遗人、零丁老人",
+      "所属朝代": "清代",
+      "生卒年代": "l642一1707后",
+      "籍贯": "广西全州人",
+      "简介": "清初画家。明靖江王之后，出家为僧。半世云游，饱览名山大川，是以所画山水，笔法恣肆，离奇苍古而又能细秀妥帖，为清初山水画大家。画花卉也别有生趣。晚年定居扬州。著有《画语录》、《画谱》。"
+    },
+    {
+      "id": "D004409",
+      "category": "P",
+      "url": "../../assets/img/painting/D001439.jpg",
+      "作者": "石涛",
+      "name": "兰竹<十八开>",
+      "创作时间": "清代",
+      "用色": "纸本水墨",
+      "尺寸": "43.3*30.3",
+      "形制": ""
+    },
+    {
+      "id": "D007820",
+      "category": "P",
+      "url": "../../assets/img/painting/D002081.jpg",
+      "作者": "石涛",
+      "name": "山水<十开>",
+      "创作时间": "清代",
+      "用色": "纸本设色",
+      "尺寸": "21*15.5",
+      "形制": ""
+    },
+    {
+      "id": "D011490",
+      "category": "P",
+      "url": "../../assets/img/painting/D004391.jpg",
+      "作者": "石涛",
+      "name": "山水花卉<十二开>",
+      "创作时间": "清代",
+      "用色": "绢本设色",
+      "尺寸": "24.5*38.0",
+      "形制": ""
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "target": "S1",
+      "info": {
+        "name": "P-S",
+        "angle": 0.72,
+        "url1": "../../assets/img/segment/seal1.png",
+        "url2": "../../assets/img/segment/seal2.png"
+      }
+    },
+    {
+      "source": "S1",
+      "target": "S2",
+      "info": {
+        "name": "S-S",
+        "angle": 0.72,
+        "url1": "../../assets/img/segment/seal1.png",
+        "url2": "../../assets/img/segment/seal2.png"
+      }
+    },
+    {
+      "source": "S1",
+      "target": "S3",
+      "info": {
+        "name": "S-S",
+        "angle": 0.72,
+        "url1": "../../assets/img/segment/seal1.png",
+        "url2": "../../assets/img/segment/seal2.png"
+      }
+    },
+    {
+      "source": "S1",
+      "target": "S4",
+      "info": {
+        "name": "S-S",
+        "angle": 0.72,
+        "url1": "../../assets/img/segment/seal1.png",
+        "url2": "../../assets/img/segment/seal2.png"
+      }
+    },
+    {
+      "source": "D004409",
+      "target": "S2",
+      "info": {
+        "name": "P-S",
+        "angle": 0.72,
+        "url1": "../../assets/img/segment/seal1.png",
+        "url2": "../../assets/img/segment/seal2.png"
+      }
+    },
+    {
+      "source": "D007820",
+      "target": "S3",
+      "info": {
+        "name": "P-S",
+        "angle": 0.72,
+        "url1": "../../assets/img/segment/seal1.png",
+        "url2": "../../assets/img/segment/seal2.png"
+      }
+    },
+    {
+      "source": "D011490",
+      "target": "S4",
+      "info": {
+        "name": "P-S",
+        "angle": 0.72,
+        "url1": "../../assets/img/segment/seal1.png",
+        "url2": "../../assets/img/segment/seal2.png"
+      }
+    },
+    {
+      "source": "1420",
+      "target": "S2",
+      "info": {
+        "name": "A-S",
+        "kind": "归属",
+        "number": 1,
+        "reference": {}
+      }
+    },
+    {
+      "source": "1420",
+      "target": "S3",
+      "info": {
+        "name": "A-S",
+        "kind": "归属",
+        "number": 1,
+        "reference": {}
+      }
+    },
+    {
+      "source": "1420",
+      "target": "S4",
+      "info": {
+        "name": "A-S",
+        "kind": "归属",
+        "number": 1,
+        "reference": {}
+      }
+    }
+  ]
+}
