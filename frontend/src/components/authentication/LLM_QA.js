@@ -27,7 +27,7 @@ const Segments = () => {
   const [selectedImages, setSelectedImages] = useState([]); // 当前选中的图片索引
   const [selectedImages2, setSelectedImages2] = useState([]); // 当前选中的图片索引
   const [imagePaths, setImagePaths] = useState([
-    "../../assets/img/left/1.png",
+    "../../assets/img/left/7.png",
     "../../assets/img/left/2.png",
     "../../assets/img/left/3.png",
     "../../assets/img/left/4.png",

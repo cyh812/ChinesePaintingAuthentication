@@ -76,7 +76,7 @@ function ReferenceIcon2(props) {
 const minDistance = 0.01;
 
 const Legend = () => {
-    const [value1, setValue1] = React.useState([0.5, 0.8]);
+    const [value1, setValue1] = React.useState([0.8, 1]);
 
     // Slider 变动时，按拖动的 thumb 更新对应值
     const handleSliderChange = (event, newValue, activeThumb) => {
@@ -122,7 +122,7 @@ const Legend = () => {
         setValue1([value1[0], newRight]);
     };
 
-    const [value2, setValue2] = React.useState([0.3, 0.77]);
+    const [value2, setValue2] = React.useState([0.8, 1]);
 
     // Slider 变动时，按拖动的 thumb 更新对应值
     const handleSliderChange2 = (event, newValue, activeThumb) => {

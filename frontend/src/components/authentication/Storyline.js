@@ -21,8 +21,8 @@ const Storyline = () => {
   }
 
   const urllist = [
-    "../../assets/data/data1.json",
-    "../../assets/data/data2.json",
+    "../../assets/data2/data1.json",
+    "../../assets/data2/data2.json",
     "../../assets/data/data3.json",
     "../../assets/data/data3.json",
     "../../assets/data/data5.json",
@@ -159,7 +159,7 @@ const Storyline = () => {
       .style("font-weight", "bold") // 设置字体加粗
       .text((d) => d.name);
 
-    const customCard = d3.select('body').append('div')
+    const customCard = d3.select(containerRef.current).append('div')
       .attr('class', 'custom-card')
       .style('position', 'absolute')
       .style('visibility', 'hidden')
@@ -236,8 +236,8 @@ const Storyline = () => {
         }
         //加一个文献节点
         
-        customCard.style('left', `${event.pageX + 30}px`)
-          .style('top', `${event.pageY - 50}px`);
+        customCard.style('left', `${event.pageX - 450}px`)
+          .style('top', `${event.pageY - 150}px`);
       })
       .on("mouseout", function () {
         customCard.transition().duration(200).style('visibility', 'hidden');
@@ -272,7 +272,7 @@ const Storyline = () => {
 
 
     // 创建卡片容器（扇形的）
-    const customCardonArc1 = d3.select('body')
+    const customCardonArc1 = d3.select(containerRef.current)
       .append('div')
       .attr('class', 'custom-card')
       .style('position', 'absolute')
@@ -285,7 +285,7 @@ const Storyline = () => {
       .style('width', '250px'); // 卡片宽度
 
     // 创建卡片容器 （印章-印章）
-    const customCardonArc2 = d3.select('body')
+    const customCardonArc2 = d3.select(containerRef.current)
       .append('div')
       .attr('class', 'custom-card')
       .style('position', 'absolute')
@@ -313,8 +313,8 @@ const Storyline = () => {
       
       <!-- 右侧文字，显示similarity和ranking -->
       <div style="margin-right: 40px; text-align: left;">
-        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Similarity:</strong>${similar}</p>
-        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Ranking:</strong>2/6</p>
+        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Similarity :</strong>${similar}</p>
+        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Ranking :</strong>2/6</p>
       </div>
     </div>
   `);
@@ -335,8 +335,8 @@ const Storyline = () => {
       
       <!-- 右侧文字，显示similarity和ranking -->
       <div style="margin-right: 10px; text-align: left;">
-        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Similarity: </strong>${similar}</p>
-        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Ranking: </strong>1/3</p>
+        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Similarity : </strong>${similar}</p>
+        <p style="font-size: 13px; color: #666;"><strong style="color: black;">Ranking : </strong>1/3</p>
       </div>
     </div>
   `);
@@ -368,11 +368,11 @@ const Storyline = () => {
         }
 
         customCardonArc1
-          .style('left', `${event.pageX - 105}px`)
+          .style('left', `${event.pageX - 480}px`)
           .style('top', `${event.pageY - 150}px`);
 
         customCardonArc2
-          .style('left', `${event.pageX - 105}px`)
+          .style('left', `${event.pageX - 480}px`)
           .style('top', `${event.pageY - 150}px`);
 
       })
@@ -467,7 +467,7 @@ const Storyline = () => {
 
 
     // 显示自定义卡片
-    const customCard3 = d3.select('body').append('div')
+    const customCard3 = d3.select(containerRef.current).append('div')
       .attr('class', 'custom-card')
       .style('position', 'absolute')
       .style('visibility', 'hidden')
@@ -477,6 +477,7 @@ const Storyline = () => {
       .style('padding', '10px')
       .style('box-shadow', '0px 4px 8px rgba(0, 0, 0, 0.1)')
       .style('width', '300px')
+      .style('color', '#000')
       .style('font-size', '12px');
 
     // 设置点击事件显示或隐藏卡片
@@ -524,22 +525,11 @@ const Storyline = () => {
         }
 
         customCard3.html(cardContent)
-          .style('left', `${event.pageX + 50}px`)  // 鼠标位置 + 偏移量
-          .style('top', `${event.pageY - 100}px`); // 鼠标位置 + 偏移量
+          .style('left', `${event.pageX - 480}px`)  // 鼠标位置 + 偏移量
+          .style('top', `${event.pageY - 150}px`); // 鼠标位置 + 偏移量
       }
     });
 
-    //   // 在 hover 时显示卡片
-    //   buttons.on("mouseover", function (event, d) {
-    //     customCard3.transition().duration(200).style('visibility', 'visible');
-    //     customCard3.html(`
-    //   <strong>Source:</strong> ${d.source.name} <br>
-    //   <strong>Target:</strong> ${d.target.name} <br>
-    //   <strong>Category:</strong> ${d.source.category} <br>
-    // `)
-    //       .style('left', `${event.pageX + 30}px`)
-    //       .style('top', `${event.pageY - 50}px`);
-    //   })
 
 
     // 力导向布局

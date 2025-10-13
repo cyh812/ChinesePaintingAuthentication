@@ -49,26 +49,26 @@ function QueryIcon(props) {
 
 function MyExpandMore() {
     return (
-      <ExpandMore
-        sx={{
-          color: '#FFFFFF',
-          backgroundColor: '#6275AC', // 你可以根据需要设置背景颜色
-          borderRadius: '50%',
-        }}
-      />
+        <ExpandMore
+            sx={{
+                color: '#FFFFFF',
+                backgroundColor: '#6275AC', // 你可以根据需要设置背景颜色
+                borderRadius: '50%',
+            }}
+        />
     );
-  }
+}
 
 function MyExpandLess() {
-return (
-    <ExpandLess
-    sx={{
-        color: '#FFFFFF',
-        backgroundColor: '#6275AC', // 你可以根据需要设置背景颜色
-        borderRadius: '50%',
-    }}
-    />
-);
+    return (
+        <ExpandLess
+            sx={{
+                color: '#FFFFFF',
+                backgroundColor: '#6275AC', // 你可以根据需要设置背景颜色
+                borderRadius: '50%',
+            }}
+        />
+    );
 }
 
 
@@ -113,8 +113,8 @@ export default function NestedList() {
     const [showquery6, setshowquery6] = React.useState(false);
 
     const message1 = "我可以通过图像匹配、印章匹配以及文本资料检索等功能，帮助您进行中国古画的鉴定。通过比对画作的图像特征、印章信息及历史文献资料，我可以提供辅助判断，帮助您确认画作的作者、创作时间、艺术风格等关键信息。";
-    const message2 = `根据图像匹配模块的结果，以下几幅画作与您提供的片段存在相似之处：                                               《秋林人醉图》 石涛 (清代)                                                 《江南春霭图》 石涛 (清代)                                         《太白诗意山水图》 石涛 (清代)                                           《古木垂阴图》 石涛 (清代)                                              《山林乐事图》 石涛 (清代)                                             《长干图》 石涛 (清代)                                                    这些画作的某些部分与您的片段非常相似，可能是相同或类似的艺术元素。`;
-    const message3 = "根据印章匹配模块的结果，匹配到了两个石涛的印章，分别是“清湘老人”和“膏盲子济”两个创作者印。"
+    const message2 = `根据图像匹配模块的结果，以下几幅画作与您提供的片段存在相似之处：                                               《兰竹<十八开>》 石涛 (清代)                                                 《山水花卉<十二开>》 石涛 (清代)                                         《山水<十开>》 石涛 (清代)                                           《古木垂阴图》 石涛 (清代)                                              《山林乐事图》 石涛 (清代)                                             《长干图》 石涛 (清代)                                                    这些画作的某些部分与您的片段非常相似，可能是相同或类似的艺术元素。`;
+    const message3 = "石涛与张景蔚（字少文、号鹤野、别号借亭）交谊深厚，艺术唱和往来频繁。康熙三十二年，石涛为张景蔚作《仿倪黄笔意图》，张氏回以《书画合璧》跋文，盛赞其“笔墨极平而极奇”，认为石涛“得古人之精微，不所缚”，可见推重之深。同年，石涛又在题跋中记“与张少文史君客学公有声阁，拈笔作倪、黄焦墨法”，自叙合作情景。张景蔚为辽阳人，号莲泊居士，斋名“鹤野书屋”“莲泊山房”，其印鉴多见于石涛诸作，如《萱榴图》《书画合璧》《余杭看山图》等，均为上海博物馆藏。石涛在《山水十开》中亦记张氏来访、观画、唱和之事，可见二人诗画往还密切，为石涛晚年重要的友人与鉴赏者之一。"
     const message4 = "根据印章“清湘老人”的匹配结果，在石涛的《花果图》《花卉（十二开）》《山水花卉（十二开）》等作品中均用过此印章，此外，系统检测到更多使用该印章的作品，您可以继续查阅数据库获取更多相关画作及完整信息。"
     const message5 = "根据相关资料，大涤堂的建立时间和地点可以追溯到以下信息：                                                                         1.大涤堂与石涛在扬州大东门外的活动密切相关，且大涤子号的产生与康熙三十一年（1692年）冬石涛回到扬州有关。                                                                2.石涛在康熙三十三年（1694年）正式在作品上使用“大涤子”款，并在康熙三十五年（1696年）后大量使用，期间也出现了“大涤堂”印章。                                                         因此，大涤堂大致建成时间应为康熙三十年代初期，地点为扬州大东门外。"
     const message6 = "根据相关资料，大涤草堂确实出现在石涛的其他作品中，以下是一些例子：                                                       1.《东岑嫩绿图》：题款中提到“写于大涤草堂”，表明该作品创作于康熙三十五年（1696）以后。                                                        2.《江南春霭图》：题款中提到“大涤堂下”，明确标明该作品与大涤堂有关。                                                          3.《为拱北作山水》：这幅画曾被记录为“大涤堂图”，并且题跋中提到“大涤堂下”。                                                 因此，石涛在多个作品中提到大涤草堂，特别是在他晚期的作品中。"
@@ -257,10 +257,10 @@ export default function NestedList() {
     React.useEffect(() => {
         const handleKeyDown = (event) => {
             if (event.key === '3') {
-                if (!query1) {
-                    setquery1(true);
-                }
-                else if (!query2) {
+                // if (!query1) {
+                //     setquery1(true);
+                // }
+                if (!query2) {
                     setquery2(true)
                 }
                 else if (!query3) {
@@ -310,7 +310,7 @@ export default function NestedList() {
                     <ListSubheader component="div" id="nested-list-subheader" style={{
                         fontSize: '16px',
                         fontWeight: 'bold',
-                        color:'black'
+                        color: 'black'
                     }}>
                         R&Q History
                     </ListSubheader>
@@ -386,7 +386,7 @@ export default function NestedList() {
                     <ListItemIcon>
                         <QueryIcon sx={{ width: 30, height: 30 }} />
                     </ListItemIcon>
-                    <ListItemText primary="Round 2" />
+                    <ListItemText primary="Round 1" />
                     {open2 ? (
                         <MyExpandLess sx={{ color: '#000000' }} />
                     ) : (
@@ -394,12 +394,13 @@ export default function NestedList() {
                     )}
                 </ListItemButton>)}
                 <Collapse in={open2} timeout="auto" unmountOnExit>
+
                     <List component="div" disablePadding>
                         <ListItemButton sx={{ pl: 4 }}>
                             <ListItemIcon>
                                 <PaintingIcon />
                             </ListItemIcon>
-                            <ListItemText primary="秋林人醉图" />
+                            <ListItemText primary="余杭看山图" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
@@ -409,7 +410,7 @@ export default function NestedList() {
                             <ListItemIcon>
                                 <PaintingIcon />
                             </ListItemIcon>
-                            <ListItemText primary="江南春霭图" />
+                            <ListItemText primary="兰竹<十八开>" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
@@ -419,7 +420,7 @@ export default function NestedList() {
                             <ListItemIcon>
                                 <PaintingIcon />
                             </ListItemIcon>
-                            <ListItemText primary="太白诗意山水图" />
+                            <ListItemText primary="山水<十开>" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
@@ -429,7 +430,7 @@ export default function NestedList() {
                             <ListItemIcon>
                                 <PaintingIcon />
                             </ListItemIcon>
-                            <ListItemText primary="古木垂阴图" />
+                            <ListItemText primary="山水花卉<十二开>" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
@@ -437,9 +438,9 @@ export default function NestedList() {
                         </ListItemButton>
                         <ListItemButton sx={{ pl: 4 }}>
                             <ListItemIcon>
-                                <PaintingIcon />
+                                <SealIcon />
                             </ListItemIcon>
-                            <ListItemText primary="山林乐事图" />
+                            <ListItemText primary="前有龙眠济(余杭看山图)" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
@@ -447,9 +448,39 @@ export default function NestedList() {
                         </ListItemButton>
                         <ListItemButton sx={{ pl: 4 }}>
                             <ListItemIcon>
-                                <PaintingIcon />
+                                <SealIcon />
                             </ListItemIcon>
-                            <ListItemText primary="长干图" />
+                            <ListItemText primary="前有龙眠济(山水花卉<十二开>)" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <SealIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="前有龙眠济(山水<十开>)" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+                        <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <SealIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="前有龙眠济(兰竹图)" />
+                            {/* 添加删除按钮 */}
+                            <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemButton>
+                                                <ListItemButton sx={{ pl: 4 }}>
+                            <ListItemIcon>
+                                <PeopleIcon/>
+                            </ListItemIcon>
+                            <ListItemText primary="石涛" />
                             {/* 添加删除按钮 */}
                             <IconButton edge="end" aria-label="delete" onClick={() => alert('删除')}>
                                 <DeleteIcon />
@@ -489,7 +520,7 @@ export default function NestedList() {
                     <ListItemIcon>
                         <QueryIcon sx={{ width: 30, height: 30 }} />
                     </ListItemIcon>
-                    <ListItemText primary="Round 3" />
+                    <ListItemText primary="Round 2" />
                     {open3 ? (
                         <MyExpandLess sx={{ color: '#000000' }} />
                     ) : (

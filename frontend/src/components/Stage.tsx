@@ -1,20 +1,21 @@
-import React, { useContext, useCallback } from "react";
+import React, { useContext, useCallback, useMemo, useRef, useEffect, useState } from "react";
 import * as _ from "underscore";
 import Tool from "./Tool";
 import { modelInputProps } from "./helpers/Interfaces";
 import AppContext from "./hooks/createContext";
+import { exportMaskedPNG } from "./helpers/exportMask";
 
 interface StageProps {
   zoomLevel: number;
   onZoomChange: (nextZoom: number) => void;
-  currentLabel: 0 | 1 | null;                 // ✅ 允许 null
-  onHoverChange: (p: modelInputProps | null) => void; // ✅ 悬停预览点
-  onHoverEnd: () => void;                      // ✅ 清空预览
+  currentLabel: 0 | 1 | null;
+  onHoverChange: (p: modelInputProps | null) => void;
+  onHoverEnd: () => void;
 }
 
-const MIN_ZOOM = 0.2;
+const MIN_ZOOM = 0.01;
 const MAX_ZOOM = 5;
-const STEP = 0.1;
+const STEP = 0.05;
 
 const Stage: React.FC<StageProps> = ({
   zoomLevel,
@@ -26,8 +27,63 @@ const Stage: React.FC<StageProps> = ({
   const {
     clicks: [clicks, setClicks],
     image: [image],
+    maskImg: [maskImg],
   } = useContext(AppContext)!;
 
+  // ====== 新增：平移状态（像素）======
+  const [panX, setPanX] = useState(0); // 横向平移
+  // 如需上下移动，可加 panY，并在 transform 里用 panY
+
+  // 使外层能接收键盘事件
+  const viewportRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    // 初次显示时自动聚焦，确保能直接用方向键
+    viewportRef.current?.focus();
+  }, []);
+
+  // 键盘左右移动
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLDivElement>) => {
+      // 若焦点在输入/选择控件上，忽略快捷键，避免干扰输入
+      const tag = (e.target as HTMLElement)?.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+
+      // === 导出（Space / Shift+Space）===
+      if (e.code === "Space") {
+        e.preventDefault();
+        if (image && maskImg) {
+          const mode = e.shiftKey ? "highlight" : "cutout";
+          exportMaskedPNG(image, maskImg, `segment-${Date.now()}.png`, mode);
+        }
+        return; // 本次事件已处理，直接返回
+      }
+
+      // === 左右平移（ArrowLeft / ArrowRight）===
+      if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+        e.preventDefault();
+        const PAN_STEP = Math.max(20, 40 * zoomLevel); // 缩放越大步长越大
+        if (e.key === "ArrowLeft") {
+          setPanX((x) => x + PAN_STEP);   // 画面向右移动
+        } else {
+          setPanX((x) => x - PAN_STEP);   // 画面向左移动
+        }
+      }
+    },
+    [zoomLevel, image, maskImg]
+  );
+
+  const handleKeyDown2 = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.code === "Space") {
+      e.preventDefault();
+      if (!image || !maskImg) return;
+      // 按住 Shift 导出“抠图”模式，否则默认“高亮”模式
+      const mode = e.shiftKey ? "cutout" : "highlight";
+      exportMaskedPNG(image, maskImg, `segment-${Date.now()}.png`, mode);
+    }
+    // 你已有的左右方向键逻辑可放这里一起处理
+  }, [image, maskImg]);
+
+  // ====== 其余保留原逻辑 ======
   const toImageCoords = (e: any) => {
     const el = e.nativeEvent.target as HTMLImageElement;
     const rect = el.getBoundingClientRect();
@@ -39,24 +95,27 @@ const Stage: React.FC<StageProps> = ({
     return { x, y };
   };
 
-  // 点击（仅在按钮激活时生效）
   const handleClick = (e: any) => {
-    if (currentLabel === null) return; // ❗未激活不落点
+    if (currentLabel === null) return;
     const { x, y } = toImageCoords(e);
-    const click: modelInputProps = { x, y, clickType: currentLabel };
-    setClicks([...(clicks ?? []), click]);
+    setClicks([...(clicks ?? []), { x, y, clickType: currentLabel }]);
   };
 
-  // 悬停预览（仅在未激活时生效）
-  const handleMouseMove = _.throttle((e: any) => {
-    if (currentLabel !== null) return; // 已激活就不做悬停预览
-    const { x, y } = toImageCoords(e);
-    onHoverChange({ x, y, clickType: 1 }); // 预览用正点 label=1
-  }, 30);
+  const throttledHoverRef = useRef<(e: any) => void>();
+  useEffect(() => {
+    throttledHoverRef.current = _.throttle((e: any) => {
+      if (currentLabel !== null) return;
+      const { x, y } = toImageCoords(e);
+      onHoverChange({ x, y, clickType: 1 });
+    }, 30);
+    return () => (throttledHoverRef.current as any)?.cancel?.();
+  }, [currentLabel, image, onHoverChange]);
 
-  const handleMouseLeave = () => {
-    onHoverEnd(); // 清空预览
-  };
+  const handleMouseMove = useCallback((e: any) => {
+    throttledHoverRef.current && throttledHoverRef.current(e);
+  }, []);
+
+  const handleMouseLeave = () => onHoverEnd();
 
   const handleWheel = useCallback((e: React.WheelEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -65,22 +124,45 @@ const Stage: React.FC<StageProps> = ({
     if (clamped !== zoomLevel) onZoomChange(clamped);
   }, [zoomLevel, onZoomChange]);
 
-  const zoomStyle = { width: `${100 * zoomLevel}%`, height: `${100 * zoomLevel}%` };
-  const flexCenter = "flex items-center justify-center";
+  // 视口：裁剪溢出 + 可获得焦点 + 键盘导航
+  const viewportClass =
+    "flex items-center justify-center w-full h-full overflow-hidden relative";
+
+  // 内容层：像素尺寸，并叠加 translate 平移
+  const contentStyle: React.CSSProperties = useMemo(() => (
+    image ? {
+      position: "relative",
+      width: `${image.width * zoomLevel}px`,
+      height: `${image.height * zoomLevel}px`,
+      transform: `translate3d(${panX}px, 0, 0)`, // ⬅⬅ 只左右移动
+      willChange: "transform",
+      flex: "0 0 auto",
+      maxWidth: "none",
+      maxHeight: "none",
+    } : {
+      position: "relative",
+      transform: `translate3d(${panX}px, 0, 0)`,
+      flex: "0 0 auto",
+      maxWidth: "none",
+      maxHeight: "none",
+    }
+  ), [image, zoomLevel, panX]);
 
   return (
-    <div className={`${flexCenter} w-full h-full overflow-hidden`} onWheel={handleWheel}>
-      <div className={`${flexCenter} relative`} style={zoomStyle}>
-        {/* <Tool
-          handleMouseMove={handleMouseMove}
-          handleClick={handleClick}
-          handleMouseLeave={handleMouseLeave}
-        /> */}
+    <div
+      ref={viewportRef}
+      className={viewportClass}
+      onWheel={handleWheel}
+      onKeyDown={handleKeyDown}
+      tabIndex={0}             // 使其可聚焦接收键盘事件
+      style={{ outline: "none" }} // 不显示聚焦虚线（可去掉）
+    >
+      <div style={contentStyle}>
         <Tool
           handleMouseMove={handleMouseMove}
           handleClick={handleClick}
           handleMouseLeave={handleMouseLeave}
-          currentLabel={currentLabel}   // ← 新增
+          currentLabel={currentLabel}
         />
       </div>
     </div>

@@ -40,7 +40,7 @@ const Tool = ({ handleMouseMove, handleClick, handleMouseLeave, currentLabel }: 
     }));
   }, [clicks, image]);
 
-  const baseSizeClass = shouldFitToWidth ? "w-full" : "h-full";
+  const baseSizeClass = "w-full h-full";
   const previewMode = currentLabel === null;                  // 未激活按钮 = 仅预览
   const useInverse = !previewMode && !!maskImg;               // 激活后且有 mask ⇒ 反相显示
 
@@ -71,6 +71,7 @@ const Tool = ({ handleMouseMove, handleClick, handleMouseLeave, currentLabel }: 
         style={{
           display: "block",
           filter: useInverse ? "brightness(0.45)" : undefined,
+          maxWidth: "none", maxHeight: "none" 
         }}
         onMouseMove={handleMouseMove}  // 悬停预览需要事件（未激活时生效）
         onClick={handleClick}          // 激活后点击落点（未激活时 Stage 已拦截，不会落点）
@@ -83,7 +84,7 @@ const Tool = ({ handleMouseMove, handleClick, handleMouseLeave, currentLabel }: 
         <img
           src={maskImg.src}
           className={`absolute inset-0 ${baseSizeClass}`}
-          style={{ opacity: 0.4, pointerEvents: "none" }}
+          style={{ opacity: 0.4, pointerEvents: "none" ,maxWidth: "none", maxHeight: "none" }}
           draggable={false}
         />
       )}
@@ -93,7 +94,7 @@ const Tool = ({ handleMouseMove, handleClick, handleMouseLeave, currentLabel }: 
         <img
           src={image.src}
           className={`absolute inset-0 ${baseSizeClass}`}
-          style={maskedImageStyle}
+          style={{...maskedImageStyle,maxWidth: "none", maxHeight: "none" }}
           onMouseMove={handleMouseMove}
           onClick={handleClick}
           onMouseLeave={handleMouseLeave}

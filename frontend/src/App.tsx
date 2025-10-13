@@ -20,8 +20,8 @@ import Legend from "./components/authentication/Legend"
 import Title from "./components/authentication/Title"
 
 // Define image, embedding and model paths
-const IMAGE_PATH = "/assets/data/1.png";
-const IMAGE_EMBEDDING = "/assets/data/Duiju.npy";
+const IMAGE_PATH = "/assets/data/D011518.jpg";
+const IMAGE_EMBEDDING = "/assets/data/D011518.npy";
 const MODEL_DIR = "/model/sam_onnx_example.onnx";
 
 const App = () => {
