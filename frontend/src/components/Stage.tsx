@@ -5,12 +5,20 @@ import { modelInputProps } from "./helpers/Interfaces";
 import AppContext from "./hooks/createContext";
 import { exportMaskedPNG } from "./helpers/exportMask";
 
+export const stageFocusManager = {
+  focusCallback: null as (() => void) | null
+};
+
 interface StageProps {
   zoomLevel: number;
   onZoomChange: (nextZoom: number) => void;
   currentLabel: 0 | 1 | null;
   onHoverChange: (p: modelInputProps | null) => void;
   onHoverEnd: () => void;
+  panX: number;                      // 添加
+  panY: number;                      // 添加
+  onPanXChange: (x: number) => void; // 添加
+  onPanYChange: (y: number) => void; // 添加
 }
 
 const MIN_ZOOM = 0.01;
@@ -23,6 +31,10 @@ const Stage: React.FC<StageProps> = ({
   currentLabel,
   onHoverChange,
   onHoverEnd,
+  panX,                 // 添加
+  panY,                 // 添加
+  onPanXChange,         // 添加
+  onPanYChange          // 添加
 }) => {
   const {
     clicks: [clicks, setClicks],
@@ -31,14 +43,23 @@ const Stage: React.FC<StageProps> = ({
   } = useContext(AppContext)!;
 
   // ====== 新增：平移状态（像素）======
-  const [panX, setPanX] = useState(0); // 横向平移
+  //const [panX, setPanX] = useState(0); // 横向平移
   // 如需上下移动，可加 panY，并在 transform 里用 panY
+  //const [panY, setPanY] = useState(0);
 
   // 使外层能接收键盘事件
   const viewportRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     // 初次显示时自动聚焦，确保能直接用方向键
+    stageFocusManager.focusCallback = () => {
+      viewportRef.current?.focus();
+    };
     viewportRef.current?.focus();
+    return () => {
+      if (stageFocusManager.focusCallback === viewportRef.current?.focus) {
+        stageFocusManager.focusCallback = null;
+      }
+    };
   }, []);
 
   // 键盘左右移动
@@ -59,17 +80,22 @@ const Stage: React.FC<StageProps> = ({
       }
 
       // === 左右平移（ArrowLeft / ArrowRight）===
-      if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+      if (e.key === "ArrowLeft" || e.key === "ArrowRight" 
+       || e.key === "ArrowUp" || e.key === "ArrowDown") {
         e.preventDefault();
         const PAN_STEP = Math.max(20, 40 * zoomLevel); // 缩放越大步长越大
         if (e.key === "ArrowLeft") {
-          setPanX((x) => x + PAN_STEP);   // 画面向右移动
-        } else {
-          setPanX((x) => x - PAN_STEP);   // 画面向左移动
+          onPanXChange(panX + PAN_STEP);   // 画面向右移动
+        } else if (e.key === "ArrowRight") {
+          onPanXChange(panX - PAN_STEP);   // 画面向左移动
+        } else if (e.key === "ArrowUp") {
+          onPanYChange(panY + PAN_STEP);   // 画面向下移动
+        } else if (e.key === "ArrowDown") {
+          onPanYChange(panY - PAN_STEP);   // 画面向上移动
         }
       }
     },
-    [zoomLevel, image, maskImg]
+    [zoomLevel, image, maskImg, panX, panY, onPanXChange, onPanYChange]
   );
 
   const handleKeyDown2 = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -84,6 +110,7 @@ const Stage: React.FC<StageProps> = ({
   }, [image, maskImg]);
 
   // ====== 其余保留原逻辑 ======
+  //将鼠标点击的屏幕坐标转换为图像的原始坐标
   const toImageCoords = (e: any) => {
     const el = e.nativeEvent.target as HTMLImageElement;
     const rect = el.getBoundingClientRect();
@@ -95,12 +122,14 @@ const Stage: React.FC<StageProps> = ({
     return { x, y };
   };
 
+  //处理鼠标点击，在点击位置添加标记点
   const handleClick = (e: any) => {
     if (currentLabel === null) return;
     const { x, y } = toImageCoords(e);
     setClicks([...(clicks ?? []), { x, y, clickType: currentLabel }]);
   };
 
+  //使用节流优化鼠标移动事件，提供悬停预览功能
   const throttledHoverRef = useRef<(e: any) => void>();
   useEffect(() => {
     throttledHoverRef.current = _.throttle((e: any) => {
@@ -117,6 +146,7 @@ const Stage: React.FC<StageProps> = ({
 
   const handleMouseLeave = () => onHoverEnd();
 
+  //处理鼠标滚轮事件实现图像缩放
   const handleWheel = useCallback((e: React.WheelEvent<HTMLDivElement>) => {
     e.preventDefault();
     const next = e.deltaY < 0 ? zoomLevel + STEP : zoomLevel - STEP;
@@ -134,19 +164,19 @@ const Stage: React.FC<StageProps> = ({
       position: "relative",
       width: `${image.width * zoomLevel}px`,
       height: `${image.height * zoomLevel}px`,
-      transform: `translate3d(${panX}px, 0, 0)`, // ⬅⬅ 只左右移动
+      transform: `translate3d(${panX}px, ${panY}px, 0)`, // ⬅⬅ 只左右移动
       willChange: "transform",
       flex: "0 0 auto",
       maxWidth: "none",
       maxHeight: "none",
     } : {
       position: "relative",
-      transform: `translate3d(${panX}px, 0, 0)`,
+      transform: `translate3d(${panX}px, ${panY}px, 0)`,
       flex: "0 0 auto",
       maxWidth: "none",
       maxHeight: "none",
     }
-  ), [image, zoomLevel, panX]);
+  ), [image, zoomLevel, panX, panY]);
 
   return (
     <div

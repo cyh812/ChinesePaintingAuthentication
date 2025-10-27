@@ -142,6 +142,17 @@ const Segments = () => {
 
   return (
     <div className="segments">
+      {/* {reply && (
+          <div className="ai-reply" style={{ 
+              padding: '10px', 
+              margin: '10px', 
+              backgroundColor: '#f0f0f0', 
+              borderRadius: '5px' 
+          }}>
+              <strong>AI 回答:</strong>
+              <p>{reply}</p>
+          </div>
+      )} */}
       {/* 上方菜单按钮 */}
       <div className="segments-menu">
         <div className="segments-menu1">

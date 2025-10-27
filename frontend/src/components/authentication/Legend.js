@@ -177,14 +177,17 @@ const Legend = () => {
             backgroundColor: '#ffffff', // 背景颜色
             boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', // 添加阴影
             padding: '1px',      // 内边距
-            width: '1550px',      // 设置菜单宽度
+            width: '95%',                  // 修改：使用相对宽度
+            maxWidth: '1550px',            // 添加：最大宽度限制
             height: '70px',
             color: "black",
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
             borderRadius: "10px",
-            border: '2px solid #ddd' /* 添加边框 */
+            border: '2px solid #ddd', /* 添加边框 */
+            overflowX: 'auto',         // 关键：添加水平滚动条
+            overflowY: 'hidden'
         }}>
             <Box sx={{ width: 650, marginRight: 1, marginLeft: 1, backgroundColor: '#f7f7f7', borderRadius: '20px' }}>
                 <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>

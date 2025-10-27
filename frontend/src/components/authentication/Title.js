@@ -4,7 +4,7 @@ import { MenuItem, FormControl, Select, InputLabel } from "@mui/material";
 
 
 const Title = () => {
-    const [age, setAge] = React.useState('');
+    const [age, setAge] = React.useState('10');//默认显示简体中文
 
     const handleChange = (event) => {
         setAge(event.target.value);

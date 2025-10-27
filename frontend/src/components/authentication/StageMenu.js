@@ -65,6 +65,8 @@ export default function StageMenu({ showStage, currentLabel, onChangeLabel, onRe
                 boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
                 borderRadius: '8px',
                 padding: '8px',
+                maxWidth: '100%', // 限制最大宽度
+                width: 'fit-content',          // 宽度自适应内容
             }}
 
         >
@@ -75,6 +77,11 @@ export default function StageMenu({ showStage, currentLabel, onChangeLabel, onRe
                     border: `1px solid ${theme.palette.divider}`,
                     flexWrap: 'nowrap',          // ✅ 不允许换行
                     backgroundColor: '#FBF5F0',
+                    maxWidth: '100%',  // 限制最大宽度
+                    overflowX: 'auto',        // 添加水平滚动
+                    overflowY: 'hidden',      // 隐藏垂直滚动
+                    scrollbarWidth: 'thin',   // Firefox 滚动条样式
+                    scrollbarColor: 'rgba(100, 100, 100, 0.5) rgba(0,0,0,0.1)', // 深灰色
                 })}
             >
                 <StyledToggleButtonGroup size="small" value={alignment} aria-label="left group">

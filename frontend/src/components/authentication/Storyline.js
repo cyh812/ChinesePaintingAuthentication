@@ -84,6 +84,9 @@ const Storyline = () => {
   useEffect(() => {
     if (dimensions.width === 0 || dimensions.height === 0 || nodesData.length === 0 || linksData.length === 0) return;
 
+    // 清理之前的所有内容
+    d3.select(containerRef.current).selectAll("*").remove();
+
     // 创建SVG容器
     const svg = d3.select(containerRef.current)
       .append("svg")
@@ -112,6 +115,9 @@ const Storyline = () => {
       .attr("stroke-width", 2);
 
     // 创建节点（使用图片）
+    let clickTimer = null;
+    let dragStartPos = null;
+    
     const node = graphGroup.selectAll("image")
       .data(nodesData)
       .enter()
@@ -123,6 +129,7 @@ const Storyline = () => {
       .attr("y", (d) => d.y - 20)
       .call(d3.drag() // 添加拖拽事件
         .on("start", function (event) {
+          dragStartPos = { x: event.x, y: event.y };
           d3.select(this).raise().classed("active", true);
         })
         .on("drag", function (event, d) {
@@ -139,8 +146,18 @@ const Storyline = () => {
           ticked();
           updateLinks(); // 更新连线位置
         })
-        .on("end", function () {
+        .on("end", function (event) {
           d3.select(this).classed("active", false);
+          // 计算拖拽距离，如果距离很小则认为是点击而非拖拽
+          const distance = Math.sqrt(
+            Math.pow(event.x - dragStartPos.x, 2) + 
+            Math.pow(event.y - dragStartPos.y, 2)
+          );
+          // 如果移动距离小于5像素，触发点击事件
+          if (distance < 5) {
+            d3.select(this).dispatch('click');
+          }
+          dragStartPos = null;
         })
       );
 
@@ -171,76 +188,133 @@ const Storyline = () => {
       .style('width', '350px')
       .style('background-color', 'white')
       .style('display', 'flex')  // 使用flexbox布局
-      .style('flex-direction', 'row')  // 水平排列
-      .style('align-items', 'center')  // 垂直居中对齐
+      .style('flex-direction', 'column')  // 改为垂直布局以容纳关闭按钮
+      .style('align-items', 'stretch')  // 拉伸对齐
 
-    // 显示卡片的hover事件
+    // 显示卡片的点击事件
     node
-      .on("mouseover", function (event, d) {
-        customCard.transition().duration(200).style('visibility', 'visible');
-
+      .on("click", function (event, d) {
+        // 阻止事件冒泡
+        event.stopPropagation();
+        
+        // 先更新卡片内容，然后显示
         //画作节点
         if (d.category === "P" || d.category === "O") {
           customCard.html(`
-<div style="width: 150px; height: 150px; overflow: hidden; position: relative;">
-  <img src="${d.url}" alt="Node Image" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);" />
-</div>
-
-            &nbsp;&nbsp;
-            <div style="width: 200px; background-color: #f0f0f0; padding: 3px; border-radius: 5px;">
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作品: </strong>${d.name}</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作者: </strong>${d.作者}</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">创作时间: </strong>${d.创作时间}</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">用色: </strong>${d.用色}</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">尺寸: </strong>${d.尺寸}</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">形制: </strong>${d.形制}</p>
-                    <p style="font-size: 15px; color: #666; word-wrap: break-word; text-align: center;">
-                <strong style="color: blue;">查看详情</strong></p>
-        </div>
-        `)
+            <!-- 关闭按钮 -->
+            <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+              <button class="closeCardBtn" style="background: none; border: none; cursor: pointer; font-size: 20px; color: #999; padding: 0; line-height: 1;">
+                ✕
+              </button>
+            </div>
+            <!-- 卡片内容 -->
+            <div style="display: flex; flex-direction: row; align-items: center;">
+              <div style="width: 150px; height: 150px; overflow: hidden; position: relative;">
+                <img src="${d.url}" alt="Node Image" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);" />
+              </div>
+              &nbsp;&nbsp;
+              <div style="width: 200px; background-color: #f0f0f0; padding: 3px; border-radius: 5px;">
+                <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作品: </strong>${d.name}</p>
+                <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">作者: </strong>${d.作者}</p>
+                <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">创作时间: </strong>${d.创作时间}</p>
+                <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">用色: </strong>${d.用色}</p>
+                <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">尺寸: </strong>${d.尺寸}</p>
+                <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">形制: </strong>${d.形制}</p>
+                <p style="font-size: 15px; color: #666; word-wrap: break-word; text-align: center;">
+                  <strong style="color: blue;">查看详情</strong>
+                </p>
+              </div>
+            </div>
+          `)
         }
         //画家节点
         else if (d.category === "A") {
           customCard.html(`
-            <div>
-          <img src="${d.url}" alt="Node Image" style="width: 150px; height: auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);" />
+            <!-- 关闭按钮 -->
+            <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+              <button class="closeCardBtn" style="background: none; border: none; cursor: pointer; font-size: 20px; color: #999; padding: 0; line-height: 1;">
+                ✕
+              </button>
             </div>
-            &nbsp;&nbsp;
-            <div style="width: 200px; background-color:#f0f0f0; padding: 3px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">姓名: </strong>${d.name}</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">名字拼音: </strong>${d.名字拼音}</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">字号: </strong>${d.字号}</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">所属朝代: </strong>${d.所属朝代}</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">生卒年代: </strong>${d.生卒年代}</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">籍贯: </strong>${d.籍贯}</p>
-          <p style="font-size: 15px; color: #666; word-wrap: break-word; text-align: center;">
-                <strong style="color: blue;">查看详情</strong></p>
-          </div>
-        `)
+            <!-- 卡片内容 -->
+            <div style="display: flex; flex-direction: row; align-items: center;">
+              <div>
+                <img src="${d.url}" alt="Node Image" style="width: 150px; height: auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);" />
+              </div>
+              &nbsp;&nbsp;
+              <div style="width: 200px; background-color:#f0f0f0; padding: 3px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+                <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">姓名: </strong>${d.name}</p>
+                <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">名字拼音: </strong>${d.名字拼音}</p>
+                <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">字号: </strong>${d.字号}</p>
+                <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">所属朝代: </strong>${d.所属朝代}</p>
+                <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">生卒年代: </strong>${d.生卒年代}</p>
+                <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">籍贯: </strong>${d.籍贯}</p>
+                <p style="font-size: 15px; color: #666; word-wrap: break-word; text-align: center;">
+                  <strong style="color: blue;">查看详情</strong>
+                </p>
+              </div>
+            </div>
+          `)
         }
         //印章节点
         else if (d.category === "S") {
           customCard.html(`
-            <div>
-          <img src="${d.url}" alt="Node Image" style="width: 100px; height: auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);" />
+            <!-- 关闭按钮 -->
+            <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+              <button class="closeCardBtn" style="background: none; border: none; cursor: pointer; font-size: 20px; color: #999; padding: 0; line-height: 1;">
+                ✕
+              </button>
             </div>
-            &nbsp;&nbsp;
-            <div style="width: 250px; background-color:#f0f0f0; padding: 3px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">拥有者: </strong>${d.拥有者}</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">名称: </strong>${d.name}</p>
-          <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">收录: </strong>${d.单位}</p>
-                  <p style="font-size: 15px; color: #666; word-wrap: break-word; text-align: center;">
-                <strong style="color: blue;">查看详情</strong></p>
-          </div>
-        `)
+            <!-- 卡片内容 -->
+            <div style="display: flex; flex-direction: row; align-items: center;">
+              <div>
+                <img src="${d.url}" alt="Node Image" style="width: 100px; height: auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);" />
+              </div>
+              &nbsp;&nbsp;
+              <div style="width: 250px; background-color:#f0f0f0; padding: 3px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+                <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">拥有者: </strong>${d.拥有者}</p>
+                <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">名称: </strong>${d.name}</p>
+                <p style="font-size: 12px; color: #666; word-wrap: break-word;"><strong style="color: black;">收录: </strong>${d.单位}</p>
+                <p style="font-size: 15px; color: #666; word-wrap: break-word; text-align: center;">
+                  <strong style="color: blue;">查看详情</strong>
+                </p>
+              </div>
+            </div>
+          `)
         }
-        //加一个文献节点
         
-        customCard.style('left', `${event.pageX - 450}px`)
-          .style('top', `${event.pageY - 150}px`);
-      })
-      .on("mouseout", function () {
-        customCard.transition().duration(200).style('visibility', 'hidden');
+        // 获取节点元素的实际屏幕位置
+        const nodeElement = this;
+        const nodeRect = nodeElement.getBoundingClientRect();
+        
+        // 获取容器的位置，用于计算相对偏移
+        const containerRect = containerRef.current.getBoundingClientRect();
+        
+        // 计算卡片相对于容器的位置
+        const cardLeft = nodeRect.right - containerRect.left + 10;  // 节点右侧10px
+        const cardTop = nodeRect.top - containerRect.top;  // 与节点顶部对齐
+        
+        // 使用相对于容器的坐标来设置卡片位置
+        customCard.style('left', `${cardLeft}px`)
+          .style('top', `${cardTop}px`);
+        
+        // 显示卡片
+        customCard.transition().duration(200).style('visibility', 'visible');
+        
+        // 使用事件委托绑定关闭按钮的点击事件
+        setTimeout(() => {
+          const closeBtn = customCard.select('.closeCardBtn').node();
+          if (closeBtn) {
+            // 移除之前的事件监听器（如果有）
+            closeBtn.replaceWith(closeBtn.cloneNode(true));
+            // 重新获取节点并添加事件
+            const newCloseBtn = customCard.select('.closeCardBtn').node();
+            newCloseBtn.addEventListener('click', function(e) {
+              e.stopPropagation();
+              customCard.transition().duration(200).style('visibility', 'hidden');
+            });
+          }
+        }, 0);
       });
 
     // 创建扇形生成器
@@ -300,6 +374,13 @@ const Storyline = () => {
     const updateCardContent1 = (image1, image2, similar) => {
       //图像切片连边
       customCardonArc1.html(`
+    <!-- 关闭按钮 -->
+    <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+      <button id="closeArcCardBtn1" style="background: none; border: none; cursor: pointer; font-size: 20px; color: #999; padding: 0; line-height: 1;">
+        ✕
+      </button>
+    </div>
+    <!-- 卡片内容 -->
     <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
       <!-- 上面三张图片并排 -->
       <img src="${image1}" alt="Image 1" style="width: 90px; height: auto;" />
@@ -322,6 +403,13 @@ const Storyline = () => {
     // 印章相似度连边
     const updateCardContent2 = (image1, image2, similar) => {
       customCardonArc2.html(`
+    <!-- 关闭按钮 -->
+    <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+      <button id="closeArcCardBtn2" style="background: none; border: none; cursor: pointer; font-size: 20px; color: #999; padding: 0; line-height: 1;">
+        ✕
+      </button>
+    </div>
+    <!-- 卡片内容 -->
     <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
       <!-- 上面三张图片并排 -->
       <img src="${image1}" alt="Image 1" style="width: 55px; height: auto; margin-left:10px " />
@@ -342,9 +430,10 @@ const Storyline = () => {
   `);
     };
 
-    // 显示卡片的hover事件
+    // 显示卡片的点击事件
     arc
-      .on("mouseover", function (event, d) {
+      .on("click", function (event, d) {
+        event.stopPropagation();
         if (d.info.name == "P-P") {
           const image1 = d.info.url1 !== "" ? d.info.url1 : '../../assets/img/test/L1.png';
           const image2 = d.info.url2 !== "" ? d.info.url2 : '../../assets/img/test/L1.png';
@@ -375,10 +464,23 @@ const Storyline = () => {
           .style('left', `${event.pageX - 480}px`)
           .style('top', `${event.pageY - 150}px`);
 
-      })
-      .on("mouseout", function () {
-        customCardonArc1.transition().duration(200).style('visibility', 'hidden');
-        customCardonArc2.transition().duration(200).style('visibility', 'hidden');
+        // 添加关闭按钮的点击事件
+        setTimeout(() => {
+          const closeBtn1 = document.getElementById('closeArcCardBtn1');
+          const closeBtn2 = document.getElementById('closeArcCardBtn2');
+          if (closeBtn1) {
+            closeBtn1.addEventListener('click', function(e) {
+              e.stopPropagation();
+              customCardonArc1.transition().duration(200).style('visibility', 'hidden');
+            });
+          }
+          if (closeBtn2) {
+            closeBtn2.addEventListener('click', function(e) {
+              e.stopPropagation();
+              customCardonArc2.transition().duration(200).style('visibility', 'hidden');
+            });
+          }
+        }, 0);
       });
 
     const parsedLinksData = linksData.map(link => ({
@@ -482,6 +584,9 @@ const Storyline = () => {
 
     // 设置点击事件显示或隐藏卡片
     buttons.on("click", function (event, d) {
+      // 阻止事件冒泡
+      event.stopPropagation();
+      
       // 判断卡片当前是否可见，如果可见则隐藏，否则显示
       const isVisible = customCard3.style('visibility') === 'visible';
 
@@ -492,8 +597,14 @@ const Storyline = () => {
         // 显示卡片
         customCard3.transition().duration(200).style('visibility', 'visible');
 
-        // 构建卡片内容
+        // 构建卡片内容 - 添加关闭按钮
         let cardContent = `
+          <!-- 关闭按钮 -->
+          <div style="display: flex; justify-content: flex-end; margin-bottom: 5px;">
+            <button id="closeRefCardBtn" style="background: none; border: none; cursor: pointer; font-size: 20px; color: #999; padding: 0; line-height: 1;">
+              ✕
+            </button>
+          </div>
       `;
         // 遍历 linksData，找到与 d.source 和 d.target 匹配的 link
         const matchedLink = linksData.find(link =>
@@ -527,6 +638,17 @@ const Storyline = () => {
         customCard3.html(cardContent)
           .style('left', `${event.pageX - 480}px`)  // 鼠标位置 + 偏移量
           .style('top', `${event.pageY - 150}px`); // 鼠标位置 + 偏移量
+        
+        // 添加关闭按钮的点击事件
+        setTimeout(() => {
+          const closeBtn = document.getElementById('closeRefCardBtn');
+          if (closeBtn) {
+            closeBtn.addEventListener('click', function(e) {
+              e.stopPropagation();
+              customCard3.transition().duration(200).style('visibility', 'hidden');
+            });
+          }
+        }, 0);
       }
     });
 
@@ -639,7 +761,7 @@ const Storyline = () => {
 
     // 清理函数，防止多次渲染
     return () => {
-      d3.select(containerRef.current).select("svg").remove();
+      d3.select(containerRef.current).selectAll("*").remove();
     };
   }, [dimensions, nodesData, linksData]);
 

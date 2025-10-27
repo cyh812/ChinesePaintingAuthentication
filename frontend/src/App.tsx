@@ -18,7 +18,7 @@ import StageMenu from "./components/authentication/StageMenu"
 import NestedList from "./components/authentication/NestedList"
 import Legend from "./components/authentication/Legend"
 import Title from "./components/authentication/Title"
-
+import { stageFocusManager } from './components/Stage';
 // Define image, embedding and model paths
 const IMAGE_PATH = "/assets/data/D011518.jpg";
 const IMAGE_EMBEDDING = "/assets/data/D011518.npy";
@@ -45,11 +45,21 @@ const App = () => {
 
   const [zoomLevel, setZoomLevel] = useState(0.8);
 
+  const [panX, setPanX] = useState(0);
+  const [panY, setPanY] = useState(0);
   // === 清空所有点与掩码 ===
   const handleReset = () => {
     setClicks([]);        // 清空点
     setHoverClick(null);
     setMaskImg(null);     // 清空当前 mask
+    setPanX(0);           // 重置横向平移
+    setPanY(0);           // 重置纵向平移
+    // 重置后让 Stage 组件重新获得焦点
+    setTimeout(() => {
+      if (stageFocusManager.focusCallback) {
+        stageFocusManager.focusCallback();
+      }
+    }, 0);
   };
   // The ONNX model expects the input to be rescaled to 1024. 
   // The modelScale state variable keeps track of the scale values.
@@ -157,6 +167,10 @@ const App = () => {
               currentLabel={currentLabel}
               onHoverChange={setHoverClick}   // ✅ 新增：悬停时设置预览点
               onHoverEnd={() => setHoverClick(null)} // ✅ 离开时清空预览
+              panX={panX}
+              panY={panY}
+              onPanXChange={setPanX}
+              onPanYChange={setPanY}
             />
           )}
         </div>
