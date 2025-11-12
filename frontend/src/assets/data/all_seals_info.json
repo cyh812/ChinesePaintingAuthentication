@@ -1,0 +1,1883 @@
+[
+  {
+    "seal_code": "0001",
+    "owner": "石涛",
+    "name": "痴绝2(墨兰图)",
+    "seal_image": "encoded_seals/seal_0001.png",
+    "painting_id": "D002078",
+    "painting_name": "墨兰图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0002",
+    "owner": "石涛",
+    "name": "零丁老人(墨兰图)",
+    "seal_image": "encoded_seals/seal_0002.png",
+    "painting_id": "D002078",
+    "painting_name": "墨兰图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0003",
+    "owner": "石涛",
+    "name": "若极(墨兰图)",
+    "seal_image": "encoded_seals/seal_0003.png",
+    "painting_id": "D002078",
+    "painting_name": "墨兰图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0004",
+    "owner": "石涛",
+    "name": "印章0004(江南春霭图)",
+    "seal_image": "encoded_seals/seal_0004.png",
+    "painting_id": "D002081",
+    "painting_name": "江南春霭图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0005",
+    "owner": "石涛",
+    "name": "印章0005(江南春霭图)",
+    "seal_image": "encoded_seals/seal_0005.png",
+    "painting_id": "D002081",
+    "painting_name": "江南春霭图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0006",
+    "owner": "石涛",
+    "name": "印章0006(江南春霭图)",
+    "seal_image": "encoded_seals/seal_0006.png",
+    "painting_id": "D002081",
+    "painting_name": "江南春霭图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0007",
+    "owner": "石涛",
+    "name": "印章0007(江南春霭图)",
+    "seal_image": "encoded_seals/seal_0007.png",
+    "painting_id": "D002081",
+    "painting_name": "江南春霭图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0008",
+    "owner": "石涛",
+    "name": "印章0008(江南春霭图)",
+    "seal_image": "encoded_seals/seal_0008.png",
+    "painting_id": "D002081",
+    "painting_name": "江南春霭图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0009",
+    "owner": "石涛",
+    "name": "原济2(江南春霭图)",
+    "seal_image": "encoded_seals/seal_0009.png",
+    "painting_id": "D002081",
+    "painting_name": "江南春霭图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0010",
+    "owner": "石涛",
+    "name": "印章0010(江南春霭图)",
+    "seal_image": "encoded_seals/seal_0010.png",
+    "painting_id": "D002081",
+    "painting_name": "江南春霭图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0011",
+    "owner": "石涛",
+    "name": "印章0011(江南春霭图)",
+    "seal_image": "encoded_seals/seal_0011.png",
+    "painting_id": "D002081",
+    "painting_name": "江南春霭图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0012",
+    "owner": "石涛",
+    "name": "印章0012(庐山观瀑图)",
+    "seal_image": "encoded_seals/seal_0012.jpg",
+    "painting_id": "D002388",
+    "painting_name": "庐山观瀑图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0013",
+    "owner": "石涛",
+    "name": "老济1(庐山观瀑图)",
+    "seal_image": "encoded_seals/seal_0013.jpg",
+    "painting_id": "D002388",
+    "painting_name": "庐山观瀑图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0014",
+    "owner": "石涛",
+    "name": "搜尽奇峰打草稿(庐山观瀑图)",
+    "seal_image": "encoded_seals/seal_0014.jpg",
+    "painting_id": "D002388",
+    "painting_name": "庐山观瀑图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0015",
+    "owner": "石涛",
+    "name": "阿长1(花果图)",
+    "seal_image": "encoded_seals/seal_0015.jpg",
+    "painting_id": "D002761",
+    "painting_name": "花果图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0016",
+    "owner": "石涛",
+    "name": "膏肓子济1(花果图)",
+    "seal_image": "encoded_seals/seal_0016.jpg",
+    "painting_id": "D002761",
+    "painting_name": "花果图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0017",
+    "owner": "石涛",
+    "name": "印章0017(花果图)",
+    "seal_image": "encoded_seals/seal_0017.jpg",
+    "painting_id": "D002761",
+    "painting_name": "花果图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0018",
+    "owner": "石涛",
+    "name": "零丁老人(花果图)",
+    "seal_image": "encoded_seals/seal_0018.jpg",
+    "painting_id": "D002761",
+    "painting_name": "花果图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0019",
+    "owner": "石涛",
+    "name": "梦董生(花果图)",
+    "seal_image": "encoded_seals/seal_0019.jpg",
+    "painting_id": "D002761",
+    "painting_name": "花果图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0020",
+    "owner": "石涛",
+    "name": "前有龙眠济(花果图)",
+    "seal_image": "encoded_seals/seal_0020.jpg",
+    "painting_id": "D002761",
+    "painting_name": "花果图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0021",
+    "owner": "石涛",
+    "name": "清湘石涛1(花果图)",
+    "seal_image": "encoded_seals/seal_0021.jpg",
+    "painting_id": "D002761",
+    "painting_name": "花果图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0022",
+    "owner": "石涛",
+    "name": "头白依然不识字(花果图)",
+    "seal_image": "encoded_seals/seal_0022.jpg",
+    "painting_id": "D002761",
+    "painting_name": "花果图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0023",
+    "owner": "石涛",
+    "name": "瞎尊者(花果图)",
+    "seal_image": "encoded_seals/seal_0023.jpg",
+    "painting_id": "D002761",
+    "painting_name": "花果图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0024",
+    "owner": "石涛",
+    "name": "痴绝1(花果图)",
+    "seal_image": "encoded_seals/seal_0024.jpg",
+    "painting_id": "D002761",
+    "painting_name": "花果图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0025",
+    "owner": "石涛",
+    "name": "印章0025(花果图)",
+    "seal_image": "encoded_seals/seal_0025.jpg",
+    "painting_id": "D002761",
+    "painting_name": "花果图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0026",
+    "owner": "石涛",
+    "name": "印章0026(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0026.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0027",
+    "owner": "石涛",
+    "name": "印章0027(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0027.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0028",
+    "owner": "石涛",
+    "name": "印章0028(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0028.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0029",
+    "owner": "石涛",
+    "name": "印章0029(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0029.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0030",
+    "owner": "石涛",
+    "name": "印章0030(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0030.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0031",
+    "owner": "石涛",
+    "name": "印章0031(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0031.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0032",
+    "owner": "石涛",
+    "name": "印章0032(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0032.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0033",
+    "owner": "石涛",
+    "name": "印章0033(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0033.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0034",
+    "owner": "石涛",
+    "name": "冰雪悟前身(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0034.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0035",
+    "owner": "石涛",
+    "name": "苦瓜和尚2(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0035.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0036",
+    "owner": "石涛",
+    "name": "印章0036(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0036.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0037",
+    "owner": "石涛",
+    "name": "老济1(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0037.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0038",
+    "owner": "石涛",
+    "name": "印章0038(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0038.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0039",
+    "owner": "石涛",
+    "name": "印章0039(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0039.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0040",
+    "owner": "石涛",
+    "name": "印章0040(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0040.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0041",
+    "owner": "石涛",
+    "name": "石涛2(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0041.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0042",
+    "owner": "石涛",
+    "name": "印章0042(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0042.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0043",
+    "owner": "石涛",
+    "name": "印章0043(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0043.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0044",
+    "owner": "石涛",
+    "name": "印章0044(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0044.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0045",
+    "owner": "石涛",
+    "name": "印章0045(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0045.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0046",
+    "owner": "石涛",
+    "name": "印章0046(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0046.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0047",
+    "owner": "石涛",
+    "name": "印章0047(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0047.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0048",
+    "owner": "石涛",
+    "name": "印章0048(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0048.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0049",
+    "owner": "石涛",
+    "name": "印章0049(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0049.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0050",
+    "owner": "石涛",
+    "name": "印章0050(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0050.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0051",
+    "owner": "石涛",
+    "name": "印章0051(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0051.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0052",
+    "owner": "石涛",
+    "name": "印章0052(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0052.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0053",
+    "owner": "石涛",
+    "name": "印章0053(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0053.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0054",
+    "owner": "石涛",
+    "name": "印章0054(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0054.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0055",
+    "owner": "石涛",
+    "name": "印章0055(搜尽奇峰打草稿)",
+    "seal_image": "encoded_seals/seal_0055.png",
+    "painting_id": "D004388",
+    "painting_name": "搜尽奇峰打草稿",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0056",
+    "owner": "石涛",
+    "name": "乡年苦瓜(太白诗意山水图)",
+    "seal_image": "encoded_seals/seal_0056.png",
+    "painting_id": "D004391",
+    "painting_name": "太白诗意山水图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0057",
+    "owner": "石涛",
+    "name": "于今为庶为清门(太白诗意山水图)",
+    "seal_image": "encoded_seals/seal_0057.png",
+    "painting_id": "D004391",
+    "painting_name": "太白诗意山水图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0058",
+    "owner": "石涛",
+    "name": "法门(云山图)",
+    "seal_image": "encoded_seals/seal_0058.jpg",
+    "painting_id": "D004394",
+    "painting_name": "云山图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0059",
+    "owner": "石涛",
+    "name": "苦瓜3(云山图)",
+    "seal_image": "encoded_seals/seal_0059.jpg",
+    "painting_id": "D004394",
+    "painting_name": "云山图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0060",
+    "owner": "石涛",
+    "name": "粤山1(云山图)",
+    "seal_image": "encoded_seals/seal_0060.jpg",
+    "painting_id": "D004394",
+    "painting_name": "云山图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0061",
+    "owner": "石涛",
+    "name": "印章0061(山水人物图)",
+    "seal_image": "encoded_seals/seal_0061.png",
+    "painting_id": "D004396",
+    "painting_name": "山水人物图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0062",
+    "owner": "石涛",
+    "name": "印章0062(山水人物图)",
+    "seal_image": "encoded_seals/seal_0062.png",
+    "painting_id": "D004396",
+    "painting_name": "山水人物图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0063",
+    "owner": "石涛",
+    "name": "印章0063(山水人物图)",
+    "seal_image": "encoded_seals/seal_0063.png",
+    "painting_id": "D004396",
+    "painting_name": "山水人物图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0064",
+    "owner": "石涛",
+    "name": "印章0064(山水人物图)",
+    "seal_image": "encoded_seals/seal_0064.png",
+    "painting_id": "D004396",
+    "painting_name": "山水人物图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0065",
+    "owner": "石涛",
+    "name": "老涛1(山水人物图)",
+    "seal_image": "encoded_seals/seal_0065.png",
+    "painting_id": "D004396",
+    "painting_name": "山水人物图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0066",
+    "owner": "石涛",
+    "name": "印章0066(山水人物图)",
+    "seal_image": "encoded_seals/seal_0066.png",
+    "painting_id": "D004396",
+    "painting_name": "山水人物图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0067",
+    "owner": "石涛",
+    "name": "印章0067(山水人物图)",
+    "seal_image": "encoded_seals/seal_0067.png",
+    "painting_id": "D004396",
+    "painting_name": "山水人物图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0068",
+    "owner": "石涛",
+    "name": "印章0068(金山龙游寺图)",
+    "seal_image": "encoded_seals/seal_0068.png",
+    "painting_id": "D004401",
+    "painting_name": "金山龙游寺图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0069",
+    "owner": "石涛",
+    "name": "印章0069(金山龙游寺图)",
+    "seal_image": "encoded_seals/seal_0069.png",
+    "painting_id": "D004401",
+    "painting_name": "金山龙游寺图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0070",
+    "owner": "石涛",
+    "name": "原济3(金山龙游寺图)",
+    "seal_image": "encoded_seals/seal_0070.png",
+    "painting_id": "D004401",
+    "painting_name": "金山龙游寺图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0071",
+    "owner": "石涛",
+    "name": "石涛(金山龙游寺图)",
+    "seal_image": "encoded_seals/seal_0071.png",
+    "painting_id": "D004401",
+    "painting_name": "金山龙游寺图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0072",
+    "owner": "石涛",
+    "name": "印章0072(金山龙游寺图)",
+    "seal_image": "encoded_seals/seal_0072.png",
+    "painting_id": "D004401",
+    "painting_name": "金山龙游寺图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0073",
+    "owner": "石涛",
+    "name": "印章0073(金山龙游寺图)",
+    "seal_image": "encoded_seals/seal_0073.png",
+    "painting_id": "D004401",
+    "painting_name": "金山龙游寺图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0074",
+    "owner": "石涛",
+    "name": "印章0074(陶渊明诗意图)",
+    "seal_image": "encoded_seals/seal_0074.jpg",
+    "painting_id": "D004404",
+    "painting_name": "陶渊明诗意图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0075",
+    "owner": "石涛",
+    "name": "印章0075(陶渊明诗意图)",
+    "seal_image": "encoded_seals/seal_0075.jpg",
+    "painting_id": "D004404",
+    "painting_name": "陶渊明诗意图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0076",
+    "owner": "石涛",
+    "name": "印章0076(陶渊明诗意图)",
+    "seal_image": "encoded_seals/seal_0076.jpg",
+    "painting_id": "D004404",
+    "painting_name": "陶渊明诗意图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0077",
+    "owner": "石涛",
+    "name": "印章0077(陶渊明诗意图)",
+    "seal_image": "encoded_seals/seal_0077.jpg",
+    "painting_id": "D004404",
+    "painting_name": "陶渊明诗意图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0078",
+    "owner": "石涛",
+    "name": "印章0078(陶渊明诗意图)",
+    "seal_image": "encoded_seals/seal_0078.jpg",
+    "painting_id": "D004404",
+    "painting_name": "陶渊明诗意图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0079",
+    "owner": "石涛",
+    "name": "清湘石涛2(陶渊明诗意图)",
+    "seal_image": "encoded_seals/seal_0079.jpg",
+    "painting_id": "D004404",
+    "painting_name": "陶渊明诗意图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0080",
+    "owner": "石涛",
+    "name": "清湘石涛2(陶渊明诗意图)",
+    "seal_image": "encoded_seals/seal_0080.jpg",
+    "painting_id": "D004404",
+    "painting_name": "陶渊明诗意图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0081",
+    "owner": "石涛",
+    "name": "印章0081(陶渊明诗意图)",
+    "seal_image": "encoded_seals/seal_0081.jpg",
+    "painting_id": "D004404",
+    "painting_name": "陶渊明诗意图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0082",
+    "owner": "石涛",
+    "name": "印章0082(陶渊明诗意图)",
+    "seal_image": "encoded_seals/seal_0082.jpg",
+    "painting_id": "D004404",
+    "painting_name": "陶渊明诗意图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0083",
+    "owner": "石涛",
+    "name": "印章0083(陶渊明诗意图)",
+    "seal_image": "encoded_seals/seal_0083.jpg",
+    "painting_id": "D004404",
+    "painting_name": "陶渊明诗意图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0084",
+    "owner": "石涛",
+    "name": "瞎尊者(陶渊明诗意图)",
+    "seal_image": "encoded_seals/seal_0084.jpg",
+    "painting_id": "D004404",
+    "painting_name": "陶渊明诗意图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0085",
+    "owner": "石涛",
+    "name": "瞎尊者(陶渊明诗意图)",
+    "seal_image": "encoded_seals/seal_0085.jpg",
+    "painting_id": "D004404",
+    "painting_name": "陶渊明诗意图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0086",
+    "owner": "石涛",
+    "name": "瞎尊者(陶渊明诗意图)",
+    "seal_image": "encoded_seals/seal_0086.jpg",
+    "painting_id": "D004404",
+    "painting_name": "陶渊明诗意图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0087",
+    "owner": "石涛",
+    "name": "印章0087(陶渊明诗意图)",
+    "seal_image": "encoded_seals/seal_0087.jpg",
+    "painting_id": "D004404",
+    "painting_name": "陶渊明诗意图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0088",
+    "owner": "石涛",
+    "name": "印章0088(陶渊明诗意图)",
+    "seal_image": "encoded_seals/seal_0088.jpg",
+    "painting_id": "D004404",
+    "painting_name": "陶渊明诗意图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0089",
+    "owner": "石涛",
+    "name": "印章0089(陶渊明诗意图)",
+    "seal_image": "encoded_seals/seal_0089.jpg",
+    "painting_id": "D004404",
+    "painting_name": "陶渊明诗意图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0090",
+    "owner": "石涛",
+    "name": "印章0090(陶渊明诗意图)",
+    "seal_image": "encoded_seals/seal_0090.jpg",
+    "painting_id": "D004404",
+    "painting_name": "陶渊明诗意图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0091",
+    "owner": "石涛",
+    "name": "印章0091(陶渊明诗意图)",
+    "seal_image": "encoded_seals/seal_0091.jpg",
+    "painting_id": "D004404",
+    "painting_name": "陶渊明诗意图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0092",
+    "owner": "石涛",
+    "name": "印章0092(陶渊明诗意图)",
+    "seal_image": "encoded_seals/seal_0092.jpg",
+    "painting_id": "D004404",
+    "painting_name": "陶渊明诗意图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0093",
+    "owner": "石涛",
+    "name": "印章0093(对牛弹琴图)",
+    "seal_image": "encoded_seals/seal_0093.png",
+    "painting_id": "D004422",
+    "painting_name": "对牛弹琴图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0094",
+    "owner": "石涛",
+    "name": "印章0094(对牛弹琴图)",
+    "seal_image": "encoded_seals/seal_0094.png",
+    "painting_id": "D004422",
+    "painting_name": "对牛弹琴图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0095",
+    "owner": "石涛",
+    "name": "清湘老人(对牛弹琴图)",
+    "seal_image": "encoded_seals/seal_0095.png",
+    "painting_id": "D004422",
+    "painting_name": "对牛弹琴图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0096",
+    "owner": "石涛",
+    "name": "若极(对牛弹琴图)",
+    "seal_image": "encoded_seals/seal_0096.png",
+    "painting_id": "D004422",
+    "painting_name": "对牛弹琴图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0097",
+    "owner": "石涛",
+    "name": "赞之十世孙阿长2(对牛弹琴图)",
+    "seal_image": "encoded_seals/seal_0097.png",
+    "painting_id": "D004422",
+    "painting_name": "对牛弹琴图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0098",
+    "owner": "石涛",
+    "name": "印章0098(对牛弹琴图)",
+    "seal_image": "encoded_seals/seal_0098.png",
+    "painting_id": "D004422",
+    "painting_name": "对牛弹琴图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0099",
+    "owner": "石涛",
+    "name": "膏肓子济1(横塘曳履图)",
+    "seal_image": "encoded_seals/seal_0099.png",
+    "painting_id": "D004424",
+    "painting_name": "横塘曳履图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0100",
+    "owner": "石涛",
+    "name": "印章0100(横塘曳履图)",
+    "seal_image": "encoded_seals/seal_0100.png",
+    "painting_id": "D004424",
+    "painting_name": "横塘曳履图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0101",
+    "owner": "石涛",
+    "name": "老济1(横塘曳履图)",
+    "seal_image": "encoded_seals/seal_0101.png",
+    "painting_id": "D004424",
+    "painting_name": "横塘曳履图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0102",
+    "owner": "石涛",
+    "name": "印章0102(横塘曳履图)",
+    "seal_image": "encoded_seals/seal_0102.png",
+    "painting_id": "D004424",
+    "painting_name": "横塘曳履图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0103",
+    "owner": "石涛",
+    "name": "印章0103(横塘曳履图)",
+    "seal_image": "encoded_seals/seal_0103.png",
+    "painting_id": "D004424",
+    "painting_name": "横塘曳履图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0104",
+    "owner": "石涛",
+    "name": "清湘老人(横塘曳履图)",
+    "seal_image": "encoded_seals/seal_0104.png",
+    "painting_id": "D004424",
+    "painting_name": "横塘曳履图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0105",
+    "owner": "石涛",
+    "name": "四百峰中箬笠翁图书1(横塘曳履图)",
+    "seal_image": "encoded_seals/seal_0105.png",
+    "painting_id": "D004424",
+    "painting_name": "横塘曳履图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0106",
+    "owner": "石涛",
+    "name": "印章0106(横塘曳履图)",
+    "seal_image": "encoded_seals/seal_0106.png",
+    "painting_id": "D004424",
+    "painting_name": "横塘曳履图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0107",
+    "owner": "石涛",
+    "name": "印章0107(诗画合璧)",
+    "seal_image": "encoded_seals/seal_0107.jpg",
+    "painting_id": "D005073",
+    "painting_name": "诗画合璧",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0108",
+    "owner": "石涛",
+    "name": "印章0108(诗画合璧)",
+    "seal_image": "encoded_seals/seal_0108.jpg",
+    "painting_id": "D005073",
+    "painting_name": "诗画合璧",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0109",
+    "owner": "石涛",
+    "name": "印章0109(诗画合璧)",
+    "seal_image": "encoded_seals/seal_0109.jpg",
+    "painting_id": "D005073",
+    "painting_name": "诗画合璧",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0110",
+    "owner": "石涛",
+    "name": "冰雪悟前身(诗画合璧)",
+    "seal_image": "encoded_seals/seal_0110.jpg",
+    "painting_id": "D005073",
+    "painting_name": "诗画合璧",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0111",
+    "owner": "石涛",
+    "name": "印章0111(诗画合璧)",
+    "seal_image": "encoded_seals/seal_0111.jpg",
+    "painting_id": "D005073",
+    "painting_name": "诗画合璧",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0112",
+    "owner": "石涛",
+    "name": "清湘石涛1(诗画合璧)",
+    "seal_image": "encoded_seals/seal_0112.jpg",
+    "painting_id": "D005073",
+    "painting_name": "诗画合璧",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0113",
+    "owner": "石涛",
+    "name": "清湘石涛1(诗画合璧)",
+    "seal_image": "encoded_seals/seal_0113.jpg",
+    "painting_id": "D005073",
+    "painting_name": "诗画合璧",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0114",
+    "owner": "石涛",
+    "name": "清湘石涛2(诗画合璧)",
+    "seal_image": "encoded_seals/seal_0114.jpg",
+    "painting_id": "D005073",
+    "painting_name": "诗画合璧",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0115",
+    "owner": "石涛",
+    "name": "释元济印(诗画合璧)",
+    "seal_image": "encoded_seals/seal_0115.jpg",
+    "painting_id": "D005073",
+    "painting_name": "诗画合璧",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0116",
+    "owner": "石涛",
+    "name": "瞎尊者(诗画合璧)",
+    "seal_image": "encoded_seals/seal_0116.jpg",
+    "painting_id": "D005073",
+    "painting_name": "诗画合璧",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0117",
+    "owner": "石涛",
+    "name": "印章0117(诗画合璧)",
+    "seal_image": "encoded_seals/seal_0117.jpg",
+    "painting_id": "D005073",
+    "painting_name": "诗画合璧",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0118",
+    "owner": "石涛",
+    "name": "印章0118(诗画合璧)",
+    "seal_image": "encoded_seals/seal_0118.jpg",
+    "painting_id": "D005073",
+    "painting_name": "诗画合璧",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0119",
+    "owner": "石涛",
+    "name": "印章0119(诗画合璧)",
+    "seal_image": "encoded_seals/seal_0119.jpg",
+    "painting_id": "D005073",
+    "painting_name": "诗画合璧",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0120",
+    "owner": "石涛",
+    "name": "印章0120(诗画合璧)",
+    "seal_image": "encoded_seals/seal_0120.jpg",
+    "painting_id": "D005073",
+    "painting_name": "诗画合璧",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0121",
+    "owner": "石涛",
+    "name": "印章0121(诗画合璧)",
+    "seal_image": "encoded_seals/seal_0121.jpg",
+    "painting_id": "D005073",
+    "painting_name": "诗画合璧",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0122",
+    "owner": "石涛",
+    "name": "印章0122(诗画合璧)",
+    "seal_image": "encoded_seals/seal_0122.jpg",
+    "painting_id": "D005073",
+    "painting_name": "诗画合璧",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0123",
+    "owner": "石涛",
+    "name": "印章0123(诗画合璧)",
+    "seal_image": "encoded_seals/seal_0123.jpg",
+    "painting_id": "D005073",
+    "painting_name": "诗画合璧",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0124",
+    "owner": "石涛",
+    "name": "印章0124(诗画合璧)",
+    "seal_image": "encoded_seals/seal_0124.jpg",
+    "painting_id": "D005073",
+    "painting_name": "诗画合璧",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0125",
+    "owner": "石涛",
+    "name": "印章0125(山麓听泉图)",
+    "seal_image": "encoded_seals/seal_0125.png",
+    "painting_id": "D005509",
+    "painting_name": "山麓听泉图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0126",
+    "owner": "石涛",
+    "name": "印章0126(山麓听泉图)",
+    "seal_image": "encoded_seals/seal_0126.png",
+    "painting_id": "D005509",
+    "painting_name": "山麓听泉图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0127",
+    "owner": "石涛",
+    "name": "印章0127(山麓听泉图)",
+    "seal_image": "encoded_seals/seal_0127.png",
+    "painting_id": "D005509",
+    "painting_name": "山麓听泉图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0128",
+    "owner": "石涛",
+    "name": "搜尽奇峰打草稿(山麓听泉图)",
+    "seal_image": "encoded_seals/seal_0128.png",
+    "painting_id": "D005509",
+    "painting_name": "山麓听泉图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0129",
+    "owner": "石涛",
+    "name": "印章0129(山麓听泉图)",
+    "seal_image": "encoded_seals/seal_0129.png",
+    "painting_id": "D005509",
+    "painting_name": "山麓听泉图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0130",
+    "owner": "石涛",
+    "name": "印章0130(淮扬洁秋图)",
+    "seal_image": "encoded_seals/seal_0130.png",
+    "painting_id": "D008074",
+    "painting_name": "淮扬洁秋图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0131",
+    "owner": "石涛",
+    "name": "零丁老人(淮扬洁秋图)",
+    "seal_image": "encoded_seals/seal_0131.png",
+    "painting_id": "D008074",
+    "painting_name": "淮扬洁秋图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0132",
+    "owner": "石涛",
+    "name": "若极(淮扬洁秋图)",
+    "seal_image": "encoded_seals/seal_0132.png",
+    "painting_id": "D008074",
+    "painting_name": "淮扬洁秋图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0133",
+    "owner": "石涛",
+    "name": "于今为庶为清门(淮扬洁秋图)",
+    "seal_image": "encoded_seals/seal_0133.png",
+    "painting_id": "D008074",
+    "painting_name": "淮扬洁秋图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0134",
+    "owner": "石涛",
+    "name": "痴绝1(淮扬洁秋图)",
+    "seal_image": "encoded_seals/seal_0134.png",
+    "painting_id": "D008074",
+    "painting_name": "淮扬洁秋图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0135",
+    "owner": "石涛",
+    "name": "印章0135(淮扬洁秋图)",
+    "seal_image": "encoded_seals/seal_0135.png",
+    "painting_id": "D008074",
+    "painting_name": "淮扬洁秋图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0136",
+    "owner": "石涛",
+    "name": "巨僧元济(古木垂阴图)",
+    "seal_image": "encoded_seals/seal_0136.png",
+    "painting_id": "D009166",
+    "painting_name": "古木垂阴图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0137",
+    "owner": "石涛",
+    "name": "苦瓜和尚2(古木垂阴图)",
+    "seal_image": "encoded_seals/seal_0137.png",
+    "painting_id": "D009166",
+    "painting_name": "古木垂阴图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0138",
+    "owner": "石涛",
+    "name": "四百峰中箬笠翁图书2(古木垂阴图)",
+    "seal_image": "encoded_seals/seal_0138.png",
+    "painting_id": "D009166",
+    "painting_name": "古木垂阴图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0139",
+    "owner": "石涛",
+    "name": "印章0139(古木垂阴图)",
+    "seal_image": "encoded_seals/seal_0139.png",
+    "painting_id": "D009166",
+    "painting_name": "古木垂阴图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0140",
+    "owner": "石涛",
+    "name": "印章0140(古木垂阴图)",
+    "seal_image": "encoded_seals/seal_0140.png",
+    "painting_id": "D009166",
+    "painting_name": "古木垂阴图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0141",
+    "owner": "石涛",
+    "name": "印章0141(古木垂阴图)",
+    "seal_image": "encoded_seals/seal_0141.png",
+    "painting_id": "D009166",
+    "painting_name": "古木垂阴图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0142",
+    "owner": "石涛",
+    "name": "印章0142(古木垂阴图)",
+    "seal_image": "encoded_seals/seal_0142.png",
+    "painting_id": "D009166",
+    "painting_name": "古木垂阴图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0143",
+    "owner": "石涛",
+    "name": "印章0143(古木垂阴图)",
+    "seal_image": "encoded_seals/seal_0143.png",
+    "painting_id": "D009166",
+    "painting_name": "古木垂阴图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0144",
+    "owner": "石涛",
+    "name": "印章0144(黄山图)",
+    "seal_image": "encoded_seals/seal_0144.png",
+    "painting_id": "D010320",
+    "painting_name": "黄山图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0145",
+    "owner": "石涛",
+    "name": "印章0145(黄山图)",
+    "seal_image": "encoded_seals/seal_0145.png",
+    "painting_id": "D010320",
+    "painting_name": "黄山图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0146",
+    "owner": "石涛",
+    "name": "印章0146(黄山图)",
+    "seal_image": "encoded_seals/seal_0146.png",
+    "painting_id": "D010320",
+    "painting_name": "黄山图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0147",
+    "owner": "石涛",
+    "name": "我法1(黄山图)",
+    "seal_image": "encoded_seals/seal_0147.png",
+    "painting_id": "D010320",
+    "painting_name": "黄山图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0148",
+    "owner": "石涛",
+    "name": "印章0148(黄山图)",
+    "seal_image": "encoded_seals/seal_0148.png",
+    "painting_id": "D010320",
+    "painting_name": "黄山图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0149",
+    "owner": "石涛",
+    "name": "原济3(黄山图)",
+    "seal_image": "encoded_seals/seal_0149.png",
+    "painting_id": "D010320",
+    "painting_name": "黄山图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0150",
+    "owner": "石涛",
+    "name": "石涛(黄山图)",
+    "seal_image": "encoded_seals/seal_0150.png",
+    "painting_id": "D010320",
+    "painting_name": "黄山图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0151",
+    "owner": "石涛",
+    "name": "印章0151(黄山图)",
+    "seal_image": "encoded_seals/seal_0151.png",
+    "painting_id": "D010320",
+    "painting_name": "黄山图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0152",
+    "owner": "石涛",
+    "name": "印章0152(松阁临泉图)",
+    "seal_image": "encoded_seals/seal_0152.png",
+    "painting_id": "D011470",
+    "painting_name": "松阁临泉图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0153",
+    "owner": "石涛",
+    "name": "印章0153(松阁临泉图)",
+    "seal_image": "encoded_seals/seal_0153.png",
+    "painting_id": "D011470",
+    "painting_name": "松阁临泉图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0154",
+    "owner": "石涛",
+    "name": "印章0154(松阁临泉图)",
+    "seal_image": "encoded_seals/seal_0154.png",
+    "painting_id": "D011470",
+    "painting_name": "松阁临泉图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0155",
+    "owner": "石涛",
+    "name": "印章0155(松阁临泉图)",
+    "seal_image": "encoded_seals/seal_0155.png",
+    "painting_id": "D011470",
+    "painting_name": "松阁临泉图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0156",
+    "owner": "石涛",
+    "name": "膏肓子济1(山水花卉)",
+    "seal_image": "encoded_seals/seal_0156.jpg",
+    "painting_id": "D011476",
+    "painting_name": "山水花卉",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0157",
+    "owner": "石涛",
+    "name": "膏肓子济1(山水花卉)",
+    "seal_image": "encoded_seals/seal_0157.jpg",
+    "painting_id": "D011476",
+    "painting_name": "山水花卉",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0158",
+    "owner": "石涛",
+    "name": "印章0158(山水花卉)",
+    "seal_image": "encoded_seals/seal_0158.jpg",
+    "painting_id": "D011476",
+    "painting_name": "山水花卉",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0159",
+    "owner": "石涛",
+    "name": "印章0159(山水花卉)",
+    "seal_image": "encoded_seals/seal_0159.jpg",
+    "painting_id": "D011476",
+    "painting_name": "山水花卉",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0160",
+    "owner": "石涛",
+    "name": "前有龙眠济(山水花卉)",
+    "seal_image": "encoded_seals/seal_0160.jpg",
+    "painting_id": "D011476",
+    "painting_name": "山水花卉",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0161",
+    "owner": "石涛",
+    "name": "印章0161(山水花卉)",
+    "seal_image": "encoded_seals/seal_0161.jpg",
+    "painting_id": "D011476",
+    "painting_name": "山水花卉",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0162",
+    "owner": "石涛",
+    "name": "印章0162(山水花卉)",
+    "seal_image": "encoded_seals/seal_0162.jpg",
+    "painting_id": "D011476",
+    "painting_name": "山水花卉",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0163",
+    "owner": "石涛",
+    "name": "清湘石涛3(山水花卉)",
+    "seal_image": "encoded_seals/seal_0163.jpg",
+    "painting_id": "D011476",
+    "painting_name": "山水花卉",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0164",
+    "owner": "石涛",
+    "name": "赞之十世孙阿长1(山水花卉)",
+    "seal_image": "encoded_seals/seal_0164.jpg",
+    "painting_id": "D011476",
+    "painting_name": "山水花卉",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0165",
+    "owner": "石涛",
+    "name": "印章0165(山水花卉)",
+    "seal_image": "encoded_seals/seal_0165.jpg",
+    "painting_id": "D011476",
+    "painting_name": "山水花卉",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0166",
+    "owner": "石涛",
+    "name": "印章0166(山水花卉)",
+    "seal_image": "encoded_seals/seal_0166.jpg",
+    "painting_id": "D011476",
+    "painting_name": "山水花卉",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0167",
+    "owner": "石涛",
+    "name": "印章0167(山窗研读图)",
+    "seal_image": "encoded_seals/seal_0167.png",
+    "painting_id": "D011477",
+    "painting_name": "山窗研读图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0168",
+    "owner": "石涛",
+    "name": "印章0168(山窗研读图)",
+    "seal_image": "encoded_seals/seal_0168.png",
+    "painting_id": "D011477",
+    "painting_name": "山窗研读图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0169",
+    "owner": "石涛",
+    "name": "巨僧元济(山窗研读图)",
+    "seal_image": "encoded_seals/seal_0169.png",
+    "painting_id": "D011477",
+    "painting_name": "山窗研读图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0170",
+    "owner": "石涛",
+    "name": "苦瓜和尚2(山窗研读图)",
+    "seal_image": "encoded_seals/seal_0170.png",
+    "painting_id": "D011477",
+    "painting_name": "山窗研读图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0171",
+    "owner": "石涛",
+    "name": "四百峰中箬笠翁图书2(山窗研读图)",
+    "seal_image": "encoded_seals/seal_0171.png",
+    "painting_id": "D011477",
+    "painting_name": "山窗研读图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0172",
+    "owner": "石涛",
+    "name": "印章0172(山窗研读图)",
+    "seal_image": "encoded_seals/seal_0172.png",
+    "painting_id": "D011477",
+    "painting_name": "山窗研读图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0173",
+    "owner": "石涛",
+    "name": "丈下人(山窗研读图)",
+    "seal_image": "encoded_seals/seal_0173.png",
+    "painting_id": "D011477",
+    "painting_name": "山窗研读图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0174",
+    "owner": "石涛",
+    "name": "印章0174(山窗研读图)",
+    "seal_image": "encoded_seals/seal_0174.png",
+    "painting_id": "D011477",
+    "painting_name": "山窗研读图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0175",
+    "owner": "石涛",
+    "name": "印章0175(山窗研读图)",
+    "seal_image": "encoded_seals/seal_0175.png",
+    "painting_id": "D011477",
+    "painting_name": "山窗研读图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0176",
+    "owner": "石涛",
+    "name": "法门(细雨虬松图)",
+    "seal_image": "encoded_seals/seal_0176.png",
+    "painting_id": "D011481",
+    "painting_name": "细雨虬松图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0177",
+    "owner": "石涛",
+    "name": "巨僧元济(细雨虬松图)",
+    "seal_image": "encoded_seals/seal_0177.png",
+    "painting_id": "D011481",
+    "painting_name": "细雨虬松图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0178",
+    "owner": "石涛",
+    "name": "墨池飞出北溟鱼(细雨虬松图)",
+    "seal_image": "encoded_seals/seal_0178.png",
+    "painting_id": "D011481",
+    "painting_name": "细雨虬松图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0179",
+    "owner": "石涛",
+    "name": "印章0179(细雨虬松图)",
+    "seal_image": "encoded_seals/seal_0179.png",
+    "painting_id": "D011481",
+    "painting_name": "细雨虬松图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0180",
+    "owner": "石涛",
+    "name": "印章0180(西园雅集图)",
+    "seal_image": "encoded_seals/seal_0180.png",
+    "painting_id": "D011517",
+    "painting_name": "西园雅集图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0181",
+    "owner": "石涛",
+    "name": "印章0181(西园雅集图)",
+    "seal_image": "encoded_seals/seal_0181.png",
+    "painting_id": "D011517",
+    "painting_name": "西园雅集图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0182",
+    "owner": "石涛",
+    "name": "恨古人不见大涤子极(西园雅集图)",
+    "seal_image": "encoded_seals/seal_0182.png",
+    "painting_id": "D011517",
+    "painting_name": "西园雅集图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0183",
+    "owner": "石涛",
+    "name": "冰雪悟前身(西园雅集图)",
+    "seal_image": "encoded_seals/seal_0183.png",
+    "painting_id": "D011517",
+    "painting_name": "西园雅集图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0184",
+    "owner": "石涛",
+    "name": "印章0184(西园雅集图)",
+    "seal_image": "encoded_seals/seal_0184.png",
+    "painting_id": "D011517",
+    "painting_name": "西园雅集图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0185",
+    "owner": "石涛",
+    "name": "印章0185(西园雅集图)",
+    "seal_image": "encoded_seals/seal_0185.png",
+    "painting_id": "D011517",
+    "painting_name": "西园雅集图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0186",
+    "owner": "石涛",
+    "name": "印章0186(西园雅集图)",
+    "seal_image": "encoded_seals/seal_0186.png",
+    "painting_id": "D011517",
+    "painting_name": "西园雅集图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0187",
+    "owner": "石涛",
+    "name": "印章0187(西园雅集图)",
+    "seal_image": "encoded_seals/seal_0187.png",
+    "painting_id": "D011517",
+    "painting_name": "西园雅集图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0188",
+    "owner": "石涛",
+    "name": "印章0188(西园雅集图)",
+    "seal_image": "encoded_seals/seal_0188.png",
+    "painting_id": "D011517",
+    "painting_name": "西园雅集图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0189",
+    "owner": "石涛",
+    "name": "印章0189(西园雅集图)",
+    "seal_image": "encoded_seals/seal_0189.png",
+    "painting_id": "D011517",
+    "painting_name": "西园雅集图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0190",
+    "owner": "石涛",
+    "name": "膏肓子济1(山水清音图)",
+    "seal_image": "encoded_seals/seal_0190.jpg",
+    "painting_id": "D011521",
+    "painting_name": "山水清音图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0191",
+    "owner": "石涛",
+    "name": "搜尽奇峰打草稿(山水清音图)",
+    "seal_image": "encoded_seals/seal_0191.jpg",
+    "painting_id": "D011521",
+    "painting_name": "山水清音图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0192",
+    "owner": "石涛",
+    "name": "印章0192(山水清音图)",
+    "seal_image": "encoded_seals/seal_0192.jpg",
+    "painting_id": "D011521",
+    "painting_name": "山水清音图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0193",
+    "owner": "石涛",
+    "name": "印章0193(山水清音图)",
+    "seal_image": "encoded_seals/seal_0193.jpg",
+    "painting_id": "D011521",
+    "painting_name": "山水清音图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0194",
+    "owner": "石涛",
+    "name": "印章0194(月夜泛舟图)",
+    "seal_image": "encoded_seals/seal_0194.png",
+    "painting_id": "D011524",
+    "painting_name": "月夜泛舟图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0195",
+    "owner": "石涛",
+    "name": "印章0195(月夜泛舟图)",
+    "seal_image": "encoded_seals/seal_0195.png",
+    "painting_id": "D011524",
+    "painting_name": "月夜泛舟图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0196",
+    "owner": "石涛",
+    "name": "老济1(月夜泛舟图)",
+    "seal_image": "encoded_seals/seal_0196.png",
+    "painting_id": "D011524",
+    "painting_name": "月夜泛舟图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0197",
+    "owner": "石涛",
+    "name": "印章0197(月夜泛舟图)",
+    "seal_image": "encoded_seals/seal_0197.png",
+    "painting_id": "D011524",
+    "painting_name": "月夜泛舟图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0198",
+    "owner": "石涛",
+    "name": "四百峰中箬笠翁图书1(月夜泛舟图)",
+    "seal_image": "encoded_seals/seal_0198.png",
+    "painting_id": "D011524",
+    "painting_name": "月夜泛舟图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0199",
+    "owner": "石涛",
+    "name": "印章0199(月夜泛舟图)",
+    "seal_image": "encoded_seals/seal_0199.png",
+    "painting_id": "D011524",
+    "painting_name": "月夜泛舟图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0200",
+    "owner": "石涛",
+    "name": "印章0200(月夜泛舟图)",
+    "seal_image": "encoded_seals/seal_0200.png",
+    "painting_id": "D011524",
+    "painting_name": "月夜泛舟图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0201",
+    "owner": "石涛",
+    "name": "印章0201(月夜泛舟图)",
+    "seal_image": "encoded_seals/seal_0201.png",
+    "painting_id": "D011524",
+    "painting_name": "月夜泛舟图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0202",
+    "owner": "石涛",
+    "name": "印章0202(月夜泛舟图)",
+    "seal_image": "encoded_seals/seal_0202.png",
+    "painting_id": "D011524",
+    "painting_name": "月夜泛舟图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0203",
+    "owner": "石涛",
+    "name": "苦瓜和尚2(游华阳山图)",
+    "seal_image": "encoded_seals/seal_0203.png",
+    "painting_id": "D011540",
+    "painting_name": "游华阳山图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0204",
+    "owner": "石涛",
+    "name": "印章0204(游华阳山图)",
+    "seal_image": "encoded_seals/seal_0204.png",
+    "painting_id": "D011540",
+    "painting_name": "游华阳山图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0205",
+    "owner": "石涛",
+    "name": "石涛2(游华阳山图)",
+    "seal_image": "encoded_seals/seal_0205.png",
+    "painting_id": "D011540",
+    "painting_name": "游华阳山图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0206",
+    "owner": "石涛",
+    "name": "印章0206(游华阳山图)",
+    "seal_image": "encoded_seals/seal_0206.png",
+    "painting_id": "D011540",
+    "painting_name": "游华阳山图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0207",
+    "owner": "石涛",
+    "name": "印章0207(牡丹兰花图)",
+    "seal_image": "encoded_seals/seal_0207.jpg",
+    "painting_id": "D012756",
+    "painting_name": "牡丹兰花图",
+    "has_reference": false
+  },
+  {
+    "seal_code": "0208",
+    "owner": "石涛",
+    "name": "搜尽奇峰打草稿(牡丹兰花图)",
+    "seal_image": "encoded_seals/seal_0208.jpg",
+    "painting_id": "D012756",
+    "painting_name": "牡丹兰花图",
+    "has_reference": true
+  },
+  {
+    "seal_code": "0209",
+    "owner": "石涛",
+    "name": "印章0209(牡丹兰花图)",
+    "seal_image": "encoded_seals/seal_0209.jpg",
+    "painting_id": "D012756",
+    "painting_name": "牡丹兰花图",
+    "has_reference": false
+  }
+]

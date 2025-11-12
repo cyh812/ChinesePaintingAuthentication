@@ -14,6 +14,7 @@ import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
 import CropIcon from '@mui/icons-material/Crop';
 import AdsClickIcon from '@mui/icons-material/AdsClick';
 import CollectionsBookmarkIcon from '@mui/icons-material/CollectionsBookmark';
+import ImageSelector from './ImageSelector';
 
 const CustomToggleButton = styled(ToggleButton)(({ theme }) => ({
     '&.Mui-selected': {
@@ -37,15 +38,30 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
     },
 }));
 
-export default function StageMenu({ showStage, currentLabel, onChangeLabel, onReset }) {
+export default function StageMenu({ showStage, currentLabel, onChangeLabel, onReset, onImageSelect, onShowSegments }) {
     const [alignment, setAlignment] = React.useState('');
     const [formats, setFormats] = React.useState(() => ['']);
+    const [imageSelectorOpen, setImageSelectorOpen] = React.useState(false);
     const fileInputRef = React.useRef(null);
 
     const handleFormat = (event, newFormats) => setFormats(newFormats);
     const handleAlignment = (event, newAlignment) => setAlignment(newAlignment);
 
-    const handleFileUploadClick = () => fileInputRef.current && fileInputRef.current.click();
+    const handleFileUploadClick = () => {
+        // 打开图片选择对话框
+        setImageSelectorOpen(true);
+    };
+
+    const handleImageSelect = (selectedImage) => {
+        console.log('选中的图片:', selectedImage);
+        setImageSelectorOpen(false);
+        
+        // 显示Stage
+        showStage && showStage();
+        
+        // 通知父组件图片已选择
+        onImageSelect && onImageSelect(selectedImage);
+    };
 
     const handleFileChange = (event) => {
         event.preventDefault();
@@ -138,7 +154,12 @@ export default function StageMenu({ showStage, currentLabel, onChangeLabel, onRe
                     <CustomToggleButton value="italic" aria-label="italic">
                         <CropIcon />
                     </CustomToggleButton>
-                    <CustomToggleButton value="underlined" aria-label="underlined">
+                    <CustomToggleButton 
+                        value="underlined" 
+                        aria-label="underlined"
+                        onClick={() => onShowSegments && onShowSegments()}
+                        title="显示切片和印章"
+                    >
                         <AutoAwesomeOutlinedIcon />
                     </CustomToggleButton>
                     <CustomToggleButton value="color" aria-label="color">
@@ -154,6 +175,13 @@ export default function StageMenu({ showStage, currentLabel, onChangeLabel, onRe
                 type="file"
                 style={{ display: 'none' }}
                 onChange={handleFileChange}
+            />
+
+            {/* 图片选择对话框 */}
+            <ImageSelector 
+                open={imageSelectorOpen}
+                onClose={() => setImageSelectorOpen(false)}
+                onSelect={handleImageSelect}
             />
         </div>
     );

@@ -75,205 +75,181 @@ function ReferenceIcon2(props) {
 
 const minDistance = 0.01;
 
-const Legend = () => {
-    const [value1, setValue1] = React.useState([0.8, 1]);
+const Legend = ({ onSegmentSimilarityChange }) => {
+    // 切片相似度范围: 0.8 - 1.0
+    const [segmentSimilarity, setSegmentSimilarity] = React.useState([0.8, 1]);
 
     // Slider 变动时，按拖动的 thumb 更新对应值
     const handleSliderChange = (event, newValue, activeThumb) => {
         if (!Array.isArray(newValue)) return;
         if (activeThumb === 0) {
-            setValue1([Math.min(newValue[0], value1[1] - minDistance), value1[1]]);
+            const newRange = [Math.min(newValue[0], segmentSimilarity[1] - minDistance), segmentSimilarity[1]];
+            setSegmentSimilarity(newRange);
+            onSegmentSimilarityChange?.(newRange);
         } else {
-            setValue1([value1[0], Math.max(newValue[1], value1[0] + minDistance)]);
+            const newRange = [segmentSimilarity[0], Math.max(newValue[1], segmentSimilarity[0] + minDistance)];
+            setSegmentSimilarity(newRange);
+            onSegmentSimilarityChange?.(newRange);
         }
     };
 
     // 左侧 Input 变化
     const handleLeftInputChange = (event) => {
         let newLeft = Number(event.target.value);
-        // 限制最小值为 0，最大值不能超过右侧值 - minDistance
-        newLeft = Math.max(newLeft, 0);
-        newLeft = Math.min(newLeft, value1[1] - minDistance);
-        setValue1([newLeft, value1[1]]);
+        // 限制最小值为 0.8，最大值不能超过右侧值 - minDistance
+        newLeft = Math.max(newLeft, 0.8);
+        newLeft = Math.min(newLeft, segmentSimilarity[1] - minDistance);
+        const newRange = [newLeft, segmentSimilarity[1]];
+        setSegmentSimilarity(newRange);
+        onSegmentSimilarityChange?.(newRange);
     };
 
     // 右侧 Input 变化
     const handleRightInputChange = (event) => {
         let newRight = Number(event.target.value);
-        // 限制最大值为 100，最小值不能低于左侧值 + minDistance
+        // 限制最大值为 1.0，最小值不能低于左侧值 + minDistance
         newRight = Math.min(newRight, 1);
-        newRight = Math.max(newRight, value1[0] + minDistance);
-        setValue1([value1[0], newRight]);
+        newRight = Math.max(newRight, segmentSimilarity[0] + minDistance);
+        const newRange = [segmentSimilarity[0], newRight];
+        setSegmentSimilarity(newRange);
+        onSegmentSimilarityChange?.(newRange);
     };
 
     // 失去焦点时，再次校验左侧值
     const handleLeftBlur = () => {
-        let newLeft = value1[0];
-        if (newLeft < 0) newLeft = 0;
-        if (newLeft > value1[1] - minDistance) newLeft = value1[1] - minDistance;
-        setValue1([newLeft, value1[1]]);
+        let newLeft = segmentSimilarity[0];
+        if (newLeft < 0.8) newLeft = 0.8;
+        if (newLeft > segmentSimilarity[1] - minDistance) newLeft = segmentSimilarity[1] - minDistance;
+        const newRange = [newLeft, segmentSimilarity[1]];
+        setSegmentSimilarity(newRange);
+        onSegmentSimilarityChange?.(newRange);
     };
 
     // 失去焦点时，再次校验右侧值
     const handleRightBlur = () => {
-        let newRight = value1[1];
+        let newRight = segmentSimilarity[1];
         if (newRight > 1) newRight = 1;
-        if (newRight < value1[0] + minDistance) newRight = value1[0] + minDistance;
-        setValue1([value1[0], newRight]);
-    };
-
-    const [value2, setValue2] = React.useState([0.8, 1]);
-
-    // Slider 变动时，按拖动的 thumb 更新对应值
-    const handleSliderChange2 = (event, newValue, activeThumb) => {
-        if (!Array.isArray(newValue)) return;
-        if (activeThumb === 0) {
-            setValue2([Math.min(newValue[0], value2[1] - minDistance), value2[1]]);
-        } else {
-            setValue2([value2[0], Math.max(newValue[1], value1[0] + minDistance)]);
-        }
-    };
-
-    // 左侧 Input 变化
-    const handleLeftInputChange2 = (event) => {
-        let newLeft = Number(event.target.value);
-        // 限制最小值为 0，最大值不能超过右侧值 - minDistance
-        newLeft = Math.max(newLeft, 0);
-        newLeft = Math.min(newLeft, value1[1] - minDistance);
-        setValue2([newLeft, value2[1]]);
-    };
-
-    // 右侧 Input 变化
-    const handleRightInputChange2 = (event) => {
-        let newRight = Number(event.target.value);
-        // 限制最大值为 100，最小值不能低于左侧值 + minDistance
-        newRight = Math.min(newRight, 1);
-        newRight = Math.max(newRight, value2[0] + minDistance);
-        setValue2([value2[0], newRight]);
-    };
-
-    // 失去焦点时，再次校验左侧值
-    const handleLeftBlur2 = () => {
-        let newLeft = value2[0];
-        if (newLeft < 0) newLeft = 0;
-        if (newLeft > value2[1] - minDistance) newLeft = value2[1] - minDistance;
-        setValue2([newLeft, value2[1]]);
-    };
-
-    // 失去焦点时，再次校验右侧值
-    const handleRightBlur2 = () => {
-        let newRight = value2[1];
-        if (newRight > 1) newRight = 1;
-        if (newRight < value2[0] + minDistance) newRight = value2[0] + minDistance;
-        setValue2([value2[0], newRight]);
+        if (newRight < segmentSimilarity[0] + minDistance) newRight = segmentSimilarity[0] + minDistance;
+        const newRange = [segmentSimilarity[0], newRight];
+        setSegmentSimilarity(newRange);
+        onSegmentSimilarityChange?.(newRange);
     };
 
 
     return (
         <div style={{
-            position: 'absolute', // 悬浮效果
-            bottom: '20px',          // 距离顶部 10px
-            zIndex: 1000,         // 确保在其他内容之上
-            backgroundColor: '#ffffff', // 背景颜色
-            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', // 添加阴影
-            padding: '1px',      // 内边距
-            width: '95%',                  // 修改：使用相对宽度
-            maxWidth: '1550px',            // 添加：最大宽度限制
-            height: '70px',
+            position: 'absolute',
+            bottom: '20px',
+            zIndex: 1000,
+            backgroundColor: '#ffffff',
+            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)',
+            padding: '15px 15px 10px 15px', // 增加顶部内边距
+            width: 'calc(100% - 40px)', // 响应式宽度，减去左右边距
+            maxWidth: '100%',
+            minHeight: '80px', // 增加最小高度
+            height: 'auto', // 自动高度
             color: "black",
             display: "flex",
             flexDirection: "row",
-            alignItems: "center",
+            alignItems: 'center',
+            justifyContent: 'space-between', // 均匀分布
             borderRadius: "10px",
-            border: '2px solid #ddd', /* 添加边框 */
-            overflowX: 'auto',         // 关键：添加水平滚动条
-            overflowY: 'hidden'
+            border: '2px solid #ddd',
+            overflowX: 'auto', // 水平滚动
+            overflowY: 'hidden',
+            gap: '8px', // 减小间距
+            left: '50%', // 居中对齐
+            transform: 'translateX(-50%)', // 居中对齐
         }}>
-            <Box sx={{ width: 650, marginRight: 1, marginLeft: 1, backgroundColor: '#f7f7f7', borderRadius: '20px' }}>
-                <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
-                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap', borderRight: '5px solid #ffffff', padding: '5px 15px', fontSize: '18px' }}>Image Similarity </div>
-                    <Input sx={{ width: 50 }}
-                        value={value1[0]}
-                        size="small"
-                        onChange={handleLeftInputChange}
-                        onBlur={handleLeftBlur}
-                    />
-                    <Slider
-                        getAriaLabel={() => 'Minimum distance'}
-                        value={value1}
-                        onChange={handleSliderChange}
-                        valueLabelDisplay="auto"
-                        disableSwap
-                        step={0.01}
-                        min={0}
-                        max={1}
-                        sx={{ mx: 2, width: 200 }}
-                    />
-                    <Input sx={{ width: 50, paddingLeft: 2 }}
-                        value={value1[1]}
-                        size="small"
-                        onChange={handleRightInputChange}
-                        onBlur={handleRightBlur}
-                    />
-                </Stack>
-            </Box>
+            {/* 容器内部使用 flex-wrap: nowrap 确保横向排列，不换行 */}
+            <div style={{
+                display: 'flex',
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '8px',
+                width: '100%',
+                minWidth: 'fit-content',
+                whiteSpace: 'nowrap'
+            }}>
+                {/* 切片相似度滑块 */}
+                <Box sx={{ flex: '1 1 auto', minWidth: '380px', maxWidth: '480px', backgroundColor: '#f7f7f7', borderRadius: '20px', px: 1, py: 1 }}>
+                    <Stack spacing={0.5} direction="row" sx={{ alignItems: 'center', mb: 0, mt: 0.5 }}>
+                        <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap', borderRight: '5px solid #ffffff', padding: '5px 10px', fontSize: '14px' }}>Segment Similarity</div>
+                        <Input sx={{ width: 42 }}
+                            value={segmentSimilarity[0]}
+                            size="small"
+                            onChange={handleLeftInputChange}
+                            onBlur={handleLeftBlur}
+                            inputProps={{
+                                step: 0.01,
+                                min: 0.8,
+                                max: 1,
+                                type: 'number',
+                            }}
+                        />
+                        <Slider
+                            getAriaLabel={() => 'Segment similarity range'}
+                            value={segmentSimilarity}
+                            onChange={handleSliderChange}
+                            valueLabelDisplay="auto"
+                            disableSwap
+                            step={0.01}
+                            min={0.8}
+                            max={1}
+                            sx={{ 
+                                mx: 0.5, 
+                                flex: 1, 
+                                minWidth: '100px',
+                                '& .MuiSlider-valueLabel': {
+                                    fontSize: '12px',
+                                    padding: '2px 6px'
+                                }
+                            }}
+                        />
+                        <Input sx={{ width: 42 }}
+                            value={segmentSimilarity[1]}
+                            size="small"
+                            onChange={handleRightInputChange}
+                            onBlur={handleRightBlur}
+                            inputProps={{
+                                step: 0.01,
+                                min: 0.8,
+                                max: 1,
+                                type: 'number',
+                            }}
+                        />
+                    </Stack>
+                </Box>
 
-            <Box sx={{ width: 630, marginRight: 2, marginLeft: 2, backgroundColor: '#f7f7f7', borderRadius: '20px' }}>
-                <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
-                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap', borderRight: '5px solid #ffffff', padding: '5px 15px', fontSize: '18px' }}>Seal Similarity </div>
-                    <Input sx={{ width: 50 }}
-                        value={value2[0]}
-                        size="small"
-                        onChange={handleLeftInputChange2}
-                        onBlur={handleLeftBlur2}
-                    />
-                    <Slider
-                        getAriaLabel={() => 'Minimum distance'}
-                        value={value2}
-                        onChange={handleSliderChange2}
-                        valueLabelDisplay="auto"
-                        disableSwap
-                        step={0.01}
-                        min={0}
-                        max={1}
-                        sx={{ mx: 2, width: 200 }}
-                    />
-                    <Input sx={{ width: 50, paddingLeft: 2}}
-                        value={value2[1]}
-                        size="small"
-                        onChange={handleRightInputChange2}
-                        onBlur={handleRightBlur2}
-                    />
-                </Stack>
-            </Box>
+                <Box sx={{ flex: '0 0 auto', minWidth: '85px' }}>
+                    <Stack spacing={0.5} direction="row" sx={{ alignItems: 'center', mb: 0, justifyContent: 'center' }}>
+                        <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap', fontSize: '14px' }}>Author</div>
+                        <PeopleIcon sx={{ transform: 'scale(1.2)', ml: 0.5 }} />
+                    </Stack>
+                </Box>
 
-            <Box sx={{ width: 100, marginRight: 3 }}>
-                <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
-                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap', fontSize: '18px' }}>Author</div>
-                    <PeopleIcon sx={{ transform: 'scale(1.5)' }} />
-                </Stack>
-            </Box>
+                <Box sx={{ flex: '0 0 auto', minWidth: '100px' }}>
+                    <Stack spacing={0.5} direction="row" sx={{ alignItems: 'center', mb: 0, justifyContent: 'center' }}>
+                        <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap', fontSize: '14px' }}>Painting</div>
+                        <PaintingIcon sx={{ transform: 'scale(1.2)', ml: 0.5 }} />
+                    </Stack>
+                </Box>
 
-            <Box sx={{ width: 120, marginRight: 3 }}>
-                <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
-                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap', fontSize: '18px' }}>Painting</div>
-                    <PaintingIcon sx={{ transform: 'scale(1.5)' }} />
-                </Stack>
-            </Box>
+                <Box sx={{ flex: '0 0 auto', minWidth: '70px' }}>
+                    <Stack spacing={0.5} direction="row" sx={{ alignItems: 'center', mb: 0, justifyContent: 'center' }}>
+                        <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap', fontSize: '14px' }}>Seal</div>
+                        <SealIcon sx={{ transform: 'scale(1.2)', ml: 0.5 }} />
+                    </Stack>
+                </Box>
 
-            <Box sx={{ width: 100, marginRight: 1 }}>
-                <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
-                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap', fontSize: '18px' }}>Seal</div>
-                    <SealIcon sx={{ transform: 'scale(1.5)' }} />
-                </Stack>
-            </Box>
-
-            <Box sx={{ width: 120, marginRight: 0 }}>
-                <Stack spacing={1} direction="row" sx={{ alignItems: 'center', mb: 0 }}>
-                    <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap', fontSize: '18px' }}>Literature</div>
-                    <ReferenceIcon2 sx={{ transform: 'scale(1.3)' }} />
-                </Stack>
-            </Box>
+                <Box sx={{ flex: '0 0 auto', minWidth: '105px' }}>
+                    <Stack spacing={0.5} direction="row" sx={{ alignItems: 'center', mb: 0, justifyContent: 'center' }}>
+                        <div style={{ color: 'black', fontWeight: 'bold', whiteSpace: 'nowrap', fontSize: '14px' }}>Literature</div>
+                        <ReferenceIcon2 sx={{ transform: 'scale(1.15)', ml: 0.5 }} />
+                    </Stack>
+                </Box>
+            </div>
         </div>
     );
 };

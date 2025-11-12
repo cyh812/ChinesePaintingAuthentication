@@ -1,0 +1,1465 @@
+[
+  {
+    "seal_code": "0001",
+    "seal_image": "encoded_seals/seal_0001.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0010.png",
+    "similarity": 0.6829
+  },
+  {
+    "seal_code": "0002",
+    "seal_image": "encoded_seals/seal_0002.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0053.png",
+    "similarity": 0.6841
+  },
+  {
+    "seal_code": "0003",
+    "seal_image": "encoded_seals/seal_0003.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0067.png",
+    "similarity": 0.6978
+  },
+  {
+    "seal_code": "0004",
+    "seal_image": "encoded_seals/seal_0004.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0005",
+    "seal_image": "encoded_seals/seal_0005.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0006",
+    "seal_image": "encoded_seals/seal_0006.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0007",
+    "seal_image": "encoded_seals/seal_0007.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0008",
+    "seal_image": "encoded_seals/seal_0008.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0009",
+    "seal_image": "encoded_seals/seal_0009.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0092.png",
+    "similarity": 0.7882
+  },
+  {
+    "seal_code": "0010",
+    "seal_image": "encoded_seals/seal_0010.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0011",
+    "seal_image": "encoded_seals/seal_0011.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0012",
+    "seal_image": "encoded_seals/seal_0012.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0013",
+    "seal_image": "encoded_seals/seal_0013.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0049.png",
+    "similarity": 0.7822
+  },
+  {
+    "seal_code": "0014",
+    "seal_image": "encoded_seals/seal_0014.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0074.png",
+    "similarity": 0.7229
+  },
+  {
+    "seal_code": "0015",
+    "seal_image": "encoded_seals/seal_0015.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0001.png",
+    "similarity": 0.7987
+  },
+  {
+    "seal_code": "0016",
+    "seal_image": "encoded_seals/seal_0016.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0025.png",
+    "similarity": 0.7563
+  },
+  {
+    "seal_code": "0017",
+    "seal_image": "encoded_seals/seal_0017.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0018",
+    "seal_image": "encoded_seals/seal_0018.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0053.png",
+    "similarity": 0.7015
+  },
+  {
+    "seal_code": "0019",
+    "seal_image": "encoded_seals/seal_0019.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0054.png",
+    "similarity": 0.6465
+  },
+  {
+    "seal_code": "0020",
+    "seal_image": "encoded_seals/seal_0020.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0057.png",
+    "similarity": 0.7143
+  },
+  {
+    "seal_code": "0021",
+    "seal_image": "encoded_seals/seal_0021.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0062.png",
+    "similarity": 0.6882
+  },
+  {
+    "seal_code": "0022",
+    "seal_image": "encoded_seals/seal_0022.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0075.png",
+    "similarity": 0.6482
+  },
+  {
+    "seal_code": "0023",
+    "seal_image": "encoded_seals/seal_0023.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0079.png",
+    "similarity": 0.7382
+  },
+  {
+    "seal_code": "0024",
+    "seal_image": "encoded_seals/seal_0024.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0009.png",
+    "similarity": 0.6898
+  },
+  {
+    "seal_code": "0025",
+    "seal_image": "encoded_seals/seal_0025.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0026",
+    "seal_image": "encoded_seals/seal_0026.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0027",
+    "seal_image": "encoded_seals/seal_0027.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0028",
+    "seal_image": "encoded_seals/seal_0028.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0029",
+    "seal_image": "encoded_seals/seal_0029.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0030",
+    "seal_image": "encoded_seals/seal_0030.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0031",
+    "seal_image": "encoded_seals/seal_0031.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0032",
+    "seal_image": "encoded_seals/seal_0032.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0033",
+    "seal_image": "encoded_seals/seal_0033.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0034",
+    "seal_image": "encoded_seals/seal_0034.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0004.png",
+    "similarity": 0.6991
+  },
+  {
+    "seal_code": "0035",
+    "seal_image": "encoded_seals/seal_0035.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0046.png",
+    "similarity": 0.6487
+  },
+  {
+    "seal_code": "0036",
+    "seal_image": "encoded_seals/seal_0036.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0037",
+    "seal_image": "encoded_seals/seal_0037.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0049.png",
+    "similarity": 0.6983
+  },
+  {
+    "seal_code": "0038",
+    "seal_image": "encoded_seals/seal_0038.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0039",
+    "seal_image": "encoded_seals/seal_0039.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0040",
+    "seal_image": "encoded_seals/seal_0040.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0041",
+    "seal_image": "encoded_seals/seal_0041.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0070.png",
+    "similarity": 0.7434
+  },
+  {
+    "seal_code": "0042",
+    "seal_image": "encoded_seals/seal_0042.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0043",
+    "seal_image": "encoded_seals/seal_0043.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0044",
+    "seal_image": "encoded_seals/seal_0044.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0045",
+    "seal_image": "encoded_seals/seal_0045.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0046",
+    "seal_image": "encoded_seals/seal_0046.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0047",
+    "seal_image": "encoded_seals/seal_0047.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0048",
+    "seal_image": "encoded_seals/seal_0048.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0049",
+    "seal_image": "encoded_seals/seal_0049.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0050",
+    "seal_image": "encoded_seals/seal_0050.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0051",
+    "seal_image": "encoded_seals/seal_0051.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0052",
+    "seal_image": "encoded_seals/seal_0052.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0053",
+    "seal_image": "encoded_seals/seal_0053.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0054",
+    "seal_image": "encoded_seals/seal_0054.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0055",
+    "seal_image": "encoded_seals/seal_0055.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0056",
+    "seal_image": "encoded_seals/seal_0056.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0080.png",
+    "similarity": 0.7727
+  },
+  {
+    "seal_code": "0057",
+    "seal_image": "encoded_seals/seal_0057.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0087.png",
+    "similarity": 0.6724
+  },
+  {
+    "seal_code": "0058",
+    "seal_image": "encoded_seals/seal_0058.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0024.png",
+    "similarity": 0.7183
+  },
+  {
+    "seal_code": "0059",
+    "seal_image": "encoded_seals/seal_0059.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0044.png",
+    "similarity": 0.7178
+  },
+  {
+    "seal_code": "0060",
+    "seal_image": "encoded_seals/seal_0060.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0095.png",
+    "similarity": 0.7905
+  },
+  {
+    "seal_code": "0061",
+    "seal_image": "encoded_seals/seal_0061.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0062",
+    "seal_image": "encoded_seals/seal_0062.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0063",
+    "seal_image": "encoded_seals/seal_0063.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0064",
+    "seal_image": "encoded_seals/seal_0064.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0065",
+    "seal_image": "encoded_seals/seal_0065.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0048.png",
+    "similarity": 0.6634
+  },
+  {
+    "seal_code": "0066",
+    "seal_image": "encoded_seals/seal_0066.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0067",
+    "seal_image": "encoded_seals/seal_0067.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0068",
+    "seal_image": "encoded_seals/seal_0068.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0069",
+    "seal_image": "encoded_seals/seal_0069.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0070",
+    "seal_image": "encoded_seals/seal_0070.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0093.png",
+    "similarity": 0.7017
+  },
+  {
+    "seal_code": "0071",
+    "seal_image": "encoded_seals/seal_0071.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0094.png",
+    "similarity": 0.703
+  },
+  {
+    "seal_code": "0072",
+    "seal_image": "encoded_seals/seal_0072.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0073",
+    "seal_image": "encoded_seals/seal_0073.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0074",
+    "seal_image": "encoded_seals/seal_0074.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0075",
+    "seal_image": "encoded_seals/seal_0075.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0076",
+    "seal_image": "encoded_seals/seal_0076.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0077",
+    "seal_image": "encoded_seals/seal_0077.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0078",
+    "seal_image": "encoded_seals/seal_0078.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0079",
+    "seal_image": "encoded_seals/seal_0079.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0063.png",
+    "similarity": 0.5953
+  },
+  {
+    "seal_code": "0080",
+    "seal_image": "encoded_seals/seal_0080.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0063.png",
+    "similarity": 0.5903
+  },
+  {
+    "seal_code": "0081",
+    "seal_image": "encoded_seals/seal_0081.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0082",
+    "seal_image": "encoded_seals/seal_0082.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0083",
+    "seal_image": "encoded_seals/seal_0083.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0084",
+    "seal_image": "encoded_seals/seal_0084.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0079.png",
+    "similarity": 0.6858
+  },
+  {
+    "seal_code": "0085",
+    "seal_image": "encoded_seals/seal_0085.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0079.png",
+    "similarity": 0.6558
+  },
+  {
+    "seal_code": "0086",
+    "seal_image": "encoded_seals/seal_0086.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0079.png",
+    "similarity": 0.6858
+  },
+  {
+    "seal_code": "0087",
+    "seal_image": "encoded_seals/seal_0087.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0088",
+    "seal_image": "encoded_seals/seal_0088.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0089",
+    "seal_image": "encoded_seals/seal_0089.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0090",
+    "seal_image": "encoded_seals/seal_0090.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0091",
+    "seal_image": "encoded_seals/seal_0091.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0092",
+    "seal_image": "encoded_seals/seal_0092.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0093",
+    "seal_image": "encoded_seals/seal_0093.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0094",
+    "seal_image": "encoded_seals/seal_0094.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0095",
+    "seal_image": "encoded_seals/seal_0095.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0060.png",
+    "similarity": 0.6587
+  },
+  {
+    "seal_code": "0096",
+    "seal_image": "encoded_seals/seal_0096.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0067.png",
+    "similarity": 0.6977
+  },
+  {
+    "seal_code": "0097",
+    "seal_image": "encoded_seals/seal_0097.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0097.png",
+    "similarity": 0.5598
+  },
+  {
+    "seal_code": "0098",
+    "seal_image": "encoded_seals/seal_0098.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0099",
+    "seal_image": "encoded_seals/seal_0099.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0025.png",
+    "similarity": 0.6974
+  },
+  {
+    "seal_code": "0100",
+    "seal_image": "encoded_seals/seal_0100.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0101",
+    "seal_image": "encoded_seals/seal_0101.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0049.png",
+    "similarity": 0.6907
+  },
+  {
+    "seal_code": "0102",
+    "seal_image": "encoded_seals/seal_0102.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0103",
+    "seal_image": "encoded_seals/seal_0103.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0104",
+    "seal_image": "encoded_seals/seal_0104.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0060.png",
+    "similarity": 0.6498
+  },
+  {
+    "seal_code": "0105",
+    "seal_image": "encoded_seals/seal_0105.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0072.png",
+    "similarity": 0.6513
+  },
+  {
+    "seal_code": "0106",
+    "seal_image": "encoded_seals/seal_0106.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0107",
+    "seal_image": "encoded_seals/seal_0107.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0108",
+    "seal_image": "encoded_seals/seal_0108.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0109",
+    "seal_image": "encoded_seals/seal_0109.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0110",
+    "seal_image": "encoded_seals/seal_0110.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0004.png",
+    "similarity": 0.7356
+  },
+  {
+    "seal_code": "0111",
+    "seal_image": "encoded_seals/seal_0111.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0112",
+    "seal_image": "encoded_seals/seal_0112.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0062.png",
+    "similarity": 0.6113
+  },
+  {
+    "seal_code": "0113",
+    "seal_image": "encoded_seals/seal_0113.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0062.png",
+    "similarity": 0.6356
+  },
+  {
+    "seal_code": "0114",
+    "seal_image": "encoded_seals/seal_0114.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0063.png",
+    "similarity": 0.6087
+  },
+  {
+    "seal_code": "0115",
+    "seal_image": "encoded_seals/seal_0115.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0071.png",
+    "similarity": 0.7136
+  },
+  {
+    "seal_code": "0116",
+    "seal_image": "encoded_seals/seal_0116.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0079.png",
+    "similarity": 0.7133
+  },
+  {
+    "seal_code": "0117",
+    "seal_image": "encoded_seals/seal_0117.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0118",
+    "seal_image": "encoded_seals/seal_0118.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0119",
+    "seal_image": "encoded_seals/seal_0119.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0120",
+    "seal_image": "encoded_seals/seal_0120.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0121",
+    "seal_image": "encoded_seals/seal_0121.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0122",
+    "seal_image": "encoded_seals/seal_0122.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0123",
+    "seal_image": "encoded_seals/seal_0123.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0124",
+    "seal_image": "encoded_seals/seal_0124.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0125",
+    "seal_image": "encoded_seals/seal_0125.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0126",
+    "seal_image": "encoded_seals/seal_0126.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0127",
+    "seal_image": "encoded_seals/seal_0127.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0128",
+    "seal_image": "encoded_seals/seal_0128.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0074.png",
+    "similarity": 0.8009
+  },
+  {
+    "seal_code": "0129",
+    "seal_image": "encoded_seals/seal_0129.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0130",
+    "seal_image": "encoded_seals/seal_0130.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0131",
+    "seal_image": "encoded_seals/seal_0131.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0053.png",
+    "similarity": 0.6967
+  },
+  {
+    "seal_code": "0132",
+    "seal_image": "encoded_seals/seal_0132.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0067.png",
+    "similarity": 0.6887
+  },
+  {
+    "seal_code": "0133",
+    "seal_image": "encoded_seals/seal_0133.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0087.png",
+    "similarity": 0.6356
+  },
+  {
+    "seal_code": "0134",
+    "seal_image": "encoded_seals/seal_0134.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0009.png",
+    "similarity": 0.637
+  },
+  {
+    "seal_code": "0135",
+    "seal_image": "encoded_seals/seal_0135.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0136",
+    "seal_image": "encoded_seals/seal_0136.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0041.png",
+    "similarity": 0.963
+  },
+  {
+    "seal_code": "0137",
+    "seal_image": "encoded_seals/seal_0137.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0046.png",
+    "similarity": 0.7154
+  },
+  {
+    "seal_code": "0138",
+    "seal_image": "encoded_seals/seal_0138.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0073.png",
+    "similarity": 0.7005
+  },
+  {
+    "seal_code": "0139",
+    "seal_image": "encoded_seals/seal_0139.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0140",
+    "seal_image": "encoded_seals/seal_0140.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0141",
+    "seal_image": "encoded_seals/seal_0141.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0142",
+    "seal_image": "encoded_seals/seal_0142.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0143",
+    "seal_image": "encoded_seals/seal_0143.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0144",
+    "seal_image": "encoded_seals/seal_0144.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0145",
+    "seal_image": "encoded_seals/seal_0145.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0146",
+    "seal_image": "encoded_seals/seal_0146.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0147",
+    "seal_image": "encoded_seals/seal_0147.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0076.png",
+    "similarity": 0.6829
+  },
+  {
+    "seal_code": "0148",
+    "seal_image": "encoded_seals/seal_0148.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0149",
+    "seal_image": "encoded_seals/seal_0149.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0093.png",
+    "similarity": 0.7948
+  },
+  {
+    "seal_code": "0150",
+    "seal_image": "encoded_seals/seal_0150.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0094.png",
+    "similarity": 0.8287
+  },
+  {
+    "seal_code": "0151",
+    "seal_image": "encoded_seals/seal_0151.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0152",
+    "seal_image": "encoded_seals/seal_0152.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0153",
+    "seal_image": "encoded_seals/seal_0153.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0154",
+    "seal_image": "encoded_seals/seal_0154.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0155",
+    "seal_image": "encoded_seals/seal_0155.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0156",
+    "seal_image": "encoded_seals/seal_0156.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0025.png",
+    "similarity": 0.7121
+  },
+  {
+    "seal_code": "0157",
+    "seal_image": "encoded_seals/seal_0157.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0025.png",
+    "similarity": 0.6812
+  },
+  {
+    "seal_code": "0158",
+    "seal_image": "encoded_seals/seal_0158.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0159",
+    "seal_image": "encoded_seals/seal_0159.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0160",
+    "seal_image": "encoded_seals/seal_0160.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0057.png",
+    "similarity": 0.6756
+  },
+  {
+    "seal_code": "0161",
+    "seal_image": "encoded_seals/seal_0161.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0162",
+    "seal_image": "encoded_seals/seal_0162.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0163",
+    "seal_image": "encoded_seals/seal_0163.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0064.png",
+    "similarity": 0.6776
+  },
+  {
+    "seal_code": "0164",
+    "seal_image": "encoded_seals/seal_0164.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0096.png",
+    "similarity": 0.6504
+  },
+  {
+    "seal_code": "0165",
+    "seal_image": "encoded_seals/seal_0165.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0166",
+    "seal_image": "encoded_seals/seal_0166.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0167",
+    "seal_image": "encoded_seals/seal_0167.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0168",
+    "seal_image": "encoded_seals/seal_0168.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0169",
+    "seal_image": "encoded_seals/seal_0169.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0041.png",
+    "similarity": 0.9321
+  },
+  {
+    "seal_code": "0170",
+    "seal_image": "encoded_seals/seal_0170.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0046.png",
+    "similarity": 0.7286
+  },
+  {
+    "seal_code": "0171",
+    "seal_image": "encoded_seals/seal_0171.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0073.png",
+    "similarity": 0.6933
+  },
+  {
+    "seal_code": "0172",
+    "seal_image": "encoded_seals/seal_0172.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0173",
+    "seal_image": "encoded_seals/seal_0173.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0098.png",
+    "similarity": 0.6264
+  },
+  {
+    "seal_code": "0174",
+    "seal_image": "encoded_seals/seal_0174.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0175",
+    "seal_image": "encoded_seals/seal_0175.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0176",
+    "seal_image": "encoded_seals/seal_0176.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0024.png",
+    "similarity": 0.8276
+  },
+  {
+    "seal_code": "0177",
+    "seal_image": "encoded_seals/seal_0177.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0041.png",
+    "similarity": 0.8484
+  },
+  {
+    "seal_code": "0178",
+    "seal_image": "encoded_seals/seal_0178.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0055.png",
+    "similarity": 0.8051
+  },
+  {
+    "seal_code": "0179",
+    "seal_image": "encoded_seals/seal_0179.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0180",
+    "seal_image": "encoded_seals/seal_0180.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0181",
+    "seal_image": "encoded_seals/seal_0181.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0182",
+    "seal_image": "encoded_seals/seal_0182.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0030.png",
+    "similarity": 0.6888
+  },
+  {
+    "seal_code": "0183",
+    "seal_image": "encoded_seals/seal_0183.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0004.png",
+    "similarity": 0.7128
+  },
+  {
+    "seal_code": "0184",
+    "seal_image": "encoded_seals/seal_0184.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0185",
+    "seal_image": "encoded_seals/seal_0185.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0186",
+    "seal_image": "encoded_seals/seal_0186.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0187",
+    "seal_image": "encoded_seals/seal_0187.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0188",
+    "seal_image": "encoded_seals/seal_0188.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0189",
+    "seal_image": "encoded_seals/seal_0189.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0190",
+    "seal_image": "encoded_seals/seal_0190.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0025.png",
+    "similarity": 0.8325
+  },
+  {
+    "seal_code": "0191",
+    "seal_image": "encoded_seals/seal_0191.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0074.png",
+    "similarity": 0.7257
+  },
+  {
+    "seal_code": "0192",
+    "seal_image": "encoded_seals/seal_0192.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0193",
+    "seal_image": "encoded_seals/seal_0193.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0194",
+    "seal_image": "encoded_seals/seal_0194.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0195",
+    "seal_image": "encoded_seals/seal_0195.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0196",
+    "seal_image": "encoded_seals/seal_0196.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0049.png",
+    "similarity": 0.7415
+  },
+  {
+    "seal_code": "0197",
+    "seal_image": "encoded_seals/seal_0197.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0198",
+    "seal_image": "encoded_seals/seal_0198.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0072.png",
+    "similarity": 0.6796
+  },
+  {
+    "seal_code": "0199",
+    "seal_image": "encoded_seals/seal_0199.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0200",
+    "seal_image": "encoded_seals/seal_0200.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0201",
+    "seal_image": "encoded_seals/seal_0201.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0202",
+    "seal_image": "encoded_seals/seal_0202.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0203",
+    "seal_image": "encoded_seals/seal_0203.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0046.png",
+    "similarity": 0.8087
+  },
+  {
+    "seal_code": "0204",
+    "seal_image": "encoded_seals/seal_0204.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0205",
+    "seal_image": "encoded_seals/seal_0205.png",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0070.png",
+    "similarity": 0.8373
+  },
+  {
+    "seal_code": "0206",
+    "seal_image": "encoded_seals/seal_0206.png",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0207",
+    "seal_image": "encoded_seals/seal_0207.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  },
+  {
+    "seal_code": "0208",
+    "seal_image": "encoded_seals/seal_0208.jpg",
+    "has_reference": true,
+    "standard_image": "reference_seals/ref_0074.png",
+    "similarity": 0.6855
+  },
+  {
+    "seal_code": "0209",
+    "seal_image": "encoded_seals/seal_0209.jpg",
+    "has_reference": false,
+    "standard_image": null,
+    "similarity": null
+  }
+]

@@ -1,5 +1,5 @@
 import { InferenceSession, Tensor } from "onnxruntime-web";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 import "./assets/scss/App.scss";
 import { handleImageScale } from "./components/helpers/scaleHelper";
 import { modelScaleProps,modelInputProps } from "./components/helpers/Interfaces";
@@ -12,13 +12,17 @@ const ort = require("onnxruntime-web");
 import npyjs from "npyjs";
 import "./App.css"
 
-import LLM from "./components/authentication/LLM_QA";
+import EnhancedLLM_QA from "./components/authentication/EnhancedLLM_QA";
 import Storyline from "./components/authentication/Storyline";
 import StageMenu from "./components/authentication/StageMenu"
-import NestedList from "./components/authentication/NestedList"
+import EnhancedNestedList from "./components/authentication/EnhancedNestedList"
 import Legend from "./components/authentication/Legend"
 import Title from "./components/authentication/Title"
+import SegmentsAndSeals from "./components/authentication/SegmentsAndSeals"
+import QuestionAnsweringComponent from "./components/authentication/QuestionAnswering"
+import FullAnswerPanel from "./components/authentication/FullAnswerPanel"
 import { stageFocusManager } from './components/Stage';
+import StorylineDataManager from "./components/authentication/StorylineDataManager";
 // Define image, embedding and model paths
 const IMAGE_PATH = "/assets/data/D011518.jpg";
 const IMAGE_EMBEDDING = "/assets/data/D011518.npy";
@@ -47,6 +51,26 @@ const App = () => {
 
   const [panX, setPanX] = useState(0);
   const [panY, setPanY] = useState(0);
+  
+  // 图数据状态
+  const [graphData, setGraphData] = useState<{ nodes: any[], links: any[] } | null>(null);
+  const [graphLoading, setGraphLoading] = useState(true); // 添加加载状态
+  const [isFullGraphMode, setIsFullGraphMode] = useState(false); // 总图模式状态
+  
+  // 切片和印章显示状态
+  const [showSegmentsAndSeals, setShowSegmentsAndSeals] = useState(false);
+  const [currentImageId, setCurrentImageId] = useState<string | null>(null); // 当前选中的图片ID，初始为null
+  
+  // 新增：选中项和相似度阈值状态
+  const [selectedItems, setSelectedItems] = useState<any[]>([]); // 选中的切片/印章
+  const [segmentSimilarityThreshold, setSegmentSimilarityThreshold] = useState<[number, number]>([0.8, 1.0]); // 切片相似度阈值
+  
+  // 新增：完整答案显示状态
+  const [fullAnswerData, setFullAnswerData] = useState<any>(null); // 存储要显示的完整答案数据
+  
+  // 创建 ref 来引用 SegmentsAndSeals 组件
+  const segmentsAndSealsRef = useRef<any>(null);
+  
   // === 清空所有点与掩码 ===
   const handleReset = () => {
     setClicks([]);        // 清空点
@@ -89,6 +113,27 @@ const App = () => {
     Promise.resolve(loadNpyTensor(IMAGE_EMBEDDING, "float32")).then(
       (embedding) => setTensor(embedding)
     );
+    
+    // 初始化图数据 - 使用 StorylineDataManager
+    const initGraph = async () => {
+      try {
+        setGraphLoading(true);
+        
+        // 初始状态：只有石涛节点，不添加任何画作
+        // StorylineDataManager 在初始化时已经自动添加了石涛节点
+        
+        // 获取初始图数据（只有石涛）
+        const initialGraph = (StorylineDataManager as any).toStorylineFormat();
+        setGraphData(initialGraph as any);
+        
+        console.log('✅ 图数据初始化完成 (仅石涛节点), 节点数:', initialGraph.nodes.length);
+      } catch (error) {
+        console.error('❌ 图数据初始化失败:', error);
+      } finally {
+        setGraphLoading(false);
+      }
+    };
+    initGraph();
   }, []);
 
   const loadImage = async (url: URL) => {
@@ -144,6 +189,108 @@ const App = () => {
     }
   };
 
+  // 处理图更新的回调 - 从 QuestionAnswering 接收新增的节点和边
+  const handleGraphUpdate = (result: { addedNodes?: any[], addedEdges?: any[], data?: any }) => {
+    console.log('📊 收到图数据更新:', result);
+    
+    // 获取最新的图数据
+    const updatedGraph = (StorylineDataManager as any).toStorylineFormat();
+    
+    // 强制创建新对象引用以触发React重新渲染
+    setGraphData({
+      nodes: [...updatedGraph.nodes],
+      links: [...updatedGraph.links]
+    });
+    
+    console.log('✅ 图数据已更新, 节点数:', updatedGraph.nodes.length, '边数:', updatedGraph.links.length);
+  };
+
+  // 处理清空选择的回调 - 查询成功后清空切片和印章选择
+  const handleClearSelection = () => {
+    console.log('🧹 App收到清空选择请求');
+    if (segmentsAndSealsRef.current) {
+      segmentsAndSealsRef.current.clearSelection();
+    }
+  };
+
+  // 处理显示完整答案的回调
+  const handleShowFullAnswer = (historyItem: any) => {
+    console.log('📖 显示完整答案:', historyItem);
+    setFullAnswerData(historyItem);
+  };
+
+  // 处理图片选择
+  const handleImageSelect = (selectedImage: any) => {
+    console.log('🖼️ 用户选择了图片:', selectedImage);
+    
+    // 保存当前图片ID
+    setCurrentImageId(selectedImage.id);
+    
+    // 清空选中项
+    setSelectedItems([]);
+    
+    // 🔥 清空之前的所有图谱数据，只保留石涛节点
+    console.log('🗑️ 清空之前的图谱，重置为只有石涛节点');
+    (StorylineDataManager as any).reset();
+    
+    // 添加新选择的画作节点到图谱
+    (StorylineDataManager as any).addPaintingNode(selectedImage.id, selectedImage.name || `画作 ${selectedImage.id}`);
+    
+    // 更新图数据
+    const updatedGraph = (StorylineDataManager as any).toStorylineFormat();
+    setGraphData({
+      nodes: [...updatedGraph.nodes],
+      links: [...updatedGraph.links]
+    });
+    
+    console.log('✅ 图谱已更新: 石涛 + ' + selectedImage.id + ', 节点数:', updatedGraph.nodes.length);
+    
+    // 使用 JSON 中的图像url路径
+    const imagePath = `/assets/data/${selectedImage.path.replace('../../assets/data/', '')}`;
+    const url = new URL(imagePath, location.origin);
+    
+    // 加载新图片
+    loadImage(url);
+    
+    // 加载对应的 NPY 文件 (Paintings_npy 中的同名文件)
+    const npyPath = `/assets/data/Paintings_npy/${selectedImage.id}.npy`;
+    console.log('📦 正在加载 NPY 文件:', npyPath);
+    
+    Promise.resolve(loadNpyTensor(npyPath, "float32")).then(
+      (embedding) => {
+        setTensor(embedding);
+        console.log('✅ NPY 文件加载成功:', npyPath);
+      }
+    ).catch((error) => {
+      console.error('❌ NPY 文件加载失败:', error);
+      console.log('⚠️ 尝试的路径:', npyPath);
+    });
+    
+    // 重置状态
+    handleReset();
+  };
+
+  // 处理显示切片和印章
+  const handleShowSegments = () => {
+    // 只有选择了图片后才允许显示切片和印章
+    if (!currentImageId) {
+      console.warn('⚠️ 请先选择一张图片');
+      return;
+    }
+    setShowSegmentsAndSeals(prev => !prev);
+  };
+
+  // 处理选中项变化
+  const handleSelectionChange = (newSelectedItems: any[]) => {
+    console.log('� 选中项变化:', newSelectedItems);
+    setSelectedItems(newSelectedItems);
+  };
+
+  // 处理相似度阈值变化
+  const handleSegmentSimilarityChange = (newThreshold: [number, number]) => {
+    console.log('📊 相似度阈值变化:', newThreshold);
+    setSegmentSimilarityThreshold(newThreshold);
+  };
 
   return <>
     <div className="top-bar">
@@ -158,6 +305,8 @@ const App = () => {
             currentLabel={currentLabel}
             onChangeLabel={setCurrentLabel}
             onReset={handleReset}
+            onImageSelect={handleImageSelect}
+            onShowSegments={handleShowSegments}
           />
           {/* ✅ 把 currentLabel 传给 Stage；zoom 仍外控，滚轮通过 onZoomChange 更新 */}
           {showStage && (
@@ -178,18 +327,84 @@ const App = () => {
       <div className="right-side">
         <div className="right-side-top">
           <div className="right-side-top-left">
-            <NestedList />
-            <Storyline />
-            <Legend />
-            {/* <KG /> */}
+            <EnhancedNestedList 
+              onGraphUpdate={handleGraphUpdate} 
+              onShowFullAnswer={handleShowFullAnswer}
+            />
+            
+            {/* 只有数据加载完成且有效时才渲染Storyline，避免闪烁 */}
+            {!graphLoading && graphData && graphData.nodes.length > 0 ? (
+              <Storyline 
+                nodesData={graphData.nodes as any}
+                linksData={graphData.links as any}
+              />
+            ) : (
+              <div className="storyline" style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center',
+                color: '#999',
+                fontSize: '14px'
+              }}>
+                {graphLoading ? '加载图数据中...' : '暂无数据'}
+              </div>
+            )}
+            <Legend onSegmentSimilarityChange={handleSegmentSimilarityChange} />
           </div>
         </div>
-        {/* 大模型对话输入框 */}
+        {/* 切片和印章视图 / 问答界面 */}
         <div className="right-side-buttom">
-          <LLM />
+          <div style={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            height: '100%', 
+            width: '100%',
+            boxSizing: 'border-box',
+            overflow: 'hidden'
+          }}>
+            {/* 上方: 切片和印章选择 - 自适应高度 */}
+            <div style={{ 
+              flex: '1',
+              minHeight: 0,
+              overflow: 'auto',
+              marginBottom: '8px',
+              backgroundColor: '#f5f5f5'
+            }}>
+              {showSegmentsAndSeals && 
+                React.createElement(SegmentsAndSeals as any, {
+                  ref: segmentsAndSealsRef,
+                  selectedImageId: currentImageId,
+                  onSelectionChange: handleSelectionChange
+                })
+              }
+            </div>
+            {/* 下方: 问答界面 - 固定输入框高度，占据剩余空间 */}
+            <div style={{ 
+              flex: '0 0 auto',
+              height: '57px', // 输入框容器高度 (45px输入框 + 12px padding)
+              minHeight: '57px',
+              overflow: 'hidden'
+            }}>
+              {React.createElement(QuestionAnsweringComponent as any, {
+                selectedImageId: currentImageId,
+                selectedItems: selectedItems,
+                segmentSimilarityThreshold: segmentSimilarityThreshold,
+                onGraphUpdate: handleGraphUpdate,
+                onClearSelection: handleClearSelection
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    {/* 完整答案显示面板 */}
+    {fullAnswerData && (
+      <FullAnswerPanel 
+        answerData={fullAnswerData}
+        onClose={() => setFullAnswerData(null)}
+      />
+    )}
 
   </>
 };
