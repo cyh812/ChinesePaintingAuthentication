@@ -1,267 +1,342 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import OpenAI from "openai";
-import SvgIcon from '@mui/material/SvgIcon';
+import SvgIcon from "@mui/material/SvgIcon";
 import "./LLM.css";
+import KGData from "../../assets/data/KG.json";
 
-// 初始化 Deepseek 客户端
-const openai = new OpenAI({
-  baseURL: 'https://api.deepseek.com', // 使用 Deepseek 的基础 URL
-  apiKey: "sk-d92a575188954a01b6a4fc4e2d231fe9", // 替换为您的 Deepseek API Key
-  dangerouslyAllowBrowser: true, // 允许在浏览器中使用 OpenAI 客户端
+// =========================
+// 第一阶段 LLM：负责检索 JSON 条目
+// =========================
+const retrieverClient = new OpenAI({
+  baseURL: "https://api.deepseek.com",
+  apiKey: "sk-569bccdbc77a46d789eabb3c72a402b3",
+  dangerouslyAllowBrowser: true,
+});
+
+// =========================
+// 第二阶段 LLM：负责自然语言对话
+// 这里你可以接另一个 API，也可以先继续用 DeepSeek 做测试
+// =========================
+const answerClient = new OpenAI({
+  baseURL: "https://api.deepseek.com",
+  apiKey: "sk-c0cc496d16e6413c8e04a0ffcb9ddb21",
+  dangerouslyAllowBrowser: true,
 });
 
 function Send(props) {
   return (
     <SvgIcon {...props} viewBox="0 0 32 32">
-      <path d="M27.6367 15.1132L1.19533 0.9765C0.812515 0.785094 0.347671 1.08587 0.402359 1.49603L2.45314 25.914C2.48048 26.2968 2.8633 26.5156 3.21876 26.3788L11.75 22.7968L16.4258 28.1015C16.7266 28.4296 17.2461 28.2929 17.3555 27.8827L19.5977 19.4882L27.6367 16.0976C28.0195 15.9062 28.0469 15.332 27.6367 15.1132ZM16.4258 25.5585L13.9649 21.1835L1.38673 1.76947L18.0664 18.996L16.4258 25.5585Z" fill="#FDFDFD" />
+      <path
+        d="M27.6367 15.1132L1.19533 0.9765C0.812515 0.785094 0.347671 1.08587 0.402359 1.49603L2.45314 25.914C2.48048 26.2968 2.8633 26.5156 3.21876 26.3788L11.75 22.7968L16.4258 28.1015C16.7266 28.4296 17.2461 28.2929 17.3555 27.8827L19.5977 19.4882L27.6367 16.0976C28.0195 15.9062 28.0469 15.332 27.6367 15.1132ZM16.4258 25.5585L13.9649 21.1835L1.38673 1.76947L18.0664 18.996L16.4258 25.5585Z"
+        fill="#FDFDFD"
+      />
     </SvgIcon>
   );
 }
 
-const Segments = () => {
-  const [message, setMessage] = useState(""); // 控制输入框内容
-  const [loading, setLoading] = useState(false); // 控制加载状态
-  const [reply, setReply] = useState(""); // 保存 GPT 的回复
-  const [conversationHistory, setConversationHistory] = useState([]);
+// 尝试从 LLM 返回文本中解析 JSON
+function safeParseJson(text) {
+  if (!text) return null;
 
-  const [selectedImages, setSelectedImages] = useState([]); // 当前选中的图片索引
-  const [selectedImages2, setSelectedImages2] = useState([]); // 当前选中的图片索引
-  const [imagePaths, setImagePaths] = useState([
-    "../../assets/img/left/7.png",
-    "../../assets/img/left/2.png",
-    "../../assets/img/left/3.png",
-    "../../assets/img/left/4.png",
-    "../../assets/img/left/5.png",
-    "../../assets/img/left/6.png",
-  ]); // 图片路径数组
+  // 1. 直接尝试整体解析
+  try {
+    return JSON.parse(text);
+  } catch (_) { }
 
-  const [imagePaths2, setImagePaths2] = useState([
-    "../../assets/img/right/2.jpg",
-    "../../assets/img/right/1.png",
-  ]); // 图片路径数组
+  // 2. 尝试提取 ```json ... ``` 代码块
+  const codeBlockMatch = text.match(/```json\s*([\s\S]*?)\s*```/i);
+  if (codeBlockMatch?.[1]) {
+    try {
+      return JSON.parse(codeBlockMatch[1]);
+    } catch (_) { }
+  }
 
-  const [displayedImages, setDisplayedImages] = useState([]); // 动态展示的图片数组
-  const [displayedImages2, setDisplayedImages2] = useState([]); // 动态展示的图片数组
+  // 3. 尝试提取普通 ``` ... ```
+  const plainCodeBlockMatch = text.match(/```\s*([\s\S]*?)\s*```/i);
+  if (plainCodeBlockMatch?.[1]) {
+    try {
+      return JSON.parse(plainCodeBlockMatch[1]);
+    } catch (_) { }
+  }
 
-  // 键盘监听事件：按下 "A" 键添加图片
+  // 4. 尝试截取最外层数组
+  const arrayMatch = text.match(/\[[\s\S]*\]/);
+  if (arrayMatch?.[0]) {
+    try {
+      return JSON.parse(arrayMatch[0]);
+    } catch (_) { }
+  }
+
+  // 5. 尝试截取最外层对象
+  const objectMatch = text.match(/\{[\s\S]*\}/);
+  if (objectMatch?.[0]) {
+    try {
+      return JSON.parse(objectMatch[0]);
+    } catch (_) { }
+  }
+
+  return null;
+}
+
+const Segments = (props) => {
+  const { onKnowledgeRetrieved } = props;
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  // 给第二阶段 LLM 用的历史对话
+  const [conversationHistory, setConversationHistory] = useState([
+    {
+      role: "assistant",
+      content:
+        "你好，我是你的 AI 助手。请输入问题，我会先检索知识库，再结合历史对话进行回答。",
+    },
+  ]);
+
+  // 第一阶段检索出的结构化知识
+  const [retrievedKnowledge, setRetrievedKnowledge] = useState(null);
+
+  const messagesEndRef = useRef(null);
+  const textareaRef = useRef(null);
+
   useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "1") {
-        if (displayedImages.length < imagePaths.length) {
-          setDisplayedImages((prev) => [...prev, imagePaths[prev.length]]);
-        }
-      }
-    };
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [conversationHistory, loading]);
 
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [imagePaths, displayedImages]);
-
-  // 键盘监听事件：按下 2 键添加图片
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "2") {
-        if (displayedImages2.length < imagePaths2.length) {
-          setDisplayedImages2((prev) => [...prev, imagePaths2[prev.length]]);
-        }
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [imagePaths2, displayedImages2]);
-
-  // 单击图片添加或移除选中状态
-  const toggleImageSelection = (index) => {
-    if (selectedImages.includes(index)) {
-      setSelectedImages((prev) => prev.filter((i) => i !== index));
-    } else {
-      setSelectedImages((prev) => [...prev, index]);
-    }
-  };
-  const toggleImageSelection2 = (index) => {
-    if (selectedImages2.includes(index)) {
-      setSelectedImages2((prev) => prev.filter((i) => i !== index));
-    } else {
-      setSelectedImages2((prev) => [...prev, index]);
-    }
+  const adjustTextareaHeight = () => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+    textarea.style.height = "auto";
+    textarea.style.height = `${textarea.scrollHeight}px`;
   };
 
-  // 发送请求到 GPT API
-  const sendMessageToGPT = async () => {
-    setMessage("")
-    if (!message.trim()) return; // 避免发送空消息
+  const resetTextareaHeight = () => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+    textarea.style.height = "auto";
+  };
 
-    setLoading(true); // 开始加载
+  // =========================
+  // 第一阶段：知识检索
+  // 输入：用户问题 + KG.json
+  // 输出：抽取后的 JSON
+  // =========================
+  const retrieveKnowledge = async (userQuestion) => {
+    const retrieverSystemPrompt = `
+你是一个知识库条目抽取助手。
+你的任务是：根据用户的问题，从我提供的 JSON 知识库中抽取与问题相关的条目。
 
-    // 更新对话历史，将用户的消息添加到历史中
-    const newConversationHistory = [
-      ...conversationHistory,
-      { role: "user", content: message }
+要求：
+1. 每次请求都是独立任务，不要假设任何历史上下文；
+2. 只依据本次提供的问题和 JSON 内容进行判断；
+3. 返回与问题相关的条目；
+4. 不要编造 JSON 中不存在的信息；
+5. 可以删除与当前问题无关的字段和子条目；
+6. 如果没有找到相关条目，返回 []；
+
+输出要求：
+1. 只输出 JSON；
+2. 不要输出解释文字；
+3. 优先输出 JSON 数组；
+4. 保证 JSON 格式合法，可被 JSON.parse 解析。
+`;
+
+    const retrieverUserPrompt = `
+用户问题：
+${userQuestion}
+
+知识库 JSON：
+${JSON.stringify(KGData, null, 2)}
+`;
+
+    const completion = await retrieverClient.chat.completions.create({
+      model: "deepseek-chat",
+      messages: [
+        { role: "system", content: retrieverSystemPrompt },
+        { role: "user", content: retrieverUserPrompt },
+      ],
+      temperature: 0,
+    });
+
+    const rawReply = completion.choices[0]?.message?.content || "[]";
+    const parsed = safeParseJson(rawReply);
+
+    if (!parsed) {
+      throw new Error("第一阶段 LLM 返回内容不是合法 JSON");
+    }
+
+    return parsed;
+  };
+
+  // =========================
+  // 第二阶段：自然语言回答
+  // 输入：用户问题 + 检索结果 + 历史对话
+  // 输出：自然语言回答
+  // =========================
+  const answerWithKnowledge = async (userQuestion, knowledgeJson, history) => {
+    const answerSystemPrompt = `
+你是一个中国古画知识问答助手。
+你的任务是基于“用户问题 + 外部知识 + 历史对话上下文”，组织自然、准确、简洁的回答。
+
+要求：
+1. 优先依据提供的外部知识回答；
+2. 可以结合历史对话理解用户的省略指代、追问和上下文；
+3. 不要编造外部知识中不存在的事实；
+4. 当外部知识不足时，可以明确说明信息不足；
+5. 回答风格自然，不要机械复述 JSON。
+`;
+
+    const answerUserPrompt = `
+当前用户问题：
+${userQuestion}
+
+本轮检索到的外部知识：
+${JSON.stringify(knowledgeJson, null, 2)}
+`;
+
+    const messages = [
+      { role: "system", content: answerSystemPrompt },
+      ...history,
+      { role: "user", content: answerUserPrompt },
     ];
-    setConversationHistory(newConversationHistory);
+
+    const completion = await answerClient.chat.completions.create({
+      model: "deepseek-chat",
+      messages,
+      temperature: 0.6,
+    });
+
+    return completion.choices[0]?.message?.content || "无回复";
+  };
+
+  const sendMessage = async () => {
+    const trimmedMessage = message.trim();
+    if (!trimmedMessage || loading) return;
+
+    // 先把用户消息放进对话区
+    const nextHistory = [
+      ...conversationHistory,
+      { role: "user", content: trimmedMessage },
+    ];
+    setConversationHistory(nextHistory);
+
+    setMessage("");
+    resetTextareaHeight();
+    setLoading(true);
 
     try {
-      // 调用 Deepseek API
-      const completion = await openai.chat.completions.create({
-        model: "deepseek-chat", // 使用 Deepseek 的模型
-        messages: newConversationHistory, // 用户的消息
-        // temperature: 0.7, // 控制结果随机性
-        // max_tokens: 150, // 回复的最大字数
-      });
+      // ===== 第一阶段：检索 =====
+      const knowledge = await retrieveKnowledge(trimmedMessage);
 
-      const deepseekReply = completion.choices[0]?.message?.content || "无回复";
-      console.log("Deepseek 回复：", deepseekReply);
-      setReply(deepseekReply); // 将 Deepseek 回复保存到状态中
+      setRetrievedKnowledge(knowledge);
+      console.log("第一阶段抽取出的 JSON：", knowledge);
+      // 传给父组件或其他 component
+      if (typeof onKnowledgeRetrieved === "function") {
+        onKnowledgeRetrieved(knowledge);
+      }
 
-      // 更新对话历史，将模型的回复添加到历史中
+      // ===== 第二阶段：回答 =====
+      const finalAnswer = await answerWithKnowledge(
+        trimmedMessage,
+        knowledge,
+        nextHistory
+      );
+
       setConversationHistory((prev) => [
         ...prev,
-        { role: "assistant", content: deepseekReply }
+        { role: "assistant", content: finalAnswer },
       ]);
     } catch (error) {
-      console.error("请求 Deepseek 失败:", error);
-      setReply("请求失败，请稍后重试。");
+      console.error("两阶段 LLM 处理失败:", error);
+
+      let errorText = "请求失败，请稍后重试。";
+
+      if (
+        error?.status === 402 ||
+        String(error?.message).includes("Insufficient Balance")
+      ) {
+        errorText = "API 余额不足，请检查账户额度。";
+      } else if (String(error?.message).includes("合法 JSON")) {
+        errorText = "第一阶段检索结果无法解析为 JSON，请检查提示词或模型输出。";
+      }
+
+      setConversationHistory((prev) => [
+        ...prev,
+        { role: "assistant", content: errorText },
+      ]);
     } finally {
-      setLoading(false); // 停止加载
-      setMessage(""); // 清空输入框
+      setLoading(false);
     }
   };
 
-  // 输入框内容更新
   const handleInputChange = (e) => {
     setMessage(e.target.value);
+    requestAnimationFrame(adjustTextareaHeight);
   };
 
-  // 点击发送按钮
   const handleSendClick = () => {
-    sendMessageToGPT();
-    setSelectedImages([]);
-    setSelectedImages2([]);
+    sendMessage();
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
   };
 
   return (
     <div className="segments">
-      {/* 上方菜单按钮 */}
-      <div className="segments-menu">
-        <div className="segments-menu1">
-          {displayedImages.map((imagePath, index) => (
-            <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
-              <div
-                key={index}
-                className={`menu-image ${selectedImages.includes(index) ? "selected" : ""}`}
-                onClick={() => toggleImageSelection(index)}
-              >
-                <img src={imagePath} alt={`Menu ${index + 1}`} />
-              </div>
-              {selectedImages.includes(index) && <div key={index} style={{ display: "flex", flexDirection: "column", height: "75px", marginLeft: "10px", backgroundColor: "#FCFCFC", borderRadius: "5px", justifyContent: "space-around", alignItems: "center" }}>
-                <button
-                  style={{
-                    background: "none",
-                    border: "none",
-                    padding: 0,
-                    cursor: "pointer",
-                    marginBottom: "5px", // 按钮之间的间距
-                  }}
-                  onClick={(e) => {
-                  }}
-                >
-                  <img src="../../assets/img/b1.png" alt="Button 1" style={{ width: "24px", height: "24px" }} />
-                </button>
-                <div
-                  style={{
-                    width: "80%",
-                    height: "1px",
-                    backgroundColor: "#DDD", // 分割线颜色
-                    margin: "4px 0", // 分割线与按钮的间距
-                  }}
-                />
-                <button
-                  style={{
-                    background: "none",
-                    border: "none",
-                    padding: 0,
-                    cursor: "pointer",
-                  }}
-                  onClick={(e) => {
-                  }}
-                >
-                  <img src="../../assets/img/b2.png" alt="Button 2" style={{ width: "24px", height: "24px" }} />
-                </button>
-              </div>}
+      <div className="chat-header">Two-Stage KG Assistant</div>
+
+      <div className="chat-messages">
+        {conversationHistory.map((item, index) => (
+          <div
+            key={index}
+            className={`message-row ${item.role === "user"
+                ? "message-row-user"
+                : "message-row-assistant"
+              }`}
+          >
+            <div
+              className={`message-bubble ${item.role === "user" ? "message-user" : "message-assistant"
+                }`}
+            >
+              {item.content}
             </div>
-          ))}
-        </div>
-        <div className="segments-menu2">
-          {displayedImages2.map((imagePath, index) => (
-            <div style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
-              <div
-                key={index}
-                className={`menu-image ${selectedImages2.includes(index) ? "selected" : ""}`}
-                onClick={() => toggleImageSelection2(index)}
-              >
-                <img src={imagePath} alt={`Menu ${index + 1}`} />
-              </div>
-              {selectedImages2.includes(index) && <div key={index} style={{ display: "flex", flexDirection: "column", height: "75px", marginLeft: "10px", backgroundColor: "#FCFCFC", borderRadius: "5px", justifyContent: "space-around", alignItems: "center" }}>
-                <button
-                  style={{
-                    background: "none",
-                    border: "none",
-                    padding: 0,
-                    cursor: "pointer",
-                    marginBottom: "5px", // 按钮之间的间距
-                  }}
-                  onClick={(e) => {
-                  }}
-                >
-                  <img src="../../assets/img/b1.png" alt="Button 1" style={{ width: "24px", height: "24px" }} />
-                </button>
-                <div
-                  style={{
-                    width: "80%",
-                    height: "1px",
-                    backgroundColor: "#DDD", // 分割线颜色
-                    margin: "4px 0", // 分割线与按钮的间距
-                  }}
-                />
-                <button
-                  style={{
-                    background: "none",
-                    border: "none",
-                    padding: 0,
-                    cursor: "pointer",
-                  }}
-                  onClick={(e) => {
-                  }}
-                >
-                  <img src="../../assets/img/b2.png" alt="Button 2" style={{ width: "24px", height: "24px" }} />
-                </button>
-              </div>}
+          </div>
+        ))}
+
+        {loading && (
+          <div className="message-row message-row-assistant">
+            <div className="message-bubble message-assistant typing">
+              正在先检索知识，再组织回答...
             </div>
-          ))}
-        </div>
+          </div>
+        )}
+
+        <div ref={messagesEndRef} />
       </div>
 
-
-      {/* 下方输入区域 */}
       <div className="segments-input-container">
         <textarea
+          ref={textareaRef}
           className="segments-input"
           value={message}
           onChange={handleInputChange}
-          placeholder="" // 填写“请输入消息”
-          disabled={loading} /* 加载时禁用输入 */
+          onKeyDown={handleKeyDown}
+          placeholder="请输入问题。"
+          disabled={loading}
+          rows={1}
         />
-        <button style={{
-          fontSize: 20
-        }}
+
+        <button
           className="send-button"
           onClick={handleSendClick}
-          disabled={loading} /* 加载时禁用按钮 */
+          disabled={loading}
+          aria-label="发送"
+          title="发送"
         >
-
-            <Send sx={{ transform: 'scale(1.5) translateX(3px)' }} /> 
-          
+          <Send sx={{ transform: "scale(1.3)" }} />
         </button>
       </div>
     </div>

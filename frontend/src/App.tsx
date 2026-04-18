@@ -1,183 +1,155 @@
-import { InferenceSession, Tensor } from "onnxruntime-web";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import "./assets/scss/App.scss";
-import { handleImageScale } from "./components/helpers/scaleHelper";
-import { modelScaleProps,modelInputProps } from "./components/helpers/Interfaces";
-import { onnxMaskToImage } from "./components/helpers/maskUtils";
-import { modelData } from "./components/helpers/onnxModelAPI";
-import Stage from "./components/Stage";
-import AppContext from "./components/hooks/createContext";
-const ort = require("onnxruntime-web");
 /* @ts-ignore */
-import npyjs from "npyjs";
-import "./App.css"
+import "./App.css";
 
 import LLM from "./components/authentication/LLM_QA";
-import Storyline from "./components/authentication/Storyline";
-import StageMenu from "./components/authentication/StageMenu"
-import NestedList from "./components/authentication/NestedList"
-import Legend from "./components/authentication/Legend"
-import Title from "./components/authentication/Title"
+import KG from "./components/authentication/KG";
+import Title from "./components/authentication/Title";
 
-// Define image, embedding and model paths
-const IMAGE_PATH = "/assets/data/D011518.jpg";
-const IMAGE_EMBEDDING = "/assets/data/D011518.npy";
-const MODEL_DIR = "/model/sam_onnx_example.onnx";
+import SealNodeDetail from "./components/authentication/SealNodeDetail";
+import PaintingNodeDetail from "./components/authentication/PaintingNodeDetail";
+import ReferenceNodeDetail from "./components/authentication/ReferenceNodeDetail";
+
+import PSLinkDetail from "./components/authentication/PSLinkDetail";
+import PPLinkDetail from "./components/authentication/PPLinkDetail";
+import PRLinkDetail from "./components/authentication/PRLinkDetail";
 
 const App = () => {
-  const {
-    clicks: [clicks, setClicks],          // ✅ 取出 setClicks
-    image: [, setImage],
-    maskImg: [, setMaskImg],             // ✅ 取出 setMaskImg
-  } = useContext(AppContext)!;
-  const [model, setModel] = useState<InferenceSession | null>(null); // ONNX model
-  const [tensor, setTensor] = useState<Tensor | null>(null); // Image embedding tensor
+  const [showNodeDetail, setShowNodeDetail] = useState(true);
+  const [showLinkDetail, setShowLinkDetail] = useState(true);
 
-  const [showStage, setShowStage] = useState(false);  // 控制 StageMenu 显示与否
-  const handleShowStage = () => {
-    setShowStage(true); // 调整缩放值
+  const [retrievedKnowledge, setRetrievedKnowledge] = useState<any>(null);
+  const [paintingSegmentSimilarityData, setPaintingSegmentSimilarityData] =
+    useState<any>(null);
+
+  // 当前选中节点 / 连边
+  const [selectedNode, setSelectedNode] = useState<any>(null);
+  const [selectedLink, setSelectedLink] = useState<any>(null);
+
+  // ===== 节点详情总入口 =====
+  const NodeDetailRenderer = ({ selectedNode }: any) => {
+    if (!selectedNode) {
+      return <div className="EmptyDetail">当前暂无选中的节点</div>;
+    }
+
+    switch (selectedNode.category) {
+      case "P":
+        return (
+          <PaintingNodeDetail
+            node={selectedNode.data}
+            onPaintingSegmentSearchResult={(data: any) => {
+              console.log("App.tsx 收到 painting segment similarity 数据：", data);
+              setPaintingSegmentSimilarityData(data);
+            }}
+          />
+        );
+      case "S":
+        return <SealNodeDetail node={selectedNode.data} />;
+      case "R":
+        return <ReferenceNodeDetail node={selectedNode.data} />;
+      default:
+        return <div className="EmptyDetail">未知节点类型</div>;
+    }
   };
 
-  // === 新增：当前点的标签（1=正，0=负） ===
-  const [currentLabel, setCurrentLabel] = useState<0 | 1>(1);
-  // ✅ 悬停预览点（不进持久 clicks）
-  const [hoverClick, setHoverClick] = useState<modelInputProps | null>(null);
+  // ===== 连边详情总入口 =====
+  const LinkDetailRenderer = ({ selectedLink }: any) => {
+    if (!selectedLink) {
+      return <div className="EmptyDetail">当前暂无选中的连边</div>;
+    }
 
-  const [zoomLevel, setZoomLevel] = useState(0.8);
-
-  // === 清空所有点与掩码 ===
-  const handleReset = () => {
-    setClicks([]);        // 清空点
-    setHoverClick(null);
-    setMaskImg(null);     // 清空当前 mask
+    switch (selectedLink?.category) {
+      case "P-P":
+        return <PPLinkDetail link={selectedLink} />;
+      case "P-S":
+        return <PSLinkDetail link={selectedLink} />;
+      case "P-R":
+        return <PRLinkDetail link={selectedLink} />;
+      default:
+        return <div className="EmptyDetail">未知连边类型</div>;
+    }
   };
-  // The ONNX model expects the input to be rescaled to 1024. 
-  // The modelScale state variable keeps track of the scale values.
-  const [modelScale, setModelScale] = useState<modelScaleProps | null>(null);
 
-  // Initialize the ONNX model. load the image, and load the SAM
-  // pre-computed image embedding
-  useEffect(() => {
-    // Initialize the ONNX model
-    const initModel = async () => {
-      try {
-        if (MODEL_DIR === undefined) return;
-        const URL: string = MODEL_DIR;
-        const model = await InferenceSession.create(URL);
-        setModel(model);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-    initModel();
-
-    // Load the image
-    const url = new URL(IMAGE_PATH, location.origin);
-    loadImage(url);
-
-    // Load the Segment Anything pre-computed embedding
-    Promise.resolve(loadNpyTensor(IMAGE_EMBEDDING, "float32")).then(
-      (embedding) => setTensor(embedding)
-    );
+  // 供 KG 调用，使用 useCallback 固定引用，避免 KG 因函数 props 变化而重渲染
+  const handleNodeSelect = useCallback((nodeData: any) => {
+    setSelectedNode(nodeData);
+    setShowNodeDetail(true);
   }, []);
 
-  const loadImage = async (url: URL) => {
-    try {
-      const img = new Image();
-      img.src = url.href;
-      img.onload = () => {
-        const { height, width, samScale } = handleImageScale(img);
-        setModelScale({
-          height: height,  // original image height
-          width: width,  // original image width
-          samScale: samScale, // scaling factor for image which has been resized to longest side 1024
-        });
-        img.width = width;
-        img.height = height;
-        setImage(img);
-      };
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const handleLinkSelect = useCallback((linkData: any) => {
+    setSelectedLink(linkData);
+    setShowLinkDetail(true);
+  }, []);
 
-  // Decode a Numpy file into a tensor. 
-  const loadNpyTensor = async (tensorFile: string, dType: string) => {
-    let npLoader = new npyjs();
-    const npArray = await npLoader.load(tensorFile);
-    const tensor = new ort.Tensor(dType, npArray.data, npArray.shape);
-    return tensor;
-  };
-
-  // Run the ONNX model every time clicks has changed
-  useEffect(() => {
-    runONNX();
-  }, [clicks, hoverClick]);
-
-  const runONNX = async () => {
-    try {
-      if (model === null || tensor === null || modelScale === null) return;
-      // ✅ 合并持久点 + 悬停点（仅预览不入库）
-      const mergedClicks = [...(clicks ?? [])];
-      if (hoverClick) mergedClicks.push(hoverClick);
-      if (mergedClicks.length === 0) {
-        setMaskImg(null);
-        return;
-      }
-      const feeds = modelData({ clicks: mergedClicks, tensor, modelScale });
-      if (!feeds) return;
-      const results = await model.run(feeds);
-      const output = results[model.outputNames[0]];
-      setMaskImg(onnxMaskToImage(output.data, output.dims[2], output.dims[3]));
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-
-  return <>
-    <div className="top-bar">
-      <Title />
-    </div>
-    <div className="bottom-container">
-      <div className="left-side">
-        <div className="left-side-border">
-          {/* ✅ 传递 currentLabel 与 onReset */}
-          <StageMenu
-            showStage={handleShowStage}
-            currentLabel={currentLabel}
-            onChangeLabel={setCurrentLabel}
-            onReset={handleReset}
-          />
-          {/* ✅ 把 currentLabel 传给 Stage；zoom 仍外控，滚轮通过 onZoomChange 更新 */}
-          {showStage && (
-            <Stage
-              zoomLevel={zoomLevel}
-              onZoomChange={setZoomLevel}
-              currentLabel={currentLabel}
-              onHoverChange={setHoverClick}   // ✅ 新增：悬停时设置预览点
-              onHoverEnd={() => setHoverClick(null)} // ✅ 离开时清空预览
-            />
-          )}
-        </div>
+  return (
+    <>
+      <div className="top-bar">
+        <Title />
       </div>
-      <div className="right-side">
-        <div className="right-side-top">
-          <div className="right-side-top-left">
-            <NestedList />
-            <Storyline />
-            <Legend />
-            {/* <KG /> */}
+
+      <div className="bottom-container">
+        <div className="left-side">
+          <div className="left-side-border">
+            <LLM onKnowledgeRetrieved={setRetrievedKnowledge} />
           </div>
         </div>
-        {/* 大模型对话输入框 */}
-        <div className="right-side-buttom">
-          <LLM />
+
+        <div className="right-side">
+          <div className="right-side-top">
+            <div className="right-side-top-left">
+              <div className="DetailPanel">
+                {showNodeDetail && (
+                  <div className="NodeDetail">
+                    <div className="DetailHeader">
+                      <div className="DetailHeaderTitle">节点信息</div>
+                      <button
+                        className="DetailCloseBtn"
+                        onClick={() => setShowNodeDetail(false)}
+                        aria-label="关闭节点信息"
+                      >
+                        ×
+                      </button>
+                    </div>
+
+                    <div className="DetailBody">
+                      <NodeDetailRenderer selectedNode={selectedNode} />
+                    </div>
+                  </div>
+                )}
+
+                {showLinkDetail && (
+                  <div className="LinkDetail">
+                    <div className="DetailHeader">
+                      <div className="DetailHeaderTitle">连边信息</div>
+                      <button
+                        className="DetailCloseBtn"
+                        onClick={() => setShowLinkDetail(false)}
+                        aria-label="关闭连边信息"
+                      >
+                        ×
+                      </button>
+                    </div>
+
+                    <div className="DetailBody">
+                      <LinkDetailRenderer selectedLink={selectedLink} />
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <KG
+                knowledgeData={retrievedKnowledge}
+                paintingSegmentSimilarityData={paintingSegmentSimilarityData}
+                onNodeClick={handleNodeSelect}
+                onLinkClick={handleLinkSelect}
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-  </>
+    </>
+  );
 };
 
 export default App;

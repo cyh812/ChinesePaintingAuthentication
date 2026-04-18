@@ -1,112 +1,217 @@
 /* 上层 div，占 5% 高度 */
 .top-bar {
-    height: 5%;
-    width: 100%;
-    background-color: rgba(209, 151, 98, 0.19); /* 示例背景色 */
-    color: white;
-    text-align: center;
-    display: flex;
-    /* justify-content: center;
+  height: 5%;
+  width: 100%;
+  background-color: rgb(138, 138, 138);
+  /* 示例背景色 */
+  color: white;
+  text-align: center;
+  display: flex;
+  /* justify-content: center;
     align-items: center; */
-  }
-  
-  /* 下层 div，占 95% 高度 */
-  .bottom-container {
-    display: flex;
-    height: 95%;
-    width: 100%;
-  }
-  
-  /* 左侧 div，占 30% 宽度 */
-  .left-side {
-    width: 25%;
-    background-color: #ede8e3; /* 示例背景色 */
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
 
-  }
+/* 下层 div，占 95% 高度 */
+.bottom-container {
+  display: flex;
+  height: 95%;
+  width: 100%;
+  background: linear-gradient(
+    to top,
+    rgb(35, 35, 35),
+    rgb(152, 151, 151) 54%,
+    rgb(228, 228, 228) 92%,
+    rgb(138, 138, 138)
+  );
+}
 
-  .left-side-border {
-    width: calc(100% - 20px);
-    height: calc(100% - 20px);
-    display: flex;
-    flex-direction: column;
-    position: relative; /* 让子元素绝对定位生效 */
-    border-radius: 10px;
-    background: linear-gradient(to top, rgb(35, 35, 35), rgb(152, 151, 151) 54%, rgb(228, 228, 228) 92%, rgb(138, 138, 138));
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  
-  /* 右侧 div，占 70% 宽度 */
-  .right-side {
-    width: 75%;
-    background-color: #ede8e3; /* 示例背景色 */
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  .right-side-top {
-    width: 100%;
-    height: 80%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: stretch; /* 拉伸子元素 */
-  }
-  
-  .right-side-buttom {
-    width: 100%;
-    height: 20%;
-    display: flex;
-  }
-  
-  .right-side-top-left {
-    width: calc(100% - 10px);
-    height: calc(100% - 20px);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 10px;
-    box-sizing: border-box; /* 防止 padding 和 border 导致溢出 */
-    overflow: hidden; /* 隐藏任何溢出内容 */
-    border-radius: 10px; /* 圆角，增加美观 */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* 添加阴影 */
-    position: relative; /* 启用相对定位 */
-  }
-  
-  .right-side-buttom-right {
-    width: 40%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    /* background-color: rgb(8, 53, 53); */
-  }
-  
-  /* 标题和 icon 容器 */
-  .title-container {
-    display: flex;
-    align-items: center; /* 垂直居中对齐 icon 和 title */
-    justify-content: flex-start; /* 左对齐 */
-    margin-left: 1%; /* 距离左侧 5% */
-    height: 100%; /* 确保容器占满整个高度 */
-  }
-  
-  /* 自定义 icon 样式 */
-  .icon {
-    width: 40px; /* 设置 icon 的大小 */
-    height: 40px;
-    margin-right: 10px; /* icon 和标题之间的间距 */
-  }
-  
-  .title {
-    font-family: Arial, sans-serif; /* 设置标题字体为 Arial */
-    font-size: 25px; /* 标题字体大小 */
-    color: #8a6746; /* 标题颜色 */
-    font-weight: bolder;
-  }
+/* 左侧 div，占 30% 宽度 */
+.left-side {
+  width: 25%;
+  /* 示例背景色 */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.left-side-border {
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* 让子元素绝对定位生效 */
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* 右侧 div，占 70% 宽度 */
+.right-side {
+  width: 75%;
+  /* 示例背景色 */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.right-side-top {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  /* 拉伸子元素 */
+}
+
+.right-side-top-left {
+  width: calc(100% - 10px);
+  height: calc(100% - 20px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 10px;
+  box-sizing: border-box;
+  /* 防止 padding 和 border 导致溢出 */
+  overflow: hidden;
+  /* 隐藏任何溢出内容 */
+  border-radius: 10px;
+  /* 圆角，增加美观 */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  /* 添加阴影 */
+  position: relative;
+  /* 启用相对定位 */
+}
+
+/* .NodeDetail {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 430px;
+  height: 600px;
+  padding: 8px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+} */
+
+.DetailPanel {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.NodeDetail,
+.LinkDetail {
+  width: 430px;
+  padding: 8px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.NodeDetail {
+  min-height: 100px; /* 可按需改 */
+}
+
+.LinkDetail {
+  min-height: 100px; /* 可按需改 */
+}
+
+/* 标题和 icon 容器 */
+.title-container {
+  display: flex;
+  align-items: center;
+  /* 垂直居中对齐 icon 和 title */
+  justify-content: flex-start;
+  /* 左对齐 */
+  margin-left: 1%;
+  /* 距离左侧 5% */
+  height: 100%;
+  /* 确保容器占满整个高度 */
+}
+
+/* 自定义 icon 样式 */
+.icon {
+  width: 40px;
+  /* 设置 icon 的大小 */
+  height: 40px;
+  margin-right: 10px;
+  /* icon 和标题之间的间距 */
+}
+
+.title {
+  font-family: Arial, sans-serif;
+  /* 设置标题字体为 Arial */
+  font-size: 25px;
+  /* 标题字体大小 */
+  color: #8a6746;
+  /* 标题颜色 */
+  font-weight: bolder;
+}
+
+.DetailHeader {
+  height: 50px;
+  padding: 0 12px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #ffffff;
+  color: #000;
+}
+
+.DetailHeaderTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.DetailCloseBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  margin: 0;
+
+  border: none;
+  background: transparent;
+  color: #000;
+
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.DetailCloseBtn:hover {
+  background: #e7c556;
+  color: #000;
+}
+
+.DetailBody {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}

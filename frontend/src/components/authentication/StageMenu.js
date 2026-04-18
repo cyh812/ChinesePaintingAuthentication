@@ -1,19 +1,16 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import Divider from '@mui/material/Divider';
 import Paper from '@mui/material/Paper';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup, { toggleButtonGroupClasses } from '@mui/material/ToggleButtonGroup';
+import Slider from '@mui/material/Slider';
+import SearchIcon from '@mui/icons-material/Search';
 
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import AspectRatioIcon from '@mui/icons-material/AspectRatio';
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
 import AddBoxIcon from '@mui/icons-material/AddBox';
-import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
-import CropIcon from '@mui/icons-material/Crop';
 import AdsClickIcon from '@mui/icons-material/AdsClick';
-import CollectionsBookmarkIcon from '@mui/icons-material/CollectionsBookmark';
 
 const CustomToggleButton = styled(ToggleButton)(({ theme }) => ({
     '&.Mui-selected': {
@@ -37,53 +34,93 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
     },
 }));
 
-export default function StageMenu({ showStage, currentLabel, onChangeLabel, onReset }) {
-    const [alignment, setAlignment] = React.useState('');
-    const [formats, setFormats] = React.useState(() => ['']);
-    const fileInputRef = React.useRef(null);
+const SliderContainer = styled('div')(({ theme }) => ({
+    height: 36,
+    minWidth: 120,
+    margin: theme.spacing(0.5),
+    padding: '0 12px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: 'transparent',
+    boxSizing: 'border-box',
+}));
 
-    const handleFormat = (event, newFormats) => setFormats(newFormats);
+const StyledSlider = styled(Slider)(({ theme }) => ({
+    width: '100%',
+    color: '#D19762',
+    padding: '0 !important',
+    '& .MuiSlider-thumb': {
+        width: 14,
+        height: 14,
+    },
+    '& .MuiSlider-rail': {
+        opacity: 0.25,
+    },
+    '& .MuiSlider-track': {
+        border: 'none',
+    },
+    '& .MuiSlider-mark': {
+        width: 4,
+        height: 4,
+        borderRadius: '50%',
+        backgroundColor: 'currentColor',
+        opacity: 0.5,
+    },
+}));
+
+export default function StageMenu({
+    currentLabel,
+    onChangeLabel,
+    onReset,
+    searchValue = 0,
+    onSearchValueChange,
+    onSearchClick,
+}) {
+    const [alignment, setAlignment] = React.useState('');
+
     const handleAlignment = (event, newAlignment) => setAlignment(newAlignment);
 
-    const handleFileUploadClick = () => fileInputRef.current && fileInputRef.current.click();
-
-    const handleFileChange = (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        showStage && showStage();
+    const handleSliderChange = (event, newValue) => {
+        if (onSearchValueChange) {
+            onSearchValueChange(newValue);
+        }
     };
 
     return (
         <div
             style={{
-                position: 'absolute',
-                bottom: '10px',
-                left: '50%',
-                transform: 'translateX(-50%)', // 水平居中关键
-                zIndex: 10,
-                backgroundColor: 'rgba(255, 255, 255, 0.0)',
-                boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)',
-                borderRadius: '8px',
-                padding: '8px',
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                backgroundColor: 'transparent',
+                boxSizing: 'border-box',
             }}
-
         >
             <Paper
                 elevation={0}
                 sx={(theme) => ({
                     display: 'flex',
+                    alignItems: 'center',
                     border: `1px solid ${theme.palette.divider}`,
-                    flexWrap: 'nowrap',          // ✅ 不允许换行
+                    flexWrap: 'nowrap',
                     backgroundColor: '#FBF5F0',
+                    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.12)',
+                    borderRadius: '10px',
                 })}
             >
-                <StyledToggleButtonGroup size="small" value={alignment} aria-label="left group">
-                    {/* 上传 */}
-                    <CustomToggleButton value="left" onClick={handleFileUploadClick} aria-label="upload">
-                        <CloudUploadIcon />
+                <StyledToggleButtonGroup
+                    size="small"
+                    value={alignment}
+                    exclusive
+                    onChange={handleAlignment}
+                    aria-label="left group"
+                >
+                    <CustomToggleButton value="click-mode" aria-label="click-mode">
+                        <AdsClickIcon />
                     </CustomToggleButton>
 
-                    {/* 正向点：再次点同一按钮 => 取消激活 */}
                     <CustomToggleButton
                         value="positive"
                         aria-label="positive"
@@ -94,7 +131,6 @@ export default function StageMenu({ showStage, currentLabel, onChangeLabel, onRe
                         <AddBoxIcon />
                     </CustomToggleButton>
 
-                    {/* 负向点：再次点同一按钮 => 取消激活 */}
                     <CustomToggleButton
                         value="negative"
                         aria-label="negative"
@@ -105,7 +141,6 @@ export default function StageMenu({ showStage, currentLabel, onChangeLabel, onRe
                         <IndeterminateCheckBoxIcon />
                     </CustomToggleButton>
 
-                    {/* 重置 */}
                     <CustomToggleButton
                         value="reset"
                         aria-label="reset"
@@ -118,36 +153,40 @@ export default function StageMenu({ showStage, currentLabel, onChangeLabel, onRe
 
                 <Divider flexItem orientation="vertical" sx={{ mx: 0.5, my: 1 }} />
 
-                <StyledToggleButtonGroup
-                    size="small"
-                    value={formats}
-                    exclusive
-                    onChange={handleFormat}
-                    aria-label="right group"
+                <div
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        paddingRight: '4px',
+                    }}
                 >
-                    <CustomToggleButton value="bold" aria-label="bold">
-                        <AdsClickIcon />
-                    </CustomToggleButton>
-                    <CustomToggleButton value="italic" aria-label="italic">
-                        <CropIcon />
-                    </CustomToggleButton>
-                    <CustomToggleButton value="underlined" aria-label="underlined">
-                        <AutoAwesomeOutlinedIcon />
-                    </CustomToggleButton>
-                    <CustomToggleButton value="color" aria-label="color">
-                        <CollectionsBookmarkIcon />
-                        <ArrowDropDownIcon />
-                    </CustomToggleButton>
-                </StyledToggleButtonGroup>
-            </Paper>
+                    <SliderContainer>
+                        <StyledSlider
+                            value={searchValue}
+                            min={0}
+                            max={3}
+                            step={1}
+                            marks
+                            valueLabelDisplay="auto"
+                            onChange={handleSliderChange}
+                            size="small"
+                        />
+                    </SliderContainer>
 
-            {/* 隐藏的文件上传输入框 */}
-            <input
-                ref={fileInputRef}
-                type="file"
-                style={{ display: 'none' }}
-                onChange={handleFileChange}
-            />
+                    <CustomToggleButton
+                        value="search"
+                        aria-label="search"
+                        onClick={() => onSearchClick && onSearchClick(searchValue)}
+                        title="Search"
+                        sx={{
+                            border: "none !important",
+                            boxShadow: "none",
+                        }}
+                    >
+                        <SearchIcon />
+                    </CustomToggleButton>
+                </div>
+            </Paper>
         </div>
     );
 }

@@ -24,7 +24,7 @@ const Storyline = () => {
     "../../assets/data2/data1.json",
     "../../assets/data2/data2.json",
     "../../assets/data/data3.json",
-    "../../assets/data/data3.json",
+    "../../assets/data/data4.json",
     "../../assets/data/data5.json",
     "../../assets/data/data6.json"
   ]
