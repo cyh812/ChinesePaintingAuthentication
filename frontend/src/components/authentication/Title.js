@@ -3,9 +3,10 @@ import "./Title.css";
 import Button from '@mui/material/Button';
 import MapIcon from '@mui/icons-material/Map';
 import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
+import { LANG_EN, LANG_ZH, t } from "../../i18n/texts";
 
 
-const Title = ({ onToggleFullGraph = null }) => {
+const Title = ({ onToggleFullGraph = null, language = LANG_ZH, onLanguageChange }) => {
     const [isFullGraphMode, setIsFullGraphMode] = useState(false);
 
     const handleToggle = () => {
@@ -16,12 +17,19 @@ const Title = ({ onToggleFullGraph = null }) => {
         }
     };
 
+    const handleLanguageToggle = () => {
+        const nextLanguage = language === LANG_ZH ? LANG_EN : LANG_ZH;
+        if (onLanguageChange) {
+            onLanguageChange(nextLanguage);
+        }
+    };
+
     return (
         <div className="title-container">
             <div className="title-left">
                 <img src="./assets/img/logo.png" alt="Custom Icon" className="icon" />
                 <span className="title">
-                    Chinese Ancient Paintings Authentication Interactive Visualization System
+                    {t(language, "titleMain")}
                 </span>
             </div>
             
@@ -45,13 +53,16 @@ const Title = ({ onToggleFullGraph = null }) => {
                         }
                     }}
                 >
-                    {isFullGraphMode ? '退出总图' : '查看总图'}
+                    {isFullGraphMode ? t(language, "exitFullGraph") : t(language, "enterFullGraph")}
                 </Button>
             </div>
             )}
 
             <div className="lang">
-                <div style={{
+                <button
+                    onClick={handleLanguageToggle}
+                    title={t(language, "langToggle")}
+                    style={{
                     height: '30px',
                     backgroundColor: '#fef4eb',
                     fontWeight: 'bold',
@@ -63,10 +74,11 @@ const Title = ({ onToggleFullGraph = null }) => {
                     borderRadius: '4px',
                     border: '1px solid rgba(0, 0, 0, 0.23)',
                     fontSize: '14px',
-                    color: 'rgba(0, 0, 0, 0.87)'
+                    color: 'rgba(0, 0, 0, 0.87)',
+                    cursor: 'pointer'
                 }}>
-                    简体中文
-                </div>
+                    {t(language, "langLabel")}
+                </button>
             </div>
         </div>
 

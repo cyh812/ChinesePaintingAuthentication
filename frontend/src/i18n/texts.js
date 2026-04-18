@@ -1,0 +1,103 @@
+export const LANG_ZH = "zh";
+export const LANG_EN = "en";
+
+export const TEXTS = {
+  zh: {
+    titleMain: "Chinese Ancient Paintings Authentication Interactive Visualization System",
+    langLabel: "简体中文",
+    langToggle: "切换到英文",
+    enterFullGraph: "查看总图",
+    exitFullGraph: "退出总图",
+    nodeInfo: "节点信息",
+    linkInfo: "连边信息",
+    closeNodeInfo: "关闭节点信息",
+    closeLinkInfo: "关闭连边信息",
+    emptyNode: "当前暂无选中的节点",
+    emptyLink: "当前暂无选中的连边",
+    unknownNodeType: "未知节点类型",
+    unknownLinkType: "未知连边类型",
+    chatHeader: "Two-Stage KG Assistant",
+    chatGreeting: "你好，我是你的 AI 助手。请输入问题，我会先检索知识库，再结合历史对话进行回答。",
+    chatTyping: "正在先检索知识，再组织回答...",
+    chatPlaceholder: "请输入问题。",
+    send: "发送",
+    noReply: "无回复",
+    requestFailed: "请求失败，请稍后重试。",
+    insufficientBalance: "API 余额不足，请检查账户额度。",
+    invalidJson: "第一阶段检索结果无法解析为 JSON，请检查提示词或模型输出。",
+    kgNotLoaded: "知识库加载失败，请刷新后重试。",
+    unnamedPainting: "未命名画作",
+    unknown: "未知",
+    author: "作者",
+    era: "年代",
+    material: "材质",
+    size: "尺寸",
+    noSegments: "当前画作暂无可用切片。",
+    unnamedSeal: "未命名印章",
+    sealOwner: "印章归属",
+    ownerShiTao: "石涛",
+    sealSource: "印章来源",
+    sealSourceValue: "上海博物馆编《中国书画家印鉴款识》(文物出版社，1987.12)",
+    unnamedReference: "未命名考证记录",
+    noReferenceStatement: "暂无相关文献说明。",
+    noTextRecord: "暂无文本记录。",
+    noReferenceInfo: "暂无参考文献信息。",
+    paintingLabel: "Painting",
+    referenceLabel: "Reference",
+  },
+  en: {
+    titleMain: "Chinese Ancient Paintings Authentication Interactive Visualization System",
+    langLabel: "English",
+    langToggle: "Switch to Chinese",
+    enterFullGraph: "View Full Graph",
+    exitFullGraph: "Exit Full Graph",
+    nodeInfo: "Node Info",
+    linkInfo: "Link Info",
+    closeNodeInfo: "Close node info",
+    closeLinkInfo: "Close link info",
+    emptyNode: "No node is selected.",
+    emptyLink: "No link is selected.",
+    unknownNodeType: "Unknown node type",
+    unknownLinkType: "Unknown link type",
+    chatHeader: "Two-Stage KG Assistant",
+    chatGreeting: "Hello, I am your AI assistant. Ask a question and I will retrieve knowledge first, then answer with context.",
+    chatTyping: "Retrieving knowledge and composing answer...",
+    chatPlaceholder: "Ask a question.",
+    send: "Send",
+    noReply: "No response",
+    requestFailed: "Request failed, please try again later.",
+    insufficientBalance: "API balance is insufficient. Please check your quota.",
+    invalidJson: "Stage-1 retrieval output is not valid JSON. Please check prompts or model output.",
+    kgNotLoaded: "Knowledge base is not loaded. Please refresh and try again.",
+    unnamedPainting: "Unnamed painting",
+    unknown: "Unknown",
+    author: "Author",
+    era: "Period",
+    material: "Material",
+    size: "Size",
+    noSegments: "No segments are available for this painting.",
+    unnamedSeal: "Unnamed seal",
+    sealOwner: "Seal owner",
+    ownerShiTao: "Shi Tao",
+    sealSource: "Seal source",
+    sealSourceValue: "Shanghai Museum, Marks and Seals of Chinese Calligraphers and Painters (Cultural Relics Press, 1987.12)",
+    unnamedReference: "Unnamed reference",
+    noReferenceStatement: "No reference statement available.",
+    noTextRecord: "No text record available.",
+    noReferenceInfo: "No reference info available.",
+    paintingLabel: "Painting",
+    referenceLabel: "Reference",
+  },
+};
+
+export function t(language, key) {
+  const table = TEXTS[language] || TEXTS.zh;
+  return table[key] || TEXTS.zh[key] || key;
+}
+
+export function detectInputLanguage(input) {
+  if (/[\u4e00-\u9fff]/.test(input)) {
+    return LANG_ZH;
+  }
+  return LANG_EN;
+}

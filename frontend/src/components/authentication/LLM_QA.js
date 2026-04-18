@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import OpenAI from "openai";
 import SvgIcon from "@mui/material/SvgIcon";
 import "./LLM.css";
-import KGData from "../../assets/data/KG.json";
+import { detectInputLanguage, LANG_EN, LANG_ZH, t } from "../../i18n/texts";
 
 // =========================
 // 第一阶段 LLM：负责检索 JSON 条目
@@ -79,24 +79,60 @@ function safeParseJson(text) {
 }
 
 const Segments = (props) => {
-  const { onKnowledgeRetrieved } = props;
+  const { onKnowledgeRetrieved, language = LANG_ZH } = props;
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [kgData, setKgData] = useState(null);
 
-  // 给第二阶段 LLM 用的历史对话
-  const [conversationHistory, setConversationHistory] = useState([
-    {
-      role: "assistant",
-      content:
-        "你好，我是你的 AI 助手。请输入问题，我会先检索知识库，再结合历史对话进行回答。",
-    },
-  ]);
-
-  // 第一阶段检索出的结构化知识
-  const [retrievedKnowledge, setRetrievedKnowledge] = useState(null);
+  // 展示用历史：按用户输入语言显示
+  const [conversationHistory, setConversationHistory] = useState([]);
+  // 模型用历史：统一中文语境，保证检索稳定
+  const [modelHistory, setModelHistory] = useState([]);
 
   const messagesEndRef = useRef(null);
   const textareaRef = useRef(null);
+
+  useEffect(() => {
+    const greeting = {
+      role: "assistant",
+      content: t(language, "chatGreeting"),
+      meta: { language },
+    };
+    setConversationHistory([greeting]);
+    setModelHistory([
+      {
+        role: "assistant",
+        content: t(LANG_ZH, "chatGreeting"),
+      },
+    ]);
+  }, [language]);
+
+  useEffect(() => {
+    const loadKgData = async () => {
+      const preferredFile = language === LANG_EN ? "KG_en.json" : "KG.json";
+
+      try {
+        const res = await fetch(`/assets/data/${preferredFile}`);
+        if (res.ok) {
+          const data = await res.json();
+          setKgData(data);
+          return;
+        }
+
+        const fallbackRes = await fetch("/assets/data/KG.json");
+        if (!fallbackRes.ok) {
+          throw new Error("KG load failed");
+        }
+        const fallbackData = await fallbackRes.json();
+        setKgData(fallbackData);
+      } catch (err) {
+        console.error("KG 数据加载失败:", err);
+        setKgData(null);
+      }
+    };
+
+    loadKgData();
+  }, [language]);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -120,7 +156,45 @@ const Segments = (props) => {
   // 输入：用户问题 + KG.json
   // 输出：抽取后的 JSON
   // =========================
-  const retrieveKnowledge = async (userQuestion) => {
+  const translateQuestionToChinese = async (questionInEnglish) => {
+    const completion = await retrieverClient.chat.completions.create({
+      model: "deepseek-chat",
+      messages: [
+        {
+          role: "system",
+          content:
+            "你是翻译助手。把用户输入的英文问题翻译成自然、准确、简洁的中文问题。只输出中文问题，不要解释。",
+        },
+        { role: "user", content: questionInEnglish },
+      ],
+      temperature: 0,
+    });
+
+    return completion.choices[0]?.message?.content?.trim() || questionInEnglish;
+  };
+
+  const translateAnswerToEnglish = async (answerInChinese) => {
+    const completion = await answerClient.chat.completions.create({
+      model: "deepseek-chat",
+      messages: [
+        {
+          role: "system",
+          content:
+            "You are a translation assistant. Translate the Chinese answer into fluent, faithful English. Output only the translated answer.",
+        },
+        { role: "user", content: answerInChinese },
+      ],
+      temperature: 0,
+    });
+
+    return completion.choices[0]?.message?.content?.trim() || answerInChinese;
+  };
+
+  const retrieveKnowledge = async (userQuestion, activeKgData) => {
+    if (!activeKgData) {
+      throw new Error(t(language, "kgNotLoaded"));
+    }
+
     const retrieverSystemPrompt = `
 你是一个知识库条目抽取助手。
 你的任务是：根据用户的问题，从我提供的 JSON 知识库中抽取与问题相关的条目。
@@ -145,7 +219,7 @@ const Segments = (props) => {
 ${userQuestion}
 
 知识库 JSON：
-${JSON.stringify(KGData, null, 2)}
+${JSON.stringify(activeKgData, null, 2)}
 `;
 
     const completion = await retrieverClient.chat.completions.create({
@@ -205,7 +279,7 @@ ${JSON.stringify(knowledgeJson, null, 2)}
       temperature: 0.6,
     });
 
-    return completion.choices[0]?.message?.content || "无回复";
+    return completion.choices[0]?.message?.content || t(language, "noReply");
   };
 
   const sendMessage = async () => {
@@ -213,9 +287,11 @@ ${JSON.stringify(knowledgeJson, null, 2)}
     if (!trimmedMessage || loading) return;
 
     // 先把用户消息放进对话区
+    const inputLanguage = detectInputLanguage(trimmedMessage);
+
     const nextHistory = [
       ...conversationHistory,
-      { role: "user", content: trimmedMessage },
+      { role: "user", content: trimmedMessage, meta: { language: inputLanguage } },
     ];
     setConversationHistory(nextHistory);
 
@@ -224,10 +300,19 @@ ${JSON.stringify(knowledgeJson, null, 2)}
     setLoading(true);
 
     try {
-      // ===== 第一阶段：检索 =====
-      const knowledge = await retrieveKnowledge(trimmedMessage);
+      let normalizedQuestionZh = trimmedMessage;
+      if (inputLanguage === LANG_EN) {
+        normalizedQuestionZh = await translateQuestionToChinese(trimmedMessage);
+      }
 
-      setRetrievedKnowledge(knowledge);
+      const nextModelHistory = [
+        ...modelHistory,
+        { role: "user", content: normalizedQuestionZh },
+      ];
+
+      // ===== 第一阶段：检索 =====
+      const knowledge = await retrieveKnowledge(normalizedQuestionZh, kgData);
+
       console.log("第一阶段抽取出的 JSON：", knowledge);
       // 传给父组件或其他 component
       if (typeof onKnowledgeRetrieved === "function") {
@@ -235,28 +320,51 @@ ${JSON.stringify(knowledgeJson, null, 2)}
       }
 
       // ===== 第二阶段：回答 =====
-      const finalAnswer = await answerWithKnowledge(
-        trimmedMessage,
+      const answerZh = await answerWithKnowledge(
+        normalizedQuestionZh,
         knowledge,
-        nextHistory
+        nextModelHistory
       );
+
+      let finalAnswer = answerZh;
+      if (inputLanguage === LANG_EN) {
+        try {
+          finalAnswer = await translateAnswerToEnglish(answerZh);
+        } catch (translateError) {
+          console.error("英文答案翻译失败，回退中文答案:", translateError);
+        }
+      }
 
       setConversationHistory((prev) => [
         ...prev,
-        { role: "assistant", content: finalAnswer },
+        {
+          role: "assistant",
+          content: finalAnswer,
+          meta: {
+            originalLanguage: inputLanguage,
+            originalQuestion: trimmedMessage,
+            normalizedQuestionZh,
+            answerZh,
+            answerDisplayed: finalAnswer,
+          },
+        },
       ]);
+
+      setModelHistory((prev) => [...prev, { role: "assistant", content: answerZh }]);
     } catch (error) {
       console.error("两阶段 LLM 处理失败:", error);
 
-      let errorText = "请求失败，请稍后重试。";
+      let errorText = t(language, "requestFailed");
 
       if (
         error?.status === 402 ||
         String(error?.message).includes("Insufficient Balance")
       ) {
-        errorText = "API 余额不足，请检查账户额度。";
+        errorText = t(language, "insufficientBalance");
       } else if (String(error?.message).includes("合法 JSON")) {
-        errorText = "第一阶段检索结果无法解析为 JSON，请检查提示词或模型输出。";
+        errorText = t(language, "invalidJson");
+      } else if (String(error?.message).includes(t(language, "kgNotLoaded"))) {
+        errorText = t(language, "kgNotLoaded");
       }
 
       setConversationHistory((prev) => [
@@ -286,7 +394,7 @@ ${JSON.stringify(knowledgeJson, null, 2)}
 
   return (
     <div className="segments">
-      <div className="chat-header">Two-Stage KG Assistant</div>
+      <div className="chat-header">{t(language, "chatHeader")}</div>
 
       <div className="chat-messages">
         {conversationHistory.map((item, index) => (
@@ -309,7 +417,7 @@ ${JSON.stringify(knowledgeJson, null, 2)}
         {loading && (
           <div className="message-row message-row-assistant">
             <div className="message-bubble message-assistant typing">
-              正在先检索知识，再组织回答...
+              {t(language, "chatTyping")}
             </div>
           </div>
         )}
@@ -324,7 +432,7 @@ ${JSON.stringify(knowledgeJson, null, 2)}
           value={message}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown}
-          placeholder="请输入问题。"
+          placeholder={t(language, "chatPlaceholder")}
           disabled={loading}
           rows={1}
         />
@@ -333,8 +441,8 @@ ${JSON.stringify(knowledgeJson, null, 2)}
           className="send-button"
           onClick={handleSendClick}
           disabled={loading}
-          aria-label="发送"
-          title="发送"
+          aria-label={t(language, "send")}
+          title={t(language, "send")}
         >
           <Send sx={{ transform: "scale(1.3)" }} />
         </button>

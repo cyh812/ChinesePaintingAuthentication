@@ -1,8 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import "./KG.css";
+import PaintingsEn from "../../assets/Paintings_en.json";
+import ReferencesEn from "../../assets/References_en.json";
+import SealsEn from "../../assets/Seals_en.json";
+import { LANG_EN } from "../../i18n/texts";
 
-const KG = ({ knowledgeData, paintingSegmentSimilarityData, onNodeClick, onLinkClick }) => {
+const KG = ({
+  language,
+  knowledgeData,
+  paintingSegmentSimilarityData,
+  onNodeClick,
+  onLinkClick,
+}) => {
   const containerRef = useRef(null);
 
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
@@ -69,6 +79,33 @@ const KG = ({ knowledgeData, paintingSegmentSimilarityData, onNodeClick, onLinkC
     P: "../../assets/img/painting.png",
     S: "../../assets/img/seal.png",
     R: "../../assets/img/references.png",
+  };
+
+  const paintingNameEnMap = new Map(
+    (PaintingsEn || []).map((item) => [item.id || item["编号"], item.title || item["总作品名"]])
+  );
+  const referenceNameEnMap = new Map(
+    (ReferencesEn || []).map((item) => [item.reference_id || item.id, item.info])
+  );
+  const sealNameEnMap = new Map((SealsEn || []).map((item) => [item.seal_code, item.name]));
+
+  const getDisplayNodeName = (node) => {
+    if (!node) return "";
+    if (language !== LANG_EN) return node.name;
+
+    if (node.category === "P") {
+      return paintingNameEnMap.get(node.id) || node.name;
+    }
+
+    if (node.category === "R") {
+      return referenceNameEnMap.get(node.id) || node.name;
+    }
+
+    if (node.category === "S") {
+      return sealNameEnMap.get(node.id) || node.name;
+    }
+
+    return node.name;
   };
 
   useEffect(() => {
@@ -180,7 +217,7 @@ const KG = ({ knowledgeData, paintingSegmentSimilarityData, onNodeClick, onLinkC
 
         const references = Array.isArray(painting["考证"]) ? painting["考证"] : [];
         references.forEach((ref) => {
-          const refId = ref["reference id"] || ref["id"];
+          const refId = ref["reference_id"] || ref["reference id"] || ref["id"];
           const refName = ref["info"];
           const textRecord = ref["text_record"] || ref["text record"] || "";
 
@@ -358,7 +395,7 @@ const KG = ({ knowledgeData, paintingSegmentSimilarityData, onNodeClick, onLinkC
         data: {
           id: node.id,
           category: node.category,
-          name: node.name,
+          name: getDisplayNodeName(node),
         },
       };
     };
@@ -454,7 +491,7 @@ const KG = ({ knowledgeData, paintingSegmentSimilarityData, onNodeClick, onLinkC
       .style("font-family", "Arial, sans-serif")
       .style("font-weight", "bold")
       .style("pointer-events", "none")
-      .text((d) => d.name);
+      .text((d) => getDisplayNodeName(d));
 
     const arcGenerator = d3.arc().innerRadius(0).outerRadius(10);
 
@@ -626,7 +663,7 @@ const KG = ({ knowledgeData, paintingSegmentSimilarityData, onNodeClick, onLinkC
       simulation.stop();
       d3.select(containerRef.current).selectAll("svg").remove();
     };
-  }, [dimensions, nodesData, linksData, isRendered, onNodeClick, onLinkClick]);
+  }, [dimensions, nodesData, linksData, isRendered, onNodeClick, onLinkClick, language]);
 
   return <div className="kg" ref={containerRef}></div>;
 };

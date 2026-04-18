@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "react";
 import "./assets/scss/App.scss";
 /* @ts-ignore */
 import "./App.css";
+import { LANG_ZH, t } from "./i18n/texts";
 
 import LLM from "./components/authentication/LLM_QA";
 import KG from "./components/authentication/KG";
@@ -16,6 +17,9 @@ import PPLinkDetail from "./components/authentication/PPLinkDetail";
 import PRLinkDetail from "./components/authentication/PRLinkDetail";
 
 const App = () => {
+  const [language, setLanguage] = useState<string>(() => {
+    return localStorage.getItem("app-language") || LANG_ZH;
+  });
   const [showNodeDetail, setShowNodeDetail] = useState(true);
   const [showLinkDetail, setShowLinkDetail] = useState(true);
 
@@ -30,13 +34,14 @@ const App = () => {
   // ===== 节点详情总入口 =====
   const NodeDetailRenderer = ({ selectedNode }: any) => {
     if (!selectedNode) {
-      return <div className="EmptyDetail">当前暂无选中的节点</div>;
+      return <div className="EmptyDetail">{t(language, "emptyNode")}</div>;
     }
 
     switch (selectedNode.category) {
       case "P":
         return (
           <PaintingNodeDetail
+            language={language}
             node={selectedNode.data}
             onPaintingSegmentSearchResult={(data: any) => {
               console.log("App.tsx 收到 painting segment similarity 数据：", data);
@@ -45,31 +50,36 @@ const App = () => {
           />
         );
       case "S":
-        return <SealNodeDetail node={selectedNode.data} />;
+        return <SealNodeDetail language={language} node={selectedNode.data} />;
       case "R":
-        return <ReferenceNodeDetail node={selectedNode.data} />;
+        return <ReferenceNodeDetail language={language} node={selectedNode.data} />;
       default:
-        return <div className="EmptyDetail">未知节点类型</div>;
+        return <div className="EmptyDetail">{t(language, "unknownNodeType")}</div>;
     }
   };
 
   // ===== 连边详情总入口 =====
   const LinkDetailRenderer = ({ selectedLink }: any) => {
     if (!selectedLink) {
-      return <div className="EmptyDetail">当前暂无选中的连边</div>;
+      return <div className="EmptyDetail">{t(language, "emptyLink")}</div>;
     }
 
     switch (selectedLink?.category) {
       case "P-P":
         return <PPLinkDetail link={selectedLink} />;
       case "P-S":
-        return <PSLinkDetail link={selectedLink} />;
+        return <PSLinkDetail language={language} link={selectedLink} />;
       case "P-R":
-        return <PRLinkDetail link={selectedLink} />;
+        return <PRLinkDetail language={language} link={selectedLink} />;
       default:
-        return <div className="EmptyDetail">未知连边类型</div>;
+        return <div className="EmptyDetail">{t(language, "unknownLinkType")}</div>;
     }
   };
+
+  const handleLanguageChange = useCallback((nextLanguage: string) => {
+    setLanguage(nextLanguage);
+    localStorage.setItem("app-language", nextLanguage);
+  }, []);
 
   // 供 KG 调用，使用 useCallback 固定引用，避免 KG 因函数 props 变化而重渲染
   const handleNodeSelect = useCallback((nodeData: any) => {
@@ -85,13 +95,13 @@ const App = () => {
   return (
     <>
       <div className="top-bar">
-        <Title />
+        <Title language={language} onLanguageChange={handleLanguageChange} />
       </div>
 
       <div className="bottom-container">
         <div className="left-side">
           <div className="left-side-border">
-            <LLM onKnowledgeRetrieved={setRetrievedKnowledge} />
+            <LLM language={language} onKnowledgeRetrieved={setRetrievedKnowledge} />
           </div>
         </div>
 
@@ -102,11 +112,11 @@ const App = () => {
                 {showNodeDetail && (
                   <div className="NodeDetail">
                     <div className="DetailHeader">
-                      <div className="DetailHeaderTitle">节点信息</div>
+                      <div className="DetailHeaderTitle">{t(language, "nodeInfo")}</div>
                       <button
                         className="DetailCloseBtn"
                         onClick={() => setShowNodeDetail(false)}
-                        aria-label="关闭节点信息"
+                        aria-label={t(language, "closeNodeInfo")}
                       >
                         ×
                       </button>
@@ -121,11 +131,11 @@ const App = () => {
                 {showLinkDetail && (
                   <div className="LinkDetail">
                     <div className="DetailHeader">
-                      <div className="DetailHeaderTitle">连边信息</div>
+                      <div className="DetailHeaderTitle">{t(language, "linkInfo")}</div>
                       <button
                         className="DetailCloseBtn"
                         onClick={() => setShowLinkDetail(false)}
-                        aria-label="关闭连边信息"
+                        aria-label={t(language, "closeLinkInfo")}
                       >
                         ×
                       </button>
@@ -139,6 +149,7 @@ const App = () => {
               </div>
 
               <KG
+                language={language}
                 knowledgeData={retrievedKnowledge}
                 paintingSegmentSimilarityData={paintingSegmentSimilarityData}
                 onNodeClick={handleNodeSelect}

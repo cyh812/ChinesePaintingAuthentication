@@ -1,24 +1,29 @@
 import React from "react";
 import "./PSLinkDetail.css";
 import PS from "../../assets/Seal_to_seal.json";
+import PSEn from "../../assets/Seal_to_seal_en.json";
+import { LANG_EN } from "../../i18n/texts";
 
-const PSLinkDetail = ({ link }) => {
+const PSLinkDetail = ({ link, language }) => {
+  const activePS = language === LANG_EN ? PSEn : PS;
   const sourceId = link?.data?.source || "";
   const targetId = link?.data?.target || "";
   const similarity = link?.data?.info?.angle ?? 0;
 
   // 读取对应 painting -> seal 的映射记录
-  const psEntryList = PS?.[sourceId]?.[targetId] || [];
+  const psEntryList = activePS?.[sourceId]?.[targetId] || [];
   const psEntry = Array.isArray(psEntryList) && psEntryList.length > 0 ? psEntryList[0] : null;
 
   // 左侧：截取的印章图
-  const extractedSealImage = psEntry?.["截取的印章url"]
-    ? `../../assets/data/${psEntry["截取的印章url"]}`
+  const extractedSealPath = psEntry?.["截取的印章url"] || psEntry?.["cropped_seal_url"];
+  const extractedSealImage = extractedSealPath
+    ? `../../assets/data/${extractedSealPath}`
     : "/assets/img/seal.png";
 
   // 右侧：标准件图
-  const referenceSealImage = psEntry?.["标准件url"]
-    ? `../../assets/data/${psEntry["标准件url"]}`
+  const referenceSealPath = psEntry?.["标准件url"] || psEntry?.["standard_seal_url"];
+  const referenceSealImage = referenceSealPath
+    ? `../../assets/data/${referenceSealPath}`
     : "/assets/img/seal.png";
 
   return (
