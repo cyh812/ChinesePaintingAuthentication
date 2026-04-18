@@ -1,0 +1,1134 @@
+[
+  {
+    "painting_code": "D001410",
+    "painting_image": "Paintings_merged/D001410.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D001430",
+    "painting_image": "Paintings_merged/D001430.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D001439",
+    "painting_image": "Paintings_merged/D001439.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D001458",
+    "painting_image": "Paintings_merged/D001458.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D001468",
+    "painting_image": "Paintings_merged/D001468.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D001471",
+    "painting_image": "Paintings_merged/D001471.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D001481",
+    "painting_image": "Paintings_merged/D001481.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D001484",
+    "painting_image": "Paintings_merged/D001484.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D001488",
+    "painting_image": "Paintings_merged/D001488.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D001507",
+    "painting_image": "Paintings_merged/D001507.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D001508",
+    "painting_image": "Paintings_merged/D001508.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D001510",
+    "painting_image": "Paintings_merged/D001510.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D001730",
+    "painting_image": "Paintings_merged/D001730.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D002078",
+    "painting_image": "Paintings_merged/D002078.jpg",
+    "seals": [
+      {
+        "seal_code": "0001",
+        "seal_image": "encoded_seals/seal_0001.png"
+      },
+      {
+        "seal_code": "0002",
+        "seal_image": "encoded_seals/seal_0002.png"
+      },
+      {
+        "seal_code": "0003",
+        "seal_image": "encoded_seals/seal_0003.png"
+      }
+    ]
+  },
+  {
+    "painting_code": "D002081",
+    "painting_image": "Paintings_merged/D002081.jpg",
+    "seals": [
+      {
+        "seal_code": "0004",
+        "seal_image": "encoded_seals/seal_0004.png"
+      },
+      {
+        "seal_code": "0005",
+        "seal_image": "encoded_seals/seal_0005.png"
+      },
+      {
+        "seal_code": "0006",
+        "seal_image": "encoded_seals/seal_0006.png"
+      },
+      {
+        "seal_code": "0007",
+        "seal_image": "encoded_seals/seal_0007.png"
+      },
+      {
+        "seal_code": "0008",
+        "seal_image": "encoded_seals/seal_0008.png"
+      },
+      {
+        "seal_code": "0009",
+        "seal_image": "encoded_seals/seal_0009.png"
+      },
+      {
+        "seal_code": "0010",
+        "seal_image": "encoded_seals/seal_0010.png"
+      },
+      {
+        "seal_code": "0011",
+        "seal_image": "encoded_seals/seal_0011.png"
+      }
+    ]
+  },
+  {
+    "painting_code": "D002101",
+    "painting_image": "Paintings_merged/D002101.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D002386",
+    "painting_image": "Paintings_merged/D002386.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D002388",
+    "painting_image": "Paintings_merged/D002388.jpg",
+    "seals": [
+      {
+        "seal_code": "0012",
+        "seal_image": "encoded_seals/seal_0012.jpg"
+      },
+      {
+        "seal_code": "0013",
+        "seal_image": "encoded_seals/seal_0013.jpg"
+      },
+      {
+        "seal_code": "0014",
+        "seal_image": "encoded_seals/seal_0014.jpg"
+      }
+    ]
+  },
+  {
+    "painting_code": "D002707",
+    "painting_image": "Paintings_merged/D002707.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D002761",
+    "painting_image": "Paintings_merged/D002761.jpg",
+    "seals": [
+      {
+        "seal_code": "0015",
+        "seal_image": "encoded_seals/seal_0015.jpg"
+      },
+      {
+        "seal_code": "0016",
+        "seal_image": "encoded_seals/seal_0016.jpg"
+      },
+      {
+        "seal_code": "0017",
+        "seal_image": "encoded_seals/seal_0017.jpg"
+      },
+      {
+        "seal_code": "0018",
+        "seal_image": "encoded_seals/seal_0018.jpg"
+      },
+      {
+        "seal_code": "0019",
+        "seal_image": "encoded_seals/seal_0019.jpg"
+      },
+      {
+        "seal_code": "0020",
+        "seal_image": "encoded_seals/seal_0020.jpg"
+      },
+      {
+        "seal_code": "0021",
+        "seal_image": "encoded_seals/seal_0021.jpg"
+      },
+      {
+        "seal_code": "0022",
+        "seal_image": "encoded_seals/seal_0022.jpg"
+      },
+      {
+        "seal_code": "0023",
+        "seal_image": "encoded_seals/seal_0023.jpg"
+      },
+      {
+        "seal_code": "0024",
+        "seal_image": "encoded_seals/seal_0024.jpg"
+      },
+      {
+        "seal_code": "0025",
+        "seal_image": "encoded_seals/seal_0025.jpg"
+      }
+    ]
+  },
+  {
+    "painting_code": "D004382",
+    "painting_image": "Paintings_merged/D004382.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D004388",
+    "painting_image": "Paintings_merged/D004388.jpg",
+    "seals": [
+      {
+        "seal_code": "0026",
+        "seal_image": "encoded_seals/seal_0026.png"
+      },
+      {
+        "seal_code": "0027",
+        "seal_image": "encoded_seals/seal_0027.png"
+      },
+      {
+        "seal_code": "0028",
+        "seal_image": "encoded_seals/seal_0028.png"
+      },
+      {
+        "seal_code": "0029",
+        "seal_image": "encoded_seals/seal_0029.png"
+      },
+      {
+        "seal_code": "0030",
+        "seal_image": "encoded_seals/seal_0030.png"
+      },
+      {
+        "seal_code": "0031",
+        "seal_image": "encoded_seals/seal_0031.png"
+      },
+      {
+        "seal_code": "0032",
+        "seal_image": "encoded_seals/seal_0032.png"
+      },
+      {
+        "seal_code": "0033",
+        "seal_image": "encoded_seals/seal_0033.png"
+      },
+      {
+        "seal_code": "0034",
+        "seal_image": "encoded_seals/seal_0034.png"
+      },
+      {
+        "seal_code": "0035",
+        "seal_image": "encoded_seals/seal_0035.png"
+      },
+      {
+        "seal_code": "0036",
+        "seal_image": "encoded_seals/seal_0036.png"
+      },
+      {
+        "seal_code": "0037",
+        "seal_image": "encoded_seals/seal_0037.png"
+      },
+      {
+        "seal_code": "0038",
+        "seal_image": "encoded_seals/seal_0038.png"
+      },
+      {
+        "seal_code": "0039",
+        "seal_image": "encoded_seals/seal_0039.png"
+      },
+      {
+        "seal_code": "0040",
+        "seal_image": "encoded_seals/seal_0040.png"
+      },
+      {
+        "seal_code": "0041",
+        "seal_image": "encoded_seals/seal_0041.png"
+      },
+      {
+        "seal_code": "0042",
+        "seal_image": "encoded_seals/seal_0042.png"
+      },
+      {
+        "seal_code": "0043",
+        "seal_image": "encoded_seals/seal_0043.png"
+      },
+      {
+        "seal_code": "0044",
+        "seal_image": "encoded_seals/seal_0044.png"
+      },
+      {
+        "seal_code": "0045",
+        "seal_image": "encoded_seals/seal_0045.png"
+      },
+      {
+        "seal_code": "0046",
+        "seal_image": "encoded_seals/seal_0046.png"
+      },
+      {
+        "seal_code": "0047",
+        "seal_image": "encoded_seals/seal_0047.png"
+      },
+      {
+        "seal_code": "0048",
+        "seal_image": "encoded_seals/seal_0048.png"
+      },
+      {
+        "seal_code": "0049",
+        "seal_image": "encoded_seals/seal_0049.png"
+      },
+      {
+        "seal_code": "0050",
+        "seal_image": "encoded_seals/seal_0050.png"
+      },
+      {
+        "seal_code": "0051",
+        "seal_image": "encoded_seals/seal_0051.png"
+      },
+      {
+        "seal_code": "0052",
+        "seal_image": "encoded_seals/seal_0052.png"
+      },
+      {
+        "seal_code": "0053",
+        "seal_image": "encoded_seals/seal_0053.png"
+      },
+      {
+        "seal_code": "0054",
+        "seal_image": "encoded_seals/seal_0054.png"
+      },
+      {
+        "seal_code": "0055",
+        "seal_image": "encoded_seals/seal_0055.png"
+      }
+    ]
+  },
+  {
+    "painting_code": "D004391",
+    "painting_image": "Paintings_merged/D004391.jpg",
+    "seals": [
+      {
+        "seal_code": "0056",
+        "seal_image": "encoded_seals/seal_0056.png"
+      },
+      {
+        "seal_code": "0057",
+        "seal_image": "encoded_seals/seal_0057.png"
+      }
+    ]
+  },
+  {
+    "painting_code": "D004394",
+    "painting_image": "Paintings_merged/D004394.jpg",
+    "seals": [
+      {
+        "seal_code": "0058",
+        "seal_image": "encoded_seals/seal_0058.jpg"
+      },
+      {
+        "seal_code": "0059",
+        "seal_image": "encoded_seals/seal_0059.jpg"
+      },
+      {
+        "seal_code": "0060",
+        "seal_image": "encoded_seals/seal_0060.jpg"
+      }
+    ]
+  },
+  {
+    "painting_code": "D004396",
+    "painting_image": "Paintings_merged/D004396.jpg",
+    "seals": [
+      {
+        "seal_code": "0061",
+        "seal_image": "encoded_seals/seal_0061.png"
+      },
+      {
+        "seal_code": "0062",
+        "seal_image": "encoded_seals/seal_0062.png"
+      },
+      {
+        "seal_code": "0063",
+        "seal_image": "encoded_seals/seal_0063.png"
+      },
+      {
+        "seal_code": "0064",
+        "seal_image": "encoded_seals/seal_0064.png"
+      },
+      {
+        "seal_code": "0065",
+        "seal_image": "encoded_seals/seal_0065.png"
+      },
+      {
+        "seal_code": "0066",
+        "seal_image": "encoded_seals/seal_0066.png"
+      },
+      {
+        "seal_code": "0067",
+        "seal_image": "encoded_seals/seal_0067.png"
+      }
+    ]
+  },
+  {
+    "painting_code": "D004401",
+    "painting_image": "Paintings_merged/D004401.jpg",
+    "seals": [
+      {
+        "seal_code": "0068",
+        "seal_image": "encoded_seals/seal_0068.png"
+      },
+      {
+        "seal_code": "0069",
+        "seal_image": "encoded_seals/seal_0069.png"
+      },
+      {
+        "seal_code": "0070",
+        "seal_image": "encoded_seals/seal_0070.png"
+      },
+      {
+        "seal_code": "0071",
+        "seal_image": "encoded_seals/seal_0071.png"
+      },
+      {
+        "seal_code": "0072",
+        "seal_image": "encoded_seals/seal_0072.png"
+      },
+      {
+        "seal_code": "0073",
+        "seal_image": "encoded_seals/seal_0073.png"
+      }
+    ]
+  },
+  {
+    "painting_code": "D004404",
+    "painting_image": "Paintings_merged/D004404.jpg",
+    "seals": [
+      {
+        "seal_code": "0074",
+        "seal_image": "encoded_seals/seal_0074.jpg"
+      },
+      {
+        "seal_code": "0075",
+        "seal_image": "encoded_seals/seal_0075.jpg"
+      },
+      {
+        "seal_code": "0076",
+        "seal_image": "encoded_seals/seal_0076.jpg"
+      },
+      {
+        "seal_code": "0077",
+        "seal_image": "encoded_seals/seal_0077.jpg"
+      },
+      {
+        "seal_code": "0078",
+        "seal_image": "encoded_seals/seal_0078.jpg"
+      },
+      {
+        "seal_code": "0079",
+        "seal_image": "encoded_seals/seal_0079.jpg"
+      },
+      {
+        "seal_code": "0080",
+        "seal_image": "encoded_seals/seal_0080.jpg"
+      },
+      {
+        "seal_code": "0081",
+        "seal_image": "encoded_seals/seal_0081.jpg"
+      },
+      {
+        "seal_code": "0082",
+        "seal_image": "encoded_seals/seal_0082.jpg"
+      },
+      {
+        "seal_code": "0083",
+        "seal_image": "encoded_seals/seal_0083.jpg"
+      },
+      {
+        "seal_code": "0084",
+        "seal_image": "encoded_seals/seal_0084.jpg"
+      },
+      {
+        "seal_code": "0085",
+        "seal_image": "encoded_seals/seal_0085.jpg"
+      },
+      {
+        "seal_code": "0086",
+        "seal_image": "encoded_seals/seal_0086.jpg"
+      },
+      {
+        "seal_code": "0087",
+        "seal_image": "encoded_seals/seal_0087.jpg"
+      },
+      {
+        "seal_code": "0088",
+        "seal_image": "encoded_seals/seal_0088.jpg"
+      },
+      {
+        "seal_code": "0089",
+        "seal_image": "encoded_seals/seal_0089.jpg"
+      },
+      {
+        "seal_code": "0090",
+        "seal_image": "encoded_seals/seal_0090.jpg"
+      },
+      {
+        "seal_code": "0091",
+        "seal_image": "encoded_seals/seal_0091.jpg"
+      },
+      {
+        "seal_code": "0092",
+        "seal_image": "encoded_seals/seal_0092.jpg"
+      }
+    ]
+  },
+  {
+    "painting_code": "D004413",
+    "painting_image": "Paintings_merged/D004413.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D004415",
+    "painting_image": "Paintings_merged/D004415.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D004422",
+    "painting_image": "Paintings_merged/D004422.jpg",
+    "seals": [
+      {
+        "seal_code": "0093",
+        "seal_image": "encoded_seals/seal_0093.png"
+      },
+      {
+        "seal_code": "0094",
+        "seal_image": "encoded_seals/seal_0094.png"
+      },
+      {
+        "seal_code": "0095",
+        "seal_image": "encoded_seals/seal_0095.png"
+      },
+      {
+        "seal_code": "0096",
+        "seal_image": "encoded_seals/seal_0096.png"
+      },
+      {
+        "seal_code": "0097",
+        "seal_image": "encoded_seals/seal_0097.png"
+      },
+      {
+        "seal_code": "0098",
+        "seal_image": "encoded_seals/seal_0098.png"
+      }
+    ]
+  },
+  {
+    "painting_code": "D004423",
+    "painting_image": "Paintings_merged/D004423.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D004424",
+    "painting_image": "Paintings_merged/D004424.jpg",
+    "seals": [
+      {
+        "seal_code": "0099",
+        "seal_image": "encoded_seals/seal_0099.png"
+      },
+      {
+        "seal_code": "0100",
+        "seal_image": "encoded_seals/seal_0100.png"
+      },
+      {
+        "seal_code": "0101",
+        "seal_image": "encoded_seals/seal_0101.png"
+      },
+      {
+        "seal_code": "0102",
+        "seal_image": "encoded_seals/seal_0102.png"
+      },
+      {
+        "seal_code": "0103",
+        "seal_image": "encoded_seals/seal_0103.png"
+      },
+      {
+        "seal_code": "0104",
+        "seal_image": "encoded_seals/seal_0104.png"
+      },
+      {
+        "seal_code": "0105",
+        "seal_image": "encoded_seals/seal_0105.png"
+      },
+      {
+        "seal_code": "0106",
+        "seal_image": "encoded_seals/seal_0106.png"
+      }
+    ]
+  },
+  {
+    "painting_code": "D004425",
+    "painting_image": "Paintings_merged/D004425.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D005072",
+    "painting_image": "Paintings_merged/D005072.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D005073",
+    "painting_image": "Paintings_merged/D005073.jpg",
+    "seals": [
+      {
+        "seal_code": "0107",
+        "seal_image": "encoded_seals/seal_0107.jpg"
+      },
+      {
+        "seal_code": "0108",
+        "seal_image": "encoded_seals/seal_0108.jpg"
+      },
+      {
+        "seal_code": "0109",
+        "seal_image": "encoded_seals/seal_0109.jpg"
+      },
+      {
+        "seal_code": "0110",
+        "seal_image": "encoded_seals/seal_0110.jpg"
+      },
+      {
+        "seal_code": "0111",
+        "seal_image": "encoded_seals/seal_0111.jpg"
+      },
+      {
+        "seal_code": "0112",
+        "seal_image": "encoded_seals/seal_0112.jpg"
+      },
+      {
+        "seal_code": "0113",
+        "seal_image": "encoded_seals/seal_0113.jpg"
+      },
+      {
+        "seal_code": "0114",
+        "seal_image": "encoded_seals/seal_0114.jpg"
+      },
+      {
+        "seal_code": "0115",
+        "seal_image": "encoded_seals/seal_0115.jpg"
+      },
+      {
+        "seal_code": "0116",
+        "seal_image": "encoded_seals/seal_0116.jpg"
+      },
+      {
+        "seal_code": "0117",
+        "seal_image": "encoded_seals/seal_0117.jpg"
+      },
+      {
+        "seal_code": "0118",
+        "seal_image": "encoded_seals/seal_0118.jpg"
+      },
+      {
+        "seal_code": "0119",
+        "seal_image": "encoded_seals/seal_0119.jpg"
+      },
+      {
+        "seal_code": "0120",
+        "seal_image": "encoded_seals/seal_0120.jpg"
+      },
+      {
+        "seal_code": "0121",
+        "seal_image": "encoded_seals/seal_0121.jpg"
+      },
+      {
+        "seal_code": "0122",
+        "seal_image": "encoded_seals/seal_0122.jpg"
+      },
+      {
+        "seal_code": "0123",
+        "seal_image": "encoded_seals/seal_0123.jpg"
+      },
+      {
+        "seal_code": "0124",
+        "seal_image": "encoded_seals/seal_0124.jpg"
+      }
+    ]
+  },
+  {
+    "painting_code": "D005509",
+    "painting_image": "Paintings_merged/D005509.jpg",
+    "seals": [
+      {
+        "seal_code": "0125",
+        "seal_image": "encoded_seals/seal_0125.png"
+      },
+      {
+        "seal_code": "0126",
+        "seal_image": "encoded_seals/seal_0126.png"
+      },
+      {
+        "seal_code": "0127",
+        "seal_image": "encoded_seals/seal_0127.png"
+      },
+      {
+        "seal_code": "0128",
+        "seal_image": "encoded_seals/seal_0128.png"
+      },
+      {
+        "seal_code": "0129",
+        "seal_image": "encoded_seals/seal_0129.png"
+      }
+    ]
+  },
+  {
+    "painting_code": "D008074",
+    "painting_image": "Paintings_merged/D008074.jpg",
+    "seals": [
+      {
+        "seal_code": "0130",
+        "seal_image": "encoded_seals/seal_0130.png"
+      },
+      {
+        "seal_code": "0131",
+        "seal_image": "encoded_seals/seal_0131.png"
+      },
+      {
+        "seal_code": "0132",
+        "seal_image": "encoded_seals/seal_0132.png"
+      },
+      {
+        "seal_code": "0133",
+        "seal_image": "encoded_seals/seal_0133.png"
+      },
+      {
+        "seal_code": "0134",
+        "seal_image": "encoded_seals/seal_0134.png"
+      },
+      {
+        "seal_code": "0135",
+        "seal_image": "encoded_seals/seal_0135.png"
+      }
+    ]
+  },
+  {
+    "painting_code": "D009166",
+    "painting_image": "Paintings_merged/D009166.jpg",
+    "seals": [
+      {
+        "seal_code": "0136",
+        "seal_image": "encoded_seals/seal_0136.png"
+      },
+      {
+        "seal_code": "0137",
+        "seal_image": "encoded_seals/seal_0137.png"
+      },
+      {
+        "seal_code": "0138",
+        "seal_image": "encoded_seals/seal_0138.png"
+      },
+      {
+        "seal_code": "0139",
+        "seal_image": "encoded_seals/seal_0139.png"
+      },
+      {
+        "seal_code": "0140",
+        "seal_image": "encoded_seals/seal_0140.png"
+      },
+      {
+        "seal_code": "0141",
+        "seal_image": "encoded_seals/seal_0141.png"
+      },
+      {
+        "seal_code": "0142",
+        "seal_image": "encoded_seals/seal_0142.png"
+      },
+      {
+        "seal_code": "0143",
+        "seal_image": "encoded_seals/seal_0143.png"
+      }
+    ]
+  },
+  {
+    "painting_code": "D010320",
+    "painting_image": "Paintings_merged/D010320.jpg",
+    "seals": [
+      {
+        "seal_code": "0144",
+        "seal_image": "encoded_seals/seal_0144.png"
+      },
+      {
+        "seal_code": "0145",
+        "seal_image": "encoded_seals/seal_0145.png"
+      },
+      {
+        "seal_code": "0146",
+        "seal_image": "encoded_seals/seal_0146.png"
+      },
+      {
+        "seal_code": "0147",
+        "seal_image": "encoded_seals/seal_0147.png"
+      },
+      {
+        "seal_code": "0148",
+        "seal_image": "encoded_seals/seal_0148.png"
+      },
+      {
+        "seal_code": "0149",
+        "seal_image": "encoded_seals/seal_0149.png"
+      },
+      {
+        "seal_code": "0150",
+        "seal_image": "encoded_seals/seal_0150.png"
+      },
+      {
+        "seal_code": "0151",
+        "seal_image": "encoded_seals/seal_0151.png"
+      }
+    ]
+  },
+  {
+    "painting_code": "D011470",
+    "painting_image": "Paintings_merged/D011470.jpg",
+    "seals": [
+      {
+        "seal_code": "0152",
+        "seal_image": "encoded_seals/seal_0152.png"
+      },
+      {
+        "seal_code": "0153",
+        "seal_image": "encoded_seals/seal_0153.png"
+      },
+      {
+        "seal_code": "0154",
+        "seal_image": "encoded_seals/seal_0154.png"
+      },
+      {
+        "seal_code": "0155",
+        "seal_image": "encoded_seals/seal_0155.png"
+      }
+    ]
+  },
+  {
+    "painting_code": "D011476",
+    "painting_image": "Paintings_merged/D011476.jpg",
+    "seals": [
+      {
+        "seal_code": "0156",
+        "seal_image": "encoded_seals/seal_0156.jpg"
+      },
+      {
+        "seal_code": "0157",
+        "seal_image": "encoded_seals/seal_0157.jpg"
+      },
+      {
+        "seal_code": "0158",
+        "seal_image": "encoded_seals/seal_0158.jpg"
+      },
+      {
+        "seal_code": "0159",
+        "seal_image": "encoded_seals/seal_0159.jpg"
+      },
+      {
+        "seal_code": "0160",
+        "seal_image": "encoded_seals/seal_0160.jpg"
+      },
+      {
+        "seal_code": "0161",
+        "seal_image": "encoded_seals/seal_0161.jpg"
+      },
+      {
+        "seal_code": "0162",
+        "seal_image": "encoded_seals/seal_0162.jpg"
+      },
+      {
+        "seal_code": "0163",
+        "seal_image": "encoded_seals/seal_0163.jpg"
+      },
+      {
+        "seal_code": "0164",
+        "seal_image": "encoded_seals/seal_0164.jpg"
+      },
+      {
+        "seal_code": "0165",
+        "seal_image": "encoded_seals/seal_0165.jpg"
+      },
+      {
+        "seal_code": "0166",
+        "seal_image": "encoded_seals/seal_0166.jpg"
+      }
+    ]
+  },
+  {
+    "painting_code": "D011477",
+    "painting_image": "Paintings_merged/D011477.jpg",
+    "seals": [
+      {
+        "seal_code": "0167",
+        "seal_image": "encoded_seals/seal_0167.png"
+      },
+      {
+        "seal_code": "0168",
+        "seal_image": "encoded_seals/seal_0168.png"
+      },
+      {
+        "seal_code": "0169",
+        "seal_image": "encoded_seals/seal_0169.png"
+      },
+      {
+        "seal_code": "0170",
+        "seal_image": "encoded_seals/seal_0170.png"
+      },
+      {
+        "seal_code": "0171",
+        "seal_image": "encoded_seals/seal_0171.png"
+      },
+      {
+        "seal_code": "0172",
+        "seal_image": "encoded_seals/seal_0172.png"
+      },
+      {
+        "seal_code": "0173",
+        "seal_image": "encoded_seals/seal_0173.png"
+      },
+      {
+        "seal_code": "0174",
+        "seal_image": "encoded_seals/seal_0174.png"
+      },
+      {
+        "seal_code": "0175",
+        "seal_image": "encoded_seals/seal_0175.png"
+      }
+    ]
+  },
+  {
+    "painting_code": "D011481",
+    "painting_image": "Paintings_merged/D011481.jpg",
+    "seals": [
+      {
+        "seal_code": "0176",
+        "seal_image": "encoded_seals/seal_0176.png"
+      },
+      {
+        "seal_code": "0177",
+        "seal_image": "encoded_seals/seal_0177.png"
+      },
+      {
+        "seal_code": "0178",
+        "seal_image": "encoded_seals/seal_0178.png"
+      },
+      {
+        "seal_code": "0179",
+        "seal_image": "encoded_seals/seal_0179.png"
+      }
+    ]
+  },
+  {
+    "painting_code": "D011490",
+    "painting_image": "Paintings_merged/D011490.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D011517",
+    "painting_image": "Paintings_merged/D011517.jpg",
+    "seals": [
+      {
+        "seal_code": "0180",
+        "seal_image": "encoded_seals/seal_0180.png"
+      },
+      {
+        "seal_code": "0181",
+        "seal_image": "encoded_seals/seal_0181.png"
+      },
+      {
+        "seal_code": "0182",
+        "seal_image": "encoded_seals/seal_0182.png"
+      },
+      {
+        "seal_code": "0183",
+        "seal_image": "encoded_seals/seal_0183.png"
+      },
+      {
+        "seal_code": "0184",
+        "seal_image": "encoded_seals/seal_0184.png"
+      },
+      {
+        "seal_code": "0185",
+        "seal_image": "encoded_seals/seal_0185.png"
+      },
+      {
+        "seal_code": "0186",
+        "seal_image": "encoded_seals/seal_0186.png"
+      },
+      {
+        "seal_code": "0187",
+        "seal_image": "encoded_seals/seal_0187.png"
+      },
+      {
+        "seal_code": "0188",
+        "seal_image": "encoded_seals/seal_0188.png"
+      },
+      {
+        "seal_code": "0189",
+        "seal_image": "encoded_seals/seal_0189.png"
+      }
+    ]
+  },
+  {
+    "painting_code": "D011518",
+    "painting_image": "Paintings_merged/D011518.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D011521",
+    "painting_image": "Paintings_merged/D011521.jpg",
+    "seals": [
+      {
+        "seal_code": "0190",
+        "seal_image": "encoded_seals/seal_0190.jpg"
+      },
+      {
+        "seal_code": "0191",
+        "seal_image": "encoded_seals/seal_0191.jpg"
+      },
+      {
+        "seal_code": "0192",
+        "seal_image": "encoded_seals/seal_0192.jpg"
+      },
+      {
+        "seal_code": "0193",
+        "seal_image": "encoded_seals/seal_0193.jpg"
+      }
+    ]
+  },
+  {
+    "painting_code": "D011524",
+    "painting_image": "Paintings_merged/D011524.jpg",
+    "seals": [
+      {
+        "seal_code": "0194",
+        "seal_image": "encoded_seals/seal_0194.png"
+      },
+      {
+        "seal_code": "0195",
+        "seal_image": "encoded_seals/seal_0195.png"
+      },
+      {
+        "seal_code": "0196",
+        "seal_image": "encoded_seals/seal_0196.png"
+      },
+      {
+        "seal_code": "0197",
+        "seal_image": "encoded_seals/seal_0197.png"
+      },
+      {
+        "seal_code": "0198",
+        "seal_image": "encoded_seals/seal_0198.png"
+      },
+      {
+        "seal_code": "0199",
+        "seal_image": "encoded_seals/seal_0199.png"
+      },
+      {
+        "seal_code": "0200",
+        "seal_image": "encoded_seals/seal_0200.png"
+      },
+      {
+        "seal_code": "0201",
+        "seal_image": "encoded_seals/seal_0201.png"
+      },
+      {
+        "seal_code": "0202",
+        "seal_image": "encoded_seals/seal_0202.png"
+      }
+    ]
+  },
+  {
+    "painting_code": "D011540",
+    "painting_image": "Paintings_merged/D011540.jpg",
+    "seals": [
+      {
+        "seal_code": "0203",
+        "seal_image": "encoded_seals/seal_0203.png"
+      },
+      {
+        "seal_code": "0204",
+        "seal_image": "encoded_seals/seal_0204.png"
+      },
+      {
+        "seal_code": "0205",
+        "seal_image": "encoded_seals/seal_0205.png"
+      },
+      {
+        "seal_code": "0206",
+        "seal_image": "encoded_seals/seal_0206.png"
+      }
+    ]
+  },
+  {
+    "painting_code": "D012756",
+    "painting_image": "Paintings_merged/D012756.jpg",
+    "seals": [
+      {
+        "seal_code": "0207",
+        "seal_image": "encoded_seals/seal_0207.jpg"
+      },
+      {
+        "seal_code": "0208",
+        "seal_image": "encoded_seals/seal_0208.jpg"
+      },
+      {
+        "seal_code": "0209",
+        "seal_image": "encoded_seals/seal_0209.jpg"
+      }
+    ]
+  },
+  {
+    "painting_code": "D013208",
+    "painting_image": "Paintings_merged/D013208.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D014497",
+    "painting_image": "Paintings_merged/D014497.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D014498",
+    "painting_image": "Paintings_merged/D014498.jpg",
+    "seals": []
+  },
+  {
+    "painting_code": "D014499",
+    "painting_image": "Paintings_merged/D014499.jpg",
+    "seals": []
+  }
+]
