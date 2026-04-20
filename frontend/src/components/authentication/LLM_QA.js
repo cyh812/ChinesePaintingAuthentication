@@ -394,8 +394,6 @@ ${JSON.stringify(knowledgeJson, null, 2)}
 
   return (
     <div className="segments">
-      <div className="chat-header">{t(language, "chatHeader")}</div>
-
       <div className="chat-messages">
         {conversationHistory.map((item, index) => (
           <div
