@@ -3,6 +3,13 @@ import OpenAI from "openai";
 import SvgIcon from "@mui/material/SvgIcon";
 import "./LLM.css";
 import { detectInputLanguage, LANG_EN, LANG_ZH, t } from "../../i18n/texts";
+import {
+  PRESET_DEMO_SEQUENCE,
+  getDemoStepByIndex,
+  getLocalizedStepText,
+  getTotalDemoSteps,
+} from "./demo/presetDemoSequence";
+import { composePresetAnswer } from "./demo/presetAnswerComposer";
 
 // =========================
 // 第一阶段 LLM：负责检索 JSON 条目
@@ -22,6 +29,8 @@ const answerClient = new OpenAI({
   apiKey: "sk-c0cc496d16e6413c8e04a0ffcb9ddb21",
   dangerouslyAllowBrowser: true,
 });
+
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 function Send(props) {
   return (
@@ -82,7 +91,14 @@ const Segments = (props) => {
   const { onKnowledgeRetrieved, language = LANG_ZH } = props;
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [presetTyping, setPresetTyping] = useState(false);
+  const [isPresetPlaying, setIsPresetPlaying] = useState(false);
   const [kgData, setKgData] = useState(null);
+
+  const [exhibitionEnabled, setExhibitionEnabled] = useState(false);
+  const [exhibitionMode, setExhibitionMode] = useState("guided");
+  const [guidedStepIndex, setGuidedStepIndex] = useState(0);
+  const [guidedStepReadyForNext, setGuidedStepReadyForNext] = useState(false);
 
   // 展示用历史：按用户输入语言显示
   const [conversationHistory, setConversationHistory] = useState([]);
@@ -91,6 +107,8 @@ const Segments = (props) => {
 
   const messagesEndRef = useRef(null);
   const textareaRef = useRef(null);
+  const playbackTokenRef = useRef(0);
+  const totalSteps = getTotalDemoSteps();
 
   useEffect(() => {
     const greeting = {
@@ -137,6 +155,173 @@ const Segments = (props) => {
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [conversationHistory, loading]);
+
+  const cancelPresetPlayback = () => {
+    playbackTokenRef.current += 1;
+    setPresetTyping(false);
+    setIsPresetPlaying(false);
+  };
+
+  useEffect(() => {
+    return () => {
+      cancelPresetPlayback();
+    };
+  }, []);
+
+  const appendMessage = (item) => {
+    setConversationHistory((prev) => [...prev, item]);
+  };
+
+  const runPresetStep = async (step, stepIndex) => {
+    if (!step) return;
+
+    const token = playbackTokenRef.current + 1;
+    playbackTokenRef.current = token;
+    setIsPresetPlaying(true);
+    setPresetTyping(false);
+
+    const { question, guideText, followupHint } = getLocalizedStepText(step, language);
+    const questionDelayMs = step?.timing?.questionDelayMs ?? 450;
+    const answerDelayMs = step?.timing?.answerDelayMs ?? 1000;
+
+    await wait(questionDelayMs);
+    if (playbackTokenRef.current !== token) return;
+
+    if (step.type === "guide") {
+      const guideContent = `${guideText || t(language, "demoGuideFallback")}${
+        followupHint ? `\n\n${followupHint}` : ""
+      }`;
+
+      appendMessage({
+        role: "assistant",
+        content: guideContent,
+        meta: {
+          source: "preset",
+          stepType: "guide",
+          stepIndex,
+          totalSteps,
+          language,
+        },
+      });
+
+      setIsPresetPlaying(false);
+      return;
+    }
+
+    appendMessage({
+      role: "user",
+      content: question || t(language, "demoQuestionFallback"),
+      meta: {
+        source: "preset",
+        stepType: "qa",
+        stepIndex,
+        totalSteps,
+        language,
+      },
+    });
+
+    setPresetTyping(true);
+    await wait(answerDelayMs);
+
+    if (playbackTokenRef.current !== token) return;
+
+    setPresetTyping(false);
+
+    if (
+      typeof onKnowledgeRetrieved === "function" &&
+      Array.isArray(step.knowledgePayload)
+    ) {
+      onKnowledgeRetrieved(step.knowledgePayload);
+    }
+
+    const generatedAnswer = composePresetAnswer(step, language);
+    const assistantContent = `${generatedAnswer}${
+      followupHint ? `\n\n${followupHint}` : ""
+    }`;
+
+    appendMessage({
+      role: "assistant",
+      content: assistantContent,
+      meta: {
+        source: "preset",
+        stepType: "qa",
+        stepIndex,
+        totalSteps,
+        language,
+      },
+    });
+
+    if (question && generatedAnswer) {
+      setModelHistory((prev) => [
+        ...prev,
+        { role: "user", content: question },
+        { role: "assistant", content: generatedAnswer },
+      ]);
+    }
+
+    setIsPresetPlaying(false);
+  };
+
+  const startExhibition = () => {
+    cancelPresetPlayback();
+    setExhibitionEnabled(true);
+    setGuidedStepIndex(0);
+    setGuidedStepReadyForNext(false);
+    appendMessage({
+      role: "assistant",
+      content: t(language, "exhibitionStarted"),
+      meta: { source: "system", language },
+    });
+  };
+
+  const stopExhibition = (autoEnded = false) => {
+    cancelPresetPlayback();
+    setExhibitionEnabled(false);
+    setGuidedStepIndex(0);
+    setGuidedStepReadyForNext(false);
+    appendMessage({
+      role: "assistant",
+      content: autoEnded
+        ? t(language, "exhibitionGuideEnded")
+        : t(language, "exhibitionStopped"),
+      meta: { source: "system", language },
+    });
+  };
+
+  const handleGuidedNext = async () => {
+    if (!guidedStepReadyForNext) {
+      return;
+    }
+
+    if (guidedStepIndex >= totalSteps - 1) {
+      stopExhibition(true);
+      return;
+    }
+
+    setGuidedStepIndex((prev) => {
+      if (prev >= totalSteps - 1) {
+        return prev;
+      }
+      return prev + 1;
+    });
+
+    setGuidedStepReadyForNext(false);
+  };
+
+  const handlePickStep = async (index) => {
+    if (!exhibitionEnabled) {
+      startExhibition();
+    }
+
+    if (exhibitionMode === "guided") {
+      setGuidedStepIndex(index);
+      await runPresetStep(getDemoStepByIndex(index), index);
+      setGuidedStepReadyForNext(true);
+      return;
+    }
+
+    await runPresetStep(getDemoStepByIndex(index), index);
+  };
 
   const adjustTextareaHeight = () => {
     const textarea = textareaRef.current;
@@ -286,6 +471,11 @@ ${JSON.stringify(knowledgeJson, null, 2)}
     const trimmedMessage = message.trim();
     if (!trimmedMessage || loading) return;
 
+    // 用户插入真实提问时，中断当前预设播放，继续当前 KG 的真实问答链路。
+    if (isPresetPlaying || presetTyping) {
+      cancelPresetPlayback();
+    }
+
     // 先把用户消息放进对话区
     const inputLanguage = detectInputLanguage(trimmedMessage);
 
@@ -394,7 +584,94 @@ ${JSON.stringify(knowledgeJson, null, 2)}
 
   return (
     <div className="segments">
+      <div className="exhibition-rail">
+        <div className="rail-top">
+          <div className="rail-title-wrap">
+            <div className="rail-title">{t(language, "exhibitionTitle")}</div>
+            <div className="rail-subtitle">{PRESET_DEMO_SEQUENCE.title?.[language] || PRESET_DEMO_SEQUENCE.title?.zh}</div>
+          </div>
+
+          <div className="rail-actions">
+            <button
+              className={`rail-btn ${exhibitionEnabled ? "danger" : "success"}`}
+              onClick={exhibitionEnabled ? stopExhibition : startExhibition}
+            >
+              {exhibitionEnabled ? t(language, "exhibitionStop") : t(language, "exhibitionStart")}
+            </button>
+          </div>
+        </div>
+
+        {exhibitionEnabled && (() => {
+          const activeIndex = Math.min(guidedStepIndex, Math.max(totalSteps - 1, 0));
+          const activeStep = getDemoStepByIndex(activeIndex);
+          const localized = getLocalizedStepText(activeStep, language);
+          const cardTitle =
+            localized?.suggestionLabel || localized?.question || localized?.guideText;
+
+          return (
+            <>
+              <div className="mode-switch">
+                <button
+                  className={`mode-btn ${exhibitionMode === "guided" ? "active" : ""}`}
+                  onClick={() => {
+                    cancelPresetPlayback();
+                    setExhibitionMode("guided");
+                    setGuidedStepReadyForNext(false);
+                  }}
+                >
+                  {t(language, "modeGuided")}
+                </button>
+                <button
+                  className={`mode-btn ${exhibitionMode === "free" ? "active" : ""}`}
+                  onClick={() => {
+                    cancelPresetPlayback();
+                    setExhibitionMode("free");
+                    setGuidedStepReadyForNext(false);
+                  }}
+                >
+                  {t(language, "modeFree")}
+                </button>
+
+                {exhibitionMode === "guided" && (
+                  <button
+                    className="rail-btn"
+                    onClick={handleGuidedNext}
+                    disabled={isPresetPlaying || loading || !guidedStepReadyForNext}
+                  >
+                    {t(language, "guidedNext")} ({Math.min(guidedStepIndex + 1, totalSteps)}/{totalSteps})
+                  </button>
+                )}
+              </div>
+
+              <div className="single-step-card-wrap">
+                <div className={`suggestion-card single-card ${
+                  exhibitionMode === "guided" ? "current" : ""
+                }`}>
+                  <div className="suggestion-head">
+                    <span className="suggestion-index">{activeIndex + 1}</span>
+                    <span className="suggestion-type">
+                      {activeStep?.type === "guide"
+                        ? t(language, "stepTypeGuide")
+                        : t(language, "stepTypeQA")}
+                    </span>
+                  </div>
+                  <div className="suggestion-title">{cardTitle}</div>
+                  <button
+                    className="suggestion-cta"
+                    onClick={() => handlePickStep(activeIndex)}
+                    disabled={isPresetPlaying || loading}
+                  >
+                    {t(language, "tryThisQuestion")}
+                  </button>
+                </div>
+              </div>
+            </>
+          );
+        })()}
+      </div>
+
       <div className="chat-messages">
+
         {conversationHistory.map((item, index) => (
           <div
             key={index}
@@ -407,10 +684,24 @@ ${JSON.stringify(knowledgeJson, null, 2)}
               className={`message-bubble ${item.role === "user" ? "message-user" : "message-assistant"
                 }`}
             >
+              {item?.meta?.source === "preset" && (
+                <div className="message-badge preset">{t(language, "badgePreset")}</div>
+              )}
+              {item?.meta?.source === "system" && (
+                <div className="message-badge system">{t(language, "badgeSystem")}</div>
+              )}
               {item.content}
             </div>
           </div>
         ))}
+
+        {presetTyping && (
+          <div className="message-row message-row-assistant">
+            <div className="message-bubble message-assistant typing">
+              {t(language, "presetTyping")}
+            </div>
+          </div>
+        )}
 
         {loading && (
           <div className="message-row message-row-assistant">

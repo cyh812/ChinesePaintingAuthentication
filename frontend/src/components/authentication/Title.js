@@ -6,7 +6,11 @@ import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
 import { LANG_EN, LANG_ZH, t } from "../../i18n/texts";
 
 
-const Title = ({ onToggleFullGraph = null, language = LANG_ZH, onLanguageChange }) => {
+const Title = ({
+    onToggleFullGraph = null,
+    language = LANG_ZH,
+    onLanguageChange,
+}) => {
     const [isFullGraphMode, setIsFullGraphMode] = useState(false);
 
     const handleToggle = () => {
@@ -58,7 +62,8 @@ const Title = ({ onToggleFullGraph = null, language = LANG_ZH, onLanguageChange 
             </div>
             )}
 
-            <div className="lang">
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginLeft: 'auto' }}>
+                <div className="lang">
                 <button
                     onClick={handleLanguageToggle}
                     title={t(language, "langToggle")}
@@ -79,6 +84,7 @@ const Title = ({ onToggleFullGraph = null, language = LANG_ZH, onLanguageChange 
                 }}>
                     {t(language, "langLabel")}
                 </button>
+                </div>
             </div>
         </div>
 

@@ -101,7 +101,10 @@ const App = () => {
       <div className="bottom-container">
         <div className="left-side">
           <div className="left-side-border">
-            <LLM language={language} onKnowledgeRetrieved={setRetrievedKnowledge} />
+            <LLM
+              language={language}
+              onKnowledgeRetrieved={setRetrievedKnowledge}
+            />
           </div>
         </div>
 

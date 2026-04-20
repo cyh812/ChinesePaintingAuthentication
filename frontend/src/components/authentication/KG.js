@@ -10,6 +10,7 @@ const KG = ({
   language,
   knowledgeData,
   paintingSegmentSimilarityData,
+  graphResetToken = 0,
   onNodeClick,
   onLinkClick,
 }) => {
@@ -21,56 +22,8 @@ const KG = ({
   const [isRendered, setIsRendered] = useState(false);
 
   const initialGraphData = {
-    nodes: [
-      {
-        id: "D011518",
-        category: "P",
-        name: "余杭看山图",
-      },
-      {
-        id: "D002761",
-        category: "P",
-        name: "花卉<十二开>",
-      },
-      {
-        id: "0025",
-        category: "S",
-        name: "清湘老人(花卉<十二开>)",
-      },
-      {
-        id: "A2501",
-        category: "R",
-        name: "石涛的《余杭看山图》",
-      },
-    ],
-    links: [
-      {
-        source: "D011518",
-        target: "D002761",
-        info: {
-          name: "P-P",
-          sourceslice: "D011518_1",
-          targetslice: "D002761_1",
-          angle: 0.62,
-        },
-      },
-      {
-        source: "D002761",
-        target: "0025",
-        info: {
-          name: "P-S",
-          angle: 0.68,
-        },
-      },
-      {
-        source: "D011518",
-        target: "A2501",
-        info: {
-          name: "P-R",
-          "text record": "这里是测试用的参考文本，用于面板联动。",
-        },
-      },
-    ],
+    nodes: [],
+    links: [],
   };
 
   const [graphData, setGraphData] = useState(initialGraphData);
@@ -128,6 +81,10 @@ const KG = ({
     setLinksData(graphData.links || []);
     setIsRendered(true);
   }, []);
+
+  useEffect(() => {
+    setGraphData({ nodes: [], links: [] });
+  }, [graphResetToken]);
 
   useEffect(() => {
     if (!knowledgeData) return;

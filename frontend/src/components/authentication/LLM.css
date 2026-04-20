@@ -36,6 +36,177 @@
   background: #f7f7f8;
 }
 
+.exhibition-rail {
+  margin: 12px 12px 0 12px;
+  flex-shrink: 0;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #e7d8c9;
+  background: linear-gradient(135deg, #fff8ef 0%, #f9f3ea 100%);
+}
+
+.rail-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.rail-title-wrap {
+  min-width: 0;
+}
+
+.rail-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #51391f;
+}
+
+.rail-subtitle {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #7b5f45;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rail-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rail-btn {
+  border: 1px solid #d7b99a;
+  border-radius: 10px;
+  background: #fff;
+  color: #51391f;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.rail-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.rail-btn.success {
+  background: #e9f7ef;
+  border-color: #8ac8a0;
+}
+
+.rail-btn.danger {
+  background: #fff1f0;
+  border-color: #d99b95;
+}
+
+.mode-switch {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.mode-btn {
+  border: 1px solid #cfb395;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #6f5033;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+
+.mode-btn.active {
+  background: #6f5033;
+  color: #fff;
+}
+
+.suggestion-list {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+
+.single-step-card-wrap {
+  margin-top: 10px;
+}
+
+.single-card {
+  margin: 0;
+}
+
+.suggestion-card {
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #ecd8c2;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(133, 92, 54, 0.07);
+}
+
+.suggestion-card.current {
+  border-color: #9e6f42;
+  box-shadow: 0 0 0 2px rgba(158, 111, 66, 0.18);
+}
+
+.suggestion-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.suggestion-index {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #6f5033;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.suggestion-type {
+  font-size: 11px;
+  color: #8a6d4f;
+  font-weight: 700;
+}
+
+.suggestion-title {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #3d2c1b;
+  min-height: 36px;
+}
+
+.suggestion-cta {
+  margin-top: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #d19762 0%, #b07a49 100%);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 7px 10px;
+  cursor: pointer;
+}
+
+.suggestion-cta:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 /* 每一行消息 */
 .message-row {
   display: flex;
@@ -62,6 +233,26 @@
   white-space: pre-wrap;
   word-break: break-word;
   box-sizing: border-box;
+}
+
+.message-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 2px 7px;
+  margin-bottom: 8px;
+}
+
+.message-badge.preset {
+  background: #fff1dc;
+  color: #8f4f17;
+}
+
+.message-badge.system {
+  background: #e8f3ff;
+  color: #1f5c9e;
 }
 
 /* 用户消息 */
