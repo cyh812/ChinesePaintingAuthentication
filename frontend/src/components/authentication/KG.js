@@ -478,8 +478,8 @@ const KG = ({
       .attr("x", (d) => d.x || 0)
       .attr("y", (d) => (d.y || 0) + 35)
       .attr("text-anchor", "middle")
-      .attr("fill", "black")
-      .style("text-shadow", "2px 2px 3px rgba(255, 255, 255, 0.8)")
+      .attr("fill", "white")
+      .style("text-shadow", "2px 2px 3px rgba(0, 0, 0, 0.8)")
       .style("font-size", "18px")
       .style("font-family", "Arial, sans-serif")
       .style("font-weight", "bold")
@@ -565,18 +565,17 @@ const KG = ({
       .append("xhtml:div")
       .style("width", "100%")
       .style("height", "100%")
-      .style("background-color", "#ffffff")
-      .style("border-radius", "5px")
+      .style("background-color", "#585858")
+      .style("border-radius", "0px")
       .style("cursor", "pointer")
       .style("display", "flex")
       .style("align-items", "center")
       .style("justify-content", "center")
-      .style("padding", "1px")
+      .style("padding", "0px")
       .html(`
         <img
-          src="../../assets/img/reference-blue.png"
+          src="../../assets/img/reference-new.png"
           alt="reference"
-          style="width: 17px; height: 20px; margin-left: 3px;"
         />
       `);
 
@@ -603,7 +602,7 @@ const KG = ({
     function ticked() {
       node.attr("x", (d) => d.x - 20).attr("y", (d) => d.y - 20);
 
-      text.attr("x", (d) => d.x).attr("y", (d) => d.y + 35);
+      text.attr("x", (d) => d.x).attr("y", (d) => d.y + 40);
 
       graphGroup
         .selectAll("foreignObject")

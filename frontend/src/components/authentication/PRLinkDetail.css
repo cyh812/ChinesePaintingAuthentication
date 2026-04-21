@@ -6,7 +6,7 @@
   padding: 16px;
   box-sizing: border-box;
   border-radius: 14px;
-  background: #ffffff;
+  background: rgba(251, 245, 240, 0.8);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.06);
 }
@@ -16,14 +16,14 @@
   padding: 14px 16px;
   box-sizing: border-box;
   border-radius: 12px;
-  background: #f8f9fb;
-  border-left: 4px solid #4b80fa;
+  background: rgba(161, 126, 90, 0.8);
+  border-left: 4px solid rgb(118, 92, 67);
 }
 
 .pr-link-detail-text-record {
   font-size: 15px;
   line-height: 1.8;
-  color: #222222;
+  color: #ffffff;
   word-break: break-word;
   white-space: pre-wrap;
 }

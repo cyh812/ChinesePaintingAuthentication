@@ -24,15 +24,7 @@ const PRLinkDetail = ({ link, language }) => {
       </div>
 
       <div className="pr-link-detail-bottom">
-        <div className="pr-link-detail-meta">
-          <span className="pr-link-detail-meta-id">
-            {t(language, "paintingLabel")}: {sourceId}
-          </span>
-          <span className="pr-link-detail-meta-divider">|</span>
-          <span className="pr-link-detail-meta-id">
-            {t(language, "referenceLabel")}: {targetId}
-          </span>
-        </div>
+
 
         <div className="pr-link-detail-citation">{referenceCitation}</div>
       </div>

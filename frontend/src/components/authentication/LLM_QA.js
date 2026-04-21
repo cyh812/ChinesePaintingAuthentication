@@ -749,7 +749,6 @@ ${JSON.stringify(knowledgeJson, null, 2)}
         <div className="rail-top">
           <div className="rail-title-wrap">
             <div className="rail-title">{t(language, "exhibitionTitle")}</div>
-            <div className="rail-subtitle">{PRESET_DEMO_SEQUENCE.title?.[language] || PRESET_DEMO_SEQUENCE.title?.zh}</div>
           </div>
 
           <div className="rail-actions">

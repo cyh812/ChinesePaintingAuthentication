@@ -31,7 +31,6 @@ const Title = ({
     return (
         <div className="title-container">
             <div className="title-left">
-                <img src="./assets/img/logo.png" alt="Custom Icon" className="icon" />
                 <span className="title">
                     {t(language, "titleMain")}
                 </span>

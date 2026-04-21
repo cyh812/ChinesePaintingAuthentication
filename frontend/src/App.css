@@ -2,7 +2,7 @@
 .top-bar {
   height: 5%;
   width: 100%;
-  background-color: rgb(138, 138, 138);
+  background-color: #7A6147;
   /* 示例背景色 */
   color: white;
   text-align: center;
@@ -16,13 +16,7 @@
   display: flex;
   height: 95%;
   width: 100%;
-  background: linear-gradient(
-    to top,
-    rgb(35, 35, 35),
-    rgb(152, 151, 151) 54%,
-    rgb(228, 228, 228) 92%,
-    rgb(138, 138, 138)
-  );
+  background: #7A6147
 }
 
 /* 左侧 div，占 30% 宽度 */
@@ -117,7 +111,7 @@
   width: 430px;
   padding: 8px;
   box-sizing: border-box;
-  background: #fff;
+  background: rgba(161, 126, 90, 0.8);
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
@@ -170,15 +164,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  background: #ffffff;
-  color: #000;
+  color: #ffffff;
 }
 
 .DetailHeaderTitle {
   font-size: 16px;
   font-weight: 600;
-  color: #000;
+  color: #ffffff;
 }
 
 .DetailCloseBtn {
@@ -194,7 +186,7 @@
 
   border: none;
   background: transparent;
-  color: #000;
+  color: #ffffff;
 
   font-size: 22px;
   font-weight: 500;
