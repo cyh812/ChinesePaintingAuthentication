@@ -87,6 +87,159 @@ function safeParseJson(text) {
   return null;
 }
 
+function toArray(value) {
+  if (!value) return [];
+  return Array.isArray(value) ? value : [value];
+}
+
+function normalizeSealItem(seal) {
+  if (!seal || typeof seal !== "object") return null;
+
+  const sealId = seal["seal id"] || seal["seal_id"] || seal["seal_code"] || seal["id"];
+  const sealName = seal["name"] || seal["seal_name"] || seal["印章名"];
+
+  if (!sealId || !sealName) return null;
+
+  return {
+    "seal id": String(sealId),
+    similarity: seal["similarity"] ?? 0,
+    name: sealName,
+  };
+}
+
+function normalizeReferenceItem(ref) {
+  if (!ref || typeof ref !== "object") return null;
+
+  const refId = ref["reference_id"] || ref["reference id"];
+  const refInfo = ref["info"] || ref["title"] || ref["name"];
+
+  if (!refId || !refInfo) return null;
+
+  return {
+    reference_id: String(refId),
+    info: refInfo,
+    text_record: ref["text_record"] || ref["text record"] || ref["statement"] || "",
+  };
+}
+
+function normalizePaintingItem(painting) {
+  if (!painting || typeof painting !== "object") return null;
+
+  const paintingId = painting["编号"] || painting["id"];
+  const paintingName = painting["总作品名"] || painting["作品名"] || painting["title"] || painting["name"];
+
+  if (!paintingId || !paintingName) return null;
+
+  const sealsRaw = Array.isArray(painting["seals"])
+    ? painting["seals"]
+    : Array.isArray(painting["印章"])
+      ? painting["印章"]
+      : [];
+
+  const refsRaw = Array.isArray(painting["考证"])
+    ? painting["考证"]
+    : Array.isArray(painting["references"])
+      ? painting["references"]
+      : [];
+
+  const seals = sealsRaw.map(normalizeSealItem).filter(Boolean);
+  const references = refsRaw.map(normalizeReferenceItem).filter(Boolean);
+
+  return {
+    编号: String(paintingId),
+    总作品名: paintingName,
+    seals,
+    考证: references,
+  };
+}
+
+function extractTargetPaintingFromQuestion(questionZh, activeKgData) {
+  if (!questionZh || !Array.isArray(activeKgData)) return null;
+
+  const candidates = activeKgData
+    .map((item) => {
+      const id = item["编号"] || item["id"];
+      const name = item["总作品名"] || item["作品名"] || item["title"] || item["name"];
+      return id && name ? { id: String(id), name, raw: item } : null;
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.name.length - a.name.length);
+
+  return candidates.find((item) => questionZh.includes(item.name)) || null;
+}
+
+function normalizeAndFilterKnowledge(rawKnowledge, questionZh, activeKgData) {
+  const sealIntentPattern = /印章|印鉴|印文|钤|印谱|seal/i;
+  const referenceIntentPattern = /参考|文献|考证|资料|出处|记载|reference|citation/i;
+
+  const isSealQuestion = sealIntentPattern.test(questionZh || "");
+  const isReferenceQuestion = referenceIntentPattern.test(questionZh || "");
+
+  const pruneByIntent = (item) => {
+    if (!item) return item;
+
+    if (isSealQuestion && !isReferenceQuestion) {
+      return {
+        ...item,
+        考证: [],
+      };
+    }
+
+    if (isReferenceQuestion && !isSealQuestion) {
+      return {
+        ...item,
+        seals: [],
+      };
+    }
+
+    return item;
+  };
+
+  const normalizedList = toArray(rawKnowledge)
+    .map(normalizePaintingItem)
+    .map(pruneByIntent)
+    .filter(Boolean);
+
+  const byPaintingId = new Map();
+  normalizedList.forEach((item) => {
+    if (!byPaintingId.has(item["编号"])) {
+      byPaintingId.set(item["编号"], item);
+    }
+  });
+
+  const deduped = Array.from(byPaintingId.values());
+  const target = extractTargetPaintingFromQuestion(questionZh, activeKgData);
+
+  if (!target) {
+    return {
+      items: deduped.slice(0, 3),
+      targetPaintingId: null,
+      targetPaintingName: null,
+      rawCount: normalizedList.length,
+      keptCount: Math.min(deduped.length, 3),
+    };
+  }
+
+  let filtered = deduped.filter(
+    (item) => item["编号"] === target.id || item["总作品名"] === target.name
+  );
+
+  if (filtered.length === 0) {
+    const normalizedTarget = normalizePaintingItem(target.raw);
+    if (normalizedTarget) {
+      filtered = [normalizedTarget];
+    }
+  }
+
+  return {
+    items: filtered,
+    targetPaintingId: target.id,
+    targetPaintingName: target.name,
+    rawCount: normalizedList.length,
+    keptCount: filtered.length,
+  };
+}
+
 const Segments = (props) => {
   const { onKnowledgeRetrieved, language = LANG_ZH } = props;
   const [message, setMessage] = useState("");
@@ -381,23 +534,24 @@ const Segments = (props) => {
     }
 
     const retrieverSystemPrompt = `
-你是一个知识库条目抽取助手。
-你的任务是：根据用户的问题，从我提供的 JSON 知识库中抽取与问题相关的条目。
+  你是一个知识库条目抽取助手。
+  你的任务是：根据用户问题，从提供的 JSON 知识库中抽取与问题相关的条目。
 
-要求：
-1. 每次请求都是独立任务，不要假设任何历史上下文；
-2. 只依据本次提供的问题和 JSON 内容进行判断；
-3. 返回与问题相关的条目；
-4. 不要编造 JSON 中不存在的信息；
-5. 可以删除与当前问题无关的字段和子条目；
-6. 如果没有找到相关条目，返回 []；
+  严格规则：
+  1. 每次请求都是独立任务，不要假设任何历史上下文；
+  2. 只使用知识库中真实存在的字段和值，不要编造；
+  3. 只依据本次提供的问题和 JSON 内容进行判断；
+  4. 返回回答该问题所需的字段；
+  5. 不要编造 JSON 中不存在的信息；
+  6. 删除与当前问题无关的字段和子条目；
+  7. 如果没有找到相关条目，返回 []；
+  8. 不要输出解释文字。
 
-输出要求：
-1. 只输出 JSON；
-2. 不要输出解释文字；
-3. 优先输出 JSON 数组；
-4. 保证 JSON 格式合法，可被 JSON.parse 解析。
-`;
+  输出要求：
+  1. 只输出合法 JSON；
+  2. 优先输出 JSON 数组；
+  3. 保证可被 JSON.parse 解析。
+  `;
 
     const retrieverUserPrompt = `
 用户问题：
@@ -501,12 +655,19 @@ ${JSON.stringify(knowledgeJson, null, 2)}
       ];
 
       // ===== 第一阶段：检索 =====
-      const knowledge = await retrieveKnowledge(normalizedQuestionZh, kgData);
+      const rawKnowledge = await retrieveKnowledge(normalizedQuestionZh, kgData);
+      const filteredKnowledgePack = normalizeAndFilterKnowledge(
+        rawKnowledge,
+        normalizedQuestionZh,
+        kgData
+      );
+      const knowledge = filteredKnowledgePack.items;
 
-      console.log("第一阶段抽取出的 JSON：", knowledge);
+      console.log("第一阶段抽取出的 JSON（原始）:", rawKnowledge);
+      console.log("第一阶段入图 JSON（过滤后）:", filteredKnowledgePack);
       // 传给父组件或其他 component
       if (typeof onKnowledgeRetrieved === "function") {
-        onKnowledgeRetrieved(knowledge);
+        onKnowledgeRetrieved(filteredKnowledgePack);
       }
 
       // ===== 第二阶段：回答 =====

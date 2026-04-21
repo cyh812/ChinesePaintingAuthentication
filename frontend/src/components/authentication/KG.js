@@ -91,7 +91,11 @@ const KG = ({
 
     const knowledgeArray = Array.isArray(knowledgeData)
       ? knowledgeData
-      : [knowledgeData];
+      : Array.isArray(knowledgeData?.items)
+        ? knowledgeData.items
+        : Array.isArray(knowledgeData?.results)
+          ? knowledgeData.results
+          : [knowledgeData];
 
     setGraphData((prevGraph) => {
       const nextNodes = [...prevGraph.nodes];
@@ -125,7 +129,16 @@ const KG = ({
         const targetId =
           typeof link.target === "object" ? link.target.id : link.target;
         const linkType = link.info?.name || "";
-        const key = `${sourceId}__${targetId}__${linkType}`;
+        const sourceSlice = link.info?.sourceslice || "";
+        const targetSlice = link.info?.targetslice || "";
+
+        // P-P 在“画作对 + 切片对”维度去重；其余边维持原去重策略。
+        const key =
+          linkType === "P-P"
+            ? sourceId <= targetId
+              ? `${sourceId}__${targetId}__${linkType}__${sourceSlice}__${targetSlice}`
+              : `${targetId}__${sourceId}__${linkType}__${targetSlice}__${sourceSlice}`
+            : `${sourceId}__${targetId}__${linkType}`;
 
         if (!linkKeySet.has(key)) {
           linkKeySet.add(key);
@@ -134,8 +147,9 @@ const KG = ({
       };
 
       knowledgeArray.forEach((painting) => {
-        const paintingId = painting["编号"];
-        const paintingName = painting["总作品名"];
+        const paintingId = painting["编号"] || painting["id"];
+        const paintingName =
+          painting["总作品名"] || painting["作品名"] || painting["title"] || painting["name"];
 
         if (!paintingId || !paintingName) return;
 
@@ -145,9 +159,13 @@ const KG = ({
           name: paintingName,
         });
 
-        const seals = Array.isArray(painting["seals"]) ? painting["seals"] : [];
+        const seals = Array.isArray(painting["seals"])
+          ? painting["seals"]
+          : Array.isArray(painting["印章"])
+            ? painting["印章"]
+            : [];
         seals.forEach((seal) => {
-          const sealId = seal["seal id"] || seal["id"];
+          const sealId = seal["seal id"] || seal["seal_id"] || seal["id"];
           const sealName = seal["name"];
           const sealSimilarity = seal["similarity"];
 
@@ -172,10 +190,14 @@ const KG = ({
           });
         });
 
-        const references = Array.isArray(painting["考证"]) ? painting["考证"] : [];
+        const references = Array.isArray(painting["考证"])
+          ? painting["考证"]
+          : Array.isArray(painting["references"])
+            ? painting["references"]
+            : [];
         references.forEach((ref) => {
-          const refId = ref["reference_id"] || ref["reference id"] || ref["id"];
-          const refName = ref["info"];
+          const refId = ref["reference_id"] || ref["reference id"];
+          const refName = ref["info"] || ref["title"] || ref["name"];
           const textRecord = ref["text_record"] || ref["text record"] || "";
 
           if (!refId || !refName) return;
@@ -227,6 +249,15 @@ const KG = ({
           const targetId =
             typeof link.target === "object" ? link.target.id : link.target;
           const linkType = link.info?.name || "";
+          const sourceSlice = link.info?.sourceslice || "";
+          const targetSlice = link.info?.targetslice || "";
+
+          if (linkType === "P-P") {
+            return sourceId <= targetId
+              ? `${sourceId}__${targetId}__${linkType}__${sourceSlice}__${targetSlice}`
+              : `${targetId}__${sourceId}__${linkType}__${targetSlice}__${sourceSlice}`;
+          }
+
           return `${sourceId}__${targetId}__${linkType}`;
         })
       );
@@ -249,7 +280,15 @@ const KG = ({
         const targetId =
           typeof link.target === "object" ? link.target.id : link.target;
         const linkType = link.info?.name || "";
-        const key = `${sourceId}__${targetId}__${linkType}`;
+        const sourceSlice = link.info?.sourceslice || "";
+        const targetSlice = link.info?.targetslice || "";
+
+        const key =
+          linkType === "P-P"
+            ? sourceId <= targetId
+              ? `${sourceId}__${targetId}__${linkType}__${sourceSlice}__${targetSlice}`
+              : `${targetId}__${sourceId}__${linkType}__${targetSlice}__${sourceSlice}`
+            : `${sourceId}__${targetId}__${linkType}`;
 
         if (!linkKeySet.has(key)) {
           linkKeySet.add(key);
@@ -268,18 +307,15 @@ const KG = ({
 
         if (!targetPaintingId || !targetSliceId) return;
 
-        // 目标画作已存在时，完全跳过，不加节点，不加边
-        if (nodeIdSet.has(targetPaintingId)) {
-          return;
-        }
-
         const didAddNode = addNodeIfNotExists({
           id: targetPaintingId,
           category: "P",
           name: targetPaintingName || targetPaintingId,
         });
 
-        if (didAddNode) {
+        // 无论目标节点是否已存在，都尝试补充“切片级”P-P 连边。
+        // addLinkIfNotExists 会在连边相同（同画作对+同切片对）时自动忽略。
+        if (didAddNode || nodeIdSet.has(targetPaintingId)) {
           addLinkIfNotExists({
             source: sourcePaintingId,
             target: targetPaintingId,
