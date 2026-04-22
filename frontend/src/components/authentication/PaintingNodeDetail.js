@@ -7,6 +7,14 @@ import paintingsegments from "../../assets/Painting_paintings.json";
 import paintingsegmentsEn from "../../assets/Painting_paintings_en.json";
 import { LANG_EN, t } from "../../i18n/texts";
 
+const resolveAssetUrl = (relativePath) => {
+  const cleanPath = String(relativePath || "").replace(/^\.?\//, "");
+  if (typeof document === "undefined") {
+    return `./${cleanPath}`;
+  }
+  return new URL(cleanPath, document.baseURI).toString();
+};
+
 const PaintingNodeDetail = ({ node, onPaintingSegmentSearchResult, language }) => {
   const activePaintingData = language === LANG_EN ? PaintingDataEn : PaintingData;
   const activeSegmentsData = language === LANG_EN ? paintingsegmentsEn : paintingsegments;
@@ -50,8 +58,8 @@ const PaintingNodeDetail = ({ node, onPaintingSegmentSearchResult, language }) =
     t(language, "unknown");
 
   // 按规则直接拼接路径
-  const imagePath = `./assets/data/Paintings_merged/${paintingId}.jpg`;
-  const embeddingPath = `./assets/data/Paintings_npy/${paintingId}.npy`;
+  const imagePath = resolveAssetUrl(`assets/data/Paintings_merged/${paintingId}.jpg`);
+  const embeddingPath = resolveAssetUrl(`assets/data/Paintings_npy/${paintingId}.npy`);
 
   // 根据真实数据动态生成当前 painting 的切片列表
   const segmentList = useMemo(() => {
@@ -60,7 +68,7 @@ const PaintingNodeDetail = ({ node, onPaintingSegmentSearchResult, language }) =
 
     return Object.keys(currentPaintingSegments).map((sliceId) => ({
       id: sliceId,
-      image: `./assets/data/pic/${paintingId}/${sliceId}.png`,
+      image: resolveAssetUrl(`assets/data/pic/${paintingId}/${sliceId}.png`),
     }));
   }, [activeSegmentsData, paintingId]);
 
@@ -212,7 +220,7 @@ const PaintingNodeDetail = ({ node, onPaintingSegmentSearchResult, language }) =
                     src={segment.image}
                     alt={segment.id}
                     onError={(e) => {
-                      e.currentTarget.src = "./assets/img/painting.png";
+                      e.currentTarget.src = resolveAssetUrl("assets/img/painting.png");
                     }}
                   />
                 </div>
