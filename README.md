@@ -124,3 +124,47 @@ headers: {
 **`hooks/`**
 
 - Handle shared state for the app
+
+## Deploy to GitHub Pages
+
+This repository now includes an automated GitHub Pages workflow:
+
+- [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml)
+
+### 1. Push and enable Pages
+
+1. Push your code to GitHub (branch `main` or `master`).
+2. Open repository settings:
+    - `Settings` -> `Pages`
+    - `Build and deployment` -> `Source`: choose `GitHub Actions`
+3. Open `Actions` tab and confirm workflow `Deploy Frontend to GitHub Pages` runs successfully.
+
+### 2. Important path note
+
+This project uses many absolute frontend paths like `/assets/...` and `/model/...`.
+
+- Most stable setup without code changes: deploy as **User/Org Pages root site**
+  - repository name: `<your-username>.github.io`
+  - site URL: `https://<your-username>.github.io/`
+- If you deploy as **Project Pages** (`https://<your-username>.github.io/<repo>/`), absolute paths may 404 unless you refactor path handling.
+
+### 3. About Actions secrets and API keys (important)
+
+`Actions secrets` can prevent keys from being committed to the repository, but for a frontend-only app they **cannot fully hide runtime keys** from end users.
+
+If a key is required in browser requests, users can still inspect it from built JS or network traffic.
+
+Recommended options:
+
+1. Keep frontend-only demo mode for public deployment (no private production key exposed).
+2. Or move API calls to a backend proxy if true key secrecy is required.
+
+### 4. Production checklist before public release
+
+1. Verify site loads from the final Pages URL with no 404 in DevTools Network.
+2. Verify static resources are loaded: `assets`, `model`, `js`, wasm files.
+3. Verify core flows:
+    - Q&A panel
+    - KG node/link updates
+    - Similar-image search
+    - Exhibition mode
