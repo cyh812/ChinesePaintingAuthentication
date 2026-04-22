@@ -13,20 +13,20 @@ const Storyline = () => {
 
   // 预先加载四个自定义的图像（PNG/SVG素材）
   const nodeImages = {
-    "P": "../../assets/img/painting.png",
-    "S": "../../assets/img/seal.png",
-    "A": "../../assets/img/people.png",
-    "R": "../../assets/img/references.png",
-    "O": "../../assets/img/painting.png"
+    "P": "./assets/img/painting.png",
+    "S": "./assets/img/seal.png",
+    "A": "./assets/img/people.png",
+    "R": "./assets/img/references.png",
+    "O": "./assets/img/painting.png"
   }
 
   const urllist = [
-    "../../assets/data2/data1.json",
-    "../../assets/data2/data2.json",
-    "../../assets/data/data3.json",
-    "../../assets/data/data4.json",
-    "../../assets/data/data5.json",
-    "../../assets/data/data6.json"
+    "./assets/data2/data1.json",
+    "./assets/data2/data2.json",
+    "./assets/data/data3.json",
+    "./assets/data/data4.json",
+    "./assets/data/data5.json",
+    "./assets/data/data6.json"
   ]
 
   var flag = 0
@@ -303,13 +303,13 @@ const Storyline = () => {
     <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
       <!-- 上面三张图片并排 -->
       <img src="${image1}" alt="Image 1" style="width: 90px; height: auto;" />
-      <img src="../../assets/img/similar.png" alt="Image 2" style="width: 30px; height: 30px;align-self: center;" />
+      <img src="./assets/img/similar.png" alt="Image 2" style="width: 30px; height: 30px;align-self: center;" />
       <img src="${image2}" alt="Image 3" style="width: 90px; height: auto;" />
     </div>
 
     <div style="display: flex; justify-content: space-between; align-items: center; background-color: #f0f0f0; border-radius: 5px; padding:3px">
       <!-- 下部左侧图片 -->
-      <img src="../../assets/img/rank.png" alt="Left Image" style="width: 35px; height: 35px; margin-left:30px" />
+      <img src="./assets/img/rank.png" alt="Left Image" style="width: 35px; height: 35px; margin-left:30px" />
       
       <!-- 右侧文字，显示similarity和ranking -->
       <div style="margin-right: 40px; text-align: left;">
@@ -325,13 +325,13 @@ const Storyline = () => {
     <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
       <!-- 上面三张图片并排 -->
       <img src="${image1}" alt="Image 1" style="width: 55px; height: auto; margin-left:10px " />
-      <img src="../../assets/img/similar.png" alt="Image 2" style="width: 30px; height: 30px;align-self: center;" />
+      <img src="./assets/img/similar.png" alt="Image 2" style="width: 30px; height: 30px;align-self: center;" />
       <img src="${image2}" alt="Image 3" style="width: 55px; height: auto; margin-right:10px" />
     </div>
 
     <div style="display: flex; justify-content: space-between; align-items: center; background-color: #f0f0f0; border-radius: 5px; padding:3px">
       <!-- 下部左侧图片 -->
-      <img src="../../assets/img/rank2.png" alt="Left Image" style="width: 35px; height: 35px; margin-left:20px" />
+      <img src="./assets/img/rank2.png" alt="Left Image" style="width: 35px; height: 35px; margin-left:20px" />
       
       <!-- 右侧文字，显示similarity和ranking -->
       <div style="margin-right: 10px; text-align: left;">
@@ -346,8 +346,8 @@ const Storyline = () => {
     arc
       .on("mouseover", function (event, d) {
         if (d.info.name == "P-P") {
-          const image1 = d.info.url1 !== "" ? d.info.url1 : '../../assets/img/test/L1.png';
-          const image2 = d.info.url2 !== "" ? d.info.url2 : '../../assets/img/test/L1.png';
+          const image1 = d.info.url1 !== "" ? d.info.url1 : './assets/img/test/L1.png';
+          const image2 = d.info.url2 !== "" ? d.info.url2 : './assets/img/test/L1.png';
           const similar = d.info.angle;
           updateCardContent1(image1, image2, similar); // 更新卡片内容
           customCardonArc1
@@ -356,8 +356,8 @@ const Storyline = () => {
             .style('visibility', 'hidden')
         }
         if (d.info.name == "S-S") {
-          const image1 = d.info.url1 !== "" ? d.info.url1 : '../../assets/img/test/L1.png';
-          const image2 = d.info.url2 !== "" ? d.info.url2 : '../../assets/img/test/L1.png';
+          const image1 = d.info.url1 !== "" ? d.info.url1 : './assets/img/test/L1.png';
+          const image2 = d.info.url2 !== "" ? d.info.url2 : './assets/img/test/L1.png';
           const similar = d.info.angle;
           updateCardContent2(image1, image2, similar); // 更新卡片内容
 
@@ -419,10 +419,10 @@ const Storyline = () => {
         // 根据 d.info?.name 的值动态设置 src
         let iconSrc = ""; 
         if (d.info?.name === "P-S" || d.info?.name === "A-S"){
-          iconSrc = "../../assets/img/seal-red.png"
+          iconSrc = "./assets/img/seal-red.png"
         }
         else{
-          iconSrc = "../../assets/img/seal-blue.png"
+          iconSrc = "./assets/img/seal-blue.png"
         }
         return `
           <img src="${iconSrc}" alt="Icon" style="width: 20px; height: 20px; margin-left: 3px;" />
@@ -458,8 +458,8 @@ const Storyline = () => {
       .html(d => {
         // 根据 d.info?.name 的值动态设置 src
         let iconSrc2 = d.info?.name === "P-R"
-          ? "../../assets/img/reference-blue.png"
-          : "../../assets/img/reference-green.png"; // 假设 P-S 使用红色图标
+          ? "./assets/img/reference-blue.png"
+          : "./assets/img/reference-green.png"; // 假设 P-S 使用红色图标
         return `
       <img src="${iconSrc2}" alt="Icon" style="width: 17px; height: 20px; margin-left: 3px;" />
     `;
@@ -513,7 +513,7 @@ const Storyline = () => {
               <div style="border-bottom: 1px solid #ccc; width: 190px; margin-top: 5px;"></div>
               <div style="display: flex; align-items: center; margin-top: 5px;justify-content: space-between;">
                 <p style="font-size: 12px; margin-right: 5px; font-weight: bold;">${key}</p>
-                <img src="../../assets/img/reference.png" alt="Icon" style="width: 17px; height: 20px; margin-right: 5px; cursor: pointer;" onclick="window.open('${url}', '_blank');" />
+                <img src="./assets/img/reference.png" alt="Icon" style="width: 17px; height: 20px; margin-right: 5px; cursor: pointer;" onclick="window.open('${url}', '_blank');" />
               </div>
             `;
 

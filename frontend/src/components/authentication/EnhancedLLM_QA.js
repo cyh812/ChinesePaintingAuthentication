@@ -67,7 +67,7 @@ const EnhancedLLM_QA = ({ targetPaintingId = "D011518", onGraphUpdate, selectedI
       .map(path => {
         const relativePath = path.replace(/\\/g, '/');
         return {
-          path: `/assets/data/${relativePath}`,
+          path: `./assets/data/${relativePath}`,
           name: path.split('\\').pop()
         };
       })
@@ -101,7 +101,7 @@ const EnhancedLLM_QA = ({ targetPaintingId = "D011518", onGraphUpdate, selectedI
 
     const sealList = paintingData.seals.map(seal => ({
       code: seal.seal_code,
-      path: `/assets/data/${seal.seal_image}`,
+      path: `./assets/data/${seal.seal_image}`,
       name: `印章 ${seal.seal_code}`
     }));
 

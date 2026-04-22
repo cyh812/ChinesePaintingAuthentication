@@ -8,8 +8,8 @@ const SealNodeDetail = ({ node, language }) => {
 
   // 根据 seal id 动态拼接真实图片路径
   const sealImage = sealId
-    ? `../../assets/data/reference_seals/ref_${sealId}.png`
-    : "/assets/img/seal.png";
+    ? `./assets/data/reference_seals/ref_${sealId}.png`
+    : "./assets/img/seal.png";
 
   return (
     <div className="seal-node-detail-card">
@@ -20,7 +20,7 @@ const SealNodeDetail = ({ node, language }) => {
             src={sealImage}
             alt={sealName}
             onError={(e) => {
-              e.currentTarget.src = "/assets/img/seal.png";
+              e.currentTarget.src = "./assets/img/seal.png";
             }}
           />
         </div>

@@ -283,14 +283,14 @@ const Segments = (props) => {
       const preferredFile = language === LANG_EN ? "KG_en.json" : "KG.json";
 
       try {
-        const res = await fetch(`/assets/data/${preferredFile}`);
+        const res = await fetch(`./assets/data/${preferredFile}`);
         if (res.ok) {
           const data = await res.json();
           setKgData(data);
           return;
         }
 
-        const fallbackRes = await fetch("/assets/data/KG.json");
+        const fallbackRes = await fetch("./assets/data/KG.json");
         if (!fallbackRes.ok) {
           throw new Error("KG load failed");
         }

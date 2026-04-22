@@ -93,7 +93,7 @@ class GraphDataManager {
    */
   async loadBaseData() {
     try {
-      const response = await fetch('../../assets/data/data6.json');
+      const response = await fetch('./assets/data/data6.json');
       this.baseGraph = await response.json();
       this.isInitialized = true;
       console.log('✅ 总图加载成功:', this.baseGraph);

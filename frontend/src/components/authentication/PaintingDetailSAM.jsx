@@ -15,7 +15,7 @@ import npyjs from "npyjs";
 // 后续可改成 props 传入
 // const IMAGE_PATH = "../../assets/data/D011518.jpg";
 // const IMAGE_EMBEDDING = "../../assets/data/D011518.npy";
-const MODEL_DIR = "../../../model/sam_onnx_example.onnx";
+const MODEL_DIR = "./model/sam_onnx_example.onnx";
 
 const PaintingDetailSAM = ({ imagePath, embeddingPath, paintingId, onSegmentSearch }) => {
     const {

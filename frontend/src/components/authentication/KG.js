@@ -29,9 +29,9 @@ const KG = ({
   const [graphData, setGraphData] = useState(initialGraphData);
 
   const nodeImages = {
-    P: "../../assets/img/painting.png",
-    S: "../../assets/img/seal.png",
-    R: "../../assets/img/references.png",
+    P: "./assets/img/painting.png",
+    S: "./assets/img/seal.png",
+    R: "./assets/img/references.png",
   };
 
   const paintingNameEnMap = new Map(
@@ -581,7 +581,7 @@ const KG = ({
       .style("padding", "0px")
       .html(`
         <img
-          src="../../assets/img/reference-new.png"
+          src="./assets/img/reference-new.png"
           alt="reference"
         />
       `);

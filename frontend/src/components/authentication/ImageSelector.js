@@ -23,7 +23,7 @@ const ImageSelector = ({ open, onClose, onSelect }) => {
     const images = paintingsData.map(painting => ({
       id: painting.编号,
       name: painting.作品名,
-      path: `../../assets/data/${painting.图像url}`,
+      path: `./assets/data/${painting.图像url}`,
       author: painting.作者名,
       period: painting.创作时间
     }));

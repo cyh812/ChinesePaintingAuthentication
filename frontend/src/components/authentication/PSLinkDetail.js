@@ -17,14 +17,14 @@ const PSLinkDetail = ({ link, language }) => {
   // 左侧：截取的印章图
   const extractedSealPath = psEntry?.["截取的印章url"] || psEntry?.["cropped_seal_url"];
   const extractedSealImage = extractedSealPath
-    ? `../../assets/data/${extractedSealPath}`
-    : "/assets/img/seal.png";
+    ? `./assets/data/${extractedSealPath}`
+    : "./assets/img/seal.png";
 
   // 右侧：标准件图
   const referenceSealPath = psEntry?.["标准件url"] || psEntry?.["standard_seal_url"];
   const referenceSealImage = referenceSealPath
-    ? `../../assets/data/${referenceSealPath}`
-    : "/assets/img/seal.png";
+    ? `./assets/data/${referenceSealPath}`
+    : "./assets/img/seal.png";
 
   return (
     <div className="ps-link-detail-card">
@@ -35,7 +35,7 @@ const PSLinkDetail = ({ link, language }) => {
             src={extractedSealImage}
             alt={sourceId}
             onError={(e) => {
-              e.currentTarget.src = "/assets/img/seal.png";
+              e.currentTarget.src = "./assets/img/seal.png";
             }}
           />
         </div>
@@ -63,7 +63,7 @@ const PSLinkDetail = ({ link, language }) => {
             src={referenceSealImage}
             alt={targetId}
             onError={(e) => {
-              e.currentTarget.src = "/assets/img/seal.png";
+              e.currentTarget.src = "./assets/img/seal.png";
             }}
           />
         </div>

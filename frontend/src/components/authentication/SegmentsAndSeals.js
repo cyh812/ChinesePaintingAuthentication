@@ -81,7 +81,7 @@ const SegmentsAndSeals = forwardRef(({ selectedImageId, onSelectionChange }, ref
         
         return {
           id: path, // 使用原始路径作为唯一ID
-          path: `/assets/data/${relativePath}`,
+          path: `./assets/data/${relativePath}`,
           name: path.split('\\').pop(),
           fullPath: path, // 保留完整路径用于查询
           actualImageId: actualImageId // 实际的图像ID（可能是子图ID）
@@ -114,7 +114,7 @@ const SegmentsAndSeals = forwardRef(({ selectedImageId, onSelectionChange }, ref
     const sealList = paintingData.seals.map(seal => ({
       id: seal.seal_code, // 使用印章编号作为唯一ID
       code: seal.seal_code,
-      path: `/assets/data/${seal.seal_image}`,
+      path: `./assets/data/${seal.seal_image}`,
       name: `印章 ${seal.seal_code}`
     }));
 

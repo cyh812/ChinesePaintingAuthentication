@@ -15,13 +15,13 @@ const PPLinkDetail = ({ link }) => {
 
   const leftImage =
     sourceSlice && sourcePaintingId
-      ? `../../assets/data/pic/${sourcePaintingId}/${sourceSlice}.png`
-      : "/assets/img/painting.png";
+      ? `./assets/data/pic/${sourcePaintingId}/${sourceSlice}.png`
+      : "./assets/img/painting.png";
 
   const rightImage =
     targetSlice && targetPaintingId
-      ? `../../assets/data/pic/${targetPaintingId}/${targetSlice}.png`
-      : "/assets/img/painting.png";
+      ? `./assets/data/pic/${targetPaintingId}/${targetSlice}.png`
+      : "./assets/img/painting.png";
 
   return (
     <div className="pp-link-detail-card">
@@ -32,7 +32,7 @@ const PPLinkDetail = ({ link }) => {
             src={leftImage}
             alt={sourceSlice || sourceId}
             onError={(e) => {
-              e.currentTarget.src = "/assets/img/painting.png";
+              e.currentTarget.src = "./assets/img/painting.png";
             }}
           />
         </div>
@@ -60,7 +60,7 @@ const PPLinkDetail = ({ link }) => {
             src={rightImage}
             alt={targetSlice || targetId}
             onError={(e) => {
-              e.currentTarget.src = "/assets/img/painting.png";
+              e.currentTarget.src = "./assets/img/painting.png";
             }}
           />
         </div>
