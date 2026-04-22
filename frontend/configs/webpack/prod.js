@@ -15,7 +15,8 @@ module.exports = merge(commonConfig, {
   output: {
     filename: "js/bundle.[contenthash].min.js",
     path: resolve(__dirname, "../../dist"),
-    publicPath: "/",
+    // Use runtime-detected base path so assets load under GitHub Project Pages subpath.
+    publicPath: "auto",
   },
   devtool: "source-map",
   plugins: [new Dotenv()],

@@ -1,0 +1,2905 @@
+{
+  "D001410": {
+    "D001410_1": {
+      "top1": {
+        "painting_id": "D009166",
+        "slice_id": "D009166_1",
+        "score": 0.931857
+      },
+      "top2": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_6",
+        "score": 0.907322
+      },
+      "top3": {
+        "painting_id": "D011477",
+        "slice_id": "D011477_3",
+        "score": 0.898986
+      }
+    },
+    "D001410_2": {
+      "top1": {
+        "painting_id": "D001730",
+        "slice_id": "D001730_3",
+        "score": 0.888029
+      },
+      "top2": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_2",
+        "score": 0.885898
+      },
+      "top3": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_2",
+        "score": 0.879029
+      }
+    }
+  },
+  "D001430": {
+    "D001430_1": {
+      "top1": {
+        "painting_id": "D008074",
+        "slice_id": "D008074_3",
+        "score": 0.877219
+      },
+      "top2": {
+        "painting_id": "D002386",
+        "slice_id": "D002386_2",
+        "score": 0.866524
+      },
+      "top3": {
+        "painting_id": "D009166",
+        "slice_id": "D009166_2",
+        "score": 0.853679
+      }
+    },
+    "D001430_2": {
+      "top1": {
+        "painting_id": "D002707",
+        "slice_id": "D002707_5",
+        "score": 0.907003
+      },
+      "top2": {
+        "painting_id": "D001471",
+        "slice_id": "D001471_3",
+        "score": 0.884535
+      },
+      "top3": {
+        "painting_id": "D011477",
+        "slice_id": "D011477_3",
+        "score": 0.884441
+      }
+    },
+    "D001430_3": {
+      "top1": {
+        "painting_id": "D004404",
+        "slice_id": "D004404_4",
+        "score": 0.896687
+      },
+      "top2": {
+        "painting_id": "D011490",
+        "slice_id": "D011490_2",
+        "score": 0.858957
+      }
+    },
+    "D001430_4": {
+      "top1": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_6",
+        "score": 0.888953
+      },
+      "top2": {
+        "painting_id": "D004382",
+        "slice_id": "D004382_1",
+        "score": 0.886808
+      },
+      "top3": {
+        "painting_id": "D001730",
+        "slice_id": "D001730_2",
+        "score": 0.873253
+      }
+    }
+  },
+  "D001439": {
+    "D001439_1": {
+      "top1": {
+        "painting_id": "D004424",
+        "slice_id": "D004424_1",
+        "score": 0.890311
+      },
+      "top2": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_1",
+        "score": 0.878686
+      },
+      "top3": {
+        "painting_id": "D001730",
+        "slice_id": "D001730_1",
+        "score": 0.873763
+      }
+    },
+    "D001439_2": {
+      "top1": {
+        "painting_id": "D001481",
+        "slice_id": "D001481_3",
+        "score": 0.893418
+      },
+      "top2": {
+        "painting_id": "D001410",
+        "slice_id": "D001410_2",
+        "score": 0.885898
+      },
+      "top3": {
+        "painting_id": "D011540",
+        "slice_id": "D011540_2",
+        "score": 0.879644
+      }
+    },
+    "D001439_3": {
+      "top1": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_3",
+        "score": 0.871532
+      },
+      "top2": {
+        "painting_id": "D002707",
+        "slice_id": "D002707_3",
+        "score": 0.854101
+      },
+      "top3": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_3",
+        "score": 0.844408
+      }
+    },
+    "D001439_4": {
+      "top1": {
+        "painting_id": "D004422",
+        "slice_id": "D004422_1",
+        "score": 0.844899
+      },
+      "top2": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_1",
+        "score": 0.833926
+      },
+      "top3": {
+        "painting_id": "D004424",
+        "slice_id": "D004424_1",
+        "score": 0.833586
+      }
+    },
+    "D001439_5": {
+      "top1": {
+        "painting_id": "D004415",
+        "slice_id": "D004415_2",
+        "score": 0.947511
+      },
+      "top2": {
+        "painting_id": "D014498",
+        "slice_id": "D014498_2",
+        "score": 0.929367
+      },
+      "top3": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_6",
+        "score": 0.904695
+      }
+    }
+  },
+  "D001458": {
+    "D001458_1": {
+      "top1": {
+        "painting_id": "D002078",
+        "slice_id": "D002078_1",
+        "score": 0.853783
+      },
+      "top2": {
+        "painting_id": "D004394",
+        "slice_id": "D004394_1",
+        "score": 0.830703
+      },
+      "top3": {
+        "painting_id": "D009166",
+        "slice_id": "D009166_1",
+        "score": 0.813098
+      }
+    },
+    "D001458_2": {
+      "top1": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_4",
+        "score": 0.906859
+      },
+      "top2": {
+        "painting_id": "D012756",
+        "slice_id": "D012756_3",
+        "score": 0.887419
+      },
+      "top3": {
+        "painting_id": "D011477",
+        "slice_id": "D011477_3",
+        "score": 0.878772
+      }
+    }
+  },
+  "D001468": {
+    "D001468_1": {
+      "top1": {
+        "painting_id": "D005509",
+        "slice_id": "D005509_3",
+        "score": 0.92215
+      },
+      "top2": {
+        "painting_id": "D001730",
+        "slice_id": "D001730_2",
+        "score": 0.915991
+      },
+      "top3": {
+        "painting_id": "D004415",
+        "slice_id": "D004415_2",
+        "score": 0.90811
+      }
+    },
+    "D001468_2": {
+      "top1": {
+        "painting_id": "D004404",
+        "slice_id": "D004404_5",
+        "score": 0.874795
+      },
+      "top2": {
+        "painting_id": "D004391",
+        "slice_id": "D004391_1",
+        "score": 0.869158
+      },
+      "top3": {
+        "painting_id": "D011477",
+        "slice_id": "D011477_2",
+        "score": 0.855955
+      }
+    }
+  },
+  "D001471": {
+    "D001471_1": {
+      "top1": {
+        "painting_id": "D004413",
+        "slice_id": "D004413_2",
+        "score": 0.893328
+      },
+      "top2": {
+        "painting_id": "D004404",
+        "slice_id": "D004404_5",
+        "score": 0.886732
+      },
+      "top3": {
+        "painting_id": "D004391",
+        "slice_id": "D004391_1",
+        "score": 0.883417
+      }
+    },
+    "D001471_2": {
+      "top1": {
+        "painting_id": "D011518",
+        "slice_id": "D011518_4",
+        "score": 0.905706
+      },
+      "top2": {
+        "painting_id": "D004424",
+        "slice_id": "D004424_3",
+        "score": 0.891517
+      },
+      "top3": {
+        "painting_id": "D014497",
+        "slice_id": "D014497_1",
+        "score": 0.87923
+      }
+    },
+    "D001471_3": {
+      "top1": {
+        "painting_id": "D001730",
+        "slice_id": "D001730_2",
+        "score": 0.90653
+      },
+      "top2": {
+        "painting_id": "D004382",
+        "slice_id": "D004382_2",
+        "score": 0.902846
+      },
+      "top3": {
+        "painting_id": "D002388",
+        "slice_id": "D002388_2",
+        "score": 0.90059
+      }
+    },
+    "D001471_4": {
+      "top1": {
+        "painting_id": "D004413",
+        "slice_id": "D004413_3",
+        "score": 0.93122
+      },
+      "top2": {
+        "painting_id": "D004424",
+        "slice_id": "D004424_3",
+        "score": 0.897599
+      },
+      "top3": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_5",
+        "score": 0.895791
+      }
+    }
+  },
+  "D001481": {
+    "D001481_1": {
+      "top1": {
+        "painting_id": "D001730",
+        "slice_id": "D001730_3",
+        "score": 0.901611
+      },
+      "top2": {
+        "painting_id": "D004413",
+        "slice_id": "D004413_2",
+        "score": 0.873827
+      },
+      "top3": {
+        "painting_id": "D004391",
+        "slice_id": "D004391_1",
+        "score": 0.871553
+      }
+    },
+    "D001481_2": {
+      "top1": {
+        "painting_id": "D004413",
+        "slice_id": "D004413_2",
+        "score": 0.881108
+      },
+      "top2": {
+        "painting_id": "D004391",
+        "slice_id": "D004391_1",
+        "score": 0.874224
+      },
+      "top3": {
+        "painting_id": "D004404",
+        "slice_id": "D004404_5",
+        "score": 0.866262
+      }
+    },
+    "D001481_3": {
+      "top1": {
+        "painting_id": "D001468",
+        "slice_id": "D001468_1",
+        "score": 0.906992
+      },
+      "top2": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_2",
+        "score": 0.893418
+      },
+      "top3": {
+        "painting_id": "D011521",
+        "slice_id": "D011521_3",
+        "score": 0.892168
+      }
+    }
+  },
+  "D001484": {
+    "D001484_1": {
+      "top1": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_4",
+        "score": 0.841089
+      },
+      "top2": {
+        "painting_id": "D004415",
+        "slice_id": "D004415_3",
+        "score": 0.837198
+      },
+      "top3": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_1",
+        "score": 0.826913
+      }
+    },
+    "D001484_2": {
+      "top1": {
+        "painting_id": "D012756",
+        "slice_id": "D012756_3",
+        "score": 0.871469
+      },
+      "top2": {
+        "painting_id": "D004415",
+        "slice_id": "D004415_2",
+        "score": 0.863884
+      },
+      "top3": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_4",
+        "score": 0.859909
+      }
+    }
+  },
+  "D001488": {
+    "D001488_1": {
+      "top1": {
+        "painting_id": "D010320",
+        "slice_id": "D010320_1",
+        "score": 0.888608
+      },
+      "top2": {
+        "painting_id": "D011477",
+        "slice_id": "D011477_1",
+        "score": 0.877104
+      },
+      "top3": {
+        "painting_id": "D011521",
+        "slice_id": "D011521_3",
+        "score": 0.875194
+      }
+    },
+    "D001488_2": {
+      "top1": {
+        "painting_id": "D004396",
+        "slice_id": "D004396_1",
+        "score": 0.827676
+      },
+      "top2": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_1",
+        "score": 0.825277
+      },
+      "top3": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_2",
+        "score": 0.820333
+      }
+    },
+    "D001488_3": {
+      "top1": {
+        "painting_id": "D002081",
+        "slice_id": "D002081_2",
+        "score": 0.888221
+      },
+      "top2": {
+        "painting_id": "D011540",
+        "slice_id": "D011540_3",
+        "score": 0.886049
+      },
+      "top3": {
+        "painting_id": "D004382",
+        "slice_id": "D004382_1",
+        "score": 0.879215
+      }
+    }
+  },
+  "D001507": {
+    "D001507_1": {
+      "top1": {
+        "painting_id": "D004382",
+        "slice_id": "D004382_1",
+        "score": 0.92826
+      },
+      "top2": {
+        "painting_id": "D011540",
+        "slice_id": "D011540_3",
+        "score": 0.890341
+      },
+      "top3": {
+        "painting_id": "D011470",
+        "slice_id": "D011470_1",
+        "score": 0.87499
+      }
+    },
+    "D001507_2": {
+      "top1": {
+        "painting_id": "D004394",
+        "slice_id": "D004394_1",
+        "score": 0.889074
+      },
+      "top2": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_4",
+        "score": 0.881053
+      },
+      "top3": {
+        "painting_id": "D011540",
+        "slice_id": "D011540_4",
+        "score": 0.87362
+      }
+    },
+    "D001507_3": {
+      "top1": {
+        "painting_id": "D004424",
+        "slice_id": "D004424_1",
+        "score": 0.864451
+      },
+      "top2": {
+        "painting_id": "D002388",
+        "slice_id": "D002388_1",
+        "score": 0.831284
+      },
+      "top3": {
+        "painting_id": "D004396",
+        "slice_id": "D004396_1",
+        "score": 0.82779
+      }
+    }
+  },
+  "D001508": {
+    "D001508_1": {
+      "top1": {
+        "painting_id": "D004391",
+        "slice_id": "D004391_3",
+        "score": 0.912606
+      },
+      "top2": {
+        "painting_id": "D014497",
+        "slice_id": "D014497_1",
+        "score": 0.88718
+      },
+      "top3": {
+        "painting_id": "D009166",
+        "slice_id": "D009166_1",
+        "score": 0.881219
+      }
+    },
+    "D001508_2": {
+      "top1": {
+        "painting_id": "D004424",
+        "slice_id": "D004424_1",
+        "score": 0.878029
+      },
+      "top2": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_3",
+        "score": 0.873313
+      },
+      "top3": {
+        "painting_id": "D002081",
+        "slice_id": "D002081_3",
+        "score": 0.866738
+      }
+    },
+    "D001508_3": {
+      "top1": {
+        "painting_id": "D002707",
+        "slice_id": "D002707_3",
+        "score": 0.906514
+      },
+      "top2": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_3",
+        "score": 0.88851
+      },
+      "top3": {
+        "painting_id": "D001471",
+        "slice_id": "D001471_1",
+        "score": 0.876505
+      }
+    },
+    "D001508_4": {
+      "top1": {
+        "painting_id": "D001458",
+        "slice_id": "D001458_2",
+        "score": 0.906859
+      },
+      "top2": {
+        "painting_id": "D004424",
+        "slice_id": "D004424_3",
+        "score": 0.903306
+      },
+      "top3": {
+        "painting_id": "D004382",
+        "slice_id": "D004382_1",
+        "score": 0.894306
+      }
+    }
+  },
+  "D001510": {
+    "D001510_1": {
+      "top1": {
+        "painting_id": "D011517",
+        "slice_id": "D011517_2",
+        "score": 0.901174
+      },
+      "top2": {
+        "painting_id": "D011514",
+        "slice_id": "D011514_1",
+        "score": 0.900881
+      },
+      "top3": {
+        "painting_id": "D011517",
+        "slice_id": "D011517_1",
+        "score": 0.898072
+      }
+    },
+    "D001510_2": {
+      "top1": {
+        "painting_id": "D011524",
+        "slice_id": "D011524_3",
+        "score": 0.931124
+      },
+      "top2": {
+        "painting_id": "D011517",
+        "slice_id": "D011517_2",
+        "score": 0.9295
+      },
+      "top3": {
+        "painting_id": "D011517",
+        "slice_id": "D011517_1",
+        "score": 0.929156
+      }
+    },
+    "D001510_3": {
+      "top1": {
+        "painting_id": "D011517",
+        "slice_id": "D011517_3",
+        "score": 0.913778
+      },
+      "top2": {
+        "painting_id": "D011517",
+        "slice_id": "D011517_4",
+        "score": 0.891901
+      },
+      "top3": {
+        "painting_id": "D011517",
+        "slice_id": "D011517_1",
+        "score": 0.88939
+      }
+    },
+    "D001510_4": {
+      "top1": {
+        "painting_id": "D011524",
+        "slice_id": "D011524_3",
+        "score": 0.859818
+      },
+      "top2": {
+        "painting_id": "D011524",
+        "slice_id": "D011524_2",
+        "score": 0.848026
+      },
+      "top3": {
+        "painting_id": "D011517",
+        "slice_id": "D011517_2",
+        "score": 0.839729
+      }
+    }
+  },
+  "D001730": {
+    "D001730_1": {
+      "top1": {
+        "painting_id": "D004424",
+        "slice_id": "D004424_1",
+        "score": 0.903603
+      },
+      "top2": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_1",
+        "score": 0.889883
+      },
+      "top3": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_1",
+        "score": 0.873763
+      }
+    },
+    "D001730_2": {
+      "top1": {
+        "painting_id": "D001468",
+        "slice_id": "D001468_1",
+        "score": 0.915991
+      },
+      "top2": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_4",
+        "score": 0.910335
+      },
+      "top3": {
+        "painting_id": "D001471",
+        "slice_id": "D001471_3",
+        "score": 0.90653
+      }
+    },
+    "D001730_3": {
+      "top1": {
+        "painting_id": "D001481",
+        "slice_id": "D001481_1",
+        "score": 0.901611
+      },
+      "top2": {
+        "painting_id": "D001410",
+        "slice_id": "D001410_2",
+        "score": 0.888029
+      },
+      "top3": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_2",
+        "score": 0.876211
+      }
+    }
+  },
+  "D002078": {
+    "D002078_1": {
+      "top1": {
+        "painting_id": "D011477",
+        "slice_id": "D011477_3",
+        "score": 0.891224
+      },
+      "top2": {
+        "painting_id": "D012756",
+        "slice_id": "D012756_3",
+        "score": 0.89036
+      },
+      "top3": {
+        "painting_id": "D009166",
+        "slice_id": "D009166_1",
+        "score": 0.886854
+      }
+    },
+    "D002078_2": {
+      "top1": {
+        "painting_id": "D012756",
+        "slice_id": "D012756_3",
+        "score": 0.874715
+      },
+      "top2": {
+        "painting_id": "D014499",
+        "slice_id": "D014499_1",
+        "score": 0.865172
+      },
+      "top3": {
+        "painting_id": "D001484",
+        "slice_id": "D001484_2",
+        "score": 0.857789
+      }
+    }
+  },
+  "D002081": {
+    "D002081_1": {
+      "top1": {
+        "painting_id": "D012756",
+        "slice_id": "D012756_1",
+        "score": 0.908046
+      },
+      "top2": {
+        "painting_id": "D010320",
+        "slice_id": "D010320_1",
+        "score": 0.90518
+      },
+      "top3": {
+        "painting_id": "D011521",
+        "slice_id": "D011521_3",
+        "score": 0.902292
+      }
+    },
+    "D002081_2": {
+      "top1": {
+        "painting_id": "D004415",
+        "slice_id": "D004415_2",
+        "score": 0.92242
+      },
+      "top2": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_5",
+        "score": 0.900122
+      },
+      "top3": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_6",
+        "score": 0.899258
+      }
+    },
+    "D002081_3": {
+      "top1": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_3",
+        "score": 0.872022
+      },
+      "top2": {
+        "painting_id": "D004401",
+        "slice_id": "D004401_2",
+        "score": 0.867405
+      },
+      "top3": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_2",
+        "score": 0.866738
+      }
+    }
+  },
+  "D002101": {
+    "D002101_1": {
+      "top1": {
+        "painting_id": "D004415",
+        "slice_id": "D004415_1",
+        "score": 0.8304
+      },
+      "top2": {
+        "painting_id": "D004396",
+        "slice_id": "D004396_2",
+        "score": 0.81984
+      },
+      "top3": {
+        "painting_id": "D002707",
+        "slice_id": "D002707_3",
+        "score": 0.814869
+      }
+    },
+    "D002101_2": {
+      "top1": {
+        "painting_id": "D011470",
+        "slice_id": "D011470_1",
+        "score": 0.891604
+      },
+      "top2": {
+        "painting_id": "D005509",
+        "slice_id": "D005509_3",
+        "score": 0.884827
+      },
+      "top3": {
+        "painting_id": "D001730",
+        "slice_id": "D001730_2",
+        "score": 0.880714
+      }
+    }
+  },
+  "D002386": {
+    "D002386_1": {
+      "top1": {
+        "painting_id": "D011540",
+        "slice_id": "D011540_4",
+        "score": 0.89647
+      },
+      "top2": {
+        "painting_id": "D011521",
+        "slice_id": "D011521_3",
+        "score": 0.895258
+      },
+      "top3": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_4",
+        "score": 0.891123
+      }
+    },
+    "D002386_2": {
+      "top1": {
+        "painting_id": "D001430",
+        "slice_id": "D001430_1",
+        "score": 0.866524
+      },
+      "top2": {
+        "painting_id": "D004391",
+        "slice_id": "D004391_3",
+        "score": 0.859903
+      },
+      "top3": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_1",
+        "score": 0.854517
+      }
+    }
+  },
+  "D002388": {
+    "D002388_1": {
+      "top1": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_2",
+        "score": 0.866506
+      },
+      "top2": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_1",
+        "score": 0.856794
+      },
+      "top3": {
+        "painting_id": "D001730",
+        "slice_id": "D001730_1",
+        "score": 0.853452
+      }
+    },
+    "D002388_2": {
+      "top1": {
+        "painting_id": "D001471",
+        "slice_id": "D001471_3",
+        "score": 0.90059
+      },
+      "top2": {
+        "painting_id": "D004394",
+        "slice_id": "D004394_1",
+        "score": 0.895917
+      },
+      "top3": {
+        "painting_id": "D004391",
+        "slice_id": "D004391_3",
+        "score": 0.894978
+      }
+    },
+    "D002388_3": {
+      "top1": {
+        "painting_id": "D004424",
+        "slice_id": "D004424_1",
+        "score": 0.851858
+      },
+      "top2": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_1",
+        "score": 0.844096
+      },
+      "top3": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_2",
+        "score": 0.840635
+      }
+    }
+  },
+  "D002707": {
+    "D002707_1": {
+      "top1": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_3",
+        "score": 0.855123
+      },
+      "top2": {
+        "painting_id": "D001471",
+        "slice_id": "D001471_1",
+        "score": 0.847417
+      },
+      "top3": {
+        "painting_id": "D014497",
+        "slice_id": "D014497_2",
+        "score": 0.843475
+      }
+    },
+    "D002707_2": {
+      "top1": {
+        "painting_id": "D004424",
+        "slice_id": "D004424_1",
+        "score": 0.858236
+      },
+      "top2": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_1",
+        "score": 0.855389
+      },
+      "top3": {
+        "painting_id": "D002081",
+        "slice_id": "D002081_3",
+        "score": 0.847904
+      }
+    },
+    "D002707_3": {
+      "top1": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_3",
+        "score": 0.906514
+      },
+      "top2": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_3",
+        "score": 0.906169
+      },
+      "top3": {
+        "painting_id": "D001471",
+        "slice_id": "D001471_1",
+        "score": 0.87587
+      }
+    },
+    "D002707_4": {
+      "top1": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_5",
+        "score": 0.894396
+      },
+      "top2": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_6",
+        "score": 0.892411
+      },
+      "top3": {
+        "painting_id": "D014498",
+        "slice_id": "D014498_2",
+        "score": 0.888931
+      }
+    },
+    "D002707_5": {
+      "top1": {
+        "painting_id": "D001430",
+        "slice_id": "D001430_2",
+        "score": 0.907003
+      },
+      "top2": {
+        "painting_id": "D001471",
+        "slice_id": "D001471_3",
+        "score": 0.866292
+      },
+      "top3": {
+        "painting_id": "D002388",
+        "slice_id": "D002388_2",
+        "score": 0.864084
+      }
+    }
+  },
+  "D002761": {
+    "D002761_1": {
+      "top1": {
+        "painting_id": "D004415",
+        "slice_id": "D004415_3",
+        "score": 0.819291
+      },
+      "top2": {
+        "painting_id": "D011518",
+        "slice_id": "D011518_1",
+        "score": 0.796668
+      },
+      "top3": {
+        "painting_id": "D009166",
+        "slice_id": "D009166_4",
+        "score": 0.783556
+      }
+    },
+    "D002761_2": {
+      "top1": {
+        "painting_id": "D004401",
+        "slice_id": "D004401_2",
+        "score": 0.868771
+      },
+      "top2": {
+        "painting_id": "D014498",
+        "slice_id": "D014498_3",
+        "score": 0.84638
+      },
+      "top3": {
+        "painting_id": "D004404",
+        "slice_id": "D004404_3",
+        "score": 0.843333
+      }
+    }
+  },
+  "D004382": {
+    "D004382_1": {
+      "top1": {
+        "painting_id": "D001507",
+        "slice_id": "D001507_1",
+        "score": 0.92826
+      },
+      "top2": {
+        "painting_id": "D011540",
+        "slice_id": "D011540_3",
+        "score": 0.913522
+      },
+      "top3": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_6",
+        "score": 0.906229
+      }
+    },
+    "D004382_2": {
+      "top1": {
+        "painting_id": "D004394",
+        "slice_id": "D004394_1",
+        "score": 0.909365
+      },
+      "top2": {
+        "painting_id": "D004391",
+        "slice_id": "D004391_4",
+        "score": 0.905984
+      },
+      "top3": {
+        "painting_id": "D011470",
+        "slice_id": "D011470_1",
+        "score": 0.905752
+      }
+    }
+  },
+  "D004388": {
+    "D004388_1": {
+      "top1": {
+        "painting_id": "D009166",
+        "slice_id": "D009166_1",
+        "score": 0.891024
+      },
+      "top2": {
+        "painting_id": "D011477",
+        "slice_id": "D011477_1",
+        "score": 0.888625
+      },
+      "top3": {
+        "painting_id": "D009166",
+        "slice_id": "D009166_2",
+        "score": 0.888555
+      }
+    },
+    "D004388_2": {
+      "top1": {
+        "painting_id": "D014498",
+        "slice_id": "D014498_3",
+        "score": 0.879574
+      },
+      "top2": {
+        "painting_id": "D012756",
+        "slice_id": "D012756_1",
+        "score": 0.846409
+      },
+      "top3": {
+        "painting_id": "D009166",
+        "slice_id": "D009166_2",
+        "score": 0.844882
+      }
+    },
+    "D004388_3": {
+      "top1": {
+        "painting_id": "D004401",
+        "slice_id": "D004401_2",
+        "score": 0.866691
+      },
+      "top2": {
+        "painting_id": "D014498",
+        "slice_id": "D014498_1",
+        "score": 0.82074
+      },
+      "top3": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_3",
+        "score": 0.819682
+      }
+    }
+  },
+  "D004391": {
+    "D004391_1": {
+      "top1": {
+        "painting_id": "D011540",
+        "slice_id": "D011540_2",
+        "score": 0.893871
+      },
+      "top2": {
+        "painting_id": "D001471",
+        "slice_id": "D001471_1",
+        "score": 0.883417
+      },
+      "top3": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_2",
+        "score": 0.877218
+      }
+    },
+    "D004391_2": {
+      "top1": {
+        "painting_id": "D002388",
+        "slice_id": "D002388_1",
+        "score": 0.849837
+      },
+      "top2": {
+        "painting_id": "D004413",
+        "slice_id": "D004413_2",
+        "score": 0.834295
+      },
+      "top3": {
+        "painting_id": "D004415",
+        "slice_id": "D004415_1",
+        "score": 0.832384
+      }
+    },
+    "D004391_3": {
+      "top1": {
+        "painting_id": "D014497",
+        "slice_id": "D014497_1",
+        "score": 0.927047
+      },
+      "top2": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_1",
+        "score": 0.912606
+      },
+      "top3": {
+        "painting_id": "D002388",
+        "slice_id": "D002388_2",
+        "score": 0.894978
+      }
+    },
+    "D004391_4": {
+      "top1": {
+        "painting_id": "D004382",
+        "slice_id": "D004382_2",
+        "score": 0.905984
+      },
+      "top2": {
+        "painting_id": "D011540",
+        "slice_id": "D011540_4",
+        "score": 0.902613
+      },
+      "top3": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_4",
+        "score": 0.901703
+      }
+    }
+  },
+  "D004394": {
+    "D004394_1": {
+      "top1": {
+        "painting_id": "D004382",
+        "slice_id": "D004382_2",
+        "score": 0.909365
+      },
+      "top2": {
+        "painting_id": "D014498",
+        "slice_id": "D014498_3",
+        "score": 0.90392
+      },
+      "top3": {
+        "painting_id": "D001730",
+        "slice_id": "D001730_2",
+        "score": 0.9016
+      }
+    },
+    "D004394_2": {
+      "top1": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_3",
+        "score": 0.883118
+      },
+      "top2": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_3",
+        "score": 0.864297
+      },
+      "top3": {
+        "painting_id": "D002707",
+        "slice_id": "D002707_3",
+        "score": 0.85826
+      }
+    },
+    "D004394_3": {
+      "top1": {
+        "painting_id": "D002386",
+        "slice_id": "D002386_1",
+        "score": 0.884087
+      },
+      "top2": {
+        "painting_id": "D011540",
+        "slice_id": "D011540_4",
+        "score": 0.856044
+      },
+      "top3": {
+        "painting_id": "D001507",
+        "slice_id": "D001507_2",
+        "score": 0.850927
+      }
+    }
+  },
+  "D004396": {
+    "D004396_1": {
+      "top1": {
+        "painting_id": "D001488",
+        "slice_id": "D001488_1",
+        "score": 0.867137
+      },
+      "top2": {
+        "painting_id": "D011518",
+        "slice_id": "D011518_2",
+        "score": 0.866649
+      },
+      "top3": {
+        "painting_id": "D004388",
+        "slice_id": "D004388_1",
+        "score": 0.863672
+      }
+    },
+    "D004396_2": {
+      "top1": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_1",
+        "score": 0.845582
+      },
+      "top2": {
+        "painting_id": "D001730",
+        "slice_id": "D001730_1",
+        "score": 0.822848
+      },
+      "top3": {
+        "painting_id": "D002707",
+        "slice_id": "D002707_2",
+        "score": 0.81986
+      }
+    },
+    "D004396_3": {
+      "top1": {
+        "painting_id": "D004422",
+        "slice_id": "D004422_1",
+        "score": 0.854063
+      },
+      "top2": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_4",
+        "score": 0.829725
+      },
+      "top3": {
+        "painting_id": "D002707",
+        "slice_id": "D002707_2",
+        "score": 0.827983
+      }
+    }
+  },
+  "D004401": {
+    "D004401_1": {
+      "top1": {
+        "painting_id": "D011518",
+        "slice_id": "D011518_2",
+        "score": 0.913671
+      },
+      "top2": {
+        "painting_id": "D011477",
+        "slice_id": "D011477_3",
+        "score": 0.899023
+      },
+      "top3": {
+        "painting_id": "D009166",
+        "slice_id": "D009166_1",
+        "score": 0.881721
+      }
+    },
+    "D004401_2": {
+      "top1": {
+        "painting_id": "D011477",
+        "slice_id": "D011477_2",
+        "score": 0.875585
+      },
+      "top2": {
+        "painting_id": "D004413",
+        "slice_id": "D004413_2",
+        "score": 0.870491
+      },
+      "top3": {
+        "painting_id": "D002761",
+        "slice_id": "D002761_2",
+        "score": 0.868771
+      }
+    },
+    "D004401_3": {
+      "top1": {
+        "painting_id": "D012756",
+        "slice_id": "D012756_1",
+        "score": 0.903734
+      },
+      "top2": {
+        "painting_id": "D008074",
+        "slice_id": "D008074_3",
+        "score": 0.898831
+      },
+      "top3": {
+        "painting_id": "D002081",
+        "slice_id": "D002081_1",
+        "score": 0.893381
+      }
+    }
+  },
+  "D004404": {
+    "D004404_1": {
+      "top1": {
+        "painting_id": "D008074",
+        "slice_id": "D008074_2",
+        "score": 0.83967
+      },
+      "top2": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_5",
+        "score": 0.835973
+      },
+      "top3": {
+        "painting_id": "D002388",
+        "slice_id": "D002388_3",
+        "score": 0.829591
+      }
+    },
+    "D004404_2": {
+      "top1": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_5",
+        "score": 0.828356
+      },
+      "top2": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_2",
+        "score": 0.799436
+      },
+      "top3": {
+        "painting_id": "D001730",
+        "slice_id": "D001730_1",
+        "score": 0.795405
+      }
+    },
+    "D004404_3": {
+      "top1": {
+        "painting_id": "D014498",
+        "slice_id": "D014498_3",
+        "score": 0.910224
+      },
+      "top2": {
+        "painting_id": "D004394",
+        "slice_id": "D004394_1",
+        "score": 0.88439
+      },
+      "top3": {
+        "painting_id": "D004388",
+        "slice_id": "D004388_1",
+        "score": 0.879698
+      }
+    },
+    "D004404_4": {
+      "top1": {
+        "painting_id": "D001430",
+        "slice_id": "D001430_3",
+        "score": 0.896687
+      },
+      "top2": {
+        "painting_id": "D011490",
+        "slice_id": "D011490_2",
+        "score": 0.833272
+      },
+      "top3": {
+        "painting_id": "D004394",
+        "slice_id": "D004394_3",
+        "score": 0.815537
+      }
+    },
+    "D004404_5": {
+      "top1": {
+        "painting_id": "D001471",
+        "slice_id": "D001471_1",
+        "score": 0.886732
+      },
+      "top2": {
+        "painting_id": "D004424",
+        "slice_id": "D004424_2",
+        "score": 0.875555
+      },
+      "top3": {
+        "painting_id": "D001468",
+        "slice_id": "D001468_2",
+        "score": 0.874795
+      }
+    }
+  },
+  "D004413": {
+    "D004413_1": {
+      "top1": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_2",
+        "score": 0.864091
+      },
+      "top2": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_2",
+        "score": 0.863331
+      },
+      "top3": {
+        "painting_id": "D001410",
+        "slice_id": "D001410_2",
+        "score": 0.859252
+      }
+    },
+    "D004413_2": {
+      "top1": {
+        "painting_id": "D001471",
+        "slice_id": "D001471_1",
+        "score": 0.893328
+      },
+      "top2": {
+        "painting_id": "D001481",
+        "slice_id": "D001481_2",
+        "score": 0.881108
+      },
+      "top3": {
+        "painting_id": "D011521",
+        "slice_id": "D011521_2",
+        "score": 0.878237
+      }
+    },
+    "D004413_3": {
+      "top1": {
+        "painting_id": "D001471",
+        "slice_id": "D001471_4",
+        "score": 0.93122
+      },
+      "top2": {
+        "painting_id": "D011477",
+        "slice_id": "D011477_3",
+        "score": 0.892996
+      },
+      "top3": {
+        "painting_id": "D009166",
+        "slice_id": "D009166_1",
+        "score": 0.88965
+      }
+    },
+    "D004413_4": {
+      "top1": {
+        "painting_id": "D004404",
+        "slice_id": "D004404_5",
+        "score": 0.861912
+      },
+      "top2": {
+        "painting_id": "D001471",
+        "slice_id": "D001471_1",
+        "score": 0.855182
+      },
+      "top3": {
+        "painting_id": "D004391",
+        "slice_id": "D004391_1",
+        "score": 0.849962
+      }
+    }
+  },
+  "D004415": {
+    "D004415_1": {
+      "top1": {
+        "painting_id": "D002707",
+        "slice_id": "D002707_2",
+        "score": 0.842616
+      },
+      "top2": {
+        "painting_id": "D004391",
+        "slice_id": "D004391_2",
+        "score": 0.832384
+      },
+      "top3": {
+        "painting_id": "D002101",
+        "slice_id": "D002101_1",
+        "score": 0.8304
+      }
+    },
+    "D004415_2": {
+      "top1": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_5",
+        "score": 0.947511
+      },
+      "top2": {
+        "painting_id": "D002081",
+        "slice_id": "D002081_2",
+        "score": 0.92242
+      },
+      "top3": {
+        "painting_id": "D011521",
+        "slice_id": "D011521_4",
+        "score": 0.916926
+      }
+    },
+    "D004415_3": {
+      "top1": {
+        "painting_id": "D004382",
+        "slice_id": "D004382_2",
+        "score": 0.898198
+      },
+      "top2": {
+        "painting_id": "D014498",
+        "slice_id": "D014498_3",
+        "score": 0.891662
+      },
+      "top3": {
+        "painting_id": "D011477",
+        "slice_id": "D011477_1",
+        "score": 0.88911
+      }
+    }
+  },
+  "D004422": {
+    "D004422_1": {
+      "top1": {
+        "painting_id": "D004396",
+        "slice_id": "D004396_3",
+        "score": 0.854063
+      },
+      "top2": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_4",
+        "score": 0.844899
+      },
+      "top3": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_1",
+        "score": 0.843031
+      }
+    },
+    "D004422_2": {
+      "top1": {
+        "painting_id": "D004415",
+        "slice_id": "D004415_2",
+        "score": 0.787978
+      },
+      "top2": {
+        "painting_id": "D011521",
+        "slice_id": "D011521_4",
+        "score": 0.784209
+      },
+      "top3": {
+        "painting_id": "D012756",
+        "slice_id": "D012756_3",
+        "score": 0.782456
+      }
+    }
+  },
+  "D004423": {
+    "D004423_1": {
+      "top1": {
+        "painting_id": "D004424",
+        "slice_id": "D004424_1",
+        "score": 0.924166
+      },
+      "top2": {
+        "painting_id": "D001730",
+        "slice_id": "D001730_1",
+        "score": 0.889883
+      },
+      "top3": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_1",
+        "score": 0.878686
+      }
+    },
+    "D004423_2": {
+      "top1": {
+        "painting_id": "D001410",
+        "slice_id": "D001410_2",
+        "score": 0.879029
+      },
+      "top2": {
+        "painting_id": "D001730",
+        "slice_id": "D001730_3",
+        "score": 0.876211
+      },
+      "top3": {
+        "painting_id": "D004413",
+        "slice_id": "D004413_1",
+        "score": 0.864091
+      }
+    },
+    "D004423_3": {
+      "top1": {
+        "painting_id": "D002707",
+        "slice_id": "D002707_3",
+        "score": 0.906169
+      },
+      "top2": {
+        "painting_id": "D008074",
+        "slice_id": "D008074_3",
+        "score": 0.89506
+      },
+      "top3": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_3",
+        "score": 0.88851
+      }
+    },
+    "D004423_4": {
+      "top1": {
+        "painting_id": "D011540",
+        "slice_id": "D011540_4",
+        "score": 0.917685
+      },
+      "top2": {
+        "painting_id": "D005509",
+        "slice_id": "D005509_3",
+        "score": 0.91709
+      },
+      "top3": {
+        "painting_id": "D001730",
+        "slice_id": "D001730_2",
+        "score": 0.910335
+      }
+    },
+    "D004423_5": {
+      "top1": {
+        "painting_id": "D004404",
+        "slice_id": "D004404_1",
+        "score": 0.835973
+      },
+      "top2": {
+        "painting_id": "D004404",
+        "slice_id": "D004404_2",
+        "score": 0.828356
+      },
+      "top3": {
+        "painting_id": "D010320",
+        "slice_id": "D010320_2",
+        "score": 0.827608
+      }
+    },
+    "D004423_6": {
+      "top1": {
+        "painting_id": "D004415",
+        "slice_id": "D004415_2",
+        "score": 0.914006
+      },
+      "top2": {
+        "painting_id": "D011540",
+        "slice_id": "D011540_3",
+        "score": 0.907455
+      },
+      "top3": {
+        "painting_id": "D001410",
+        "slice_id": "D001410_1",
+        "score": 0.907322
+      }
+    }
+  },
+  "D004424": {
+    "D004424_1": {
+      "top1": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_1",
+        "score": 0.924166
+      },
+      "top2": {
+        "painting_id": "D001730",
+        "slice_id": "D001730_1",
+        "score": 0.903603
+      },
+      "top3": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_1",
+        "score": 0.890311
+      }
+    },
+    "D004424_2": {
+      "top1": {
+        "painting_id": "D011470",
+        "slice_id": "D011470_2",
+        "score": 0.898942
+      },
+      "top2": {
+        "painting_id": "D004413",
+        "slice_id": "D004413_2",
+        "score": 0.876665
+      },
+      "top3": {
+        "painting_id": "D001730",
+        "slice_id": "D001730_3",
+        "score": 0.875639
+      }
+    },
+    "D004424_3": {
+      "top1": {
+        "painting_id": "D014497",
+        "slice_id": "D014497_1",
+        "score": 0.908253
+      },
+      "top2": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_4",
+        "score": 0.903306
+      },
+      "top3": {
+        "painting_id": "D011481",
+        "slice_id": "D011481_2",
+        "score": 0.899636
+      }
+    }
+  },
+  "D004425": {
+    "D004425_1": {
+      "top1": {
+        "painting_id": "D004401",
+        "slice_id": "D004401_1",
+        "score": 0.812741
+      },
+      "top2": {
+        "painting_id": "D011517",
+        "slice_id": "D011517_1",
+        "score": 0.811318
+      },
+      "top3": {
+        "painting_id": "D002386",
+        "slice_id": "D002386_1",
+        "score": 0.790071
+      }
+    }
+  },
+  "D005072": {
+    "D005072_1": {
+      "top1": {
+        "painting_id": "D004424",
+        "slice_id": "D004424_3",
+        "score": 0.882838
+      },
+      "top2": {
+        "painting_id": "D001471",
+        "slice_id": "D001471_4",
+        "score": 0.867217
+      },
+      "top3": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_4",
+        "score": 0.866404
+      }
+    }
+  },
+  "D005509": {
+    "D005509_1": {
+      "top1": {
+        "painting_id": "D014497",
+        "slice_id": "D014497_2",
+        "score": 0.84589
+      },
+      "top2": {
+        "painting_id": "D002707",
+        "slice_id": "D002707_1",
+        "score": 0.832238
+      },
+      "top3": {
+        "painting_id": "D004394",
+        "slice_id": "D004394_2",
+        "score": 0.82673
+      }
+    },
+    "D005509_2": {
+      "top1": {
+        "painting_id": "D001730",
+        "slice_id": "D001730_1",
+        "score": 0.847911
+      },
+      "top2": {
+        "painting_id": "D004424",
+        "slice_id": "D004424_1",
+        "score": 0.833925
+      },
+      "top3": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_1",
+        "score": 0.831606
+      }
+    },
+    "D005509_3": {
+      "top1": {
+        "painting_id": "D011540",
+        "slice_id": "D011540_3",
+        "score": 0.928557
+      },
+      "top2": {
+        "painting_id": "D001468",
+        "slice_id": "D001468_1",
+        "score": 0.92215
+      },
+      "top3": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_4",
+        "score": 0.91709
+      }
+    },
+    "D005509_4": {
+      "top1": {
+        "painting_id": "D004413",
+        "slice_id": "D004413_2",
+        "score": 0.87195
+      },
+      "top2": {
+        "painting_id": "D011477",
+        "slice_id": "D011477_2",
+        "score": 0.870653
+      },
+      "top3": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_3",
+        "score": 0.864145
+      }
+    }
+  },
+  "D008074": {
+    "D008074_1": {
+      "top1": {
+        "painting_id": "D011540",
+        "slice_id": "D011540_2",
+        "score": 0.865229
+      },
+      "top2": {
+        "painting_id": "D011481",
+        "slice_id": "D011481_3",
+        "score": 0.838418
+      },
+      "top3": {
+        "painting_id": "D004424",
+        "slice_id": "D004424_2",
+        "score": 0.835112
+      }
+    },
+    "D008074_2": {
+      "top1": {
+        "painting_id": "D004404",
+        "slice_id": "D004404_1",
+        "score": 0.83967
+      },
+      "top2": {
+        "painting_id": "D001730",
+        "slice_id": "D001730_1",
+        "score": 0.838797
+      },
+      "top3": {
+        "painting_id": "D004424",
+        "slice_id": "D004424_1",
+        "score": 0.80914
+      }
+    },
+    "D008074_3": {
+      "top1": {
+        "painting_id": "D004401",
+        "slice_id": "D004401_3",
+        "score": 0.898831
+      },
+      "top2": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_3",
+        "score": 0.89506
+      },
+      "top3": {
+        "painting_id": "D009166",
+        "slice_id": "D009166_2",
+        "score": 0.884182
+      }
+    }
+  },
+  "D009166": {
+    "D009166_1": {
+      "top1": {
+        "painting_id": "D011477",
+        "slice_id": "D011477_3",
+        "score": 0.934557
+      },
+      "top2": {
+        "painting_id": "D001410",
+        "slice_id": "D001410_1",
+        "score": 0.931857
+      },
+      "top3": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_6",
+        "score": 0.898042
+      }
+    },
+    "D009166_2": {
+      "top1": {
+        "painting_id": "D004388",
+        "slice_id": "D004388_1",
+        "score": 0.888555
+      },
+      "top2": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_3",
+        "score": 0.888332
+      },
+      "top3": {
+        "painting_id": "D008074",
+        "slice_id": "D008074_3",
+        "score": 0.884182
+      }
+    },
+    "D009166_3": {
+      "top1": {
+        "painting_id": "D014497",
+        "slice_id": "D014497_2",
+        "score": 0.865443
+      },
+      "top2": {
+        "painting_id": "D004396",
+        "slice_id": "D004396_1",
+        "score": 0.860229
+      },
+      "top3": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_3",
+        "score": 0.856733
+      }
+    },
+    "D009166_4": {
+      "top1": {
+        "painting_id": "D011477",
+        "slice_id": "D011477_1",
+        "score": 0.890597
+      },
+      "top2": {
+        "painting_id": "D004401",
+        "slice_id": "D004401_2",
+        "score": 0.862612
+      },
+      "top3": {
+        "painting_id": "D011477",
+        "slice_id": "D011477_3",
+        "score": 0.85278
+      }
+    }
+  },
+  "D010320": {
+    "D010320_1": {
+      "top1": {
+        "painting_id": "D002081",
+        "slice_id": "D002081_1",
+        "score": 0.90518
+      },
+      "top2": {
+        "painting_id": "D001730",
+        "slice_id": "D001730_2",
+        "score": 0.898512
+      },
+      "top3": {
+        "painting_id": "D011521",
+        "slice_id": "D011521_3",
+        "score": 0.895931
+      }
+    },
+    "D010320_2": {
+      "top1": {
+        "painting_id": "D004388",
+        "slice_id": "D004388_1",
+        "score": 0.87333
+      },
+      "top2": {
+        "painting_id": "D011533",
+        "slice_id": "D011533_4",
+        "score": 0.838992
+      },
+      "top3": {
+        "painting_id": "D009166",
+        "slice_id": "D009166_2",
+        "score": 0.836462
+      }
+    }
+  },
+  "D011470": {
+    "D011470_1": {
+      "top1": {
+        "painting_id": "D004382",
+        "slice_id": "D004382_2",
+        "score": 0.905752
+      },
+      "top2": {
+        "painting_id": "D004391",
+        "slice_id": "D004391_4",
+        "score": 0.898411
+      },
+      "top3": {
+        "painting_id": "D002101",
+        "slice_id": "D002101_2",
+        "score": 0.891604
+      }
+    },
+    "D011470_2": {
+      "top1": {
+        "painting_id": "D004424",
+        "slice_id": "D004424_2",
+        "score": 0.898942
+      },
+      "top2": {
+        "painting_id": "D011481",
+        "slice_id": "D011481_3",
+        "score": 0.879998
+      },
+      "top3": {
+        "painting_id": "D004391",
+        "slice_id": "D004391_1",
+        "score": 0.873457
+      }
+    },
+    "D011470_3": {
+      "top1": {
+        "painting_id": "D011477",
+        "slice_id": "D011477_3",
+        "score": 0.8821
+      },
+      "top2": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_1",
+        "score": 0.876278
+      },
+      "top3": {
+        "painting_id": "D009166",
+        "slice_id": "D009166_1",
+        "score": 0.869153
+      }
+    }
+  },
+  "D011477": {
+    "D011477_1": {
+      "top1": {
+        "painting_id": "D011540",
+        "slice_id": "D011540_4",
+        "score": 0.901742
+      },
+      "top2": {
+        "painting_id": "D004391",
+        "slice_id": "D004391_4",
+        "score": 0.898927
+      },
+      "top3": {
+        "painting_id": "D004394",
+        "slice_id": "D004394_1",
+        "score": 0.89661
+      }
+    },
+    "D011477_2": {
+      "top1": {
+        "painting_id": "D004401",
+        "slice_id": "D004401_2",
+        "score": 0.875585
+      },
+      "top2": {
+        "painting_id": "D004413",
+        "slice_id": "D004413_2",
+        "score": 0.873432
+      },
+      "top3": {
+        "painting_id": "D005509",
+        "slice_id": "D005509_4",
+        "score": 0.870653
+      }
+    },
+    "D011477_3": {
+      "top1": {
+        "painting_id": "D009166",
+        "slice_id": "D009166_1",
+        "score": 0.934557
+      },
+      "top2": {
+        "painting_id": "D012756",
+        "slice_id": "D012756_3",
+        "score": 0.905089
+      },
+      "top3": {
+        "painting_id": "D004401",
+        "slice_id": "D004401_1",
+        "score": 0.899023
+      }
+    }
+  },
+  "D011481": {
+    "D011481_1": {
+      "top1": {
+        "painting_id": "D002388",
+        "slice_id": "D002388_2",
+        "score": 0.881504
+      },
+      "top2": {
+        "painting_id": "D004394",
+        "slice_id": "D004394_1",
+        "score": 0.838374
+      },
+      "top3": {
+        "painting_id": "D014498",
+        "slice_id": "D014498_3",
+        "score": 0.837253
+      }
+    },
+    "D011481_2": {
+      "top1": {
+        "painting_id": "D004424",
+        "slice_id": "D004424_3",
+        "score": 0.899636
+      },
+      "top2": {
+        "painting_id": "D002081",
+        "slice_id": "D002081_2",
+        "score": 0.895499
+      },
+      "top3": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_6",
+        "score": 0.867738
+      }
+    },
+    "D011481_3": {
+      "top1": {
+        "painting_id": "D011470",
+        "slice_id": "D011470_2",
+        "score": 0.879998
+      },
+      "top2": {
+        "painting_id": "D004424",
+        "slice_id": "D004424_2",
+        "score": 0.872065
+      },
+      "top3": {
+        "painting_id": "D001730",
+        "slice_id": "D001730_3",
+        "score": 0.870434
+      }
+    }
+  },
+  "D011490": {
+    "D011490_1": {
+      "top1": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_1",
+        "score": 0.782356
+      },
+      "top2": {
+        "painting_id": "D002388",
+        "slice_id": "D002388_1",
+        "score": 0.777087
+      },
+      "top3": {
+        "painting_id": "D001488",
+        "slice_id": "D001488_2",
+        "score": 0.775672
+      }
+    },
+    "D011490_2": {
+      "top1": {
+        "painting_id": "D001430",
+        "slice_id": "D001430_3",
+        "score": 0.858957
+      },
+      "top2": {
+        "painting_id": "D004404",
+        "slice_id": "D004404_4",
+        "score": 0.833272
+      }
+    }
+  },
+  "D011514": {
+    "D011514_1": {
+      "top1": {
+        "painting_id": "D011517",
+        "slice_id": "D011517_1",
+        "score": 0.941196
+      },
+      "top2": {
+        "painting_id": "D011517",
+        "slice_id": "D011517_2",
+        "score": 0.927404
+      },
+      "top3": {
+        "painting_id": "D001510",
+        "slice_id": "D001510_2",
+        "score": 0.925374
+      }
+    },
+    "D011514_2": {
+      "top1": {
+        "painting_id": "D001510",
+        "slice_id": "D001510_2",
+        "score": 0.89203
+      },
+      "top2": {
+        "painting_id": "D011517",
+        "slice_id": "D011517_1",
+        "score": 0.883363
+      },
+      "top3": {
+        "painting_id": "D011517",
+        "slice_id": "D011517_4",
+        "score": 0.876398
+      }
+    }
+  },
+  "D011517": {
+    "D011517_1": {
+      "top1": {
+        "painting_id": "D011514",
+        "slice_id": "D011514_1",
+        "score": 0.941196
+      },
+      "top2": {
+        "painting_id": "D001510",
+        "slice_id": "D001510_2",
+        "score": 0.929156
+      },
+      "top3": {
+        "painting_id": "D011524",
+        "slice_id": "D011524_3",
+        "score": 0.917548
+      }
+    },
+    "D011517_2": {
+      "top1": {
+        "painting_id": "D011524",
+        "slice_id": "D011524_3",
+        "score": 0.932119
+      },
+      "top2": {
+        "painting_id": "D001510",
+        "slice_id": "D001510_2",
+        "score": 0.9295
+      },
+      "top3": {
+        "painting_id": "D011514",
+        "slice_id": "D011514_1",
+        "score": 0.927404
+      }
+    },
+    "D011517_3": {
+      "top1": {
+        "painting_id": "D001510",
+        "slice_id": "D001510_3",
+        "score": 0.913778
+      },
+      "top2": {
+        "painting_id": "D011524",
+        "slice_id": "D011524_2",
+        "score": 0.873958
+      },
+      "top3": {
+        "painting_id": "D001510",
+        "slice_id": "D001510_2",
+        "score": 0.872555
+      }
+    },
+    "D011517_4": {
+      "top1": {
+        "painting_id": "D011514",
+        "slice_id": "D011514_1",
+        "score": 0.921213
+      },
+      "top2": {
+        "painting_id": "D001510",
+        "slice_id": "D001510_2",
+        "score": 0.919937
+      },
+      "top3": {
+        "painting_id": "D011524",
+        "slice_id": "D011524_3",
+        "score": 0.904625
+      }
+    }
+  },
+  "D011518": {
+    "D011518_1": {
+      "top1": {
+        "painting_id": "D004388",
+        "slice_id": "D004388_1",
+        "score": 0.86582
+      },
+      "top2": {
+        "painting_id": "D014498",
+        "slice_id": "D014498_3",
+        "score": 0.862872
+      },
+      "top3": {
+        "painting_id": "D004401",
+        "slice_id": "D004401_2",
+        "score": 0.861526
+      }
+    },
+    "D011518_2": {
+      "top1": {
+        "painting_id": "D004401",
+        "slice_id": "D004401_1",
+        "score": 0.913671
+      },
+      "top2": {
+        "painting_id": "D014499",
+        "slice_id": "D014499_1",
+        "score": 0.89916
+      },
+      "top3": {
+        "painting_id": "D011477",
+        "slice_id": "D011477_3",
+        "score": 0.887173
+      }
+    },
+    "D011518_3": {
+      "top1": {
+        "painting_id": "D001430",
+        "slice_id": "D001430_3",
+        "score": 0.795427
+      },
+      "top2": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_4",
+        "score": 0.781732
+      },
+      "top3": {
+        "painting_id": "D004404",
+        "slice_id": "D004404_4",
+        "score": 0.780184
+      }
+    },
+    "D011518_4": {
+      "top1": {
+        "painting_id": "D004415",
+        "slice_id": "D004415_2",
+        "score": 0.915543
+      },
+      "top2": {
+        "painting_id": "D001471",
+        "slice_id": "D001471_2",
+        "score": 0.905706
+      },
+      "top3": {
+        "painting_id": "D002081",
+        "slice_id": "D002081_2",
+        "score": 0.893625
+      }
+    }
+  },
+  "D011521": {
+    "D011521_1": {
+      "top1": {
+        "painting_id": "D004401",
+        "slice_id": "D004401_3",
+        "score": 0.852547
+      },
+      "top2": {
+        "painting_id": "D004401",
+        "slice_id": "D004401_2",
+        "score": 0.843659
+      },
+      "top3": {
+        "painting_id": "D004396",
+        "slice_id": "D004396_1",
+        "score": 0.837066
+      }
+    },
+    "D011521_2": {
+      "top1": {
+        "painting_id": "D004413",
+        "slice_id": "D004413_2",
+        "score": 0.878237
+      },
+      "top2": {
+        "painting_id": "D001410",
+        "slice_id": "D001410_2",
+        "score": 0.876932
+      },
+      "top3": {
+        "painting_id": "D004401",
+        "slice_id": "D004401_2",
+        "score": 0.849934
+      }
+    },
+    "D011521_3": {
+      "top1": {
+        "painting_id": "D005509",
+        "slice_id": "D005509_3",
+        "score": 0.911309
+      },
+      "top2": {
+        "painting_id": "D011540",
+        "slice_id": "D011540_4",
+        "score": 0.909398
+      },
+      "top3": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_4",
+        "score": 0.907507
+      }
+    },
+    "D011521_4": {
+      "top1": {
+        "painting_id": "D004415",
+        "slice_id": "D004415_2",
+        "score": 0.916926
+      },
+      "top2": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_5",
+        "score": 0.899296
+      },
+      "top3": {
+        "painting_id": "D014498",
+        "slice_id": "D014498_2",
+        "score": 0.887869
+      }
+    }
+  },
+  "D011524": {
+    "D011524_1": {
+      "top1": {
+        "painting_id": "D011517",
+        "slice_id": "D011517_2",
+        "score": 0.902374
+      },
+      "top2": {
+        "painting_id": "D011517",
+        "slice_id": "D011517_4",
+        "score": 0.901298
+      },
+      "top3": {
+        "painting_id": "D001510",
+        "slice_id": "D001510_2",
+        "score": 0.894342
+      }
+    },
+    "D011524_2": {
+      "top1": {
+        "painting_id": "D001510",
+        "slice_id": "D001510_3",
+        "score": 0.879658
+      },
+      "top2": {
+        "painting_id": "D011517",
+        "slice_id": "D011517_3",
+        "score": 0.873958
+      },
+      "top3": {
+        "painting_id": "D001510",
+        "slice_id": "D001510_2",
+        "score": 0.862207
+      }
+    },
+    "D011524_3": {
+      "top1": {
+        "painting_id": "D011517",
+        "slice_id": "D011517_2",
+        "score": 0.932119
+      },
+      "top2": {
+        "painting_id": "D001510",
+        "slice_id": "D001510_2",
+        "score": 0.931124
+      },
+      "top3": {
+        "painting_id": "D011514",
+        "slice_id": "D011514_1",
+        "score": 0.919
+      }
+    }
+  },
+  "D011533": {
+    "D011533_1": {
+      "top1": {
+        "painting_id": "D004391",
+        "slice_id": "D004391_3",
+        "score": 0.815621
+      },
+      "top2": {
+        "painting_id": "D004424",
+        "slice_id": "D004424_2",
+        "score": 0.814452
+      },
+      "top3": {
+        "painting_id": "D004401",
+        "slice_id": "D004401_3",
+        "score": 0.813181
+      }
+    },
+    "D011533_2": {
+      "top1": {
+        "painting_id": "D014497",
+        "slice_id": "D014497_2",
+        "score": 0.812911
+      },
+      "top2": {
+        "painting_id": "D004388",
+        "slice_id": "D004388_3",
+        "score": 0.807173
+      },
+      "top3": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_3",
+        "score": 0.797526
+      }
+    },
+    "D011533_3": {
+      "top1": {
+        "painting_id": "D004391",
+        "slice_id": "D004391_1",
+        "score": 0.807011
+      },
+      "top2": {
+        "painting_id": "D004388",
+        "slice_id": "D004388_3",
+        "score": 0.802143
+      },
+      "top3": {
+        "painting_id": "D010320",
+        "slice_id": "D010320_2",
+        "score": 0.794869
+      }
+    },
+    "D011533_4": {
+      "top1": {
+        "painting_id": "D004388",
+        "slice_id": "D004388_1",
+        "score": 0.881072
+      },
+      "top2": {
+        "painting_id": "D008074",
+        "slice_id": "D008074_3",
+        "score": 0.874291
+      },
+      "top3": {
+        "painting_id": "D002388",
+        "slice_id": "D002388_2",
+        "score": 0.871973
+      }
+    }
+  },
+  "D011540": {
+    "D011540_1": {
+      "top1": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_2",
+        "score": 0.869765
+      },
+      "top2": {
+        "painting_id": "D001730",
+        "slice_id": "D001730_3",
+        "score": 0.859346
+      },
+      "top3": {
+        "painting_id": "D001481",
+        "slice_id": "D001481_3",
+        "score": 0.852721
+      }
+    },
+    "D011540_2": {
+      "top1": {
+        "painting_id": "D004391",
+        "slice_id": "D004391_1",
+        "score": 0.893871
+      },
+      "top2": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_2",
+        "score": 0.879644
+      },
+      "top3": {
+        "painting_id": "D008074",
+        "slice_id": "D008074_1",
+        "score": 0.865229
+      }
+    },
+    "D011540_3": {
+      "top1": {
+        "painting_id": "D005509",
+        "slice_id": "D005509_3",
+        "score": 0.928557
+      },
+      "top2": {
+        "painting_id": "D004382",
+        "slice_id": "D004382_1",
+        "score": 0.913522
+      },
+      "top3": {
+        "painting_id": "D004415",
+        "slice_id": "D004415_2",
+        "score": 0.912599
+      }
+    },
+    "D011540_4": {
+      "top1": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_4",
+        "score": 0.917685
+      },
+      "top2": {
+        "painting_id": "D011521",
+        "slice_id": "D011521_3",
+        "score": 0.909398
+      },
+      "top3": {
+        "painting_id": "D004391",
+        "slice_id": "D004391_4",
+        "score": 0.902613
+      }
+    }
+  },
+  "D012756": {
+    "D012756_1": {
+      "top1": {
+        "painting_id": "D002081",
+        "slice_id": "D002081_1",
+        "score": 0.908046
+      },
+      "top2": {
+        "painting_id": "D004401",
+        "slice_id": "D004401_3",
+        "score": 0.903734
+      },
+      "top3": {
+        "painting_id": "D010320",
+        "slice_id": "D010320_1",
+        "score": 0.88804
+      }
+    },
+    "D012756_2": {
+      "top1": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_4",
+        "score": 0.891965
+      },
+      "top2": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_1",
+        "score": 0.866704
+      },
+      "top3": {
+        "painting_id": "D011477",
+        "slice_id": "D011477_3",
+        "score": 0.84577
+      }
+    },
+    "D012756_3": {
+      "top1": {
+        "painting_id": "D011477",
+        "slice_id": "D011477_3",
+        "score": 0.905089
+      },
+      "top2": {
+        "painting_id": "D001508",
+        "slice_id": "D001508_4",
+        "score": 0.893639
+      },
+      "top3": {
+        "painting_id": "D002078",
+        "slice_id": "D002078_1",
+        "score": 0.89036
+      }
+    }
+  },
+  "D013208": {
+    "D013208_1": {
+      "top1": {
+        "painting_id": "D014498",
+        "slice_id": "D014498_1",
+        "score": 0.823891
+      },
+      "top2": {
+        "painting_id": "D004404",
+        "slice_id": "D004404_5",
+        "score": 0.82132
+      },
+      "top3": {
+        "painting_id": "D004391",
+        "slice_id": "D004391_1",
+        "score": 0.80971
+      }
+    },
+    "D013208_2": {
+      "top1": {
+        "painting_id": "D011521",
+        "slice_id": "D011521_3",
+        "score": 0.88482
+      },
+      "top2": {
+        "painting_id": "D002386",
+        "slice_id": "D002386_1",
+        "score": 0.883052
+      },
+      "top3": {
+        "painting_id": "D010320",
+        "slice_id": "D010320_1",
+        "score": 0.873139
+      }
+    },
+    "D013208_3": {
+      "top1": {
+        "painting_id": "D001471",
+        "slice_id": "D001471_1",
+        "score": 0.880557
+      },
+      "top2": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_2",
+        "score": 0.846334
+      },
+      "top3": {
+        "painting_id": "D004391",
+        "slice_id": "D004391_1",
+        "score": 0.836883
+      }
+    },
+    "D013208_4": {
+      "top1": {
+        "painting_id": "D009166",
+        "slice_id": "D009166_1",
+        "score": 0.867424
+      },
+      "top2": {
+        "painting_id": "D011470",
+        "slice_id": "D011470_3",
+        "score": 0.859236
+      },
+      "top3": {
+        "painting_id": "D001410",
+        "slice_id": "D001410_1",
+        "score": 0.842497
+      }
+    }
+  },
+  "D014497": {
+    "D014497_1": {
+      "top1": {
+        "painting_id": "D004391",
+        "slice_id": "D004391_3",
+        "score": 0.927047
+      },
+      "top2": {
+        "painting_id": "D004424",
+        "slice_id": "D004424_3",
+        "score": 0.908253
+      },
+      "top3": {
+        "painting_id": "D001471",
+        "slice_id": "D001471_4",
+        "score": 0.893776
+      }
+    },
+    "D014497_2": {
+      "top1": {
+        "painting_id": "D014498",
+        "slice_id": "D014498_1",
+        "score": 0.867506
+      },
+      "top2": {
+        "painting_id": "D009166",
+        "slice_id": "D009166_3",
+        "score": 0.865443
+      },
+      "top3": {
+        "painting_id": "D002081",
+        "slice_id": "D002081_3",
+        "score": 0.863347
+      }
+    }
+  },
+  "D014498": {
+    "D014498_1": {
+      "top1": {
+        "painting_id": "D014497",
+        "slice_id": "D014497_2",
+        "score": 0.867506
+      },
+      "top2": {
+        "painting_id": "D004388",
+        "slice_id": "D004388_2",
+        "score": 0.825159
+      },
+      "top3": {
+        "painting_id": "D013208",
+        "slice_id": "D013208_1",
+        "score": 0.823891
+      }
+    },
+    "D014498_2": {
+      "top1": {
+        "painting_id": "D001439",
+        "slice_id": "D001439_5",
+        "score": 0.929367
+      },
+      "top2": {
+        "painting_id": "D004415",
+        "slice_id": "D004415_2",
+        "score": 0.912336
+      },
+      "top3": {
+        "painting_id": "D004423",
+        "slice_id": "D004423_6",
+        "score": 0.902067
+      }
+    },
+    "D014498_3": {
+      "top1": {
+        "painting_id": "D004404",
+        "slice_id": "D004404_3",
+        "score": 0.910224
+      },
+      "top2": {
+        "painting_id": "D004394",
+        "slice_id": "D004394_1",
+        "score": 0.90392
+      },
+      "top3": {
+        "painting_id": "D004415",
+        "slice_id": "D004415_3",
+        "score": 0.891662
+      }
+    }
+  },
+  "D014499": {
+    "D014499_1": {
+      "top1": {
+        "painting_id": "D011518",
+        "slice_id": "D011518_2",
+        "score": 0.89916
+      },
+      "top2": {
+        "painting_id": "D004401",
+        "slice_id": "D004401_1",
+        "score": 0.869915
+      },
+      "top3": {
+        "painting_id": "D001507",
+        "slice_id": "D001507_1",
+        "score": 0.869474
+      }
+    }
+  }
+}
