@@ -139,6 +139,9 @@ This repository now includes an automated GitHub Pages workflow:
     - `Build and deployment` -> `Source`: choose `GitHub Actions`
 3. Open `Actions` tab and confirm workflow `Deploy Frontend to GitHub Pages` runs successfully.
 
+If you are a collaborator and cannot see `Settings -> Pages`, the workflow includes an auto-enable attempt (`configure-pages` with `enablement: true`). Push code and run Actions first.
+If deployment is still rejected by repository policy, ask a repository owner/admin to enable Pages once.
+
 If your first run failed with `Get Pages site failed` from `configure-pages`, use the latest workflow in this repo (it no longer depends on `configure-pages` and uses Node24-compatible action versions).
 
 ### 2. Important path note
