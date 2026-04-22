@@ -31,6 +31,8 @@ const PaintingDetailSAM = ({ imagePath, embeddingPath, paintingId, onSegmentSear
     const [currentLabel, setCurrentLabel] = useState(1);
     const [hoverClick, setHoverClick] = useState(null);
     const [zoomLevel, setZoomLevel] = useState(0.8);
+    const [panX, setPanX] = useState(0);
+    const [panY, setPanY] = useState(0);
 
     const [searchValue, setSearchValue] = useState(0);
 
@@ -45,6 +47,7 @@ const PaintingDetailSAM = ({ imagePath, embeddingPath, paintingId, onSegmentSear
         setClicks([]);
         setHoverClick(null);
         setMaskImg(null);
+        
     };
 
     useEffect(() => {
@@ -141,6 +144,10 @@ const PaintingDetailSAM = ({ imagePath, embeddingPath, paintingId, onSegmentSear
                             currentLabel={currentLabel}
                             onHoverChange={setHoverClick}
                             onHoverEnd={() => setHoverClick(null)}
+                            panX={panX}
+                            panY={panY}
+                            onPanXChange={setPanX}
+                            onPanYChange={setPanY}
                         />
                     </div>
                 </div>

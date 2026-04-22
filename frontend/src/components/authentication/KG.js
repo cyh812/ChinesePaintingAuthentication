@@ -377,6 +377,7 @@ const KG = ({
       });
 
     svg.call(zoom);
+    svg.on("dblclick.zoom", null);
 
     const getNodeId = (nodeOrId) =>
       typeof nodeOrId === "object" ? nodeOrId.id : nodeOrId;
@@ -427,7 +428,8 @@ const KG = ({
       .attr("stroke", "#999")
       .attr("stroke-width", 2)
       .style("cursor", "pointer")
-      .on("click", function (event, d) {
+      .on("mousedown", function (event, d) {
+        event.stopPropagation();
         emitLinkClick(d);
       });
 
@@ -443,7 +445,7 @@ const KG = ({
       .attr("x", (d) => (d.x || 0) - 20)
       .attr("y", (d) => (d.y || 0) - 20)
       .style("cursor", "pointer")
-      .on("click", function (event, d) {
+      .on("mousedown", function (event, d) {
         emitNodeClick(d);
       })
       .call(
@@ -500,7 +502,8 @@ const KG = ({
       .attr("r", 10)
       .attr("opacity", 1)
       .style("cursor", "pointer")
-      .on("click", function (event, d) {
+      .on("mousedown", function (event, d) {
+        event.stopPropagation();
         emitLinkClick(d);
       });
 
@@ -513,7 +516,8 @@ const KG = ({
       .attr("fill", "#4B80FA")
       .attr("opacity", 0.9)
       .style("cursor", "pointer")
-      .on("click", function (event, d) {
+      .on("mousedown", function (event, d) {
+        event.stopPropagation();
         emitLinkClick(d);
       });
 
@@ -529,7 +533,8 @@ const KG = ({
       .attr("r", 10)
       .attr("opacity", 1)
       .style("cursor", "pointer")
-      .on("click", function (event, d) {
+      .on("mousedown", function (event, d) {
+        event.stopPropagation();
         emitLinkClick(d);
       });
 
@@ -542,7 +547,8 @@ const KG = ({
       .attr("fill", "red")
       .attr("opacity", 0.9)
       .style("cursor", "pointer")
-      .on("click", function (event, d) {
+      .on("mousedown", function (event, d) {
+        event.stopPropagation();
         emitLinkClick(d);
       });
 
@@ -557,7 +563,8 @@ const KG = ({
       .attr("width", 25)
       .attr("height", 25)
       .style("cursor", "pointer")
-      .on("click", function (event, d) {
+      .on("mousedown", function (event, d) {
+        event.stopPropagation();
         emitLinkClick(d);
       });
 

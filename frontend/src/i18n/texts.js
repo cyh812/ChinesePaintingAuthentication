@@ -3,7 +3,7 @@ export const LANG_EN = "en";
 
 export const TEXTS = {
   zh: {
-    titleMain: "Chinese Ancient Paintings Authentication Interactive Visualization System",
+    titleMain: "石涛知识图谱问答体验系统",
     langLabel: "简体中文",
     langToggle: "切换到英文",
     enterFullGraph: "查看总图",
@@ -69,9 +69,10 @@ export const TEXTS = {
     prevStep: "上一题",
     nextStep: "下一题",
     exhibitionGuideEnded: "引导到此结束，已自动退出引导模式。",
+    return: "返回",
   },
   en: {
-    titleMain: "Chinese Ancient Paintings Authentication Interactive Visualization System",
+    titleMain: "Shi Tao Knowledge Graph Question and Answer Experience System",
     langLabel: "English",
     langToggle: "Switch to Chinese",
     enterFullGraph: "View Full Graph",
@@ -137,6 +138,7 @@ export const TEXTS = {
     prevStep: "Previous",
     nextStep: "Next",
     exhibitionGuideEnded: "Guide finished. Exhibition mode has been exited automatically.",
+    return: "Return",
   },
 };
 

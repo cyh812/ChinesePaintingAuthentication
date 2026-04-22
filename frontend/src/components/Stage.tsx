@@ -86,6 +86,7 @@ const Stage: React.FC<StageProps> = ({
         const PAN_STEP = Math.max(20, 40 * zoomLevel); // 缩放越大步长越大
         if (e.key === "ArrowLeft") {
           onPanXChange(panX + PAN_STEP);   // 画面向右移动
+          console.log("PanX:", panX + PAN_STEP);
         } else if (e.key === "ArrowRight") {
           onPanXChange(panX - PAN_STEP);   // 画面向左移动
         } else if (e.key === "ArrowUp") {
@@ -97,17 +98,6 @@ const Stage: React.FC<StageProps> = ({
     },
     [zoomLevel, image, maskImg, panX, panY, onPanXChange, onPanYChange]
   );
-
-  const handleKeyDown2 = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.code === "Space") {
-      e.preventDefault();
-      if (!image || !maskImg) return;
-      // 按住 Shift 导出“抠图”模式，否则默认“高亮”模式
-      const mode = e.shiftKey ? "cutout" : "highlight";
-      exportMaskedPNG(image, maskImg, `segment-${Date.now()}.png`, mode);
-    }
-    // 你已有的左右方向键逻辑可放这里一起处理
-  }, [image, maskImg]);
 
   // ====== 其余保留原逻辑 ======
   //将鼠标点击的屏幕坐标转换为图像的原始坐标
