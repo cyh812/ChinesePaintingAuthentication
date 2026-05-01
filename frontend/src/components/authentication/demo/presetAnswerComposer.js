@@ -157,11 +157,11 @@ export function composePresetAnswer(step, language) {
 
     if (isEnglish) {
       const sealText = topSeals.length > 0 ? topSeals.join(", ") : "multiple seals";
-      return `For ${targetPainting}, the key seal evidence includes ${sealText}. The related seal nodes and P-S relations are now visible in the graph, so visitors can click each seal for provenance details.`;
+      return `For ${targetPainting}, the key seal evidence includes ${sealText}. The related seal nodes and Painting-Seal relations are now visible in the graph, so visitors can click each seal for provenance details.`;
     }
 
     const sealText = topSeals.length > 0 ? topSeals.map((name) => `“${name}”`).join("、") : "多枚印章";
-    return `关于《${targetPainting}》，目前可见的关键印章包括${sealText}。对应的印章节点与 P-S 连边已经展示在图中，观众可继续点开查看来源细节。`;
+    return `关于《${targetPainting}》，目前可见的关键印章包括${sealText}。对应的印章节点与图画-印章连边已经展示在图中，观众可继续点开查看来源细节。`;
   }
 
   if (step?.intent === "ask-references") {
@@ -169,11 +169,11 @@ export function composePresetAnswer(step, language) {
 
     if (isEnglish) {
       const refText = topRefs.length > 0 ? topRefs.join("; ") : "several references";
-      return `The painting ${targetPainting} is supported by multiple references, including ${refText}. I have injected the matching R nodes and P-R links so the audience can open link details and read the corresponding text records.`;
+      return `The painting ${targetPainting} is supported by multiple references, including ${refText}. I have injected the matching R nodes and Painting-Reference links so the audience can open link details and read the corresponding text records.`;
     }
 
     const refText = topRefs.length > 0 ? topRefs.join("；") : "多条参考文献";
-    return `《${targetPainting}》目前可关联到多条参考文献，例如：${refText}。我已注入对应的 R 节点与 P-R 连边，接下来可点击连边查看具体文本记录。`;
+    return `《${targetPainting}》目前可关联到多条参考文献，例如：${refText}。我已注入对应的参考文献节点与图画-参考文献连边，接下来可点击连边查看具体文本记录。`;
   }
 
   if (localized?.guideText) {
