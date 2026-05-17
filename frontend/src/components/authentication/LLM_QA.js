@@ -16,7 +16,7 @@ import { composePresetAnswer } from "./demo/presetAnswerComposer";
 // =========================
 const retrieverClient = new OpenAI({
   baseURL: "https://api.deepseek.com",
-  apiKey: "sk-569bccdbc77a46d789eabb3c72a402b3",
+  apiKey: "",
   dangerouslyAllowBrowser: true,
 });
 
@@ -26,7 +26,7 @@ const retrieverClient = new OpenAI({
 // =========================
 const answerClient = new OpenAI({
   baseURL: "https://api.deepseek.com",
-  apiKey: "sk-c0cc496d16e6413c8e04a0ffcb9ddb21",
+  apiKey: "",
   dangerouslyAllowBrowser: true,
 });
 
@@ -663,8 +663,6 @@ ${JSON.stringify(knowledgeJson, null, 2)}
       );
       const knowledge = filteredKnowledgePack.items;
 
-      console.log("第一阶段抽取出的 JSON（原始）:", rawKnowledge);
-      console.log("第一阶段入图 JSON（过滤后）:", filteredKnowledgePack);
       // 传给父组件或其他 component
       if (typeof onKnowledgeRetrieved === "function") {
         onKnowledgeRetrieved(filteredKnowledgePack);
